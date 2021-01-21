@@ -2,7 +2,7 @@
 layout: post
 title: "First post!"
 description: "It's my first post"
-tags: [algorithm]
+tags: [algorithm, editorial, trick]
 ---
 
 Hello, i'm gumgood
