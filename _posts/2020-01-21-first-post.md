@@ -17,3 +17,19 @@ int main(){
   return 0;
 }
 {% endhighlight %}
+
+~~~cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+  printf("hello wolrd\n");
+  return 0;
+}
+~~~
+
+mathjax test
+
+$$ ax + by = c $$
+
+mathjax inline test $ ax + by = c $ asdf.
