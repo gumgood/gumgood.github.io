@@ -82,3 +82,5 @@ plugins:
   - jemoji
 paginate_path: /posts/page/:num/
 permalink: posts/:slug
+
+# my custom
