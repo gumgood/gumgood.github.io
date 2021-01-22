@@ -3,9 +3,9 @@
 // =============================================================================
 
 .highlight {
-  padding: 25px;
+  //padding: 25px;
   margin: 0;
-  margin: 30px 0;
+  //margin: 30px 0;
   overflow: auto;
   font-weight: 400;
   background: lighten($gray-lightest, 6);
@@ -17,13 +17,26 @@
 
 // Inline highlighting
 
+pre, code { font-family: consolas,Menlo,"PingFang SC","Microsoft YaHei",monospace; }
 .highlighter-rouge {
-  padding: 2px 4px;
-  font-size: 14px;
+  //padding: 2px 4px;
+  font-size: 13px;
   color: #d14;
   background: lighten($gray-lightest, 6);
-  border: 1px solid $base-border-color;
-  border-radius: 1px;
+  //border: 1px solid $base-border-color;
+  //border-radius: 1px;
+
+  table {
+    width: auto;
+    border: none;
+    border-spacing: 0px;
+
+    .rouge-gutter {
+      color: #869194;
+      background-color: #eff2f3;
+      user-select: none;
+    }
+  }
 }
 
 // Responsive
@@ -31,7 +44,7 @@
 
 @include breakpoint(small) {
   .highlight {
-    padding: 25px;
+    //padding: 25px;
     font-size: 14px;
   }
 }
@@ -56,41 +69,41 @@
 // Keyword
 
 .highlight .k {
-  font-weight: bold;
+  //font-weight: bold;
 }
 
 // Operator
 
 .highlight .o {
-  font-weight: bold;
+  //font-weight: bold;
 }
 
 // Comment.Multiline
 
 .highlight .cm {
-  font-style: italic;
+  //font-style: italic;
   color: #998;
 }
 
 // Comment.Single
 
 .highlight .cp {
-  font-weight: bold;
+  //font-weight: bold;
   color: #999;
 }
 
 // Comment.Single
 
 .highlight .c1 {
-  font-style: italic;
+  //font-style: italic;
   color: #998;
 }
 
 // Comment.Special
 
 .highlight .cs {
-  font-style: italic;
-  font-weight: bold;
+  //font-style: italic;
+  //font-weight: bold;
   color: #999;
 }
 
@@ -111,7 +124,7 @@
 // Generic.Emph
 
 .highlight .ge {
-  font-style: italic;
+  //font-style: italic;
 }
 
 // Generic.Error
@@ -155,7 +168,7 @@
 // Generic.Strong
 
 .highlight .gs {
-  font-weight: bold;
+  //font-weight: bold;
 }
 
 // Generic.Subheading
@@ -173,31 +186,31 @@
 // Keyword.Constant
 
 .highlight .kc {
-  font-weight: bold;
+  //font-weight: bold;
 }
 
 // Keyword.Declaration
 
 .highlight .kd {
-  font-weight: bold;
+  //font-weight: bold;
 }
 
 // Keyword.Pseudo
 
 .highlight .kp {
-  font-weight: bold;
+  //font-weight: bold;
 }
 
 // Keyword.Reserved
 
 .highlight .kr {
-  font-weight: bold;
+  //font-weight: bold;
 }
 
 // Keyword.Type
 
 .highlight .kt {
-  font-weight: bold;
+  //font-weight: bold;
   color: #458;
 }
 
@@ -228,7 +241,7 @@
 // Name.Class
 
 .highlight .nc {
-  font-weight: bold;
+  //font-weight: bold;
   color: #458;
 }
 
@@ -247,14 +260,14 @@
 // Name.Exception
 
 .highlight .ne {
-  font-weight: bold;
+  //font-weight: bold;
   color: #900;
 }
 
 // Name.Function
 
 .highlight .nf {
-  font-weight: bold;
+  //font-weight: bold;
   color: #900;
 }
 
@@ -279,7 +292,7 @@
 // Operator.Word
 
 .highlight .ow {
-  font-weight: bold;
+  //font-weight: bold;
 }
 
 // Text.Whitespace
