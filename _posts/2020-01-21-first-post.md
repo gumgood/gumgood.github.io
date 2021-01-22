@@ -8,16 +8,6 @@ tags: [algorithm, editorial, trick]
 Hello, i'm gumgood
 한글도 가능?
 
-{% highlight cpp %}
-#include<bits/stdc++.h>
-using namespace std;
-
-int main(){
-  printf("hello world\n");
-  return 0;
-}
-{% endhighlight %}
-
 ~~~cpp
 #include<bits/stdc++.h>
 using namespace std;
@@ -27,6 +17,8 @@ int main(){
   return 0;
 }
 ~~~
+
+인라인 코드 강조 `var` ㅋㅋ
 
 mathjax test
 
