@@ -23,7 +23,9 @@ $$\begin{array}{c}
 
 이 원리를 증명하기 전에 스턴 브로콧 트리가 어떻게 표현되는지 봅시다. 모든 분수는 트리 상에서 두 자식을 가집니다. 각 자식은 왼쪽에서 가장 가까운 조상과의 **mediant**, 오른쪽에서 가장 가까운 조상과의 **mediant**입니다.
 
-![stern-borcot-tree](/assets/img/posts/1024px-SternBrocotTree.png)
+{% include image.html path="posts/2021-01-23-the-stern-borcot-tree/1024px-SternBrocotTree.svg.png"
+path-detail="posts/2021-01-23-the-stern-borcot-tree/1024px-SternBrocotTree.svg.png"
+alt="tree" %}
 
 스턴 브로콧 트리를 중위순회했을 때, 위에서 나열한 분수를 순서대로 만날 수 있습니다.
 
@@ -126,6 +128,7 @@ string find(int x, int y, int a = 0, int b = 1, int c = 1, int d = 0) {
         return 'R' + find(x, y, m, n, c, d);
 }
 ~~~
+
 
 ## 연습문제
 ---
