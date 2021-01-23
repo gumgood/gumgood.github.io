@@ -129,7 +129,6 @@ string find(int x, int y, int a = 0, int b = 1, int c = 1, int d = 0) {
 }
 ~~~
 
-
 ## 연습문제
 ---
  * 추가 예정
