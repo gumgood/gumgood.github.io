@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Stern-Brocot tree"
-description: "스턴 브로콧 트리(Stern-Brocot tree)는 모든 양의 분수를 표현하는 자료구조 입니다."
+title: "Stern Brocot tree"
+description: "스턴 브로콧 트리(Stern Brocot tree)는 모든 양의 분수를 표현하는 자료구조 입니다."
 tags: [algorithm]
 ---
 
