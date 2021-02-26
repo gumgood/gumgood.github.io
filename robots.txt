@@ -2,5 +2,5 @@
 
 # Allow crawling of all content
 User-agent: *
-Disallow:
-Sitemap: https://gumgood.github.io//sitemap.xml
+Allow: /
+Sitemap: https://gumgood.github.io/sitemap.xml
