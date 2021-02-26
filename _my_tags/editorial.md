@@ -1,5 +1,0 @@
----
-slug: editorial
-name: Editorial
----
-

@@ -1,1 +1,0 @@
-hello! it's gumgood blog.
