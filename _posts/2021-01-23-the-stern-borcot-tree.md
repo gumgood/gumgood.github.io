@@ -7,17 +7,21 @@ tags: [algorithm]
 
 먼저, 모든 양의 분수를 나열하는 방법에 대해 알아봅시다. 다음 두 분수가 있습니다.
 
-$$\dfrac{0}{1}, \dfrac{1}{0}$$
+$$
+\dfrac{0}{1}, \dfrac{1}{0}
+$$
 
 두 번째는 엄밀히 분수는 아니지만, 무한대를 나타내는 기약분수로 해석합시다.
 
 매 반복마다, 모든 인접한 분수 $\dfrac{a}{b}$ 와 $\dfrac{c}{d}$ 사이에 **mediant**인 $\dfrac{a+c}{b+d}$를 삽입합니다. 반복에 따라 다음과 같이 나열됩니다.
 
-$$\begin{array}{c}
+$$
+\begin{array}{c}
     \dfrac{0}{1}, \dfrac{1}{1}, \dfrac{1}{0} \\\\
     \dfrac{0}{1}, \dfrac{1}{2}, \dfrac{1}{1}, \dfrac{2}{1}, \dfrac{1}{0} \\\\
     \dfrac{0}{1}, \dfrac{1}{3}, \dfrac{1}{2}, \dfrac{2}{3}, \dfrac{1}{1}, \dfrac{3}{2}, \dfrac{2}{1}, \dfrac{3}{1}, \dfrac{1}{0}
-    \end{array}$$
+    \end{array}
+$$
 
 이를 무한히 반복하면 모든 양의 분수를 나열하게 됩니다. 각 분수들은 오름차순으로 나타나며, 기약분수꼴이기 때문에 유일하게 등장합니다.
 
@@ -35,18 +39,24 @@ alt="tree" %}
 
 **오름차순** 오름차순 증명은 간답합니다. 두 분수의 **mediant**는 항상 그 사이 값을 가지므로
 
-$$ \dfrac{a}{b} \le \dfrac{a+c}{b+d} \le \dfrac{c}{d} $$
+$$
+\dfrac{a}{b} \le \dfrac{a+c}{b+d} \le \dfrac{c}{d}
+$$
 
 다음이 성립합니다
 
-$$ \dfrac{a}{b} \le \dfrac{c}{d} $$
+$$
+\dfrac{a}{b} \le \dfrac{c}{d}
+$$
 
 두 부등식은 통분하면 쉽게 보일 수 있습니다. 처음 두 분수가 오름차순을 만족하기 때문에 **mediant**를 삽입을 반복하더라도 오름차순이 유지됩니다.
 
 
 **기약분수** 어떤 인접한 분수 $\dfrac{a}{b}$ 와 $\dfrac{c}{d}$에 대해 다음을 보임으로써 기약분수성을 증명하겠습니다.
 
-$$bc - ad = 1$$
+$$
+bc - ad = 1
+$$
 
 $ax+by=c$꼴의 디오판틴방정식은 $c \mid gcd(a,b)$일 때 해를 가지게 됩니다. 위의 식의 경우 $\gcd(a,b) = \gcd(c,d) = 1$를 의미하고, 이는 기약분수임을 보이는 것과 같습니다.
 
@@ -54,14 +64,18 @@ $ax+by=c$꼴의 디오판틴방정식은 $c \mid gcd(a,b)$일 때 해를 가지�
 
 두 인접한 분수가 $bc - ad = 1$를 만족한다고 가정했을 때, **mediant**를 추가한 후
 
-$$\dfrac{a}{b}, \dfrac{a+c}{b+d}, \dfrac{c}{d}$$
+$$
+\dfrac{a}{b}, \dfrac{a+c}{b+d}, \dfrac{c}{d}
+$$
 
 다음과 같은 식이 성립해야 하며
 
-$$\begin{aligned}
+$$
+\begin{aligned}
     b(a+c) - a(b+d) &= 1 \\
     c(b+d) - d(a+c) &= 1
-\end{aligned}$$
+\end{aligned}
+$$
 
 이는 $bc - ad = 1$로 쉽게 보일 수 있습니다.
 
@@ -75,22 +89,30 @@ $$\begin{aligned}
 
 트리를 내려가는 동안 두 자식에 대해 다음이 성립합니다.
 
-$$ \dfrac{a}{b} \lt \dfrac{x}{y} \lt \dfrac{c}{d} $$
+$$
+\dfrac{a}{b} \lt \dfrac{x}{y} \lt \dfrac{c}{d}
+$$
 
 정수에서 $z \gt 0 \iff z \ge 1$임을 이용하여 식을 정리합니다.
 
-$$ \begin{aligned}
+$$
+\begin{aligned}
     bx - ay &\ge 1 \\
     cy - dx &\ge 1
-\end{aligned} $$
+\end{aligned}
+$$
 
 첫 번째 식에 $c+d$, 두 번째 식에 $a+b$를 곱해 다음 식을 얻을 수 있습니다.
 
-$$ (c+d)(bx - ay) + (a+b)(cy - dx) \ge a+b+c+d $$
+$$
+(c+d)(bx - ay) + (a+b)(cy - dx) \ge a+b+c+d
+$$
 
 위에서 보였던 $bc-ad=1$을 적용합니다.
 
-$$ x+y \ge a+b+c+d $$
+$$
+x+y \ge a+b+c+d
+$$
 
 트리를 내려갈 때마다 $a,b,c,d$ 중 최소 하나는 값이 증가하기 때문에 $x+y$번 안에 해당 분수를 찾을 수 있습니다. 따라서 모든 분수는 이 트리 안에 존재하게 됩니다.
 
