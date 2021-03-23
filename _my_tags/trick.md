@@ -1,4 +1,4 @@
 ---
-slug: Trick
+slug: trick
 name: Trick
 ---
