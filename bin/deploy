@@ -5,6 +5,12 @@
 # Exit if any subcommand fails.
 set -e
 
+# Ensure commit to main branch
+echo "Did you commit to main Branch? [Y/N]"
+read YN
+if [ "$YN" != "Y" ]; then
+  exit 0
+
 echo "Started deploying"
 
 # Checkout gh-pages branch.
