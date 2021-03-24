@@ -3,7 +3,6 @@ layout: post
 title: "Stern Brocot tree"
 description: "스턴 브로콧 트리(Stern Brocot tree)는 모든 양의 분수를 표현하는 자료구조 입니다."
 tags: [algorithm]
-typora-root-url: ../
 ---
 
 먼저, 모든 양의 분수를 나열하는 방법에 대해 알아봅시다. 다음 두 분수가 있습니다.
@@ -28,7 +27,7 @@ $$
 
 이 원리를 증명하기 전에 스턴 브로콧 트리가 어떻게 표현되는지 봅시다. 모든 분수는 트리 상에서 두 자식을 가집니다. 각 자식은 왼쪽에서 가장 가까운 조상과의 **mediant**, 오른쪽에서 가장 가까운 조상과의 **mediant**입니다.
 
-![](/assets/postimg/2021-01-23-the-stern-borcot-tree/1024px-SternBrocotTree.svg.png)
+![](../assets/postimg/2021-01-23-the-stern-borcot-tree/1024px-SternBrocotTree.svg.png)
 
 스턴 브로콧 트리를 중위순회했을 때, 위에서 나열한 분수를 순서대로 만날 수 있습니다.
 
