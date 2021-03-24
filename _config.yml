@@ -44,6 +44,7 @@ social:
 # Important settings (change at own risk)
 
 assets:
+  digest: false
   plugins:
     css: { autoprefixer: {}}
     img: { optim: {}}

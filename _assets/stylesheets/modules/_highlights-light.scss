@@ -20,6 +20,8 @@
 pre, code { font-family: consolas,Menlo,"PingFang SC","Microsoft YaHei",monospace; }
 .highlighter-rouge {
   //padding: 2px 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   font-size: 13px;
   color: #d14;
   background: lighten($gray-lightest, 6);
@@ -34,6 +36,7 @@ pre, code { font-family: consolas,Menlo,"PingFang SC","Microsoft YaHei",monospac
     .rouge-gutter {
       color: #869194;
       background-color: #eff2f3;
+      text-align: right;
       user-select: none;
     }
   }
