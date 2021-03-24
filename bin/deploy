@@ -10,6 +10,7 @@ echo "Did you commit to main Branch? [Y/N]"
 read YN
 if [ "$YN" != "Y" ]; then
   exit 0
+fi
 
 echo "Started deploying"
 
