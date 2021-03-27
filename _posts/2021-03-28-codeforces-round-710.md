@@ -194,46 +194,46 @@ int mn[200000];
 int mx[200000];
 
 void solve(){
-	set<int> qs(q,q+n);
-	set<int> s;
-	
-	for(int i=1;i<=n;++i)
-		if(qs.find(i)==qs.end())
-			s.emplace(i);
-	for(int i=0;i<n;++i){
-		if(!i || q[i-1]<q[i]) mx[i] = q[i];
-		else{
-			auto it = prev(s.upper_bound(q[i]));
-			mx[i] = *it;
-			s.erase(it);
-		}	
-	}
+    set<int> qs(q,q+n);
+    set<int> s;
 
-	for(int i=1;i<=n;++i)
-		if(qs.find(i)==qs.end())
-			s.emplace(i);
-	for(int i=0;i<n;++i){
-		if(!i || q[i-1]<q[i]) mn[i] = q[i];
-		else{
-			mn[i] = *s.begin();
-			s.erase(s.begin());
-		}
-	}
+    for(int i=1;i<=n;++i)
+        if(qs.find(i)==qs.end())
+            s.emplace(i);
+    for(int i=0;i<n;++i){
+        if(!i || q[i-1]<q[i]) mx[i] = q[i];
+        else{
+            auto it = prev(s.upper_bound(q[i]));
+            mx[i] = *it;
+            s.erase(it);
+        }    
+    }
 
-	for(int i=0;i<n;++i)
-		printf("%d ",mn[i]); puts("");
-	for(int i=0;i<n;++i)
-		printf("%d ",mx[i]); puts("");
+    for(int i=1;i<=n;++i)
+        if(qs.find(i)==qs.end())
+            s.emplace(i);
+    for(int i=0;i<n;++i){
+        if(!i || q[i-1]<q[i]) mn[i] = q[i];
+        else{
+            mn[i] = *s.begin();
+            s.erase(s.begin());
+        }
+    }
+
+    for(int i=0;i<n;++i)
+        printf("%d ",mn[i]); puts("");
+    for(int i=0;i<n;++i)
+        printf("%d ",mx[i]); puts("");
 }
 
 int main(){
-	int t; scanf("%d",&t);
-	while(t--){
-		scanf("%d",&n);
-		for(int i=0;i<n;++i)
-			scanf("%d",q+i);
-		solve();
-	}
+    int t; scanf("%d",&t);
+    while(t--){
+        scanf("%d",&n);
+        for(int i=0;i<n;++i)
+            scanf("%d",q+i);
+        solve();
+    }
 }
 ```
 

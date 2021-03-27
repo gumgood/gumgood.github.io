@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Codeforces Round 709"
+title: "Codeforces Round 709 (Div. 2)"
 description: "A~E번까지 업솔빙"
 tags: [editorial]
 ---
