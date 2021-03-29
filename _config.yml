@@ -1,7 +1,7 @@
 # Mandatory settings
 
 blog_theme: light # Or use dark
-name: Gumgood
+name: Gumgood Blog
 paginate: 25
 url: https://gumgood.github.io
 
