@@ -86,7 +86,7 @@ int main(){
 
 ### C. Planar Refections
 
-n개의 평면이 연속하게 서있고,  왼쪽에서 오른쪽으로 decay age가 k인 입자를 쏜다. 입자가 직선을 통과하는 순간 통과한 반대 방향으로 진행하는 decay age가 k-인 입자를 복사된다. 단, k=1이면 복사되지 않는다. 입자를 쏘고 모든 과정이 끝난 뒤 총 몇 개의 입자가 생기는지 세는 문제다.
+n개의 평면이 연속하게 서있고,  왼쪽에서 오른쪽으로 decay age가 k인 입자를 쏜다. 입자가 직선을 통과하는 순간 통과한 반대 방향으로 진행하는 decay age가 k-1인 입자를 복사된다. 단, k=1이면 복사되지 않는다. 입자를 쏘고 모든 과정이 끝난 뒤 총 몇 개의 입자가 생기는지 세는 문제다.
 
 decay age 별로 입자가 몇 개가 생기는지 따로 셌다. 어떤 입자의 decay age가 1보다 크다면 진행방향의 평면 개수 만큼 입자가 복사된다. 각 입자가 복사되는 위치에 해당하는 count 배열을 만들어 누적했뒀다가 다음 decay age에 대해 처리할 때 스위핑하면서 구했다.
 
@@ -107,36 +107,36 @@ int n, k;
 lint a[1001][1001];
 
 lint solve(){
-	for(int i=0;i<k;++i)
-		for(int j=0;j<n;++j)
-			a[i][j] = 0;
-	for(int i=1;i<k;++i){
-		if(i==1){
-			for(int j=0;j<n;++j)
-				a[i][j] = 1;
-		}else{
-		if(i&1){
-				for(int j=n-2;~j;--j)
-			   		a[i][j] = (a[i-1][j+1] + a[i][j+1]) % mod;	
-			}else{
-				for(int j=1;j<n;++j)
-					a[i][j] = (a[i-1][j-1] + a[i][j-1]) % mod;
-			}
-		}
-	}
-	lint ret = 1;
-	for(int i=0;i<k;++i)
-		for(int j=0;j<n;++j)
-			ret = (ret + a[i][j]) % mod;
-	return ret;
+    for(int i=0;i<k;++i)
+        for(int j=0;j<n;++j)
+            a[i][j] = 0;
+    for(int i=1;i<k;++i){
+        if(i==1){
+            for(int j=0;j<n;++j)
+                a[i][j] = 1;
+        }else{
+        if(i&1){
+                for(int j=n-2;~j;--j)
+                       a[i][j] = (a[i-1][j+1] + a[i][j+1]) % mod;    
+            }else{
+                for(int j=1;j<n;++j)
+                    a[i][j] = (a[i-1][j-1] + a[i][j-1]) % mod;
+            }
+        }
+    }
+    lint ret = 1;
+    for(int i=0;i<k;++i)
+        for(int j=0;j<n;++j)
+            ret = (ret + a[i][j]) % mod;
+    return ret;
 }
 
 int main(){
-	int tc; scanf("%d",&tc);
-	while(tc--){
-		scanf("%d%d",&n,&k);
-		printf("%lld\n",solve());
-	}
+    int tc; scanf("%d",&tc);
+    while(tc--){
+        scanf("%d%d",&n,&k);
+        printf("%lld\n",solve());
+    }
 }
 ```
 
@@ -178,7 +178,7 @@ void solve(){
             k = k + (x[i] + 100000 - 1) / 100000;
           else
             k = (k * x[i] + 100000 - 1) / 100000;
-          
+
           if(k > m || v[i-1][k]) break;
           v[i][k] = true; dp[k] = i;
         }
