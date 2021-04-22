@@ -21,31 +21,31 @@ using fint = long double;
 const int INF = 1e9 + 9;
 
 int main(){
-	int tc; scanf("%d",&tc);
-	while(tc--){
-		int n, k;
-		scanf("%d%d",&n,&k);
-		if((n-1)/2 < k) puts("-1");
-		else{
-			deque<int> dq(n); iota(all(dq),1);
-			vector<int> ans;
-			for(int i=0;i<n;++i){
-				if(i%2==0) ans.push_back(dq.front()), dq.pop_front();
-				else ans.push_back(dq.back()), dq.pop_back();
-			}
-			int s = 1;
-			if(k){
-				for(;s+1<n;++s)
-					if(ans[s-1]<ans[s] && ans[s]>ans[s+1])
-						if(--k==0) break;
-			}else{
-				s = 0;
-			}
-			sort(ans.begin() + s, ans.end(), greater<int>());
-			for(auto it : ans)
-				printf("%d ",it); puts("");
-		}
-	}
+    int tc; scanf("%d",&tc);
+    while(tc--){
+        int n, k;
+        scanf("%d%d",&n,&k);
+        if((n-1)/2 < k) puts("-1");
+        else{
+            deque<int> dq(n); iota(all(dq),1);
+            vector<int> ans;
+            for(int i=0;i<n;++i){
+                if(i%2==0) ans.push_back(dq.front()), dq.pop_front();
+                else ans.push_back(dq.back()), dq.pop_back();
+            }
+            int s = 1;
+            if(k){
+                for(;s+1<n;++s)
+                    if(ans[s-1]<ans[s] && ans[s]>ans[s+1])
+                        if(--k==0) break;
+            }else{
+                s = 0;
+            }
+            sort(ans.begin() + s, ans.end(), greater<int>());
+            for(auto it : ans)
+                printf("%d ",it); puts("");
+        }
+    }
 }
 ```
 
@@ -68,29 +68,29 @@ const lint mod = 1e9 + 7;
 int n, a[200000];
 
 lint solve(){
-	int x = a[0];
-	for(int i=1;i<n;++i) x &= a[i];
+    int x = a[0];
+    for(int i=1;i<n;++i) x &= a[i];
 
-	int cnt = 0;
-	for(int i=0;i<n;++i)
-		if(a[i] == x) cnt++;
+    int cnt = 0;
+    for(int i=0;i<n;++i)
+        if(a[i] == x) cnt++;
 
-	lint ret = (lint)cnt*(cnt-1)%mod;
-	for(int i=1;i<=n-2;++i)
-		ret = ret * i % mod;
-	return ret;
+    lint ret = (lint)cnt*(cnt-1)%mod;
+    for(int i=1;i<=n-2;++i)
+        ret = ret * i % mod;
+    return ret;
 }
 
 int main(){
-	int tc; scanf("%d",&tc);
-	while(tc--){
-		scanf("%d",&n);
-		for(int i=0;i<n;++i)
-			scanf("%d",a+i);
+    int tc; scanf("%d",&tc);
+    while(tc--){
+        scanf("%d",&n);
+        for(int i=0;i<n;++i)
+            scanf("%d",a+i);
 
-		lint ans = solve();
-		printf("%lld\n",ans);
-	}
+        lint ans = solve();
+        printf("%lld\n",ans);
+    }
 }
 ```
 
@@ -109,42 +109,42 @@ using lint = long long;
 using fint = long double;
 const int INF = 1e9 + 9;
 const lint mod = 1e9 + 7;
- 
+
 int n, m;
- 
+
 lint mul[200001][10];
- 
+
 void solve(){
-	for(int x=0;x<10;++x){
-		vector<lint> cnt(10), tmp(10);
-		cnt[x] = 1;
-		for(int i=0;i<200001;++i){
-			mul[i][x] = accumulate(all(cnt),0ll) % mod;
- 
-			for(int j=0;j<9;++j)
-				tmp[j+1] = cnt[j];
-			tmp[0] = cnt[9];
-			tmp[1] = (tmp[1] + cnt[9]) % mod;
-			cnt = tmp;
-		}
-	}
+    for(int x=0;x<10;++x){
+        vector<lint> cnt(10), tmp(10);
+        cnt[x] = 1;
+        for(int i=0;i<200001;++i){
+            mul[i][x] = accumulate(all(cnt),0ll) % mod;
+
+            for(int j=0;j<9;++j)
+                tmp[j+1] = cnt[j];
+            tmp[0] = cnt[9];
+            tmp[1] = (tmp[1] + cnt[9]) % mod;
+            cnt = tmp;
+        }
+    }
 }
- 
+
 int main(){
-	solve();
- 
-	int tc; scanf("%d",&tc);
-	while(tc--){
-		scanf("%d%d",&n,&m);
- 
-		vector<int> cnt(10);
-		for(;n;n/=10) cnt[n%10]++;
- 
-		lint ans = 0;
-		for(int i=0;i<10;++i)
-			ans = (ans + mul[m][i] * cnt[i]) % mod;
-	   printf("%lld\n",ans);	
-	}
+    solve();
+
+    int tc; scanf("%d",&tc);
+    while(tc--){
+        scanf("%d%d",&n,&m);
+
+        vector<int> cnt(10);
+        for(;n;n/=10) cnt[n%10]++;
+
+        lint ans = 0;
+        for(int i=0;i<10;++i)
+            ans = (ans + mul[m][i] * cnt[i]) % mod;
+       printf("%lld\n",ans);    
+    }
 }
 ```
 
@@ -172,44 +172,44 @@ const int INF = 1e9 + 9;
 int n, p, a[200000];
 
 lint solve(){
-	priority_queue<pair<int,int>> pq;
-	for(int i=0;i<n;++i)
-		pq.emplace(-a[i], i);
+    priority_queue<pair<int,int>> pq;
+    for(int i=0;i<n;++i)
+        pq.emplace(-a[i], i);
 
-	vector<bool> v(n);
-	vector<int> c(n,p);
-	while(!pq.empty()){
-		int x = pq.top().second; pq.pop();
-		if(v[x]) continue;
+    vector<bool> v(n);
+    vector<int> c(n,p);
+    while(!pq.empty()){
+        int x = pq.top().second; pq.pop();
+        if(v[x]) continue;
 
-		for(int s=x; 0<s && a[s-1]%a[x]==0; --s){
-			v[s] = true;
-			c[s-1] = min(c[s-1], a[x]);
-			if(v[s-1]) break;	
-		}
-		for(int e=x; e<n-1 && a[e+1]%a[x]==0; ++e){
-			v[e] = true;
-			c[e] = min(c[e], a[x]);
-			if(v[e+1]) break;
-		}
-	}
+        for(int s=x; 0<s && a[s-1]%a[x]==0; --s){
+            v[s] = true;
+            c[s-1] = min(c[s-1], a[x]);
+            if(v[s-1]) break;    
+        }
+        for(int e=x; e<n-1 && a[e+1]%a[x]==0; ++e){
+            v[e] = true;
+            c[e] = min(c[e], a[x]);
+            if(v[e+1]) break;
+        }
+    }
 
-	lint ret = 0;
-	for(int i=0;i<n-1;++i)
-		ret += c[i];
-	return ret;
+    lint ret = 0;
+    for(int i=0;i<n-1;++i)
+        ret += c[i];
+    return ret;
 }
 
 int main(){
-	int tc; scanf("%d",&tc);
-	while(tc--){
-		scanf("%d%d",&n,&p);
-		for(int i=0;i<n;++i)
-			scanf("%d",a+i);
+    int tc; scanf("%d",&tc);
+    while(tc--){
+        scanf("%d%d",&n,&p);
+        for(int i=0;i<n;++i)
+            scanf("%d",a+i);
 
-		lint ans = solve();
-		printf("%lld\n",ans);
-	}
+        lint ans = solve();
+        printf("%lld\n",ans);
+    }
 }
 ```
 
@@ -254,86 +254,86 @@ const lint mod = 1e9 + 7;
 int n, a[100000];
 
 lint pw(lint x,lint p){
-	lint ret = 1;
-	for(;p;p>>=1, x=x*x%mod)
-		if(p&1) ret = ret*x%mod;
-	return ret;
+    lint ret = 1;
+    for(;p;p>>=1, x=x*x%mod)
+        if(p&1) ret = ret*x%mod;
+    return ret;
 }
 
 lint fac(lint x){
-	lint ret = 1;
-	for(lint i=2;i<=x;++i)
-		ret = ret * i % mod;
-	return ret;
+    lint ret = 1;
+    for(lint i=2;i<=x;++i)
+        ret = ret * i % mod;
+    return ret;
 }
 
 lint inv(lint x){
-	return pw(x,mod-2);
+    return pw(x,mod-2);
 }
 
 lint combi(lint n,lint r){
-	lint ret = fac(n);
-	ret = ret * inv(fac(n-r)) % mod;
-	ret = ret * inv(fac(r)) % mod;
-	return ret;
+    lint ret = fac(n);
+    ret = ret * inv(fac(n-r)) % mod;
+    ret = ret * inv(fac(r)) % mod;
+    return ret;
 }
 
 lint solve(){
-	lint sum = accumulate(a,a+n,0ll);
-	if(sum%n) return 0;
+    lint sum = accumulate(a,a+n,0ll);
+    if(sum%n) return 0;
 
-	lint cut = sum / n;
-	lint up = 0, dw = 0, eq = 0;
-	map<int,int> ovup, ovdw;
-	for(int i=0;i<n;++i){
-		if(a[i] > cut) up++, ovup[a[i]]++;
-		if(a[i] < cut) dw++, ovdw[a[i]]++;
-		if(a[i]== cut) eq++;
-	}
+    lint cut = sum / n;
+    lint up = 0, dw = 0, eq = 0;
+    map<int,int> ovup, ovdw;
+    for(int i=0;i<n;++i){
+        if(a[i] > cut) up++, ovup[a[i]]++;
+        if(a[i] < cut) dw++, ovdw[a[i]]++;
+        if(a[i]== cut) eq++;
+    }
 
-	if(up==1){
-		lint ret = 1;
-		ret = ret * fac(dw + eq) % mod;
-		ret = ret * inv(fac(eq)) % mod;
-		for(auto [k, v] : ovdw)
-			if(v>1) ret = ret * inv(fac(v)) % mod;
-		ret = ret * (dw + eq + 1) % mod;
-		return ret;
-	}
-	if(dw==1){
-		lint ret = 1;
-		ret = ret * fac(up + eq) % mod;
-		ret = ret * inv(fac(eq)) % mod;
-		for(auto [k, v] : ovup)
-			if(v>1) ret = ret * inv(fac(v)) % mod;
-		ret = ret * (up + eq + 1) % mod;
-		return ret;
-	}
-	if(up==0 && dw==0){
-		return 1;
-	}
-	
-	lint ret = 1;
-	ret = ret * fac(up) % mod;
-	for(auto [k, v] : ovup)
-		if(v>1) ret = ret * inv(fac(v)) % mod;
-	ret = ret * fac(dw) % mod;
-	for(auto [k, v] : ovdw)
-		if(v>1) ret = ret * inv(fac(v)) % mod;
-	ret = ret * combi(n,eq) % mod;
-	ret = ret * 2 % mod;
-	return ret;
+    if(up==1){
+        lint ret = 1;
+        ret = ret * fac(dw + eq) % mod;
+        ret = ret * inv(fac(eq)) % mod;
+        for(auto [k, v] : ovdw)
+            if(v>1) ret = ret * inv(fac(v)) % mod;
+        ret = ret * (dw + eq + 1) % mod;
+        return ret;
+    }
+    if(dw==1){
+        lint ret = 1;
+        ret = ret * fac(up + eq) % mod;
+        ret = ret * inv(fac(eq)) % mod;
+        for(auto [k, v] : ovup)
+            if(v>1) ret = ret * inv(fac(v)) % mod;
+        ret = ret * (up + eq + 1) % mod;
+        return ret;
+    }
+    if(up==0 && dw==0){
+        return 1;
+    }
+
+    lint ret = 1;
+    ret = ret * fac(up) % mod;
+    for(auto [k, v] : ovup)
+        if(v>1) ret = ret * inv(fac(v)) % mod;
+    ret = ret * fac(dw) % mod;
+    for(auto [k, v] : ovdw)
+        if(v>1) ret = ret * inv(fac(v)) % mod;
+    ret = ret * combi(n,eq) % mod;
+    ret = ret * 2 % mod;
+    return ret;
 }
 
 int main(){
-	int tc = 1;
-	while(tc--){
-		scanf("%d",&n);
-		for(int i=0;i<n;++i)
-			scanf("%d",a+i);
+    int tc = 1;
+    while(tc--){
+        scanf("%d",&n);
+        for(int i=0;i<n;++i)
+            scanf("%d",a+i);
 
-		printf("%lld\n",solve());
-	}
+        printf("%lld\n",solve());
+    }
 }
 ```
 
@@ -346,12 +346,12 @@ vector<int> f(MAX);
 vector<int> inv(MAX);
 
 void init() {
-	f[0] = 1;
-	for(int i=1;i<MAX;i++) f[i] = (f[i-1]*i)%MOD;
-	inv[MAX-1] = power(f[MAX-1], MOD-2, MOD);
-	for(int i=MAX-2;i>=0;i--) inv[i] = (inv[i+1]*(i+1)) % MOD;
+    f[0] = 1;
+    for(int i=1;i<MAX;i++) f[i] = (f[i-1]*i)%MOD;
+    inv[MAX-1] = power(f[MAX-1], MOD-2, MOD);
+    for(int i=MAX-2;i>=0;i--) inv[i] = (inv[i+1]*(i+1)) % MOD;
 
-	for(int i=0;i<MAX;i++) assert(inv[i]==power(f[i],MOD-2,MOD));
+    for(int i=0;i<MAX;i++) assert(inv[i]==power(f[i],MOD-2,MOD));
 }
 ```
 
@@ -360,5 +360,3 @@ O(logn)이 익숙하지만 O(1)까지 줄여야한다면 이런 방법도 나쁘
 ### F. Swapping Problem
 
 다음에 풀어보도록 하자.
-
-
