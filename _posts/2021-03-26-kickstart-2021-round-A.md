@@ -230,53 +230,51 @@ int r[500], c[500];
 
 int p[1000];
 void init(int n){
-	iota(p, p+n, 0);
+    iota(p, p+n, 0);
 }
 int find(int x){
-	return x==p[x] ? x : p[x] = find(p[x]);
+    return x==p[x] ? x : p[x] = find(p[x]);
 }
 bool uni(int x,int y){
-	if((x=find(x))^(y=find(y)))
-		return p[x] = y, true;
-	return false;
+    if((x=find(x))^(y=find(y)))
+        return p[x] = y, true;
+    return false;
 }
 
 int solve(){
-	priority_queue<tuple<int,int,int>> pq;
-	for(int i=0;i<n;++i)
-		for(int j=0;j<n;++j)
-			pq.emplace(b[i][j], i, n+j);
+    priority_queue<tuple<int,int,int>> pq;
+    for(int i=0;i<n;++i)
+        for(int j=0;j<n;++j)
+            pq.emplace(b[i][j], i, n+j);
 
-	int ans = 0;
-	init(n*2);
-	while(!pq.empty()){
-		auto [c, x, y] = pq.top(); pq.pop();
-	   	if(!uni(x,y)) ans += c;	
-	}
-	return ans;
+    int ans = 0;
+    init(n*2);
+    while(!pq.empty()){
+        auto [c, x, y] = pq.top(); pq.pop();
+           if(!uni(x,y)) ans += c;    
+    }
+    return ans;
 }
 
 int main(){
-	int tc; scanf("%d",&tc);
-	for(int tt=1;tt<=tc;++tt){
-		scanf("%d",&n);
-		for(int i=0;i<n;++i)
-			for(int j=0;j<n;++j)
-				scanf("%d",&a[i][j]);
-		for(int i=0;i<n;++i)
-			for(int j=0;j<n;++j)
-				scanf("%d",&b[i][j]);
-		for(int i=0;i<n;++i)
-			scanf("%d",&r[i]);
-		for(int i=0;i<n;++i)
-			scanf("%d",&c[i]);
-		int ans = solve();
-		printf("Case #%d: %d\n",tt,ans);
-	}
+    int tc; scanf("%d",&tc);
+    for(int tt=1;tt<=tc;++tt){
+        scanf("%d",&n);
+        for(int i=0;i<n;++i)
+            for(int j=0;j<n;++j)
+                scanf("%d",&a[i][j]);
+        for(int i=0;i<n;++i)
+            for(int j=0;j<n;++j)
+                scanf("%d",&b[i][j]);
+        for(int i=0;i<n;++i)
+            scanf("%d",&r[i]);
+        for(int i=0;i<n;++i)
+            scanf("%d",&c[i]);
+        int ans = solve();
+        printf("Case #%d: %d\n",tt,ans);
+    }
 }
 ```
-
-
 
 ### References
 

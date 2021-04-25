@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Codeforces Round 717(Div.2)"
+title: "Codeforces Round 717 (Div.2)"
 description: "A~D번까지 업솔빙"
 tags: [editorial]
 ---
@@ -159,70 +159,70 @@ int p[100001];
 int st[100001][20][2];
 
 void init(){
-	int e = -1, x;
-	for(int s=0;s<n;++s){
-		for(;e+1<n;++e){
-			bool chk = false;
-			x = a[e+1];
-			for(int d=2;d*d<=x;++d)
-				for(;x%d==0;x/=d)
-					if(p[d]) chk = true;
-			if(x>1) if(p[x]) chk = true;
+    int e = -1, x;
+    for(int s=0;s<n;++s){
+        for(;e+1<n;++e){
+            bool chk = false;
+            x = a[e+1];
+            for(int d=2;d*d<=x;++d)
+                for(;x%d==0;x/=d)
+                    if(p[d]) chk = true;
+            if(x>1) if(p[x]) chk = true;
 
-			if(chk) break;
-			
-			x = a[e+1];
-			for(int d=2;d*d<=x;++d)
-				for(;x%d==0;x/=d)
-					p[d]++;
-			if(x>1) p[x]++;
-		}
+            if(chk) break;
 
-		st[s][1][0] = e;
-		st[s][1][1] = 1;
+            x = a[e+1];
+            for(int d=2;d*d<=x;++d)
+                for(;x%d==0;x/=d)
+                    p[d]++;
+            if(x>1) p[x]++;
+        }
 
-		x = a[s];
-		for(int d=2;d*d<=x;++d)
-			for(;x%d==0;x/=d)
-				p[d]--;
-		if(x>1) p[x]--;
-	}
+        st[s][1][0] = e;
+        st[s][1][1] = 1;
 
-	for(int p=2;p<20;++p)
-		for(int i=0;i<n;++i){
-			int end = st[i][p-1][0];
-			if(end+1 < n){
-				st[i][p][0] = st[end+1][p-1][0];
-				st[i][p][1] = st[end+1][p-1][1] + st[i][p-1][1];
-			}else{
-				st[i][p][0] = n-1;
-				st[i][p][1] = st[i][p-1][1];
-			}
-		}
+        x = a[s];
+        for(int d=2;d*d<=x;++d)
+            for(;x%d==0;x/=d)
+                p[d]--;
+        if(x>1) p[x]--;
+    }
+
+    for(int p=2;p<20;++p)
+        for(int i=0;i<n;++i){
+            int end = st[i][p-1][0];
+            if(end+1 < n){
+                st[i][p][0] = st[end+1][p-1][0];
+                st[i][p][1] = st[end+1][p-1][1] + st[i][p-1][1];
+            }else{
+                st[i][p][0] = n-1;
+                st[i][p][1] = st[i][p-1][1];
+            }
+        }
 }
 
 
 int qry(int l, int r){
-	int ret = 0;
-	for(int i=19;i;--i)
-		if(l<n && st[l][i][0] < r){
-			ret += st[l][i][1];
-			l = st[l][i][0]+1;
-		}
-	return ret+1;
+    int ret = 0;
+    for(int i=19;i;--i)
+        if(l<n && st[l][i][0] < r){
+            ret += st[l][i][1];
+            l = st[l][i][0]+1;
+        }
+    return ret+1;
 }
 
 int main(){
-	scanf("%d%d",&n,&q);
-	for(int i=0;i<n;++i)
-		scanf("%d",a+i);
-	
-	init();
+    scanf("%d%d",&n,&q);
+    for(int i=0;i<n;++i)
+        scanf("%d",a+i);
 
-	for(int i=0;i<q;++i){
-		scanf("%d%d",&l,&r);
-		printf("%d\n",qry(l-1,r-1));
-	}
+    init();
+
+    for(int i=0;i<q;++i){
+        scanf("%d%d",&l,&r);
+        printf("%d\n",qry(l-1,r-1));
+    }
 }
 ```
 
