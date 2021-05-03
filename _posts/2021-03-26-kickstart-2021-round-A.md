@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Kickstart 2021 Round A"
-description: "A~D번까지 업솔빙"
+title: "Kickstart 2021 Round A 개인 풀이"
+description: "대회 참가 후기 및 개인 풀이"
 tags: [editorial]
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Educational Codeforces Round 106 (Div. 2)"
-description: "A~E번까지 업솔빙"
+title: "Educational Codeforces Round 106 (Div. 2) 개인 풀이"
+description: "대회 참가 후기 및 개인 풀이"
 tags: [editorial]
 ---
 

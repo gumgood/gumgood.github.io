@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Codeforces Round 710 (Div.3)"
-description: "A~E번까지 업솔빙"
+title: "Codeforces Round 710 (Div.3) 개인 풀이"
+description: "대회 참가 후기 및 개인 풀이"
 tags: [editorial]
 ---
 
