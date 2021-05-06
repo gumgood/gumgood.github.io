@@ -26,28 +26,28 @@ int w[100];
 int p[100];
 
 bool solve(){
-	p[0] = w[0];
-	for(int i=1;i<n;++i)
-		p[i] = p[i-1] + w[i];
-	if(p[n-1] == x) return false;
-	for(int i=0;i<n-1;++i)
-		if(p[i] == x) swap(w[i],w[i+1]);
-	return true;
+    p[0] = w[0];
+    for(int i=1;i<n;++i)
+        p[i] = p[i-1] + w[i];
+    if(p[n-1] == x) return false;
+    for(int i=0;i<n-1;++i)
+        if(p[i] == x) swap(w[i],w[i+1]);
+    return true;
 }
 
 int main(){
-	int tc; scanf("%d",&tc);
-	while(tc--){
-		scanf("%d%d",&n,&x);
-		for(int i=0;i<n;++i)
-			scanf("%d",w+i);
-		if(!solve()) puts("NO");
-		else{
-			puts("YES");
-			for(int i=0;i<n;++i)
-				printf("%d ",w[i]); puts("");
-		}
-	}
+    int tc; scanf("%d",&tc);
+    while(tc--){
+        scanf("%d%d",&n,&x);
+        for(int i=0;i<n;++i)
+            scanf("%d",w+i);
+        if(!solve()) puts("NO");
+        else{
+            puts("YES");
+            for(int i=0;i<n;++i)
+                printf("%d ",w[i]); puts("");
+        }
+    }
 }
 ```
 
@@ -72,24 +72,24 @@ int n;
 set<int> ans;
 
 void init(){
-	for(int i=1;i*i*2<INF;++i){
-		ans.emplace(i*i*2);
-		ans.emplace(i*i*4);
-	}
+    for(int i=1;i*i*2<INF;++i){
+        ans.emplace(i*i*2);
+        ans.emplace(i*i*4);
+    }
 }
 
 bool solve(){
-	return ans.find(n) != ans.end();
+    return ans.find(n) != ans.end();
 }
 
 int main(){
-	init();
+    init();
 
-	int tc; scanf("%d",&tc);
-	while(tc--){
-		scanf("%d",&n);
-		puts(solve() ? "YES" : "NO");
-	}
+    int tc; scanf("%d",&tc);
+    while(tc--){
+        scanf("%d",&n);
+        puts(solve() ? "YES" : "NO");
+    }
 }
 ```
 
@@ -115,35 +115,35 @@ int t[100000];
 int y[100000];
 
 bool solve(){
-	vector<pair<int,int>> hi;
-	for(int i=0;i<n;++i)
-		hi.emplace_back(h[i],i);
-	sort(all(hi));
+    vector<pair<int,int>> hi;
+    for(int i=0;i<n;++i)
+        hi.emplace_back(h[i],i);
+    sort(all(hi));
 
-	for(int i=0;i<m;++i)
-		t[i] = 0;
-	for(int i=0;i<n;++i)
-		t[i%m] += hi[i].first, y[hi[i].second] = i%m + 1;
+    for(int i=0;i<m;++i)
+        t[i] = 0;
+    for(int i=0;i<n;++i)
+        t[i%m] += hi[i].first, y[hi[i].second] = i%m + 1;
 
-	for(int i=1;i<m;++i)
-		if(abs(h[i-1]-h[i])>x)
-		   return false;
-	return true;	
+    for(int i=1;i<m;++i)
+        if(abs(h[i-1]-h[i])>x)
+           return false;
+    return true;    
 }
 
 int main(){
-	int tc; scanf("%d",&tc);
-	while(tc--){
-		scanf("%d%d%d",&n,&m,&x);
-		for(int i=0;i<n;++i)
-			scanf("%d",h+i);
-		if(!solve()) puts("NO");
-		else{
-			puts("YES");
-			for(int i=0;i<n;++i)
-				printf("%d ",y[i]); puts("");
-		}
-	}
+    int tc; scanf("%d",&tc);
+    while(tc--){
+        scanf("%d%d%d",&n,&m,&x);
+        for(int i=0;i<n;++i)
+            scanf("%d",h+i);
+        if(!solve()) puts("NO");
+        else{
+            puts("YES");
+            for(int i=0;i<n;++i)
+                printf("%d ",y[i]); puts("");
+        }
+    }
 }
 ```
 
@@ -168,35 +168,35 @@ int a[200001], b[200001];
 int cnt[200001];
 
 int solve(){
-	int ret = 0;
-	for(int i=1;i<=n;++i) cnt[i] = 0;
-	for(int i=0;i<l;++i) cnt[a[i]]++;
-	for(int i=0;i<r;++i) cnt[b[i]]--;
+    int ret = 0;
+    for(int i=1;i<=n;++i) cnt[i] = 0;
+    for(int i=0;i<l;++i) cnt[a[i]]++;
+    for(int i=0;i<r;++i) cnt[b[i]]--;
 
-	int ll = 0, rr = 0;
-	for(int i=1;i<=n;++i){
-		if(cnt[i]>0) ll += abs(cnt[i]);
-		if(cnt[i]<0) rr += abs(cnt[i]);
-	}
-	for(int i=1;i<=n;++i){
-		while(ll-rr>=2 && cnt[i]>= 2) ll -= 2, cnt[i] -= 2, ret++;
-		while(rr-ll>=2 && cnt[i]<=-2) rr -= 2, cnt[i] += 2, ret++;
-	}
-	ret += max(ll, rr) - (ll+rr)/2;
-	ret += (ll+rr)/2;
-	return ret;
+    int ll = 0, rr = 0;
+    for(int i=1;i<=n;++i){
+        if(cnt[i]>0) ll += abs(cnt[i]);
+        if(cnt[i]<0) rr += abs(cnt[i]);
+    }
+    for(int i=1;i<=n;++i){
+        while(ll-rr>=2 && cnt[i]>= 2) ll -= 2, cnt[i] -= 2, ret++;
+        while(rr-ll>=2 && cnt[i]<=-2) rr -= 2, cnt[i] += 2, ret++;
+    }
+    ret += max(ll, rr) - (ll+rr)/2;
+    ret += (ll+rr)/2;
+    return ret;
 }
 
 int main(){
-	int tc; scanf("%d",&tc);
-	while(tc--){
-		scanf("%d%d%d",&n,&l,&r);
-		for(int i=0;i<l;++i)
-			scanf("%d",a+i);
-		for(int i=0;i<r;++i)
-			scanf("%d",b+i);
-		printf("%d\n",solve());
-	}
+    int tc; scanf("%d",&tc);
+    while(tc--){
+        scanf("%d%d%d",&n,&l,&r);
+        for(int i=0;i<l;++i)
+            scanf("%d",a+i);
+        for(int i=0;i<r;++i)
+            scanf("%d",b+i);
+        printf("%d\n",solve());
+    }
 }
 ```
 
@@ -236,32 +236,32 @@ lint cnt[401];
 lint dp[401][401];
 
 lint solve(){
-	for(int i=0;i<1000;++i){
-		c[i][0] = 1;
-		for(int j=1;j<1000;++j)
-			c[i][j] = (c[i-1][j] + c[i-1][j-1]) % m;
-	}
-	for(int i=1;i<=n;++i)
-		for(int j=1;j<=i;++j){
-			int x = j-1, y = i-j;
-			cnt[i] = (cnt[i] + c[x+y][y]) % m;
-		}
-	for(int i=1;i<=n;++i){
-		dp[i][0] = cnt[i];
-		for(int j=1;j<=i-2;++j)
-			for(int k=1;k<=i/2;++k)
-				dp[i][k] = (dp[i][k] + dp[j][k-1] * c[j-k + i-j][i-j-1] % m * cnt[i-j-1]) % m;
-	}
-	
-	lint ret = 0;
-	for(int i=0;i<=n/2;++i)
-		ret = (ret + dp[n][i]) % m;
-	return ret;
+    for(int i=0;i<1000;++i){
+        c[i][0] = 1;
+        for(int j=1;j<1000;++j)
+            c[i][j] = (c[i-1][j] + c[i-1][j-1]) % m;
+    }
+    for(int i=1;i<=n;++i)
+        for(int j=1;j<=i;++j){
+            int x = j-1, y = i-j;
+            cnt[i] = (cnt[i] + c[x+y][y]) % m;
+        }
+    for(int i=1;i<=n;++i){
+        dp[i][0] = cnt[i];
+        for(int j=1;j<=i-2;++j)
+            for(int k=1;k<=i/2;++k)
+                dp[i][k] = (dp[i][k] + dp[j][k-1] * c[j-k + i-j][i-j-1] % m * cnt[i-j-1]) % m;
+    }
+
+    lint ret = 0;
+    for(int i=0;i<=n/2;++i)
+        ret = (ret + dp[n][i]) % m;
+    return ret;
 }
 
 int main(){
-	scanf("%d%d",&n,&m);
-	printf("%lld",solve());
+    scanf("%d%d",&n,&m);
+    printf("%lld",solve());
 }
 ```
 
