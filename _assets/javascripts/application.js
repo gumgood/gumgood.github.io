@@ -2,9 +2,9 @@
 
 $(document).ready(function() {
   // ScrollAppear
-  if (typeof $.fn.scrollAppear === 'function') {
-    $('.scrollappear').scrollAppear();
-  }
+//  if (typeof $.fn.scrollAppear === 'function') {
+//    $('.scrollappear').scrollAppear();
+//  }
 
   // Zooming
   new Zooming(
