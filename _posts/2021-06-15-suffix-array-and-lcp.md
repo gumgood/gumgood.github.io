@@ -128,8 +128,8 @@ i+d
 &
 
 \begin{array}{r}
-\mathsf{\underline{G \ A} \ {\underline{\color{red}T \ A}} \ G \ A \ C \ A} \\
-\mathsf{\underline{ {\color{red}T \ A} } \ G \ A \ C \ A} 
+\mathsf{\underline{G \ A} \ \underline{\color{red}{T \ A}} \ G \ A \ C \ A} \\
+\mathsf{\underline{\color{red}{T \ A}} \ G \ A \ C \ A} 
 \end{array}
 
 \\
@@ -167,11 +167,11 @@ $$
 &
 
 \begin{array}{l}
-\mathsf{ {\color{red}A}BAAB } \\
-\mathsf{ {\color{red}A}AB } \\
-\mathsf{ {\color{red}A}B } \\
-\mathsf{ {\color{red}B}AAB } \\
-\mathsf{ \color{red}B }
+\mathsf{\color{red}{A} \color{black}{BAAB}} \\
+\mathsf{\color{red}{A} \color{black}{AB}} \\
+\mathsf{\color{red}{A} \color{black}{B}} \\
+\mathsf{\color{red}{B} \color{black}{AAB}} \\
+\mathsf{\color{red}{B}}
 \end{array}
 
 &
@@ -213,11 +213,11 @@ $$
 &
 
 \begin{array}{l}
-\mathsf{ {\color{RED}AB}AAB } \\
-\mathsf{ {\color{RED}AA}B } \\
-\mathsf{ {\color{RED}AB} } \\
-\mathsf{ {\color{RED}BA}AB } \\
-\mathsf{\color{RED}B }
+\mathsf{\color{red}{AB} \color{black}{AAB}} \\
+\mathsf{\color{red}{AA} \color{black}{B}} \\
+\mathsf{\color{red}{AB}} \\
+\mathsf{\color{red}{BA} \color{black}{AB}} \\
+\mathsf{\color{red}{B}}
 \end{array}
 
 &
@@ -259,11 +259,11 @@ $$
 &
 
 \begin{array}{l}
-\mathsf{ {\color{RED}AA}B } \\
-\mathsf{ {\color{RED}AB}AAB } \\
-\mathsf{ {\color{RED}AB}} \\
-\mathsf{ \color{RED}B } \\
-\mathsf{ {\color{RED}BA}AB }
+\mathsf{\color{red}{AA} \color{black}{B}} \\
+\mathsf{\color{red}{AB} \color{black}{AAB}} \\
+\mathsf{\color{red}{AB}} \\
+\mathsf{\color{red}{B}} \\
+\mathsf{\color{red}{BA} \color{black}{AB}}
 \end{array}
 
 &
@@ -305,11 +305,11 @@ $$
 &
 
 \begin{array}{l}
-\mathsf{ {\color{RED}AAB} } \\
-\mathsf{ {\color{RED}ABAA}B } \\
-\mathsf{ {\color{RED}AB} } \\
-\mathsf{ \color{RED}B } \\
-\mathsf{ {\color{RED}BAAB} }
+\mathsf{\color{red}{AAB}} \\
+\mathsf{\color{red}{ABAA} \color{black}{B}} \\
+\mathsf{\color{red}{AB}} \\
+\mathsf{\color{red}{B}} \\
+\mathsf{\color{red}{BAAB}}
 \end{array}
 
 &
@@ -351,11 +351,11 @@ $$
 &
 
 \begin{array}{l}
-\mathsf{ {\color{RED}AAB} } \\
-\mathsf{ {\color{RED}AB} } \\
-\mathsf{ {\color{RED}ABAA}B } \\
-\mathsf{ \color{RED}B } \\
-\mathsf{ {\color{RED}BAAB} }
+\mathsf{\color{red}{AAB}} \\
+\mathsf{\color{red}{AB}} \\
+\mathsf{\color{red}{ABAA} \color{black}B} \\
+\mathsf{\color{red}{B}} \\
+\mathsf{\color{red}{BAAB}}
 \end{array}
 
 &
@@ -391,11 +391,11 @@ $$
 \end{array}
 &
 \begin{array}{l}
-\mathsf{ {\color{RED}AAB} } \\
-\mathsf{ {\color{RED}ABAAB} } \\
-\mathsf{ {\color{RED}AB} } \\
-\mathsf{ \color{RED}B } \\
-\mathsf{ {\color{RED}BAAB} }
+\mathsf{\color{RED}{AAB}} \\
+\mathsf{\color{RED}{ABAAB}} \\
+\mathsf{\color{RED}{AB}} \\
+\mathsf{\color{RED}{B}} \\
+\mathsf{\color{RED}{BAAB}}
 \end{array}
 &
 \begin{array}{c}
@@ -426,11 +426,11 @@ $$
 \end{array}
 &
 \begin{array}{l}
-\mathsf{ {\color{RED}AAB} } \\
-\mathsf{ {\color{RED}AB} } \\
-\mathsf{ {\color{RED}ABAAB} } \\
-\mathsf{ \color{RED}B } \\
-\mathsf{ {\color{RED}BAAB} }
+\mathsf{\color{red}{AAB}} \\
+\mathsf{\color{red}{AB}} \\
+\mathsf{\color{red}{ABAAB}} \\
+\mathsf{\color{red}{B}} \\
+\mathsf{\color{red}{BAAB}}
 \end{array}
 &
 \begin{array}{ccc}
@@ -632,8 +632,8 @@ i
 &
 
 \begin{array}{l}
-\mathsf{ \color{red}ASD } \\
-\mathsf{ {\color{red}ASD}SDASD }
+\mathsf{\color{red}{ASD}} \\
+\mathsf{\color{red}{ASD} \color{black}{SDASD}}
 \end{array}
 
 &
@@ -671,10 +671,10 @@ i+1
 &
 
 \begin{array}{l}
-\mathsf{ \color{red}SD } \\
+\mathsf{\color{red}{SD}} \\
 \cdots \\
-\mathsf{ {\color{red}SD}ASD } \\
-\mathsf{ {\color{red}SD}SDASD }
+\mathsf{\color{red}{SD} \color{black}{ASD}} \\
+\mathsf{\color{red}{SD} \color{black}{SDASD}}
 \end{array}
 
 &
