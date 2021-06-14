@@ -128,8 +128,8 @@ i+d
 &
 
 \begin{array}{r}
-\mathsf{\underline{G \ A} \ \underline{\color{red}{T \ A}} \ G \ A \ C \ A} \\
-\mathsf{\underline{\color{red}{T \ A}} \ G \ A \ C \ A} 
+\mathsf{ G \ A \ \color{red}{T \ A} \ G \ A \ C \ A} \\
+\mathsf{\color{red}{T \ A} \ G \ A \ C \ A} 
 \end{array}
 
 \\
@@ -167,10 +167,10 @@ $$
 &
 
 \begin{array}{l}
-\mathsf{\color{red}{A} \color{black}{BAAB}} \\
-\mathsf{\color{red}{A} \color{black}{AB}} \\
-\mathsf{\color{red}{A} \color{black}{B}} \\
-\mathsf{\color{red}{B} \color{black}{AAB}} \\
+\mathsf{\color{red}{A}BAAB} \\
+\mathsf{\color{red}{A}AB} \\
+\mathsf{\color{red}{A}B} \\
+\mathsf{\color{red}{B}AAB} \\
 \mathsf{\color{red}{B}}
 \end{array}
 
@@ -213,10 +213,10 @@ $$
 &
 
 \begin{array}{l}
-\mathsf{\color{red}{AB} \color{black}{AAB}} \\
-\mathsf{\color{red}{AA} \color{black}{B}} \\
+\mathsf{\color{red}{AB}AAB} \\
+\mathsf{\color{red}{AA}B} \\
 \mathsf{\color{red}{AB}} \\
-\mathsf{\color{red}{BA} \color{black}{AB}} \\
+\mathsf{\color{red}{BA}AB} \\
 \mathsf{\color{red}{B}}
 \end{array}
 
@@ -259,11 +259,11 @@ $$
 &
 
 \begin{array}{l}
-\mathsf{\color{red}{AA} \color{black}{B}} \\
-\mathsf{\color{red}{AB} \color{black}{AAB}} \\
+\mathsf{\color{red}{AA}B} \\
+\mathsf{\color{red}{AB}AAB} \\
 \mathsf{\color{red}{AB}} \\
 \mathsf{\color{red}{B}} \\
-\mathsf{\color{red}{BA} \color{black}{AB}}
+\mathsf{\color{red}{BA}AB}
 \end{array}
 
 &
@@ -306,7 +306,7 @@ $$
 
 \begin{array}{l}
 \mathsf{\color{red}{AAB}} \\
-\mathsf{\color{red}{ABAA} \color{black}{B}} \\
+\mathsf{\color{red}{ABAA}B} \\
 \mathsf{\color{red}{AB}} \\
 \mathsf{\color{red}{B}} \\
 \mathsf{\color{red}{BAAB}}
@@ -353,7 +353,7 @@ $$
 \begin{array}{l}
 \mathsf{\color{red}{AAB}} \\
 \mathsf{\color{red}{AB}} \\
-\mathsf{\color{red}{ABAA} \color{black}B} \\
+\mathsf{\color{red}{ABAA}B} \\
 \mathsf{\color{red}{B}} \\
 \mathsf{\color{red}{BAAB}}
 \end{array}
@@ -633,7 +633,7 @@ i
 
 \begin{array}{l}
 \mathsf{\color{red}{ASD}} \\
-\mathsf{\color{red}{ASD} \color{black}{SDASD}}
+\mathsf{\color{red}{ASD}SDASD}
 \end{array}
 
 &
@@ -673,8 +673,8 @@ i+1
 \begin{array}{l}
 \mathsf{\color{red}{SD}} \\
 \cdots \\
-\mathsf{\color{red}{SD} \color{black}{ASD}} \\
-\mathsf{\color{red}{SD} \color{black}{SDASD}}
+\mathsf{\color{red}{SD}ASD} \\
+\mathsf{\color{red}{SD}SDASD}
 \end{array}
 
 &
