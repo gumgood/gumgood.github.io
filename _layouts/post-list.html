@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<div class="project-header loading-animation">
+    <div class="container">
+        <div>
+            <div class="header-project-title">
+                {{ page.title | capitalize }}
+            </div>
+            <div class="header-project-des">
+                {{ page.description }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<ul class="catalogue">
+    {% assign posts = site.categories[page.title] %}
+    {% for post in posts %}
+
+        <li class="catalogue-item">
+            <a href="{{ post.url | relativeurl }}" >
+                <p class="catalogue-type">
+                    {% for tag in post.tags %}
+                      {{ tag | capitalize }}
+                    {% endfor %}
+                </p>
+                <div class="catalogue-info transition">
+                <h1 class="catalogue-title">
+                    {{ post.title }}
+                </h1>
+                <p class="catalogue-sub">
+                    {{ post.subtitle }}
+                </p>
+                <p class="catalogue-body">
+                    {{ post.content | truncatewords: 24 | strip_html }}
+                </p>
+                </div>
+            </a>
+        </li>
+
+    {% endfor %}
+</ul>

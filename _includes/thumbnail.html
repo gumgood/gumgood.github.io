@@ -1,0 +1,11 @@
+{% assign image = "/assets/image/header.jpg" %}
+{% if page.categories %}
+  {% assign folder = page.path | split: '/' | last | remove: ".md" %}
+  {% assign header_path = "/assets/image/" | append: folder | append: "/header.jpg" %}
+  {% assign file = site.static_files | find: "path", header_path %}
+  {% if file.path %}
+    {% assign image = header_path %}
+  {% endif %}
+{% endif %}
+
+{{ image }}

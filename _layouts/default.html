@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+{% include head.html %}
+
+<body>
+    
+    {% include navigation.html %}
+
+    {% if page.categories %}
+        {% capture image %}{% include thumbnail.html %}{% endcapture %}
+        {% assign image = image | strip %}
+        <div class="post-header loading-animation" style="background-image: url('{{image}}')"></div>
+    {% endif %}
+
+    <div class="body-warp">
+        
+        <main>
+            {{ content }}
+        </main>
+
+    </div>
+
+    {% include footer.html %}
+
+</body>
+
+</html>

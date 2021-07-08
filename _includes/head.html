@@ -1,0 +1,61 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- jekyll variable -->
+  {% if page.title and page.categories %%}
+    {% assign title = page.title | append: " - " | append: site.title %}
+  {% elsif page.title %}
+    {% assign title = page.title | capitalize | append: " - " | append: site.title %}
+  {% else %}
+    {% assign title = site.title %}
+  {% endif %}
+
+  {% if page.description %}
+    {% assign description = page.description %}
+  {% elsif page.categories %}
+    {% assign description = page.content | truncatewords: 30 | strip_html %}
+  {% else %}
+    {% assign description = site.description %}
+  {% endif %}
+
+  {% capture image %}
+    {% include thumbnail.html %}
+  {% endcapture %}
+  {% assign image = image | strip | absolute_url %}
+
+  <!-- HTML Meta Tags -->
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}"/>
+
+  <!-- Naver Search Engine Tag -->
+
+  <!-- Google / Search Engine Tags -->
+  <meta itemprop="name" content="{{ title }}">
+  <meta itemprop="description" content="{{ description }}">
+  <meta itemprop="image" content="{{ image }}">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta itemprop="image" content="{{ image }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ "/assets/css/style.css" | absolute_url }}">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/image/favicon.ico">
+
+  <!-- Mathjax Support -->
+  {% include mathjax.html %}
+
+</head>

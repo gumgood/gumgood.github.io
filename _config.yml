@@ -1,0 +1,32 @@
+# Site settings
+title:          Gumgood
+description:    이상원(@Gumgood)의 블로그입니다. 
+url:            https://gumgood.github.io
+
+# Author
+author:
+  name:         Sangwon Lee 
+  email:        gumgood@naver.com
+  github:       gumgood
+
+# Permalinks
+permalink:      /:categories/:title
+
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        :compressed
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+
+# Build settings
+include: ["_page"]
+exclude: ["Gemfile", "Gemfile.lock", "README.md", "LICENSE"]
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    block:
+      line_numbers: true

@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class="post">
+
+    <div class="post-info">
+
+        <div class="post-type-tag">
+            <div class="post-type">
+                {% for tag in page.tags %}
+                  {{ tag | capitalize }}
+                {% endfor %}
+            </div>
+        </div>
+
+        <h1 class="post-title">
+            {{ page.title }}
+        </h1>
+        <h2 class="post-subtitle">
+            {{ page.subtitle }}
+        </h2>
+    </div>
+
+    {{ content }}
+
+</div>
