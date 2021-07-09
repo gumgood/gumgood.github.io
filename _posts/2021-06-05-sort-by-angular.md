@@ -35,7 +35,7 @@ int ccw(pt o,pt a,pt b){
 
 ## 비교 연산자
 
-기준점 $O$에 대한 두 점의 외적이 0보다 큰 지 판단하면 모든 점을 각도 정렬할 수 있을 것 같습니다. 하지만 실제로 이렇게 비교 연산자를 정의하면 오류가 발생합니다. 모든 두 점 사이의 각이 $\pi$보다 작으면 대소관계에 문제가 없지만, 사이의 각이 $\pi$이상이면 [strick weak ordering](https://en.cppreference.com/w/cpp/named_req/Compare)가 성립하지 않기 때문입니다.
+기준점 $O$에 대한 두 점의 외적이 0보다 큰 지 판단하면 모든 점을 각도 정렬할 수 있을 것 같습니다. 하지만 실제로 이렇게 비교 연산자를 정의하면 오류가 발생합니다. 모든 두 점 사이의 각이 $\pi$보다 작으면 대소관계에 문제가 없지만, 사이의 각이 $\pi$이상이면 [strict weak ordering](https://en.cppreference.com/w/cpp/named_req/Compare)가 성립하지 않기 때문입니다.
 
 ![sort-by-angular-2](../assets/image/2021-06-05-sort-by-angular/sort-by-angular-2.png)
 
