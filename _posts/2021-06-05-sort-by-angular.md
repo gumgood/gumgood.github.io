@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 각도 정렬 알고리즘(Sort by Angular)
-subtitle: 각도 정렬 알고리즘 소개 및 구현
+title: "각도 정렬 알고리즘(Sort by Angular)"
+subtitle: "각도 정렬 알고리즘 소개 및 구현"
 category: [blog]
 tag: [algorithm]
 ---

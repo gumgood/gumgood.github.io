@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Kickstart 2021 Round A 개인 풀이
-subtitle: 대회 참가 후기 및 개인 풀이
+title: "Kickstart 2021 Round A 개인 풀이"
+subtitle: "대회 참가 후기 및 개인 풀이"
 category: [blog]
 tags: [editorial]
 ---

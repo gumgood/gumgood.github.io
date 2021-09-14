@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 프로그래머스 월간 코드 챌린지 시즌2
-subtitle: 대회 참가 후기 및 개인 풀이
+title: "프로그래머스 월간 코드 챌린지 시즌2 4월"
+subtitle: "대회 참가 후기 및 개인 풀이"
 category: [blog]
 tag: [editorial]
 ---

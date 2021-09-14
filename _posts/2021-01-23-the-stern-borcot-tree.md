@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 스턴 브로콧 트리(Stern Brocot tree)
-subtitle: 스턴 브로콧 트리 소개 및 구현
+title: "스턴 브로콧 트리(Stern Brocot tree)"
+subtitle: "스턴 브로콧 트리 소개 및 구현"
 category: [blog]
 tags: [algorithm]
 ---

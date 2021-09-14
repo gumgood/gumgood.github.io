@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 접미사 배열과 LCP 배열(Suffix Array and LCP Array)
-subtitle: 접미사 배열과 LCP 배열 소개 및 구현
+title: "접미사 배열과 LCP 배열(Suffix Array and LCP Array)"
+subtitle: "접미사 배열과 LCP 배열 소개 및 구현"
 category: [blog]
 tags: [algorithm]
 ---
