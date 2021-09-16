@@ -5,7 +5,6 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
     min-height: 360px;
     background-color: $grey-2;
     
@@ -80,36 +79,6 @@
         color: $ridi-blue;
         text-decoration-color: $ridi-blue;
     }
-    
-        a.book-link {
-            background-image: none;
-            
-            .book-cover {
-                width: 30%;
-                display: inline-block;
-                border: 1px solid rgba(0,0,0,.1);
-                margin: 24px 11px;
-                border-radius: 5px;
-                box-shadow: 0px 8px 24px -7px rgba(0,0,0,0.03);
-                
-                @media (max-width: 914px) {
-                    margin: 22px 8px;
-                }
-                
-                @media (max-width: $break-small ) {
-                    width: 30%;
-                    margin: 18px 4px;
-                    border-radius: 3px;
-                }
-            }
-            .book-cover:hover {
-                border: 1px solid #8565fc;
-            }
-        }
-            a.book-link:after {
-                    background: linear-gradient(to right,rgba(0,0,0,.2) 0,rgba(0,0,0,0) 5%,rgba(0,0,0,0) 95%,rgba(0,0,0,.2) 100%);  
-            }
-    
     
     h1 { 
         padding: 40px 0 16px 0;

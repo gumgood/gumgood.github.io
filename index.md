@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="intro-animation">
+<div class="intro-animation" id="width_wrapper">
 <section class="explanation">
     <h1 class="intro">Hi,</h1>
     <h1 class="intro">I'm Sangwon Lee,</h1>

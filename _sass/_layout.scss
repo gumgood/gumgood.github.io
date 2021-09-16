@@ -1,20 +1,16 @@
-.container {
-  margin: 40px 0;
-  max-width: 750px;
+#width_wrapper {
+  margin: 0 auto;
+  max-width: $max_width_wrap;
   width: 80%;
     @media (max-width: $break-small) {
         width: 88%;
-        margin: 24px 0;
     }
 }
-main,
-footer>.footer_wrap,
-.nav-container {
-  margin: 0 auto;
-  max-width: 750px;
-  width: 80%;
-    @media (max-width: $break-small) {
-        width: 88%;
+
+.container {
+    margin: 40px 0;
+      @media (max-width: $break-small) {
+          margin: 24px 0;
     }
 }
 
@@ -69,37 +65,35 @@ ul {
     padding-bottom: 0;
 }
 
-a {
-//    color: $grey-0;
-}
+// for footer
 
-body {
+html {
     position: relative;
-    min-height: 100vh;
+    min-height: 100%;
 }
-.body-warp{
+body {
+    min-height: 100%;
     padding-bottom: 101px;
     @media (max-width: $break-small) {
         padding-bottom: 132px;
     }
 }
-
-//footer
-
 footer {
     position: absolute;
+    left: 0;
     bottom: 0;
-    width: 100%;
 
-    font-family: $source;
+    width: 100%;
     padding: 26px 0 36px 0;
-    background-color: $grey-3;
-    color: $default-tint;
     border-top: 1px solid $grey-2;
     border-bottom: 1px solid $grey-2;
-    
+
+    font-family: $source;
+    font-style: normal;
+    background-color: $grey-3;
+    color: $default-tint;
+        
     .footer_wrap {
-        font-style: normal;
         position: relative;
 
         .information {

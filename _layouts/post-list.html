@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="project-header loading-animation">
+<div class="project-header loading-animation" id="width_wrapper">
     <div class="container">
         <div>
             <div class="header-project-title">
@@ -15,7 +15,7 @@ layout: default
     </div>
 </div>
 
-<ul class="catalogue">
+<ul class="catalogue" id="width_wrapper">
     {% assign posts = site.categories[page.title] %}
     {% for post in posts %}
 
