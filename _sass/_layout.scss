@@ -72,9 +72,9 @@ html {
 }
 body {
     min-height: 100vh;
-    padding-bottom: 101px;
+    padding-bottom: $footer-height + $body-padding-bottom;
     @media (max-width: $break-small) {
-        padding-bottom: 132px;
+        padding-bottom: $footer-height-small + $body-padding-bottom;
     }
 }
 footer {
