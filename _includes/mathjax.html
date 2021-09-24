@@ -1,49 +1,9 @@
-<style>
-/* mathjax cut-off */
-.mjx-chtml {
-    display: inline-grid !important;
-}
-.MathJax_Display, .MJXc-display, .MathJax_SVG_Display {
-    display: block !important;
-}
-
-.mjx-chtml, .MathJax_Display, .MJXc-display, .MathJax_SVG_Display {
-    max-width: 100% !important;
-    overflow-x: auto;
-    overflow-y: hidden;
-    /* hide scroll bar */
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-}
-
-.mjx-chtml::-webkit-scrollbar,
-.MathJax_Display::-webkit-scrollbar,
-.MJXc-display::-webkit-scrollbar,
-.MathJax_SVG_Display::-webkit-scrollbar {
-    /* hide scroll bar */
-    display: none; /* Chrome, Safari, Opera*/
-}
-</style>
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    TeX: {
-      equationNumbers: {
-        autoNumber: "AMS"
-      }
-    },
-    tex2jax: {
-    inlineMath: [ ['$', '$'] ],
-    processEscapes: true,
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']]
   }
-});
-MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
-      alert("Math Processing Error: "+message[1]);
-    });
-MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
-      alert("Math Processing Error: "+message[1]);
-    });
+};
 </script>
-<script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
