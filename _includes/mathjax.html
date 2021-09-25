@@ -1,9 +1,23 @@
-<script>
-MathJax = {
-  tex: {
-    inlineMath: [['$', '$']]
+<style>
+  mjx-container[jax="CHTML"] {
+    max-width: 100%;
+    display: inline-grid;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-left: 1px;
+    padding-right: 1px;
   }
-};
-</script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
+  </style>
+  
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$']]
+    },
+    options: {
+      enableMenu: false
+    }
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
