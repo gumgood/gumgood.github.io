@@ -16,24 +16,24 @@
 //project header
 
 .project-header {
-        font-family: $source, $san-serif;
+        font-family: $source;
         color: $grey-0;
     .header-project-title {
         font-weight: 700;
-        font-size: 38px;
+        font-size: 2.375rem;
         
         @media (max-width: $break-small) {
-            font-size: 32px;
+            font-size: 2.0rem;
         }
     }
     
     .header-project-des {
         padding-top: 6px;
-        font-size: 20px;
+        font-size: 1.25rem;
         color: $grey-1;
         
         @media (max-width: $break-small) {
-            font-size: 17px;
+            font-size: 1.125rem;
         }
     }
 }
@@ -50,7 +50,7 @@
         line-height: 1.8;
         margin: 0 0 10px 0;
         word-break: break-all;
-        font-family: $san-serif;
+        font-family: $source;
         font-weight: 400;
         letter-spacing: -0.009em;
       
@@ -82,7 +82,7 @@
     h1 { 
         padding: 40px 0 16px 0;
         font-weight: 700;
-        font-size: 28px;
+        font-size: 1.802rem;
         letter-spacing: -0.009em;
     }
     
@@ -93,7 +93,7 @@
     h2 {
         padding: 30px 0 12px 0;
         font-weight: 700;
-        font-size: 25px;
+        font-size: 1.602rem;
     }
     
     h2:first-child {
@@ -102,21 +102,25 @@
     
     h3 {
         padding: 20px 0 10px 0;
-        font-size: 22px;
+        font-size: 1.424rem;
         font-weight: 600;
     }
     
     h4, h5 {
         padding: 12px 0 8px 0;
     }
+
+    h4 {
+        font-size: 1.266em;
+    }
     
     h5 {
-        font-size: 17px;
+        font-size: 1.125rem;
     }
     
     h6 {
         line-height: 1.6;
-        font-size: 17px;
+        font-size: 1rem;
         padding-bottom: 40px;
         color: $grey-1;
         font-weight: 400;
@@ -129,7 +133,7 @@
     
     figcaption {
         text-align: center;
-        font-size: 17px;
+        font-size: 1rem;
         color: $grey-1;
         line-height: 1.8;
         margin-bottom: 40px;
@@ -192,7 +196,7 @@
         padding: 32px 0;
         border: 1px solid $grey-2;
         border-radius: 6px;
-        font-size: 16px;
+        font-size: 1rem;
         color: $grey-0;
         font-weight: 500;
         
@@ -205,10 +209,10 @@
             letter-spacing: 0.01em;
             color: $ridi-blue;
             padding-bottom: 7px;
-            font-size: 25px;
+            font-size: 1.602rem;
             
             @media (max-width: $break-small ) {
-                font-size: 23px;
+                font-size: 1.424rem;
             }
             
         }
@@ -224,7 +228,7 @@ sup {
 
 .post-type {
     color: $ridi-blue;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-family: $source;
     font-weight: 600;
 }
@@ -236,13 +240,13 @@ sup {
 .post-info>h1.post-title {
     padding: 0 0 12px 0;
     font-weight: 700;
-    font-size: 32px;
-    font-family: $san-serif;
+    font-size: 2.027rem;
+    font-family: $source;
     line-height: 1.2;
     letter-spacing: -0.009em;
     
     @media (max-width: $break-small) {
-        font-size: 28px;
+        font-size: 1.802rem;
         line-height: 1.4em;
     }
 }
@@ -250,12 +254,12 @@ sup {
 .post-info>h2.post-subtitle {
     padding: 0 0 60px 0;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 1.424rem;
     color: $grey-1;
     line-height: 1.5;
 
     @media (max-width: $break-small) {
-        font-size: 20px;
+        font-size: 1.266rem;
         padding: 0 0 90px 0;
     }        
 }
@@ -267,7 +271,7 @@ sup {
     text-transform: uppercase;
     letter-spacing: 0.03em;
     padding: 4px 7px;
-    font-size: 13px;
+    font-size: 0.79rem;
     font-weight: 800;
     background-color: $yellow;
     border-radius: 8px;
@@ -287,7 +291,7 @@ sup {
 .post>div.footnotes>ol {
     padding: 0;
     margin-left: 6px;
-    font-size: 16px;
+    font-size: 1rem;
     color: $grey-1;
     li {
         p {

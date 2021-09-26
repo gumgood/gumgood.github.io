@@ -11,11 +11,11 @@ body {
 }
 
 html {
-  font-family: $san-serif, $source;
-  font-size: 16px;// 17px;
+  font-family: $source;
+  font-size: 16px;
 
-  @media (min-width: $break-small) {
-    font-size: 17px; //18px;
+  @media (max-width: $break-small) {
+    font-size: 0.889rem;
   }
 }
 
@@ -29,17 +29,13 @@ h3,
 h4,
 h5,
 h6 {
-    line-height: normal;
-    margin: 0;
-}
-
-h2 {
-    font-size: 24px;
+  line-height: normal;
+  margin: 0;
 }
 
 a {
   color: $grey-0;
-    text-decoration: none;
+  text-decoration: none;
 }
 
 blockquote {

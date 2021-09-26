@@ -11,7 +11,7 @@
 
     &-type {
         color: $ridi-blue;
-        font-size: 18px;
+        font-size: 1.125rem;
         font-family: $source;
         font-weight: 600;
         margin-bottom: 10px;
@@ -27,7 +27,7 @@
             text-transform: uppercase;
             letter-spacing: 0.03em;
             padding: 4px 7px;
-            font-size: 13px;
+            font-size: 0.79rem;
             font-weight: 800;
             margin-bottom: 10px;
             background-color: $yellow;
@@ -42,15 +42,15 @@
         h1.catalogue-title {
             color: $grey-0;
             display: block;
-            font-family: $san-serif;
-            font-size: 24px;
+            font-family: $source;
+            font-size: 1.5rem;
             font-weight: 700;
             line-height: 1.5;
             letter-spacing: -0.009em;
             position: relative;
 
             @media (max-width: $break-small) {
-                  font-size: 22px;
+                  font-size: 1.424rem;
             }
         }
         
@@ -60,18 +60,18 @@
         }
         
         p.catalogue-sub {
-            font-size: 18px;
+            font-size: 1.125rem;
             color: $grey-1;
             line-height: 1.75;
             padding-bottom: 24px;
 
             @media (max-width: $break-small) {
-                font-size: 16px;
+                font-size: 1rem;
             }        
         }
 
         p.catalogue-body {
-            font-size: 16px;
+            font-size: 1rem;
             color: $grey-1;
         }
         

@@ -36,15 +36,17 @@ ul {
       font-family: $source;
       display: inline-block;
       margin: 0 40px 0 0;
+      font-size: 18px;
+
+      @media (max-width: $break-small) {
+          margin: 0 24px 0 0;
+          font-size: 16px;
+      }
       
       &:last-child {
           margin-right: 0;
       }
       
-      @media (max-width: $break-small) {
-          margin: 0 24px 0 0;
-          font-size: 16px;
-      }
       
   }
   li:hover {
@@ -126,7 +128,7 @@ footer {
             }
 
             span {
-                font-size: 16px;
+                font-size: 1rem;
             }
         }
     }

@@ -33,10 +33,9 @@ $break-medium: 900px;
 $break-small: 670px;
 
 // font-family 정의
-$san-serif: "Source Sans Pro", "APPLE SD Gothic Neo", HelveticaNeue, Helvetica, "NanumGothic", "맑은 고딕", "Malgun Gothic", arial, sans-serif;
-$source: "Source Sans Pro", sans-serif;
+$source: Source Sans Pro, APPLE SD Gothic Neo, HelveticaNeue, Helvetica, NanumGothic, Malgun Gothic, arial, sans-serif;
 
-$monospaced-font: consolas, Menlo, Monaco, monospace;
+$monospaced-font: ui-monospace, SFMono-Regular, SF Mono,Menlo, Consolas, Liberation Mono, monospace;
 $code-color: #bf616a;
 
 @mixin box-sizing($type: border-box) {

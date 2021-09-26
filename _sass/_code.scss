@@ -7,7 +7,7 @@ code {
   background-color: $grey-4;
   border-radius: 3px;
   color: $ridi-blue;
-  font-size: 85%;
+  font-size: 0.889rem;
   padding: .2em .4em;
 }
 
@@ -18,9 +18,8 @@ pre {
 pre code {
   background-color: transparent;
   color: inherit;
-  font-size: 100%;
   padding: 0;
-  font-size: 15px;
+  font-size: 0.889rem;
 }
 
 .highlight {
