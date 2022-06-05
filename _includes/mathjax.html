@@ -1,26 +1,30 @@
 <style>
   mjx-container[jax="CHTML"] {
-    max-width: 100%;
     display: inline-grid;
+    max-width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 0.1em;
+    
+    font-size: 1rem !important;
+    padding: 0.01rem;
   }
-  </style>
+</style>
   
-  <script>
+<script>
   MathJax = {
     tex: {
       inlineMath: [['$', '$']]
     },
     options: {
       enableMenu: false,
-      enableAssistiveMml: false
-    },
-    chtml: {
-      scale: 0.91
+      menuOptions: {
+        settings: {
+          assistiveMml: false
+        }
+      }
     }
   };
-  </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-  </script>
+</script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
