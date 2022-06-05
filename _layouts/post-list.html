@@ -2,20 +2,118 @@
 layout: default
 ---
 
-<div class="project-header loading-animation" id="width_wrapper">
-    <div class="container">
-        <div>
-            <div class="header-project-title">
-                {{ page.title | capitalize }}
-            </div>
-            <div class="header-project-des">
-                {{ page.description }}
-            </div>
-        </div>
-    </div>
-</div>
+<!-- style sheet -->
+<style>
 
-<ul class="catalogue" id="width_wrapper">
+html, body {
+    margin: 0;
+    line-height: 1.5;
+}
+
+p, h2, h1 {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+    .catalogue-item {
+        border-bottom: 1px solid rgba(0,0,0,.07);
+        padding: 36px 0;
+        list-style: none;
+        
+    }
+    .catalogue-item a {
+        color: #333e4c;
+        text-decoration: none;
+    }
+    .catalogue-item:last-child {
+        border: none;
+    }
+    
+    .catalogue-type {
+        color: #1f8ce6;
+        font-size: 1rem;
+        font-family: "Source Sans Pro", "Noto Sans KR", HelveticaNeue, Helvetica, arial, sans-serif;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    
+    .catalogue-info {
+        display: inline-block;
+    }
+    
+    @media (max-width: 900px) {
+        .catalogue-info {
+            display: block;
+            width: 100%;
+        }
+    }
+    
+    .catalogue-info .catalogue-tag {
+        font-family: "Source Sans Pro", "Noto Sans KR", HelveticaNeue, Helvetica, arial, sans-serif;
+        display: inline-block;
+        margin-bottom: 2px;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        padding: 4px 7px;
+        font-size: 0.79rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+        background-color: #FEE85A;
+        border-radius: 8px;
+    }
+    
+    @media (max-width: 900px) {
+        .catalogue-info .catalogue-tag {
+            margin: 10px 0;
+        }
+    }
+    
+    .catalogue-info h1.catalogue-title {
+        color: black;
+        display: block;
+        font-family: "Source Sans Pro", "Noto Sans KR", HelveticaNeue, Helvetica, arial, sans-serif;
+        font-size: 1.9rem;
+        font-weight: 500;
+        line-height: 1.2;
+        position: relative;
+    }
+
+    .catalogue-info h1.catalogue-title:hover {
+        opacity: 0.5;
+    }
+    
+    @media (max-width: 670px) {
+        .catalogue-info h1.catalogue-title {
+            font-size: 1.424rem;
+        }
+    }
+    
+    .catalogue-info p.catalogue-sub {
+        font-size: 1.125rem;
+        color: #90949a;
+        line-height: 1.75;
+        padding-bottom: 24px;
+    }
+    
+    @media (max-width: 670px) {
+        .catalogue-info p.catalogue-sub {
+            font-size: 1rem;
+        }
+    }        
+    
+    .catalogue-info p.catalogue-body {
+        font-size: 1rem;
+        color: #90949a;
+    }
+    </style>
+<!-- style sheet end -->
+
+<ul class="catalogue width_wrapper">
     {% assign posts = site.categories[page.title] %}
     {% for post in posts %}
 

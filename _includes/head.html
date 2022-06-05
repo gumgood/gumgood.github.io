@@ -19,11 +19,8 @@
   {% else %}
     {% assign description = site.description %}
   {% endif %}
-
-  {% capture image %}
-    {% include thumbnail.html %}
-  {% endcapture %}
-  {% assign image = image | strip | absolute_url %}
+  
+  {% assign image = "/assets/image/header.jpg" | absolute_url %}
 
   <!-- HTML Meta Tags -->
   <title>{{ title }}</title>

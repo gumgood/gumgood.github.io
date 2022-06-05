@@ -2,13 +2,11 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-@import 'variables';
+@import 'colors/light-typography';
+@import 'addon/variables';
+@import 'addon/modules';
+@import 'addon/syntax';
+@import 'layout/footer';
+@import 'layout/navigation';
+@import 'layout/post';
 @import 'base';
-@import 'code';
-@import 'post';
-@import 'syntax';
-@import 'layout';
-@import 'pagination';
-@import 'catalogue';
-@import 'section'; // Home에서만 쓰이는 듯
-@import 'resume'; // Home에서만 쓰이는 듯

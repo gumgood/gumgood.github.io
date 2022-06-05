@@ -1,80 +1,99 @@
-* {
-  @include box-sizing;
-}
+/* --- common style --- */
 
-html,
-body {
-  color: $grey-0;
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
-  font-family: $source;
+  @include light-scheme;
   font-size: 16px;
-
-  @media (max-width: $break-small) {
-    font-size: 0.889rem;
-  }
 }
-
 body {
-  -webkit-text-size-adjust: 100%;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: normal;
+  line-height: 1.75rem;
+  //background: var(--body-bg);
+  background: var(--main-wrapper-bg);
   margin: 0;
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-family;
 }
 
-a {
-  color: $grey-0;
-  text-decoration: none;
+/* --- Typography --- */
+
+h1 {
+  @extend %heading;
+  @extend %section;
+
+  font-size: 1.9rem;
 }
 
-blockquote {
-  border-left: .25rem solid $grey-2;
-  color: $grey-1;
-  margin: .8rem 0 1rem 0;
-  padding: .5rem 1rem;
+h2 {
+  @extend %heading;
+  @extend %section;
+  @extend %anchor;
 
-  p:last-child {
-    margin-bottom: 0;
+  font-size: 1.5rem;
+}
+
+h3 {
+  @extend %heading;
+  @extend %section;
+  @extend %anchor;
+
+  font-size: 1.2rem;
+}
+
+h4 {
+  @extend %heading;
+  @extend %section;
+  @extend %anchor;
+
+  font-size: 1.15rem;
+}
+
+h5 {
+  @extend %heading;
+  @extend %section;
+  @extend %anchor;
+
+  font-size: 1.1rem;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,.1);
+}
+
+ol,
+ul {
+  ol,
+  ul {
+    margin-bottom: 1rem;
   }
-
-  @media (min-width: 600px) {
-    padding: 0 0 0 1.25rem;
-  }
 }
 
-img {
-  display: block;
-  margin: 0 0 1rem;
-  max-width: 100%;
+dt {
+  font-weight: 700;
+}
+
+/* -- Legacy -- */
+
+$max_width_wrap: 750px;
+$break-small: 670px;
+
+.width_wrapper {
+    margin: 0 auto;
+    max-width: $max_width_wrap;
+    width: 80%;
+      @media (max-width: $break-small) {
+        width: 88%;
+    }
 }
 
 .transition {
-    transition: all 0.3s ease-in-out;
-}
-
-::selection {
-    background: $ridi-blue;
-    color: #FFF;
-    text-shadow: none;
-}
-::-moz-selection {
-    background: $ridi-blue;
-    color: #FFF;
-    text-shadow: none;
-}
-::-webkit-selection {
-    background: $ridi-blue;
-    color: #FFF;
-    text-shadow: none;
+  transition: all 0.3s ease-in-out;
 }

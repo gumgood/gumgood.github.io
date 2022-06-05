@@ -7,11 +7,6 @@
     
     {% include navigation.html %}
 
-    {% if page.categories %}
-        {% capture image %}{% include thumbnail.html %}{% endcapture %}
-        <div class="post-header loading-animation" style="background-image: url('{{image | strip}}')"></div>
-    {% endif %}
-
     {{ content }}
 
     {% include footer.html %}

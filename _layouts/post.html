@@ -2,26 +2,36 @@
 layout: default
 ---
 
-<div class="post" id="width_wrapper">
+<div id="post" class="width_wrapper">
 
-    <div class="post-info">
+    <div id="post-info">
 
-        <div class="post-type-tag">
-            <div class="post-type">
-                {% for tag in page.tags %}
-                  {{ tag | capitalize }}
-                {% endfor %}
-            </div>
+        <div id="post-category">
+            {% for tag in page.tags %}
+                {{ tag | capitalize }}
+            {% endfor %}
         </div>
-
-        <h1 class="post-title">
+    
+        <h1 id="post-title">
             {{ page.title }}
         </h1>
-        <h2 class="post-subtitle">
-            {{ page.subtitle }}
-        </h2>
+    
+        <div id="post-metadata">
+            <span>
+                By <em>{{ page.author | default: site.author.name }}</em>
+            </span>
+            <span>
+                Posted <em>{{ page.date | date: "%b %e, %Y" }}</em>
+            </span>
+        </div>
+    
     </div>
 
-    {{ content }}
+    <div id="post-content">
+        {% include refactor-content.html content=content %}
+    </div>
+    
+    <div id="post-tail">
+    </div>
 
 </div>

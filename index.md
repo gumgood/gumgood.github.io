@@ -1,24 +1,23 @@
 ---
 layout: default
----
+--- 
 
-<div class="intro-animation" id="width_wrapper">
-<section class="explanation">
-    <h1 class="intro">Hi,</h1>
-    <h1 class="intro">I'm Sangwon Lee,</h1>
-    <h1 class="intro">Software Engineer.</h1>
-    <h2 class="intro">안녕하세요 이상원(<b>@gumgood</b>)입니다.</h2>
-</section>
+<style type="text/css" media="screen">
+  .container {
+    margin: 3rem auto;
+    max-width: 600px;
+    text-align: center;
+  }
+  h1 {
+    margin: 30px 0;
+    font-size: 3rem;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+</style>
 
-<section class="resume">
-    <div class="resume-info">
-        <p class="second-label">
-            <span class="label-emoji">
-                &#x1F44B;
-            </span>
-            &nbsp; Software Engineer
-        </p>
-        <p>알고리즘 문제 푸는 걸 좋아합니다.</p>
-    </div>
-</section>
-
+<div class="container">
+  <h1>Hello</h1>
+  <p>안녕하세요! 이상원(<strong>@gumgood</strong>)입니다.</p>
+  <p>공부하면서 배운 지식과 경험을 공유하는 블로그입니다.</p>
+</div>
