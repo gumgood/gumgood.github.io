@@ -49,7 +49,7 @@ div.highlight {
   pre {
     margin-top: 0;
     margin-bottom: 0;
-    font-family: consolas;
+    font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
     font-size: $code-font-size;
     color: var(--text-color);
     line-height: 1.4rem;
@@ -89,7 +89,7 @@ code {
   -moz-hyphens: none;
   hyphens: none;
   
-  font-family: consolas;
+  font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
 
   &.highlighter-rouge {
     font-size: $code-font-size;
