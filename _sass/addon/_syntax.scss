@@ -21,7 +21,7 @@ $code-radius: 6px;
 }
 
 %code-snippet-padding {
-  padding-left: 1rem;
+  padding-left: 0.5rem;
   padding-right: 1.5rem;
 }
 
@@ -64,7 +64,7 @@ div.highlight {
   }
 
   .lineno {
-    padding-right: 0.5rem;
+    @include pl-pr(0.5rem);
     min-width: 2.2rem;
     text-align: right;
     color: var(--highlight-lineno-color);
@@ -262,10 +262,9 @@ div {
 }
 
 @media all and (max-width: 576px) {
-  .post-content {
+  #post-content {
     > div[class^='language-'] {
-      @include ml-mr(-1.25rem);
-
+      @include ml-mr(-1.5rem);
       border-radius: 0;
 
       .highlight {
