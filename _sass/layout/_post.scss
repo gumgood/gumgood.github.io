@@ -151,6 +151,12 @@
     max-width: 100%;
     height: auto;
     margin: 0.5rem 0;
+
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
   
     &[data-loaded=true] {
       animation: fade-in linear 0.5s;
