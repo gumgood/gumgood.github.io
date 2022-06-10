@@ -2,7 +2,7 @@
 layout: post
 title: "Mapping Permutation to Integer"
 category: [blog]
-tags: [editorial]
+tags: [algorithm]
 ---
 
 원문 : <https://stackoverflow.com/questions/1506078>
