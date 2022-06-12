@@ -71,6 +71,9 @@
                 &#icon-folder {
                     content: map-get($icon-svg, --folder-icon-svg);
                 }
+                &#icon-tag {
+                    content: map-get($icon-svg, --tag-icon-svg);
+                }
             }
           }
       }
