@@ -191,17 +191,10 @@ div {
 
     /* label icon */
     i {
-      font-size: 1rem;
       margin-right: 0.4rem;
-      color: var(--code-header-icon-color);
-
       content: map-get($icon-svg, --code-icon-svg);
       max-width: 1rem;
       max-height: 1rem;
-
-      &.small {
-        font-size: 70%;
-      }
     }
 
     @at-root [file] #{&} > i {
