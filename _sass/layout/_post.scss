@@ -7,7 +7,7 @@
 
 #post {
   margin-top: 1rem;
-
+  margin-bottom: 3rem;
   a {
     @extend %link-color;
 
@@ -65,10 +65,13 @@
       @extend %normal-font-style;
       color: var(--text-color);
     }
-    span + span::before {
-      content: "\2022";
-      padding-left: 0.25rem;
-      padding-right: 0.25rem;
+    span {
+      white-space: nowrap;
+      &:not(:first-child)::before{
+        content: "\2022";
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+      }
     }
   }
 }
