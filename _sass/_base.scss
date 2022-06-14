@@ -14,13 +14,19 @@ html {
   font-size: 16px;
 }
 body {
+  font-family: $font-family;
+  color: var(--text-color);
   line-height: 1.75rem;
+  -webkit-font-smoothing: antialiased;
   //background: var(--body-bg);
   background: var(--main-wrapper-bg);
   margin: 0;
-  color: var(--text-color);
-  -webkit-font-smoothing: antialiased;
-  font-family: $font-family;
+}
+
+@media all and (max-width: 576px) {
+  html, body {
+    overflow-x: hidden;
+  }
 }
 
 /* --- Typography --- */
