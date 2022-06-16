@@ -1,18 +1,12 @@
 <nav class="nav">
     <div class="nav-container width_wrapper">
-        {% assign current = page.url | downcase | split: '/' %}
         <ul>
             <li class="transition">
-                <a href="/" {% if current.size==0 %} class="active" {% endif %} class="normal">Home</a>
+                <a href="/" {% unless page.title == "about" %} class="active" {% endunless %} class="normal">Home</a>
             </li>
-            {% assign pages = site.pages | where: "layout", "post-list" %}
-            {% for pages in pages %}
             <li class="transition">
-                <a href="/{{ pages.title }}" {% if current[1] == pages.title %} class="active" {% endif %}>
-                    {{ pages.title | capitalize }}
-                </a>
+                <a href="/about" {% if page.title == "about" %} class="active" {% endif %}>About</a>
             </li>
-            {% endfor %}
         </ul>
     </div>
 </nav>
