@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "프로그래머스 월간 코드 챌린지 시즌3 9월"
-subtitle: "대회 참가 후기 및 개인 풀이"
 category: [blog]
-tag: [editorial]
+tags: [editorial]
+redirect_from: /blog/programmers-monthly-code-challenge-s3-september
 ---
 
 ### 참가후기

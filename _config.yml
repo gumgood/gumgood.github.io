@@ -10,7 +10,7 @@ author:
   github:       gumgood
 
 # Permalinks
-permalink:      /:categories/:title
+permalink:      /:title
 
 # Assets
 sass:
@@ -20,6 +20,7 @@ sass:
 # Plugins
 plugins:
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 # Build settings
 include: ["_page"]
