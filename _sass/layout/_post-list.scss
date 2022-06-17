@@ -15,11 +15,6 @@
 
     h1#post-title {
         margin: 0;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
 
         a {
             @include no-text-decoration;
@@ -28,6 +23,13 @@
             font-family: $font-family;
             color: var(--link-color);
             line-height: 1.2;
+            
+            overflow: hidden;
+            word-break: keep-all;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
     }
 
