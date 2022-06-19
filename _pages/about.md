@@ -1,0 +1,51 @@
+---
+layout: about
+title: about
+permalink: /about
+--- 
+
+# Hello
+
+안녕하세요! 이상원(**@gumgood**)입니다.
+
+공부하면서 배운 지식과 경험을 공유하는 블로그입니다.
+
+## Work Experiences
+
+Samsung Research, Machine Learning Engineer (2022.01 - )
+
+## Education
+
+서강대학교 컴퓨터공학과, 학부 15학번 (2015.3 - 2022.2)
+
+## Problem Solving
+
+#### 대회 출제 및 검수
+- 2020 ICPC Sinchon Summer Algorithm Camp Contest, 검수 (20.08.31)
+- 2020 Sogang Programming Contest, 출제 및 검수 (20.11.28)
+- 2021 ICPC Sinchon Winter Algorithm Camp Contest, 출제 및 검수 (21.02.20)
+- 2021 신촌지역 대학생 프로그래밍 대회 동아리 연합 겨울 대회 SUAPC 2021 Winter, 출제 및 검수 (21.02.28)
+- 2021 ICPC Sinchon Summer Algorithm Camp Contest, 검수 (21.08.21)
+- 2021 Sogang Programming Contest, 출제 및 검수 (21.11.27)
+- 2022 ICPC Sinchon Winter Algorithm Camp Contest, 출제 및 검수 (22.02.19)
+- 2022 신촌지역 대학생 프로그래밍 대회 동아리 연합 겨울 대회 SUAPC 2022 Winter, 출제 및 검수 (22.02.26)
+- 2022 연세대학교 신학기맞이 프로그래밍 경진대회, 검수 (22.03.19)
+- 2022 DGIST 현풍전산배 알고리즘 대회, 검수 (22.04.30)
+- 2022 서강대학교 청정수컵, 출제 및 검수 (22.05.14)
+- 2022 인하대학교 프로그래밍 경진대회 IUPC, 검수 (22.05.22)
+
+#### 대회 참가
+- 2020 신촌지역 대학생 프로그래밍 대회 동아리 연합 여름 대회 SUAPC 2020 Summer, 2nd place (20.08.15)
+- 2020 The 2020 ICPC Asia Seoul Regional Contest, 16th place / 30th team (20.11.14)
+- 2020 삼성전자 대학생 프로그래밍 경진대회 SCPC, 5th place (20.11.07)
+- 프로그래머스 월간 코드 챌린지 시즌2 (4월), 8th place (21.04.15)
+- 2021 신촌지역 대학생 프로그래밍 대회 동아리 연합 여름 대회 SUAPC 2021 Summer, 1st place (21.08.28)
+- 프로그래머스 월간 코드 챌린지 시즌3 (9월), 6th place (21.09.09)
+- 2021 서울대학교 프로그래밍 경시대회 Open Contest - Division 2, 2nd place (21.09.11)
+- 44th Annual World Finals Moscow, 87th place (21.10.06)
+- 2021 The 2021 ICPC Asia Seoul Regional Contest, 19th place / 19th team (21.11.13)
+
+#### 강의 활동
+- 2020 겨울 신촌지역 대학교 프로그래밍 동아리 연합 알고리즘 캠프 고급반 강사 (2020.01 - 2020.02)
+- 2021 겨울 신촌지역 대학교 프로그래밍 동아리 연합 알고리즘 캠프 고급반 멘토 (2021.01 - 2021.02)
+- 2021 여름 신촌지역 대학교 프로그래밍 동아리 연합 알고리즘 캠프 중급반 멘토 (2020.07 - 2020.08)
