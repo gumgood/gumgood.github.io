@@ -3,6 +3,7 @@ layout: post
 title: "Mapping Permutation to Integer"
 categories: [algorithm]
 tags: [trick]
+redirect_from: /blog/Mapping-permutation-to-integer
 ---
 
 원문 : <https://stackoverflow.com/questions/1506078>
