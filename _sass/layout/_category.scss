@@ -55,18 +55,29 @@
 }
 
 #category {
-    h1 {
-        margin-bottom: 2rem;
-        
-        i#folder-tag {
-            margin-right: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    span {
+        display: inline;
+        width: 100%;
+        margin: 2rem 0;
+
+        * {
+            vertical-align: baseline;
+        }
+        i#icon-folder {
+            margin-right: 0.5rem;
             width: 1.5rem;
             height: 1.5rem;
-            vertical-align: bottom;
             content: map-get($icon-svg, --folder-icon-svg);
+        }
+        h1 {
+            display: inline;
+            margin: 2rem 0;
         }
         span {
             padding-left: 0.5rem;
+            vertical-align: baseline;
             font-size: 1.25rem;
             font-weight: 300;
             line-height: 1rem;

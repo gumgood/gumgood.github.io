@@ -41,18 +41,28 @@
 }
 
 #tag {
-    h1 {
-        margin-bottom: 2rem;
+    display: flex;
+    span {
+        display: inline;
+        width: 100%;
+        margin: 2rem 0;
         
+        * {
+            vertical-align: baseline;
+        }
         i#icon-tag {
-            margin-right: 0.25rem;
+            margin-right: 0.5rem;
             width: 1.5rem;
             height: 1.5rem;
-            vertical-align: middle;
             content: map-get($icon-svg, --tag-icon-svg);
+        }
+        h1 {
+            display: inline;
+            margin: 2rem 0;
         }
         span {
             padding-left: 0.5rem;
+            vertical-align: baseline;
             font-size: 1.25rem;
             font-weight: 300;
             line-height: 1rem;

@@ -6,11 +6,11 @@ layout: default
 {% assign size = posts | size %}
 
 <div id="category">
-  <h1>
-    <i id="folder-tag"></i>
-    {{ page.name | capitalize }}
+  <span>
+    <i id="icon-folder"></i>
+    <h1>{{ page.name | capitalize }}</h1>
     <span>{{ size }} {% if size == 1 %}post{% else %}posts{% endif %}</span>
-  </h1>
+  </span>
 </div>
 
 {% include post-list.html posts = posts %}
