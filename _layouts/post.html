@@ -7,11 +7,19 @@ layout: default
     <div id="post-info">
 
         <div id="post-category">
-            {% for tag in page.tags %}
-                {{ tag | capitalize }}
-            {% endfor %}
+            <span>
+            {%- if page.categories -%}
+                <i id="icon-folder"></i>
+                {%- for category in page.categories -%}
+                    <a href="{{ "/categories/" | append: category }}">{{ category | capitalize }}</a>
+                    {%- unless forloop.last -%}
+                        <span id="slash">/</span>
+                    {%- endunless -%}
+                {%- endfor -%}
+            {%- endif-%}
+            </span>
         </div>
-    
+
         <h1 id="post-title">
             {{ page.title }}
         </h1>
@@ -32,6 +40,19 @@ layout: default
     </div>
     
     <div id="post-tail">
+        {%- if page.tags -%}
+        <div id="post-tags">
+            <span>
+                <i id="icon-tag"></i>
+                {%- for tag in page.tags -%}
+                    <a href="{{ "/tags/" | append: tag }}">{{ tag | downcase }}</a>
+                    {%- unless forloop.last -%}
+                        <span>, </span>
+                    {%- endunless -%}
+                {%- endfor -%}
+            </span>
+        </div>
+        {%- endif -%}
     </div>
 
 </div>

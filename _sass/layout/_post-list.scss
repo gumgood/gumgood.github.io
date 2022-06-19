@@ -59,9 +59,6 @@
         font-size: 0.85rem;
         word-spacing: 1px;
         color: #6c757d;
-        em {
-          @extend %normal-font-style;
-        }
         span {
             display: inline;
             width: 100%;
@@ -99,8 +96,8 @@
                     opacity: 0.7;
                 }
             }
-          }
-      }
+        }
+    }
 
   }
 
