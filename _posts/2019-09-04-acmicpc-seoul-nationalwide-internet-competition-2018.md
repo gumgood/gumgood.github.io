@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "ACM-ICPC Seoul Nationalwide Internet Competition 2018"
-category: [blog]
-tags: [editorial]
+categories: [editorial]
+tags: [icpc]
 ---
 
 <https://www.acmicpc.net/category/detail/1935>

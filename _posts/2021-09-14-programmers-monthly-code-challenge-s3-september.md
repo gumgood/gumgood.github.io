@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "프로그래머스 월간 코드 챌린지 시즌3 9월"
-category: [blog]
-tags: [editorial]
+categories: [editorial]
+tags: [programmers]
 redirect_from: /blog/programmers-monthly-code-challenge-s3-september
 ---
 

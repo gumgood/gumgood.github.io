@@ -12,6 +12,28 @@ author:
 # Permalinks
 permalink:      /:title
 
+# Collections
+collections:
+  categories:
+    output: true
+    permalink: /categories/:path
+  tags:
+    output: true
+    permalink: /tags/:path
+
+# Default
+defaults:
+  - scope:
+      path: ''
+      type: categories
+    values:
+      layout: category
+  - scope:
+      path: ''
+      type: tags
+    values:
+      layout: tag
+
 # Assets
 sass:
   sass_dir:     _sass

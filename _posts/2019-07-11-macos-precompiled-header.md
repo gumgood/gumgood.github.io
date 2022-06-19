@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "[MacOS] 맥 터미널에서 bits/stdc++.h 헤더 사용하기"
-category: [blog]
-tags: [setting]
+categories: [setting]
+tags: [mac]
 ---
 
 bits/stdc++.h는 표준 라이브러리 전체를 모두 포함시키는 헤더입니다.

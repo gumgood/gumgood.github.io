@@ -1,11 +1,18 @@
 <nav class="nav">
     <div class="nav-container width_wrapper">
         <ul>
+            {% assign url = page.url | split: "/" %}
             <li class="transition">
-                <a href="/" {% unless page.title == "about" %} class="active" {% endunless %} class="normal">Home</a>
+                <a href="/" {% if page.url == "/" %} class="active" {% endif %} class="normal">Home</a>
             </li>
             <li class="transition">
-                <a href="/about" {% if page.title == "about" %} class="active" {% endif %}>About</a>
+                <a href="/categories" {% if url[1] == "categories" %} class="active" {% endif %}>Categories</a>
+            </li>
+            <li class="transition">
+                <a href="/tags" {% if url[1] == "tags" %} class="active" {% endif %}>Tags</a>
+            </li>
+            <li class="transition">
+                <a href="/about" {% if url[1] == "about" %} class="active" {% endif %}>About</a>
             </li>
         </ul>
     </div>

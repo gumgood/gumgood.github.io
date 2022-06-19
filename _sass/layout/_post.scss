@@ -6,8 +6,7 @@
 /* --- post --- */
 
 #post {
-  margin-top: 1rem;
-  margin-bottom: 3rem;
+  
   a {
     @extend %link-color;
 
@@ -50,6 +49,7 @@
       font-family: $font-family;
       color: black;
       line-height: 1.2;
+      word-break: keep-all;
       
       padding: 0;
       margin-top: 0.5rem;

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Mapping Permutation to Integer"
-category: [blog]
-tags: [algorithm]
+categories: [algorithm]
+tags: [trick]
 ---
 
 원문 : <https://stackoverflow.com/questions/1506078>

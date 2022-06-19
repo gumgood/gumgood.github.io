@@ -1,0 +1,18 @@
+---
+layout: default
+title: tags
+permalink: /tags
+---
+
+<div id="tags">
+  {% for item in site[page.title] %}
+    {% assign url = item.url | relative_url %}
+    {% assign tag = item.title | downcase %}
+    {% assign size = site.posts | where_exp: 'post', "post.tags contains tag" | size %}
+    <div>
+        <a href="{{ url }}">
+          {{ tag }}<span>{{ size }}</span>
+        </a>
+    </div>
+  {% endfor %}
+</div>

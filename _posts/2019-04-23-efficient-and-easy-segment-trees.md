@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Segment Tree (+ Lazy Propagation) 코드 최적화"
-category: [blog]
-tags: [algorithm]
+categories: [algorithm]
+tags: [data_structure, segtree]
 ---
 
 원문 : <https://codeforces.com/blog/entry/18051>

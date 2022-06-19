@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "각도 정렬 알고리즘(Sort by Angular)"
-category: [blog]
-tags: [algorithm]
+categories: [algorithm]
+tags: [geometry]
 redirect_from: /blog/sort-by-angular
 ---
 

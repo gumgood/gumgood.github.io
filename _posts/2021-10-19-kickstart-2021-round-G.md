@@ -1,10 +1,25 @@
 ---
 layout: post
 title: "Kickstart 2021 Round G 개인 풀이"
-category: [blog]
-tags: [editorial]
+categories: [editorial]
+tags: [kickstart, google]
 redirect_from: /blog/kickstart-2021-round-G
 --- 
+
+
+## Prompts
+
+> An example showing the `tip` type prompt.
+{: .prompt-tip }
+
+> An example showing the `info` type prompt.
+{: .prompt-info }
+
+> An example showing the `warning` type prompt.
+{: .prompt-warning }
+
+> An example showing the `danger` type prompt.
+{: .prompt-danger }
 
 학교 K관 랩실에서 대회에 참가했는데 중간에 랩실을 닫는 바람에 끝까지 할 수 없었다. A, B번까지 해결했을 때 등수가 괜찮았고 지하철에서 C번을 해결하면서 D번 풀이까지 세웠으나 대회가 끝나버렸다. 결과는 아쉽지만 풀이가 맞았다는 것과 시간이 있었으면 모두 해결할 수 있었다는 것에 의의를 두려고 한다.
 

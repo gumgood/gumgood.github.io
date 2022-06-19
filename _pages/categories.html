@@ -1,0 +1,20 @@
+---
+layout: default
+title: categories
+permalink: /categories
+---
+
+<div id="categories">
+  <ul>
+    {% for item in site[page.title] %}
+      {% assign url = item.url | relative_url %}
+      {% assign category = item.title | downcase %}
+      {% assign size = site.posts | where_exp: 'post', "post.categories contains category" | size %}
+      <li>
+        <i id="folder-tag"></i>
+        <a href="{{ url }}">{{ category | capitalize }}</a>
+        <span>{{ size }} {% if size == 1 %}post{% else %}posts{% endif %}</span>
+      </li>
+    {% endfor %}
+    </ul>
+</div>

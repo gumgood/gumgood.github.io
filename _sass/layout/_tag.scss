@@ -1,0 +1,60 @@
+// tags
+// tag
+
+#tags {
+    display: flex;
+    display: -ms-flexbox;
+
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    
+    @media all and (max-width: 576px) {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    a {
+        border-radius: 0.7em;
+        padding: 6px 8px 7px;
+        margin-right: 0.8rem;
+        line-height: 3rem;
+        letter-spacing: 0;
+        border: 1px solid var(--tag-border);
+        box-shadow: 0 0 3px 0 var(--tag-shadow);
+
+        font-size: 1.08rem;
+        color: var(--link-color);
+        text-decoration: none;
+        background-color: transparent;
+        
+        &:hover {
+            color: #d2603a;
+        }
+
+        span {
+            margin-left: 0.6rem;
+            font-size: 0.75rem;
+            color: #6c757d;
+        }
+    }
+}
+
+#tag {
+    h1 {
+        i#icon-tag {
+            margin-right: 0.25rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            vertical-align: middle;
+            content: map-get($icon-svg, --tag-icon-svg);
+        }
+        span {
+            padding-left: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 300;
+            line-height: 1rem;
+            color: #6c757d;
+        }
+    }
+}

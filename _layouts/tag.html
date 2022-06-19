@@ -1,0 +1,16 @@
+---
+layout: default
+--- 
+
+{% assign posts = site.posts | where_exp: 'post', "post.tags contains page.name" %}
+{% assign size = posts | size %}
+
+<div id="tag">
+  <h1>
+    <i id="icon-tag"></i>
+    {{ page.name }}
+    <span>{{ size }} {% if size == 1 %}post{% else %}posts{% endif %}</span>
+  </h1>
+</div>
+
+{% include post-list.html posts = posts %}
