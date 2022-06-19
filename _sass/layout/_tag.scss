@@ -48,7 +48,7 @@
         margin: 2rem 0;
         
         * {
-            vertical-align: baseline;
+            vertical-align: middle;
         }
         i#icon-tag {
             margin-right: 0.5rem;
@@ -62,7 +62,7 @@
         }
         span {
             padding-left: 0.5rem;
-            vertical-align: baseline;
+            vertical-align: sub;
             font-size: 1.25rem;
             font-weight: 300;
             line-height: 1rem;
