@@ -40,6 +40,7 @@
     flex-direction: column;
     span {
       display: inline;
+      font-size: 0.85rem;
       width: 100%;
       * {
          vertical-align: middle;
@@ -54,11 +55,15 @@
       }
       a {
         text-decoration: none;
-        font-size: 0.85rem;
         color: var(--link-color);
         &:hover {
           @extend %link-hover;
         }
+      }
+      em {
+          @include ml-mr(0.125rem);
+          font-weight: 600;
+          font-style: normal;
       }
     }
   }

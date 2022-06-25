@@ -8,15 +8,14 @@ layout: default
 
         <div id="post-category">
             <span>
-            {%- if page.subcategory -%}
-                <i id="icon-folder"></i>
-                {%- for category in page.subcategory -%}
-                    <a href="{{ "/categories/" | append: category }}">{{ category | capitalize }}</a>
-                    {%- unless forloop.last -%}
-                        <span id="slash">/</span>
-                    {%- endunless -%}
-                {%- endfor -%}
-            {%- endif-%}
+                {% assign category = page.category[0] %}
+                {% assign subcategory = page.subcategory[0] %} 
+                {%- if category -%}
+                    <i id="icon-folder"></i><a href="/categories/{{ category }}">{% include camelcase.html string = category %}</a>
+                    {%- if subcategory -%}
+                        <em>/</em><a href="/categories/{{ subcategory }}">{% include camelcase.html string = subcategory %}</a>
+                    {%- endif -%}
+                {%- endif -%}
             </span>
         </div>
 
