@@ -65,10 +65,12 @@
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
+            * {
+                vertical-align: middle;
+            }
             i {
                 width: 0.75rem;
                 height: 0.75rem;
-                vertical-align: middle;
                 margin-left: 0.75rem;
                 margin-right: 0.25rem;
                 &:first-child {
@@ -87,7 +89,6 @@
             a {
                 text-decoration: none;
                 color: #6c757d;
-                vertical-align: middle;
                 &:hover {
                     text-decoration: underline;
                 }
