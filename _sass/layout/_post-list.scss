@@ -65,15 +65,14 @@
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
-            * {
-                vertical-align: middle;
-            }
             i {
-                @include ml-mr(0.25rem);
                 width: 0.75rem;
                 height: 0.75rem;
-                &:not(:first-child) {
-                    margin-left: 1rem;
+                vertical-align: middle;
+                margin-left: 0.75rem;
+                margin-right: 0.25rem;
+                &:first-child {
+                    margin-left: 0;
                 }
                 &#icon-calendar {
                     content: map-get($icon-svg, --calendar-icon-svg);
@@ -85,15 +84,18 @@
                     content: map-get($icon-svg, --tag-icon-svg);
                 }
             }
-            #slash {
-                @include ml-mr(0.125rem);
-            }
             a {
                 text-decoration: none;
                 color: #6c757d;
+                vertical-align: middle;
                 &:hover {
                     text-decoration: underline;
                 }
+            }
+            em {
+                @include ml-mr(0.125rem);
+                font-weight: 600;
+                font-style: normal;
             }
         }
     }

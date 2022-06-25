@@ -8,9 +8,9 @@ layout: default
 
         <div id="post-category">
             <span>
-            {%- if page.categories -%}
+            {%- if page.subcategory -%}
                 <i id="icon-folder"></i>
-                {%- for category in page.categories -%}
+                {%- for category in page.subcategory -%}
                     <a href="{{ "/categories/" | append: category }}">{{ category | capitalize }}</a>
                     {%- unless forloop.last -%}
                         <span id="slash">/</span>

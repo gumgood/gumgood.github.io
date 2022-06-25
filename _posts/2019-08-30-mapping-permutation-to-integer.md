@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Mapping Permutation to Integer"
-categories: [algorithm]
+category: [problem_solving]
+subcategory: [algorithm]
 tags: [trick]
 redirect_from: /blog/Mapping-permutation-to-integer
 ---

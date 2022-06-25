@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- jekyll variable -->
-  {% if page.title and page.categories %%}
+  {% if page.title and page.category %}
     {% assign title = page.title | append: " - " | append: site.title %}
   {% elsif page.title %}
     {% assign title = page.title | capitalize | append: " - " | append: site.title %}
@@ -14,7 +14,7 @@
 
   {% if page.description %}
     {% assign description = page.description %}
-  {% elsif page.categories %}
+  {% elsif page.category %}
     {% assign description = page.content | truncatewords: 30 | strip_html %}
   {% else %}
     {% assign description = site.description %}

@@ -8,24 +8,28 @@
 
 Deep Learning 관련해서 학습한 내용을 정리합니다.
 
-### Category, Tag
+### Category, Subcategory Tag
 
-새로운 category 또는 tag 추가 시 `_categories` 또는 `tags`에 `{name}.html` 추가하면 됨.
+새로운 category, subcategory, tag 추가 시 `_categories`, `_subcategory`, `_tags`에 `{name}.html` 추가하면 됨.
 
 ### Todo list
-- [x] Post list
-- [ ] Category
-  - [X] Categories List
-  - [X] Category View
+- [ ] Post
+  - [x] Post list
+  - [ ] Related posts
+  - [ ] Post navigation
+  - [ ] Table of contents
+- [x] Category
+  - [X] Categories list
+  - [X] Category view
   - [x] Add to post, post list
-  - [ ] Subcategory
+  - [x] Subcategory
 - [X] Tag
-  - [X] Tags List
-  - [X] Tag View
+  - [X] Tags list
+  - [X] Tag view
   - [x] Add to post, post list
 - [ ] Pagination
 - [ ] Comment
 - [ ] Copy clipboard button
 - [ ] Sidebar & Footer
-- [ ] Mobile View
+- [ ] Mobile view
 - [ ] Search

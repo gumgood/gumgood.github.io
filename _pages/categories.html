@@ -6,14 +6,25 @@ permalink: /categories
 
 <div id="categories">
   <ul>
-    {% for item in site[page.title] %}
+    {% assign sites = site["category"] | sort: "category_order" %}
+    {% for item in sites %}
       {% assign url = item.url | relative_url %}
-      {% assign category = item.title | downcase %}
-      {% assign size = site.posts | where_exp: 'post', "post.categories contains category" | size %}
+      {% assign title = item.title | downcase %}
+      {% assign post = site.posts | where_exp: 'post', "post.category contains title" %}
+      {% assign subcategories = post | map: 'subcategory' | uniq %}
       <li>
-        <i id="folder-tag"></i>
-        <a href="{{ url }}">{{ category | capitalize }}</a>
-        <span>{{ size }} {% if size == 1 %}post{% else %}posts{% endif %}</span>
+        <i id="triangle-right-tag"></i>
+        <a href="{{ url }}">{% include camelcase.html string = title %}</a>
+        <span>{{ subcategories.size }} {% if subcategories.size == 1 %}category{% else %}categories{% endif %}, {{ post.size }} {% if post.size == 1 %}post{% else %}posts{% endif %}</span>
+        
+        {% for subcategory in subcategories %}
+          {% assign size = post | where_exp: 'post', "post.subcategory contains subcategory" | size %}
+          <li class="subcategory">
+            <i id="folder-tag"></i>
+            <a href="/categories/{{ subcategory }}">{% include camelcase.html string = subcategory %}</a>
+            <span>{{ size }} {% if size == 1 %}post{% else %}posts{% endif %}</span>
+          </li>
+        {% endfor %}
       </li>
     {% endfor %}
     </ul>

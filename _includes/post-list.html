@@ -20,15 +20,14 @@
                 <span>
                     <i id="icon-calendar"></i><span>{{ post.date | date: "%b %e, %Y" }}</span>
 
-                    {%- if post.categories -%}
-                            <i id="icon-folder"></i>
-                            {%- for category in post.categories -%}
-                                <a href="{{ "/categories/" | append: category }}">{{ category | capitalize }}</a>
-                                {%- unless forloop.last -%}
-                                    <span id="slash">/</span>
-                                {%- endunless -%}
-                            {%- endfor -%}
-                    {%- endif-%}
+                    {%- if post.category -%}
+                        {% assign category = post.category | first %}
+                        {% assign subcategory = post.subcategory | first %}
+                        <i id="icon-folder"></i><a href="/categories/{{ category }}">{% include camelcase.html string = category %}</a>
+                        {%- if subcategory -%}
+                            <em>/</em><a href="/categories/{{ subcategory }}">{% include camelcase.html string = subcategory %}</a>
+                        {%- endif -%}
+                    {%- endif -%}
                     
                     {%- if post.tags -%}
                             <i id="icon-tag"></i>

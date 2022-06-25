@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "ACM-ICPC Seoul Nationalwide Internet Competition 2018"
-categories: [editorial]
+category: [problem_solving]
+subcategory: [editorial]
 tags: [icpc]
 redirect_from: /blog/acmicpc-seoul-nationalwide-internet-competition-2018
 ---

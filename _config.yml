@@ -14,7 +14,10 @@ permalink:      /:title
 
 # Collections
 collections:
-  categories:
+  category:
+    output: true
+    permalink: /categories/:path
+  subcategory:
     output: true
     permalink: /categories/:path
   tags:
@@ -24,15 +27,18 @@ collections:
 # Default
 defaults:
   - scope:
-      path: ''
-      type: categories
+      type: category
     values:
       layout: category
   - scope:
-      path: ''
+      type: subcategory
+    values:
+      layout: category
+  - scope:
       type: tags
     values:
       layout: tag
+
 
 # Assets
 sass:

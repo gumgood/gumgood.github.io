@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Range Queries와 Modifications over Array의 Non-recursive 구현"
-categories: [algorithm]
+category: [problem_solving]
+subcategory: [algorithm]
 tags: [data_structure, segtree]
 redirect_from: /blog/range-queries-and-modifications-non-recursive-implements
 ---

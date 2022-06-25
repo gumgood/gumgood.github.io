@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Kickstart 2021 Round A 개인 풀이"
-categories: [editorial]
+category: [problem_solving]
+subcategory: [editorial]
 tags: [kickstart, google]
 redirect_from: /blog/kickstart-2021-round-A
 ---
