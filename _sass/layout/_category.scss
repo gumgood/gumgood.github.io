@@ -75,6 +75,9 @@
         display: inline;
         width: 100%;
         margin: 2rem 0;
+        line-height: 1.2;
+        padding-left: 36px;
+        text-indent: -36px;
 
         * {
             vertical-align: middle;
@@ -94,7 +97,7 @@
             vertical-align: sub;
             font-size: 1.25rem;
             font-weight: 300;
-            line-height: 1rem;
+            white-space: nowrap;
             color: #6c757d;
         }
     }

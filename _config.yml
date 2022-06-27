@@ -33,7 +33,7 @@ defaults:
   - scope:
       type: subcategory
     values:
-      layout: category
+      layout: subcategory
   - scope:
       type: tags
     values:

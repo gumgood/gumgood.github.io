@@ -2,9 +2,10 @@
 layout: default
 --- 
 
-{% assign category = page.name %}
-{% assign posts = site.posts | where_exp: 'post', "post.category contains category" %}
+{% assign subcategory = page.name %}
+{% assign posts = site.posts | where_exp: 'post', "post.subcategory contains subcategory" %}
 {% assign size = posts | size %}
+{% assign category = posts[0].category[0] | append: "_/_" | append: subcategory %}
 
 <div id="category">
   <span>
