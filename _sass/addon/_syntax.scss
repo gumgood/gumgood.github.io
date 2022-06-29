@@ -259,7 +259,7 @@ div {
 @media all and (max-width: 576px) {
   #post-content {
     > div[class^='language-'] {
-      @include ml-mr(-1.5rem);
+      @include ml-mr(-7%);
       border-radius: 0;
 
       .highlight {

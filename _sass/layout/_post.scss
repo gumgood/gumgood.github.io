@@ -222,7 +222,7 @@
       padding: 0.75rem 1.2rem;
       color: var(--prompt-text-color);
       @media all and (max-width: 576px) {
-        @include ml-mr(-1.5rem);
+        @include ml-mr(-7%);
         border-radius: 0;
       }
   
