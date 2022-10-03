@@ -28,7 +28,7 @@
           {% assign _label_icon = 'far fa-file-code' %}
         {% else %}
           {% assign _lang = _left | split: 'language-' | last | split: ' ' | first %}
-          {% capture _label_text %}{% include language-alias.html language=_lang %}{% endcapture %}
+          {% capture _label_text %}{% include utils/language-alias.html language=_lang %}{% endcapture %}
         {% endif %}
   
         {% capture _label %}

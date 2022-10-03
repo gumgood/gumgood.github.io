@@ -10,7 +10,7 @@ layout: default
 <div id="category">
   <span>
     <i id="icon-folder"></i>
-    <h1>{% include camelcase.html string = category %}</h1>
+    <h1>{% include utils/camelcase.html string = category %}</h1>
     <span>{{ size }} {% if size == 1 %}post{% else %}posts{% endif %}</span>
   </span>
 </div>

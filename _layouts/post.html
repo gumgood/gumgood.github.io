@@ -11,9 +11,9 @@ layout: default
                 {% assign category = page.category[0] %}
                 {% assign subcategory = page.subcategory[0] %} 
                 {%- if category -%}
-                    <i id="icon-folder"></i><a href="/categories/{{ category }}">{% include camelcase.html string = category %}</a>
+                    <i id="icon-folder"></i><a href="/categories/{{ category }}">{% include utils/camelcase.html string = category %}</a>
                     {%- if subcategory -%}
-                        <em>/</em><a href="/categories/{{ subcategory }}">{% include camelcase.html string = subcategory %}</a>
+                        <em>/</em><a href="/categories/{{ subcategory }}">{% include utils/camelcase.html string = subcategory %}</a>
                     {%- endif -%}
                 {%- endif -%}
             </span>
@@ -35,7 +35,7 @@ layout: default
     </div>
 
     <div id="post-content">
-        {% include refactor-content.html content=content %}
+        {% include utils/refactor-content.html content=content %}
     </div>
     
     <div id="post-tail">
@@ -53,7 +53,7 @@ layout: default
         </div>
         {%- endif -%}
         <div id="post-comment">
-            {% include comment.html%}
+            {% include scripts/comment.html%}
         </div>
     </div>
 

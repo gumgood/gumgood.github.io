@@ -23,9 +23,9 @@
                     {%- if post.category -%}
                         {% assign category = post.category | first %}
                         {% assign subcategory = post.subcategory | first %}
-                        <i id="icon-folder"></i><a href="/categories/{{ category }}">{% include camelcase.html string = category %}</a>
+                        <i id="icon-folder"></i><a href="/categories/{{ category }}">{% include utils/camelcase.html string = category %}</a>
                         {%- if subcategory -%}
-                            <em>/</em><a href="/categories/{{ subcategory }}">{% include camelcase.html string = subcategory %}</a>
+                            <em>/</em><a href="/categories/{{ subcategory }}">{% include utils/camelcase.html string = subcategory %}</a>
                         {%- endif -%}
                     {%- endif -%}
                     
