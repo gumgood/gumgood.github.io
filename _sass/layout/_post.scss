@@ -179,6 +179,10 @@
     max-width: 100%;
     height: auto;
     margin: 0.5rem 0;
+    padding: 0 7%;
+    @media (max-width: $break-small) {
+      padding: 0;
+    }
 
     position: relative;
     left: 50%;
