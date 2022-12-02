@@ -1,8 +1,6 @@
 ---
-layout: post
 title: "프로그래머스 월간 코드 챌린지 시즌2 4월"
-category: [problem_solving]
-subcategory: [editorial]
+categories: [problem_solving, editorial]
 tags: [programmers]
 redirect_from: /blog/programmers-monthly-code-challenge-s2-april
 ---

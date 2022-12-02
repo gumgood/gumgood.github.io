@@ -28,8 +28,10 @@ Deep Learning 관련해서 학습한 내용을 정리합니다.
   - [X] Tag view
   - [x] Add to post, post list
 - [ ] Pagination
-- [ ] Comment
+- [X] Comment
 - [ ] Copy clipboard button
 - [ ] Sidebar & Footer
 - [ ] Mobile view
 - [ ] Search
+- [ ] Refactor Code: `_includes/utils/content-refactor.html`,
+                     `_includes/utils/language-alias.html`

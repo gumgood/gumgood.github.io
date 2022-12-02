@@ -1,29 +1,34 @@
 ---
-layout: default
-title: categories
+title: Categories
 permalink: /categories
+
+categories:
+  problem_solving:
+    - algorithm
+    - editorial
+  deep_learning:
+    - lecture
+  etc:
+    - setting
 ---
 
 <div id="categories">
   <ul>
-    {% assign sites = site["category"] | sort: "category_order" %}
-    {% for item in sites %}
-      {% assign url = item.url | relative_url %}
-      {% assign title = item.title | downcase %}
-      {% assign post = site.posts | where_exp: 'post', "post.category contains title" %}
-      {% assign subcategories = post | map: 'subcategory' | uniq %}
+    {% for category_group in page.categories %}
+      {% assign category = category_group.first %}
+      {% assign num_post = site.posts | where_exp: 'post', 'post.categories.first == category' | size %}
       <li>
-        <i id="triangle-right-tag"></i>
-        <a href="{{ url }}">{% include utils/camelcase.html string = title %}</a>
-        <span>{{ subcategories.size }} {% if subcategories.size == 1 %}category{% else %}categories{% endif %}, {{ post.size }} {% if post.size == 1 %}post{% else %}posts{% endif %}</span>
+        <i class="triangle-down"></i>
+        <a href="/categories/{{ category }}">{% include utils/capitalize.html string=category %}</a>
+        <span>{{ category_group.last.size }} {% if category_group.last.size == 1 %}category{% else %}categories{% endif %}, {{ num_post }} {% if num_post == 1 %}post{% else %}posts{% endif %}</span>
         
-        {% for subcategory in subcategories %}
-          {% assign size = post | where_exp: 'post', "post.subcategory contains subcategory" | size %}
-          <li class="subcategory">
-            <i id="folder-tag"></i>
-            <a href="/categories/{{ subcategory }}">{% include utils/camelcase.html string = subcategory %}</a>
-            <span>{{ size }} {% if size == 1 %}post{% else %}posts{% endif %}</span>
-          </li>
+        {% for subcategory in category_group.last %}
+          {% assign num_post = site.posts | where_exp: 'post', 'post.categories.last == subcategory' | size %}
+        <li class="subcategory">
+          <i class="file-directory"></i>
+          <a href="/categories/{{ subcategory }}">{% include utils/capitalize.html string=subcategory %}</a>
+          <span>{{ num_post }} {% if num_post == 1 %}post{% else %}posts{% endif %}</span>
+        </li>
         {% endfor %}
       </li>
     {% endfor %}

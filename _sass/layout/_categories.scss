@@ -36,17 +36,10 @@
                 background-color: #fff;
                 padding-left: 3rem;
             }
-            i#folder-tag {
+            i {
                 margin-right: 0.25rem;
                 width: 1.125rem;
                 height: 1.125rem;
-                content: map-get($icon-svg, --folder-icon-svg);
-            }
-            i#triangle-right-tag {
-                margin-right: 0.25rem;
-                width: 1.125rem;
-                height: 1.125rem;
-                content: map-get($icon-svg, --triangle-right-icon-svg);
             }
             a {
                 font-size: 1.08rem;
@@ -56,6 +49,8 @@
 
                 margin-left: 0.25rem;
                 margin-right: 0.5rem;
+                
+                transition: all 0.3s ease-in-out;
                 
                 &:hover {
                     text-decoration: underline;
@@ -69,36 +64,5 @@
 }
 
 #category {
-    display: flex;
-    flex-direction: column;
-    span {
-        display: inline;
-        width: 100%;
-        margin: 2rem 0;
-        line-height: 1.2;
-        padding-left: 36px;
-        text-indent: -36px;
-
-        * {
-            vertical-align: middle;
-        }
-        i#icon-folder {
-            margin-right: 0.5rem;
-            width: 1.5rem;
-            height: 1.5rem;
-            content: map-get($icon-svg, --folder-icon-svg);
-        }
-        h1 {
-            display: inline;
-            margin: 2rem 0;
-        }
-        span {
-            padding-left: 0.5rem;
-            vertical-align: sub;
-            font-size: 1.25rem;
-            font-weight: 300;
-            white-space: nowrap;
-            color: #6c757d;
-        }
-    }
+    
 }

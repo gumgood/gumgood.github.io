@@ -1,4 +1,0 @@
-{% assign words = include.string | split: '_' %}
-{%- for word in words -%}
-    {{ word | capitalize }}{% unless forloop.last %}{{" "}}{% endunless %}
-{%- endfor -%}

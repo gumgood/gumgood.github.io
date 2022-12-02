@@ -28,6 +28,8 @@
         text-decoration: none;
         background-color: transparent;
         
+        transition: all 0.3s ease-in-out;
+        
         &:hover {
             color: #d2603a;
         }

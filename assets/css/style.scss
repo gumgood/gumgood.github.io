@@ -2,14 +2,22 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
+@import 'normalize';
+
+@import 'util/functional';
+@import 'icon/octicons';
 @import 'colors/light-typography';
+
 @import 'addon/variables';
 @import 'addon/modules';
 @import 'addon/syntax';
-@import 'layout/footer';
-@import 'layout/navigation';
-@import 'layout/post-list';
-@import 'layout/post';
-@import 'layout/category';
-@import 'layout/tag';
+
 @import 'base';
+@import 'layout/navigation';
+@import 'layout/footer';
+@import 'layout/default';
+@import 'layout/index';
+@import 'layout/post-list';
+@import 'layout/categories';
+@import 'layout/tags';
+@import 'layout/post';

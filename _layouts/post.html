@@ -6,18 +6,13 @@ layout: default
 
     <div id="post-info">
 
-        <div id="post-category">
-            <span>
-                {% assign category = page.category[0] %}
-                {% assign subcategory = page.subcategory[0] %} 
-                {%- if category -%}
-                    <i id="icon-folder"></i><a href="/categories/{{ category }}">{% include utils/camelcase.html string = category %}</a>
-                    {%- if subcategory -%}
-                        <em>/</em><a href="/categories/{{ subcategory }}">{% include utils/camelcase.html string = subcategory %}</a>
-                    {%- endif -%}
+        <span id="post-category">
+                <a href="/categories/"><i class="file-directory"></i></a>
+                <a href="/categories/{{ page.categories.first }}">{% include utils/capitalize.html string=page.categories.first %}</a>
+                {%- if page.categories.size > 1 -%}
+                    <em>/</em><a href="/categories/{{ page.categories.last }}">{% include utils/capitalize.html string=page.categories.last %}</a>
                 {%- endif -%}
-            </span>
-        </div>
+        </span>
 
         <h1 id="post-title">
             {{ page.title }}
@@ -35,16 +30,16 @@ layout: default
     </div>
 
     <div id="post-content">
-        {% include utils/refactor-content.html content=content %}
+        {% include utils/content-refactor.html content=content %}
     </div>
     
     <div id="post-tail">
         {%- if page.tags -%}
         <div id="post-tags">
             <span>
-                <i id="icon-tag"></i>
+                <i class="tag"></i>
                 {%- for tag in page.tags -%}
-                    <a href="{{ "/tags/" | append: tag }}">{{ tag | downcase }}</a>
+                    <a href="/tags/{{ tag }}">{{ tag | downcase }}</a>
                     {%- unless forloop.last -%}
                         <span>, </span>
                     {%- endunless -%}

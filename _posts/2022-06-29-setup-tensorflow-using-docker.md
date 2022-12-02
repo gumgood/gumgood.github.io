@@ -1,8 +1,6 @@
 ---
-layout: post
 title: "Ubuntu 서버에 Docker로 Tensorflow 개발 환경 구축하기"
-category: [etc]
-subcategory: [setting]
+categories: [etc, setting]
 tags: [docker, tensorflow, linux]
 ---
 

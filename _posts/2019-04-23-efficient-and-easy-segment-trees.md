@@ -1,8 +1,6 @@
 ---
-layout: post
 title: "Segment Tree (+ Lazy Propagation) 코드 최적화"
-category: [problem_solving]
-subcategory: [algorithm]
+categories: [problem_solving, algorithm]
 tags: [data_structure, segtree]
 redirect_from: /blog/efficient-and-easy-segment-trees
 ---

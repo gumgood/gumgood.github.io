@@ -1,0 +1,16 @@
+$max_width_wrap: 750px;
+$break-small: 670px;
+
+.width_wrapper {
+  margin: 0 auto;
+  max-width: $max_width_wrap;
+  width: 80%;
+
+  @media (max-width: $break-small) {
+    width: 88%;
+  }
+}
+
+.transition {
+  transition: all 0.3s ease-in-out;
+}

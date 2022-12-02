@@ -1,8 +1,6 @@
 ---
-layout: post
 title: "접미사 배열과 LCP 배열(Suffix Array and LCP Array)"
-category: [problem_solving]
-subcategory: [algorithm]
+categories: [problem_solving, algorithm]
 tags: [string, suffix_array]
 redirect_from: /blog/suffix-array-and-lcp
 ---

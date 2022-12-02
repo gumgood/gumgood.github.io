@@ -1,8 +1,6 @@
 ---
-layout: post
 title: "스턴 브로콧 트리(Stern Brocot tree)"
-category: [problem_solving]
-subcategory: [algorithm]
+categories: [problem_solving, algorithm]
 tags: [data_structure, stern_brocot_tree]
 redirect_from: /blog/the-stern-borcot-tree
 ---

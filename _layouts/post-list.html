@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+{% assign title = page.title | downcase %}
+
+{% if page.collection == 'categories' %}
+  {% assign posts = site.posts | where_exp: 'post', 'post.categories contains title' %}
+  {% assign title = posts.first.categories.first | append: ' ' | append: title %}
+{% else %}
+  {% assign posts = site.posts | where_exp: 'post', 'post.tags contains title.first' %}
+{% endif %}
+
+{% assign title = title | split: ' ' | uniq %}
+
+<div class="post-list">
+
+  <h1 class="title">
+    <a href="/{{ page.collection }}"><i class="{% if page.collection == 'categories' %}file-directory{% else %}tag{% endif %}"></i></a>
+    <a href="/{{ page.collection }}/{{ title.first }}">{% include utils/capitalize.html string=title.first %}</a>
+    {% if title.size > 1 %}
+      <em>/</em>
+      <a href="/categories/{{ title.last }}">{% include utils/capitalize.html string=title.last %}</a>
+    {% endif %}
+    <span>{{ posts.size }} {% if posts.size == 1 %}post{% else %}posts{% endif %}</span>
+  </h1>
+  
+  <ul>
+    {% for post in posts %}
+      <li>
+        <i class="dot-fill"></i>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <span class="dash"></span>
+        <span>{{ post.date | date: "%b %e, %Y" }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+  
+</div>

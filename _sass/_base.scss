@@ -1,18 +1,19 @@
 /* --- common style --- */
 
-  * {
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-    -webkit-text-size-adjust : none;
-        -ms-text-size-adjust : none;
-       -moz-text-size-adjust : none;
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -moz-text-size-adjust: none;
 }
 
 html {
   @include light-scheme;
   font-size: 16px;
 }
+
 body {
   font-family: $font-family;
   color: var(--text-color);
@@ -24,7 +25,9 @@ body {
 }
 
 @media all and (max-width: 576px) {
-  html, body {
+
+  html,
+  body {
     overflow-x: hidden;
   }
 }
@@ -74,11 +77,12 @@ hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 0;
-  border-top: 1px solid rgba(0,0,0,.1);
+  border-top: 1px solid rgba(0, 0, 0, .1);
 }
 
 ol,
 ul {
+
   ol,
   ul {
     margin-bottom: 1rem;
@@ -87,26 +91,4 @@ ul {
 
 dt {
   font-weight: 700;
-}
-
-/* -- Legacy -- */
-
-$max_width_wrap: 750px;
-$break-small: 670px;
-
-.width_wrapper {
-    margin: 0 auto;
-    max-width: $max_width_wrap;
-    width: 80%;
-      @media (max-width: $break-small) {
-        width: 88%;
-    }
-}
-
-.transition {
-  transition: all 0.3s ease-in-out;
-}
-
-#main_content {
-  margin: 1rem auto 3rem;
 }

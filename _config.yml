@@ -1,61 +1,64 @@
-# Site settings
-title:          Gumgood
-description:    이상원(@Gumgood)의 블로그입니다. 
-url:            https://gumgood.github.io
+# --------------------------- Site variables ---------------------------
+
+# Site info
+title               : Gumgood
+description         : 이상원(@Gumgood)의 블로그입니다. 
+url                 : https://gumgood.github.io
 
 # Author
 author:
-  name:         Sangwon Lee 
-  email:        gumgood@naver.com
-  github:       gumgood
+  name              : Sangwon Lee 
+  email             : gumgood@naver.com
+  github            : gumgood
 
-# Permalinks
-permalink:      /:title
+# --------------------------- Configurations ---------------------------
 
-# Collections
-collections:
-  category:
-    output: true
-    permalink: /categories/:path
-  subcategory:
-    output: true
-    permalink: /categories/:path
-  tags:
-    output: true
-    permalink: /tags/:path
-
-# Default
-defaults:
-  - scope:
-      type: category
-    values:
-      layout: category
-  - scope:
-      type: subcategory
-    values:
-      layout: subcategory
-  - scope:
-      type: tags
-    values:
-      layout: tag
-
-
-# Assets
+# Where things are
 sass:
-  sass_dir:     _sass
-  style:        :compressed
+  style             : compressed
+collections:
+  categories:
+    output          : true
+  tags:
+    output          : true
+
+# Handling Reading
+include             : ["_page"]
+exclude             : ["Gemfile", "Gemfile.lock", "README.md", "LICENSE"]
 
 # Plugins
 plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
 
-# Build settings
-include: ["_page"]
-exclude: ["Gemfile", "Gemfile.lock", "README.md", "LICENSE"]
+# Outputting
+permalink           : /:title
+#paginate_path       : /page:num
+
+# Markdown Processors
 kramdown:
-  syntax_highlighter: rouge
   syntax_highlighter_opts:
-    css_class: 'highlight'
     block:
-      line_numbers: true
+      line_numbers  : true
+
+# Defaults
+defaults:
+  - scope:
+      type          : pages
+    values:
+      layout        : default
+  - scope:
+      type          : posts
+    values:
+      layout        : post
+  - scope:
+      type          : categories
+    values:
+      permalink     : /categories/:path
+      layout        : post-list
+  - scope:
+      type          : tags
+    values:
+      permalink     : /tags/:path
+      layout        : post-list
+      

@@ -3,18 +3,21 @@ $break-small: 670px;
 
 $body-padding-bottom: 40px;
 $footer-height: 101px;
-$footer-height-small: 132px; 
+$footer-height-small: 132px;
 
 html {
     position: relative;
 }
+
 body {
     min-height: 100vh;
     padding-bottom: $footer-height + $body-padding-bottom;
+
     @media (max-width: $break-small) {
         padding-bottom: $footer-height-small + $body-padding-bottom;
     }
 }
+
 footer {
     position: absolute;
     left: 0;
@@ -29,29 +32,35 @@ footer {
     font-style: normal;
     background-color: #f6f9fc;
     color: #8898aa;
+
     a {
         color: #333e4c;
         text-decoration: none;
     }
-        
+
     .footer_wrap {
         position: relative;
 
         .information {
             display: inline-block;
+            margin-top: 10px;
 
-            .accounts {
-                margin-top: 10px;
-                a {
-                    margin-right: 24px;
-                    svg {
-                        fill: #8898aa;
-                        width: 20px;
-                    }
+            a {
+                margin-right: 24px;
+
+                svg {
+                    fill: #8898aa;
+                    width: 20px;
                 }
-                a:hover {
-                    opacity: .6;
+
+                i {
+                    height: 1.25rem;
+                    width: 1.25rem;
                 }
+            }
+
+            a:hover {
+                opacity: .6;
             }
         }
 

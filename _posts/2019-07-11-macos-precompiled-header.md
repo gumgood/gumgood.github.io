@@ -1,8 +1,6 @@
 ---
-layout: post
 title: "[MacOS] 맥 터미널에서 bits/stdc++.h 헤더 사용하기"
-category: [etc]
-subcategory: [setting]
+categories: [etc, setting]
 tags: [mac]
 redirect_from: /blog/macos-precompiled-header
 ---

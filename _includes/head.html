@@ -2,25 +2,21 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
   <!-- jekyll variable -->
-  {% if page.title and page.category %}
-    {% assign title = page.title | append: " - " | append: site.title %}
-  {% elsif page.title %}
-    {% assign title = page.title | capitalize | append: " - " | append: site.title %}
-  {% else %}
-    {% assign title = site.title %}
+  {% assign title = page.title | default: site.title %}
+  {% if page.collection == 'categories' or page.collection == 'tags' %}
+    {% capture title %}{% include utils/capitalize.html string=page.title %}{% endcapture %}
   {% endif %}
+  {% unless title == site.title %}
+    {% assign title = title | append: ' - ' | append: site.title %}
+  {% endunless %}
 
-  {% if page.description %}
-    {% assign description = page.description %}
-  {% elsif page.category %}
+  {% assign description = site.description %}
+  {% if page.collection == 'posts' %}
     {% assign description = page.content | truncatewords: 30 | strip_html %}
-  {% else %}
-    {% assign description = site.description %}
   {% endif %}
   
-  {% assign image = "/assets/image/header.jpg" | absolute_url %}
+  {% assign image ='/assets/image/header.jpg' | absolute_url %}
 
   <!-- HTML Meta Tags -->
   <title>{{ title }}</title>
@@ -46,13 +42,13 @@
   <meta name="twitter:card" content="summary">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="{{ "/assets/css/style.css" | absolute_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' }}">
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
   
   <!-- Favicon -->
-  <link rel="shortcut icon" href="{{ "/favicon.ico" | absolute_url }}">
+  <link rel="shortcut icon" href="{{ '/favicon.ico' }}">
 
   <!-- Mathjax Support -->
   {% include scripts/mathjax.html %}

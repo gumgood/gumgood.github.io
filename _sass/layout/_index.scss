@@ -1,0 +1,107 @@
+.post-summaries {
+    * {
+        margin: 0;
+    }
+
+    .post-summaries__item {
+        padding-top: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--main-border-color);
+
+        h2#post-title {
+
+            a {
+                @include no-text-decoration;
+                font-size: 1.4rem;
+                font-weight: 400;
+                font-family: $font-family;
+                color: var(--link-color);
+                line-height: 1.2;
+
+                overflow: hidden;
+                word-break: keep-all;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    text-decoration: underline;
+                    text-underline-offset: 3px;
+                    text-decoration-thickness: 1px;
+                    color: #d2603a;
+                }
+            }
+        }
+
+        .post-content {
+            margin-top: 0.6rem;
+            margin-bottom: 0.6rem;
+            color: var(--post-list-text-color);
+
+            p {
+                margin: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+        }
+
+        .post-metadata {
+            display: inline-flex;
+            width: 100%;
+
+            span {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            font-size: 0.85rem;
+            word-spacing: 1px;
+            color: #6c757d;
+
+            * {
+                vertical-align: middle;
+            }
+
+            i {
+                width: 0.75rem;
+                height: 0.75rem;
+                margin-left: 0.75rem;
+                margin-right: 0.25rem;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: #6c757d;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            em {
+                @include ml-mr(0.125rem);
+                font-weight: 600;
+                font-style: normal;
+            }
+
+            .tag {
+                @media (max-width: $break-small) {
+                    display: none;
+                }
+            }
+        }
+
+    }
+
+}

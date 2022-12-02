@@ -6,7 +6,7 @@
 /* --- post --- */
 
 #post {
-  
+
   a {
     @extend %link-color;
 
@@ -18,7 +18,7 @@
     &.popup {
       cursor: zoom-in;
 
-      > img[src]:not(.normal):not(.left):not(.right) {
+      >img[src]:not(.normal):not(.left):not(.right) {
         @include align-center;
       }
     }
@@ -28,7 +28,9 @@
         @extend %link-hover;
       }
     }
-  } /* a */
+  }
+
+  /* a */
 
 }
 
@@ -36,63 +38,70 @@
 #post-info {
 
   #post-category {
-    display: flex;
-    flex-direction: column;
-    span {
-      display: inline;
-      font-size: 0.85rem;
-      width: 100%;
-      * {
-         vertical-align: middle;
-      }
-      i {
-        margin-right: 0.5rem;
-        width: 0.75rem;
-        height: 0.75rem;
-        &#icon-folder {
-          content: map-get($icon-svg, --folder-icon-svg);
-        }
-      }
-      a {
-        text-decoration: none;
-        color: var(--link-color);
-        &:hover {
-          @extend %link-hover;
-        }
-      }
-      em {
-          @include ml-mr(0.125rem);
-          font-weight: 600;
-          font-style: normal;
+    display: inline;
+    font-size: 0.85rem;
+    width: 100%;
+
+    * {
+      vertical-align: middle;
+    }
+
+    i {
+      margin-right: 0.25rem;
+      width: 0.75rem;
+      height: 0.75rem;
+
+      &#icon-folder {
+        content: map-get($icon-svg, --folder-icon-svg);
       }
     }
+
+    a {
+      text-decoration: none;
+      line-height: 0;
+      color: var(--link-color);
+
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        @extend %link-hover;
+      }
+    }
+
+    em {
+      @include ml-mr(0.125rem);
+      font-weight: 600;
+      font-style: normal;
+    }
   }
-  
+
   h1#post-title {
-      font-size: 1.9rem;
-      font-weight: 500;
-      font-family: $font-family;
-      color: black;
-      line-height: 1.2;
-      word-break: keep-all;
-      
-      padding: 0;
-      margin-top: 0.5rem;
-      margin-bottom: 1.5rem;
+    font-size: 1.9rem;
+    font-weight: 500;
+    font-family: $font-family;
+    color: black;
+    line-height: 1.2;
+    word-break: keep-all;
+
+    padding: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
   }
 
   #post-metadata {
     font-size: 0.85rem;
     word-spacing: 1px;
     color: #6c757d;
-    
+
     em {
       @extend %normal-font-style;
       color: var(--text-color);
     }
+
     span {
       white-space: nowrap;
-      &:not(:first-child)::before{
+
+      &:not(:first-child)::before {
         content: "\2022";
         padding-left: 0.25rem;
         padding-right: 0.25rem;
@@ -137,6 +146,7 @@
         vertical-align: middle;
         background: white no-repeat center center;
         background-image: map-get($icon-svg, --checkbox-icon-svg);
+
         &[checked="checked"] {
           background-image: map-get($icon-svg, --checkbox-checked-icon-svg);
         }
@@ -144,15 +154,19 @@
     }
 
 
-  } /* ul */
+  }
 
-  > ol,
-  > ul {
+  /* ul */
+
+  >ol,
+  >ul {
     padding-left: 2rem;
 
     li {
+
       ol,
-      ul { /* sub list */
+      ul {
+        /* sub list */
         padding-left: 2rem;
         margin: 0.3rem 0;
       }
@@ -160,16 +174,16 @@
 
   }
 
-  > ol {
+  >ol {
     li {
       padding-left: 0.25em;
     }
   }
 
-  dl > dd {
+  dl>dd {
     margin-left: 1rem;
   }
-  
+
   p {
     margin-top: 0;
     margin-bottom: 1rem;
@@ -180,6 +194,7 @@
     height: auto;
     margin: 0.5rem 0;
     padding: 0 7%;
+
     @media (max-width: $break-small) {
       padding: 0;
     }
@@ -189,29 +204,30 @@
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-  
+
     &[data-loaded=true] {
       animation: fade-in linear 0.5s;
     }
-  
+
     &.left {
       float: left;
       margin: 0.75rem 1rem 1rem 0;
     }
-  
+
     &.right {
       float: right;
       margin: 0.75rem 0 1rem 1rem;
     }
-  
+
     &.shadow {
       filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.08));
-      box-shadow: none !important; /* cover the Bootstrap 4.6.1 styles */
+      box-shadow: none !important;
+      /* cover the Bootstrap 4.6.1 styles */
     }
-  
+
     @extend %img-caption;
   }
-  
+
   blockquote {
     border-left: 5px solid var(--blockquote-border-color);
     padding-left: 1rem;
@@ -225,11 +241,12 @@
       border-radius: 6px;
       padding: 0.75rem 1.2rem;
       color: var(--prompt-text-color);
+
       @media all and (max-width: 576px) {
         @include ml-mr(-7%);
         border-radius: 0;
       }
-  
+
       &::before {
         margin-right: 1rem;
         text-align: center;
@@ -237,12 +254,12 @@
         width: 1rem;
         min-width: 1rem;
       }
-  
+
       p:last-child {
         margin-bottom: 0rem;
       }
     }
-  
+
     @include prompt("tip", "\f0eb");
     @include prompt("info", "\f06a");
     @include prompt("warning", "\f06a");
@@ -287,48 +304,54 @@
           @extend %table-cell;
         }
       }
-    } /* tbody */
-  } /* table */
+    }
 
-  .footnotes > ol {
+    /* tbody */
+  }
+
+  /* table */
+
+  .footnotes>ol {
     padding-left: 2rem;
     margin-top: 0.5rem;
-  
-    > li {
+
+    >li {
       &:not(:last-child) {
         margin-bottom: 0.3rem;
       }
-  
-      > p {
+
+      >p {
         margin-left: 0.25em;
         margin-top: 0;
         margin-bottom: 0;
       }
-  
+
       /* [scroll-focus] added by `smooth-scroll.js` */
       &:target:not([scroll-focus]),
-      &[scroll-focus=true] > p {
+      &[scroll-focus=true]>p {
         background-color: var(--footnote-target-bg);
         width: fit-content;
-        -webkit-transition: background-color 1.5s ease-in-out; /* Safari prior 6.1 */
+        -webkit-transition: background-color 1.5s ease-in-out;
+        /* Safari prior 6.1 */
         transition: background-color 1.5s ease-in-out;
       }
     }
   }
-  
+
   .footnote {
     @at-root a#{&} {
       @include ml-mr(1px);
       @include pl-pr(2px);
-  
+
       border-bottom-style: none !important;
-      -webkit-transition: background-color 1.5s ease-in-out; /* Safari prior 6.1 */
+      -webkit-transition: background-color 1.5s ease-in-out;
+      /* Safari prior 6.1 */
       transition: background-color 1.5s ease-in-out;
     }
-  
+
     /* [scroll-focus] added by `smooth-scroll.js` */
     @at-root sup:target:not([scroll-focus]),
-    sup[scroll-focus=true] > a#{&} {
+    sup[scroll-focus=true]>a#{&} {
       background-color: var(--footnote-target-bg);
     }
   }
@@ -352,17 +375,21 @@
     span {
       display: inline;
       width: 100%;
+
       * {
         vertical-align: middle;
       }
+
       i {
         margin-right: 0.5rem;
         width: 1rem;
         height: 1rem;
+
         &#icon-tag {
           content: map-get($icon-svg, --tag-icon-svg);
         }
       }
+
       a {
         color: #6c757d;
         background: var(--tag-bg);
@@ -370,6 +397,7 @@
         border-radius: 0.3rem;
         padding: 0 0.4rem;
         line-height: 1.3rem;
+
         &:hover {
           transition: all 0.3s ease-in-out;
           opacity: 0.7;
