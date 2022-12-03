@@ -8,7 +8,7 @@ layout: default
   {% assign posts = site.posts | where_exp: 'post', 'post.categories contains title' %}
   {% assign title = posts.first.categories.first | append: ' ' | append: title %}
 {% else %}
-  {% assign posts = site.posts | where_exp: 'post', 'post.tags contains title.first' %}
+  {% assign posts = site.posts | where_exp: 'post', 'post.tags contains title' %}
 {% endif %}
 
 {% assign title = title | split: ' ' | uniq %}
