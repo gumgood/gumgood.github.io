@@ -2,7 +2,7 @@
     <ul>
         {% assign url = page.url | split: '/' %}
         <li class="transition">
-            <a href="/" {% if url.size == 0 %}class="active"{% endif %}>Home</a>
+            <a href="/" {% if paginator %}class="active"{% endif %}>Home</a>
         </li>
         <li class="transition">
             <a href="/categories" {% if url[1] == 'categories' %} class="active" {% endif %}>Categories</a>

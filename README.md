@@ -27,7 +27,7 @@ Deep Learning 관련해서 학습한 내용을 정리합니다.
   - [X] Tags list
   - [X] Tag view
   - [x] Add to post, post list
-- [ ] Pagination
+- [x] Pagination
 - [X] Comment
 - [ ] Copy clipboard button
 - [ ] Sidebar & Footer

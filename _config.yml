@@ -30,10 +30,10 @@ exclude             : ["Gemfile", "Gemfile.lock", "README.md", "LICENSE"]
 plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
+  - jekyll-paginate
 
 # Outputting
 permalink           : /:title
-#paginate_path       : /page:num
 
 # Markdown Processors
 kramdown:
@@ -61,4 +61,9 @@ defaults:
     values:
       permalink     : /tags/:path
       layout        : post-list
+
+# ------------------------------ Paginate ------------------------------
+      
+paginate            : 10
+paginate_path       : /:num
       

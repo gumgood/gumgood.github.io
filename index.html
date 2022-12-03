@@ -2,11 +2,9 @@
 layout: default
 ---
 
-{% assign posts = include.posts | default: site.posts %}
-
 <div class="post-summaries">
 
-    {%- for post in posts -%}
+    {%- for post in paginator.posts -%}
         
         <div class="post-summaries__item">
             
@@ -46,4 +44,22 @@ layout: default
 
     {%- endfor -%}
 
+</div>
+
+<div class="paginate">
+    {% assign s = paginator.page | minus: 1 | divided_by: 8 | plus: 1 %}
+    {% assign e = paginator.page | minus: 1 | divided_by: 8 | plus: 8 | at_most: paginator.total_pages %}
+    {% if s > 1 %}
+    <a href="/{{ s | minus: 1 }}"><i class="arrow-left"></i></a>
+    {% endif %}
+    {% for page_num in (s..e) %}
+        {% if page_num == paginator.page %}
+            <span class="active">{{ page_num }}</span>
+        {% else %}
+            <a href="/{% if page_num > 1 %}{{ page_num }}{% endif %}">{{ page_num }}</a>
+        {% endif %}
+    {% endfor %}
+    {% if e < paginator.total_pages %}
+    <a href="/{{ e | plus: 1 }}"><i class="arrow-right"></i></a>
+    {% endif %}
 </div>
