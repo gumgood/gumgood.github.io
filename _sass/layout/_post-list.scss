@@ -2,7 +2,7 @@
 
     h1.title {
         display: inline-block;
-        margin: 0.5rem 0;
+        margin: 0 0 1.5rem;
         padding-left: 0.5rem;
 
         @include valign-ilink(2.5rem, 1.25rem);
@@ -33,12 +33,12 @@
             padding-left: 0.5rem;
 
             color: var(--post-list-meta-color);
-            font-size: 0.875rem;
+            font-size: 1rem;
             font-weight: 300;
             white-space: nowrap;
 
             @media (max-width: $break-small) {
-                font-size: 0.75rem;
+                font-size: 0.875rem;
             }
         }
     }
@@ -62,10 +62,10 @@
 
             a {
                 word-break: break-all;
-                font-size: 1rem;
+                font-size: 1.125rem;
 
                 @media (max-width: $break-small) {
-                    font-size: 0.875rem;
+                    font-size: 1rem;
                 }
             }
 

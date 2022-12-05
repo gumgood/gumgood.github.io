@@ -12,17 +12,22 @@
         margin-right: 0.8rem;
         padding: 6px 8px 7px;
 
-        font-size: 1.08rem;
-        line-height: 3rem;
-
         border: 1px solid var(--tags-border);
         border-radius: 0.7em;
         box-shadow: 0 0 3px 0 var(--tags-shadow);
 
+        line-height: 3rem;
+        font-size: 1.125rem;
+            
+        @media (max-width: $break-small) {
+            padding: 6px 7px 6px;
+            font-size: 1rem;
+        }
+
         span {
             margin-left: 0.6rem;
-            font-size: 0.75rem;
             color: var(--tags-meta-color);
+            font-size: 0.75rem;
         }
 
         &:hover {
