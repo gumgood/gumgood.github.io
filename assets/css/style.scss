@@ -4,20 +4,21 @@
 
 @import 'normalize';
 
-@import 'util/functional';
 @import 'icon/octicons';
-@import 'colors/light-typography';
+@import 'util/svg-icon';
+@import 'util/functional';
+@import 'util/syntax';
 
-@import 'addon/variables';
-@import 'addon/modules';
-@import 'addon/syntax';
+@import 'common';
+@import 'include/navigation';
+@import 'include/footer';
+@import 'include/paginate';
 
-@import 'base';
-@import 'layout/navigation';
-@import 'layout/footer';
 @import 'layout/default';
 @import 'layout/index';
 @import 'layout/post-list';
-@import 'layout/categories';
-@import 'layout/tags';
 @import 'layout/post';
+
+@import 'pages/categories';
+@import 'pages/page404';
+@import 'pages/tags';

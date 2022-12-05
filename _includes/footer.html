@@ -1,20 +1,18 @@
 <footer>
-    <div class="footer_wrap width_wrapper">
-        <div class="information">
-            <a href="http://github.com/{{ site.author.github }}" target="_blank" class="transition">
+    <div>
+        <span class="info-link">
+            <a href="http://github.com/{{ site.author.github }}" target="_blank" class="hover-opacity">
                 <i class="mark-github"></i>
             </a>
-            <a href="mailto:{{ site.author.email }}" class="transition">
+            <a href="mailto:{{ site.author.email }}" class="hover-opacity">
                 <i class="mail"></i>
             </a>
-            <a href="{{ 'feed.xml' | absolute_url }}" target="_blank" class="transition">
+            <a href="{{ 'feed.xml' | absolute_url }}" target="_blank" class="hover-opacity">
                 <i class="rss"></i>
             </a>
-        </div>
-        <div class="copyright">
-            <span>
-                &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time>. {{ site.author.name }}
-            </span>
-        </div>    
+        </span>
+        <span class="copyright">
+            &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time>. {{ site.author.name }}
+        </span>
     </div>
 </footer>

@@ -1,0 +1,32 @@
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media all and (max-width: $break-small) {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    a {
+        margin-right: 0.8rem;
+        padding: 6px 8px 7px;
+
+        font-size: 1.08rem;
+        line-height: 3rem;
+
+        border: 1px solid var(--tags-border);
+        border-radius: 0.7em;
+        box-shadow: 0 0 3px 0 var(--tags-shadow);
+
+        span {
+            margin-left: 0.6rem;
+            font-size: 0.75rem;
+            color: var(--tags-meta-color);
+        }
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

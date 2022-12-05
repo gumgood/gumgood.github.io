@@ -2,10 +2,14 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="format-detection" content="telephone=no">
+
   <!-- jekyll variable -->
   {% assign title = page.title | default: site.title %}
-  {% if page.collection == 'categories' or page.collection == 'tags' %}
-    {% capture title %}{% include utils/capitalize.html string=page.title %}{% endcapture %}
+  {% if page.collection == 'categories' %}
+    {% capture title %}Categories: {% include utils/capitalize.html string=page.title %}{% endcapture %}
+  {% elsif page.collection == 'tags' %}
+    {% assign title = title | downcase | prepend: 'Tags: ' %}
   {% endif %}
   {% unless title == site.title %}
     {% assign title = title | append: ' - ' | append: site.title %}
@@ -52,7 +56,5 @@
 
   <!-- Mathjax Support -->
   {% include scripts/mathjax.html %}
-
-  <meta name="format-detection" content="telephone=no">
 
 </head>

@@ -4,19 +4,70 @@
 
 @mixin light-scheme {
     /* Framework color */
-    --body-bg: #fafafa;
-    --mask-bg: #c1c3c5;
-    --main-wrapper-bg: white;
-    --main-border-color: #f3f3f3;
+    --body-bg: white; //
+
+    /* Common */
+    --common-border-color: #f3f3f3;
+    --common-btn-bg: #fff;
+    --common-btn-color: #757575E6;
+    --common-btn-active-color: #424242;
+    --common-btn-border-color: #e9ecef;
+    --common-meta-color: #6c757d;
+    --common-link-color: #2a408e;
+    --common-link-hover-color: #d2603a;
+    --common-text-color: #34343c; 
+
+    /* Navigation */
+    --nav-btn-color: var(--common-btn-color); //
+    --nav-btn-active-color: var(--common-btn-active-color); //
   
+    /* Footer */
+    --footer-bg: #f6f9fc; //
+    --footer-border-color: #D8E0E7; // 
+    --footer-text-color: var(--common-btn-color); //
+
+    /* Post_summaries */
+    --post-summaries-border-color: var(--common-border-color); //
+    --post-summaries-text-color: dimgray; 
+    --post-summaries-meta-color: var(--common-meta-color);
+    --paginate-btn-color: var(--common-btn-color); //
+    --paginate-btn-active-color: var(--common-btn-active-color); //
+
+    /* Post_list */
+    --post-list-title-color:  black;
+    --post-list-meta-color:  var(--common-meta-color);
+    --post-list-dash-color: silver;
+
+    /* Categories */
+    --categories-bg: rgba(0, 0, 0, .03);
+    --categories-sub-bg: var(--common-btn-bg);
+    --categories-border-color: rgba(0, 0, 0, .125);
+    --categories-list-meta-color:  var(--common-meta-color);
+    --categories-shadow: var(--common-btn-border-color);
+
+    /* tags */
+    --tags-border: #dee2e6;
+    --tags-shadow: var(--btn-border-color);
+    --tags-meta-color: var(--common-meta-color);
+
+    /* Post */
+    --post-title-color:  black;
+    --post-meta-color: var(--common-text-color);
+    --post-link-color: var(--common-link-color);
+    --post-link-hover-color: var(--common-link-hover-color);
+    --post-link-underline-color: #dee2e6;
+
+    //////////
+
     /* Common color */
-    --text-color: #34343c;
+    --text-color: #34343c; // 
     --text-muted-color: gray;
     --heading-color: black;
     --blockquote-border-color: #eee;
     --blockquote-text-color: #9a9a9a;
     --link-color: #2a408e;
     --link-underline-color: #dee2e6;
+    --link-hover-color: #d2603a;
     --button-bg: #fff;
     --btn-border-color: #e9ecef;
     --btn-backtotop-color: #686868;
@@ -24,25 +75,8 @@
     --btn-box-shadow: #eaeaea;
     --checkbox-color: #c5c5c5;
     --checkbox-checked-color: #07a8f7;
-  
-    /* Sidebar */
-    --sidebar-bg: #eeeeee;
-    --sidebar-muted-color: #a2a19f;
-    --sidebar-active-color: #424242;
-    --nav-cursor-color: #757575;
-    --sidebar-btn-bg: white;
-  
-    /* Topbar */
-    --topbar-text-color: rgb(78, 78, 78);
-    --topbar-wrapper-bg: white;
-    --search-wrapper-bg: rgb(245 245 245 / 50%);
-    --search-wrapper-border-color: rgb(245 245 245);
-    --search-tag-bg: #f8f9fa;
-    --search-icon-color: #c2c6cc;
-    --input-focus-border-color: var(--btn-border-color);
-  
+
     /* Home page */
-    --post-list-text-color: dimgray;
     --btn-patinator-text-color: #555555;
     --btn-paginator-hover-color: var(--sidebar-bg);
     --btn-paginator-border-color: var(--sidebar-bg);
@@ -58,8 +92,6 @@
     --relate-post-date: rgba(30, 55, 70, 0.4);
     --footnote-target-bg: lightcyan;
     --tag-bg: rgba(0, 0, 0, 0.075);
-    --tag-border: #dee2e6;
-    --tag-shadow: var(--btn-border-color);
     --tag-hover: rgb(222, 226, 230);
     --tb-odd-bg: #fbfcfd;
     --tb-border-color: #eaeaea;
@@ -93,14 +125,4 @@
   
 } /* light-scheme */
 
-$icon-svg: (
-  --prompt-tip-icon-svg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path fill-rule='evenodd' fill='%2303b303' d='M6 0a6 6 0 100 12A6 6 0 006 0zm-.705 8.737L9.63 4.403 8.392 3.166 5.295 6.263l-1.7-1.702L2.356 5.8l2.938 2.938z'></path></svg>"),
-  --prompt-info-icon-svg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path fill-rule='evenodd' fill='%230070cb' d='M6 0a6 6 0 100 12A6 6 0 006 0zm-.705 8.737L9.63 4.403 8.392 3.166 5.295 6.263l-1.7-1.702L2.356 5.8l2.938 2.938z'></path></svg>"),
-  --prompt-warning-icon-svg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path fill-rule='evenodd' fill='%23ef9c03' d='M6 0a6 6 0 100 12A6 6 0 006 0zm3 5H3v2h6V5z'></path></svg>"),
-  --prompt-danger-icon-svg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path fill-rule='evenodd' fill='%23df3c30' d='M4.855.708c.5-.896 1.79-.896 2.29 0l4.675 8.351a1.312 1.312 0 01-1.146 1.954H1.33A1.312 1.312 0 01.183 9.058L4.855.708zM7 7V3H5v4h2zm-1 3a1 1 0 100-2 1 1 0 000 2z'></path></svg>"),
-  --checkbox-icon-svg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill-rule='evenodd' fill='%23c5c5c5' d='M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8z'></path></svg>"),
-  --checkbox-checked-icon-svg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill-rule='evenodd' fill='%2307a8f7' d='M8 16A8 8 0 108 0a8 8 0 000 16zm3.78-9.72a.75.75 0 00-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 00-1.06 1.06l2 2a.75.75 0 001.06 0l4.5-4.5z'></path></svg>"),
-  --code-icon-svg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill-rule='evenodd' fill='%23d1d1d1' d='M4.72 3.22a.75.75 0 011.06 1.06L2.06 8l3.72 3.72a.75.75 0 11-1.06 1.06L.47 8.53a.75.75 0 010-1.06l4.25-4.25zm6.56 0a.75.75 0 10-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 101.06 1.06l4.25-4.25a.75.75 0 000-1.06l-4.25-4.25z'></path></svg>"),
-  --file-code-icon-svg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill-rule='evenodd' fill='%23d1d1d1' d='M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0114.25 15h-9a.75.75 0 010-1.5h9a.25.25 0 00.25-.25V6h-2.75A1.75 1.75 0 0110 4.25V1.5H5.75a.25.25 0 00-.25.25v2.5a.75.75 0 01-1.5 0v-2.5zm7.5-.188V4.25c0 .138.112.25.25.25h2.688a.252.252 0 00-.011-.013l-2.914-2.914a.272.272 0 00-.013-.011zM5.72 6.72a.75.75 0 000 1.06l1.47 1.47-1.47 1.47a.75.75 0 101.06 1.06l2-2a.75.75 0 000-1.06l-2-2a.75.75 0 00-1.06 0zM3.28 7.78a.75.75 0 00-1.06-1.06l-2 2a.75.75 0 000 1.06l2 2a.75.75 0 001.06-1.06L1.81 9.25l1.47-1.47z'></path></svg>"),
-  --clipboard-icon-svg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill-rule='evenodd' fill='%23d1d1d1' d='M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z'></path><path fill-rule='evenodd' fill='%23d1d1d1' d='M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z'></path></svg>")
-);
+$font-family: 'Source Sans Pro', 'Microsoft Yahei', sans-serif;

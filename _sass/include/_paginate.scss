@@ -1,0 +1,17 @@
+.paginate {
+    margin: 1.5rem 0;
+    @include valign-ilink(1.5rem, 1rem);
+
+    text-align: center;
+    font-size: 1rem;
+
+    a,
+    span {
+        color: var(--paginate-btn-color);
+        @include active-underline(--paginate-btn-active-color);
+
+        &:not(&:last-child) {
+            margin-right: 1rem;
+        }
+    }
+}

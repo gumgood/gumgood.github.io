@@ -1,0 +1,55 @@
+/* --- Typography --- */
+@import 'colors/light-typography';
+
+h1, h2, h3, h4, h5 {
+  color: var(--heading-color);
+  font-weight: 400;
+  font-family: $font-family;
+
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+
+  &:focus {
+    outline: none; /* avoid outline in Safari */
+  }
+}
+
+h1 {
+  font-size: 1.9rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-size: 1.15rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+ol,
+ul {
+
+  ol,
+  ul {
+    margin-bottom: 1rem;
+  }
+}
+
+dt {
+  font-weight: 700;
+}

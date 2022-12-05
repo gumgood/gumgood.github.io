@@ -1,3 +1,42 @@
-#main_content {
-    margin: 1rem auto 3rem;
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+}
+
+html {
+    @include light-scheme;
+    font-size: 16px;
+}
+
+body {
+    font-family: $font-family;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.75rem;
+
+    color: var(--text-color);
+    background: var(--body-bg);
+
+    margin: 0;
+}
+
+@media all and (max-width: 576px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+}
+
+
+main {
+    @extend %max_width;
+    padding: 1rem 0;
+}
+
+a {
+    text-decoration: none;
 }

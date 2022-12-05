@@ -16,11 +16,11 @@ layout: default
 <div class="post-list">
 
   <h1 class="title">
-    <a href="/{{ page.collection }}"><i class="{% if page.collection == 'categories' %}file-directory{% else %}tag{% endif %}"></i></a>
-    <a href="/{{ page.collection }}/{{ title.first }}">{% include utils/capitalize.html string=title.first %}</a>
+    <a href="/{{ page.collection }}" class="hover-opacity"><i class="{% if page.collection == 'categories' %}file-directory{% else %}tag{% endif %}"></i></a>
+    <a href="/{{ page.collection }}/{{ title.first }}" class="hover-opacity">{% if page.collection == 'categories' %}{% include utils/capitalize.html string=title.first %}{% else %}{{ title.first }}{% endif %}</a>
     {% if title.size > 1 %}
       <em>/</em>
-      <a href="/categories/{{ title.last }}">{% include utils/capitalize.html string=title.last %}</a>
+      <a href="/categories/{{ title.last }}" class="hover-opacity">{% include utils/capitalize.html string=title.last %}</a>
     {% endif %}
     <span>{{ posts.size }} {% if posts.size == 1 %}post{% else %}posts{% endif %}</span>
   </h1>
@@ -29,7 +29,7 @@ layout: default
     {% for post in posts %}
       <li>
         <i class="dot-fill"></i>
-        <a href="{{ post.url }}">{{ post.title }}</a>
+        <a href="{{ post.url }}" class="hover-underline">{{ post.title }}</a>
         <span class="dash"></span>
         <span>{{ post.date | date: "%b %e, %Y" }}</span>
       </li>

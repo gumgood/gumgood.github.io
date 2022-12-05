@@ -1,9 +1,9 @@
-$max_width_wrap: 750px;
+$max_width: 750px;
 $break-small: 670px;
 
-.width_wrapper {
+%max_width {
   margin: 0 auto;
-  max-width: $max_width_wrap;
+  max-width: $max_width;
   width: 80%;
 
   @media (max-width: $break-small) {
@@ -11,6 +11,76 @@ $break-small: 670px;
   }
 }
 
-.transition {
-  transition: all 0.3s ease-in-out;
+.d-flex {
+  display: flex;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ellipsis-two {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hover-opacity {
+  &:hover {
+    transition: all 0.3s ease-in-out;
+    opacity: 0.6;
+  }
+}
+
+.hover-underline {
+  color: var(--common-link-color);
+
+  &:hover {
+    transition: all 0.3s ease-in-out;
+    color: var(--common-link-hover-color);
+    text-decoration: underline 1px;
+    text-underline-offset: 3px;
+  }
+}
+
+@mixin active-underline($active-color) {
+  &.active {
+    color: var($active-color);
+    text-decoration: underline 2px var($active-color);
+    text-underline-offset: 0.625rem;
+  }
+}
+
+@mixin valign-ilink($height, $i-width) {
+  * {
+    display: inline-block;
+    height: $height;
+    line-height: $height;
+  }
+  
+  > * {
+    vertical-align: middle;
+  } 
+
+  i {
+    display: block;
+    width: $i-width;
+  }
+}
+
+@mixin valign-i($height, $i-width) {
+  * {
+    display: inline-block;
+    height: $height;
+    line-height: $height;
+    vertical-align: middle;
+  }
+
+  >i {
+    width: $i-width;
+  }
 }

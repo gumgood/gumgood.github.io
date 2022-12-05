@@ -1,17 +1,17 @@
-<nav class="nav-container width_wrapper">
+<nav>
     <ul>
         {% assign url = page.url | split: '/' %}
-        <li class="transition">
-            <a href="/" {% if paginator %}class="active"{% endif %}>Home</a>
+        <li>
+            <a href="/" class="hover-opacity{% if paginator %} active{% endif %}">Home</a>
         </li>
-        <li class="transition">
-            <a href="/categories" {% if url[1] == 'categories' %} class="active" {% endif %}>Categories</a>
+        <li>
+            <a href="/categories" class="hover-opacity{% if url[1] == 'categories' %} active{% endif %}">Categories</a>
         </li>
-        <li class="transition">
-            <a href="/tags" {% if url[1] == 'tags' %} class="active" {% endif %}>Tags</a>
+        <li>
+            <a href="/tags" class="hover-opacity{% if url[1] == 'tags' %} active{% endif %}">Tags</a>
         </li>
-        <li class="transition">
-            <a href="/about" {% if url[1] == 'about' %} class="active" {% endif %}>About</a>
+        <li>
+            <a href="/about" class="hover-opacity{% if url[1] == 'about' %} active{% endif %}">About</a>
         </li>
     </ul>
 </nav>

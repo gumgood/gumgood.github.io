@@ -2,23 +2,23 @@
 layout: default
 ---
 
-<div id="post">
-
-    <div id="post-info">
-
-        <span id="post-category">
-                <a href="/categories/"><i class="file-directory"></i></a>
-                <a href="/categories/{{ page.categories.first }}">{% include utils/capitalize.html string=page.categories.first %}</a>
+<div class="post">
+    <div class="post-info">
+        <span class="post-category">
+            {% if page.categories.size > 0%}
+                <a href="/categories/" class="hover-underline"><i class="file-directory"></i></a>
+                <a href="/categories/{{ page.categories.first }}" class="hover-underline">{% include utils/capitalize.html string=page.categories.first %}</a>
                 {%- if page.categories.size > 1 -%}
-                    <em>/</em><a href="/categories/{{ page.categories.last }}">{% include utils/capitalize.html string=page.categories.last %}</a>
+                    <em>/</em><a href="/categories/{{ page.categories.last }}" class="hover-underline">{% include utils/capitalize.html string=page.categories.last %}</a>
                 {%- endif -%}
+            {% endif %}
         </span>
 
-        <h1 id="post-title">
+        <h1 class="post-title">
             {{ page.title }}
         </h1>
     
-        <div id="post-metadata">
+        <div class="post-metadata">
             <span>
                 By <em>{{ page.author | default: site.author.name }}</em>
             </span>
@@ -29,24 +29,24 @@ layout: default
     
     </div>
 
-    <div id="post-content">
+    <div class="post-content">
         {% include utils/content-refactor.html content=content %}
     </div>
     
     <div id="post-tail">
-        {%- if page.tags -%}
         <div id="post-tags">
             <span>
-                <i class="tag"></i>
-                {%- for tag in page.tags -%}
-                    <a href="/tags/{{ tag }}">{{ tag | downcase }}</a>
-                    {%- unless forloop.last -%}
-                        <span>, </span>
-                    {%- endunless -%}
-                {%- endfor -%}
+                {%- if page.tags.size > 0 -%}
+                    <i class="tag"></i>
+                    {%- for tag in page.tags -%}
+                        <a href="/tags/{{ tag }}" class="hover-opacity">{{ tag | downcase }}</a>
+                        {%- unless forloop.last -%}
+                            <span>, </span>
+                        {%- endunless -%}
+                    {%- endfor -%}
+                {%- endif -%}
             </span>
         </div>
-        {%- endif -%}
         <div id="post-comment">
             {% include scripts/comment.html%}
         </div>

@@ -1,0 +1,69 @@
+/* --- Make footer stick at the bottom --- */
+
+html {
+    position: relative;
+}
+
+body {
+    min-height: 100vh;
+    padding-bottom: calc(2px + 4.5rem);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* --- Footer design --- */
+
+footer {
+
+    color: var(--footer-text-color);
+    background: var(--footer-bg);
+    border-top: 1px solid var(--footer-border-color);
+    border-bottom: 1px solid var(--footer-border-color);
+
+    >div {
+        display: flex;
+        @include valign-ilink(1rem, 1rem);
+
+        @extend %max_width;
+        padding: 1.5rem 0 2rem;
+
+        .info-link {
+            overflow: hidden;
+
+            a {
+                margin-right: 1.5rem;
+            }
+        }
+
+        .copyright {
+            float: right;
+            margin-left: auto;
+
+            white-space: nowrap;
+            font-size: 0.875rem;
+
+            @media (max-width: $break-small) {
+                font-size: 0.75rem;
+            }
+        }
+    }
+}
+
+
+@media (max-width: $break-small) {
+    body {
+        padding-bottom: calc(2px + 4.375rem);
+    }
+
+    footer>div {
+        @include valign-ilink(0.875rem, 0.875rem);
+
+        .info-link>a {
+            margin-right: 1rem;
+        }
+    }
+}

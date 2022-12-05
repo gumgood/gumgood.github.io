@@ -12,21 +12,21 @@ categories:
     - setting
 ---
 
-<div id="categories">
+<div class="categories">
   <ul>
     {% for category_group in page.categories %}
       {% assign category = category_group.first %}
       {% assign num_post = site.posts | where_exp: 'post', 'post.categories.first == category' | size %}
-      <li>
+      <li class="ellipsis">
         <i class="triangle-down"></i>
-        <a href="/categories/{{ category }}">{% include utils/capitalize.html string=category %}</a>
+        <a href="/categories/{{ category }}" class="hover-underline">{% include utils/capitalize.html string=category %}</a>
         <span>{{ category_group.last.size }} {% if category_group.last.size == 1 %}category{% else %}categories{% endif %}, {{ num_post }} {% if num_post == 1 %}post{% else %}posts{% endif %}</span>
         
         {% for subcategory in category_group.last %}
           {% assign num_post = site.posts | where_exp: 'post', 'post.categories.last == subcategory' | size %}
-        <li class="subcategory">
+        <li class="subcategory ellipsis">
           <i class="file-directory"></i>
-          <a href="/categories/{{ subcategory }}">{% include utils/capitalize.html string=subcategory %}</a>
+          <a href="/categories/{{ subcategory }}" class="hover-underline">{% include utils/capitalize.html string=subcategory %}</a>
           <span>{{ num_post }} {% if num_post == 1 %}post{% else %}posts{% endif %}</span>
         </li>
         {% endfor %}
