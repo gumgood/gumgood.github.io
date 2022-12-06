@@ -33,8 +33,8 @@ layout: default
         {% include utils/content-refactor.html content=content %}
     </div>
     
-    <div id="post-tail">
-        <div id="post-tags">
+    <div class="post-tail">
+        <div class="post-tags">
             <span>
                 {%- if page.tags.size > 0 -%}
                     <i class="tag"></i>
@@ -47,7 +47,7 @@ layout: default
                 {%- endif -%}
             </span>
         </div>
-        <div id="post-comment">
+        <div class="post-comment">
             {% include scripts/comment.html%}
         </div>
     </div>

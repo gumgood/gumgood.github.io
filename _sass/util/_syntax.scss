@@ -260,19 +260,14 @@ div {
 }
 
 @media all and (max-width: 576px) {
-  #post-content {
+  .post-content {
     > div[class^='language-'] {
       margin-left: -7%;
       margin-right: -7%;
       border-radius: 0;
 
-      .highlight {
-        padding-left: 0.25rem;
-      }
-
       .code-header {
         border-radius: 0;
-        padding-left: 0.4rem;
         padding-right: 0.5rem;
       }
     }

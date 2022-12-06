@@ -6,7 +6,7 @@ html {
 
 body {
     min-height: 100vh;
-    padding-bottom: calc(2px + 4.5rem);
+    padding-bottom: calc(2px + 4.625rem);
 }
 
 footer {
@@ -26,7 +26,7 @@ footer {
 
     >div {
         display: flex;
-        @include valign-ilink(1rem, 1rem);
+        @include valign-ilink(1.125rem, 1.125rem);
 
         @extend %max_width;
         padding: 1.5rem 0 2rem;
@@ -45,10 +45,6 @@ footer {
 
             white-space: nowrap;
             font-size: 0.875rem;
-
-            @media (max-width: $break-small) {
-                font-size: 0.75rem;
-            }
         }
     }
 }
@@ -56,14 +52,16 @@ footer {
 
 @media (max-width: $break-small) {
     body {
-        padding-bottom: calc(2px + 4.375rem);
+        padding-bottom: calc(2px + 4.75rem);
     }
 
-    footer>div {
-        @include valign-ilink(0.875rem, 0.875rem);
+    footer {
+        >div {
+            @include valign-ilink(1.25rem, 1.25rem);
+        }
 
-        .info-link>a {
-            margin-right: 1rem;
+        .copyright {
+            font-size: 1.25rem;
         }
     }
 }

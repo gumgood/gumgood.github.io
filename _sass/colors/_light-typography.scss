@@ -3,8 +3,14 @@
  */
 
 @mixin light-scheme {
+    /* Legacy */
+    --text-color: #34343c;
+    --heading-color: black;
+    --blockquote-border-color: #eee;
+    --blockquote-text-color: #9a9a9a;
+
     /* Framework color */
-    --body-bg: white; //
+    --body-bg: white;
 
     /* Common */
     --common-border-color: #f3f3f3;
@@ -18,20 +24,20 @@
     --common-text-color: #34343c; 
 
     /* Navigation */
-    --nav-btn-color: var(--common-btn-color); //
-    --nav-btn-active-color: var(--common-btn-active-color); //
+    --nav-btn-color: var(--common-btn-color);
+    --nav-btn-active-color: var(--common-btn-active-color);
   
     /* Footer */
-    --footer-bg: #f6f9fc; //
-    --footer-border-color: #D8E0E7; // 
-    --footer-text-color: var(--common-btn-color); //
+    --footer-bg: #f6f9fc;
+    --footer-border-color: #D8E0E7;
+    --footer-text-color: var(--common-btn-color);
 
     /* Post_summaries */
-    --post-summaries-border-color: var(--common-border-color); //
+    --post-summaries-border-color: var(--common-border-color);
     --post-summaries-text-color: dimgray; 
     --post-summaries-meta-color: var(--common-meta-color);
-    --paginate-btn-color: var(--common-btn-color); //
-    --paginate-btn-active-color: var(--common-btn-active-color); //
+    --paginate-btn-color: var(--common-btn-color);
+    --paginate-btn-active-color: var(--common-btn-active-color);
 
     /* Post_list */
     --post-list-title-color:  black;
@@ -47,7 +53,7 @@
 
     /* tags */
     --tags-border: #dee2e6;
-    --tags-shadow: var(--btn-border-color);
+    --tags-shadow: #e9ecef;
     --tags-meta-color: var(--common-meta-color);
 
     /* Post */
@@ -56,50 +62,8 @@
     --post-link-color: var(--common-link-color);
     --post-link-hover-color: var(--common-link-hover-color);
     --post-link-underline-color: #dee2e6;
-
-    //////////
-
-    /* Common color */
-    --text-color: #34343c; // 
-    --text-muted-color: gray;
-    --heading-color: black;
-    --blockquote-border-color: #eee;
-    --blockquote-text-color: #9a9a9a;
-    --link-color: #2a408e;
-    --link-underline-color: #dee2e6;
-    --link-hover-color: #d2603a;
-    --button-bg: #fff;
-    --btn-border-color: #e9ecef;
-    --btn-backtotop-color: #686868;
-    --btn-backtotop-border-color: #f1f1f1;
-    --btn-box-shadow: #eaeaea;
-    --checkbox-color: #c5c5c5;
-    --checkbox-checked-color: #07a8f7;
-
-    /* Home page */
-    --btn-patinator-text-color: #555555;
-    --btn-paginator-hover-color: var(--sidebar-bg);
-    --btn-paginator-border-color: var(--sidebar-bg);
-    --btn-text-color: #676666;
-    --pin-bg: #f5f5f5;
-    --pin-color: #999fa4;
-  
-    /* Posts */
-    --btn-share-hover-color: var(--link-color);
-    --card-border-color: #f1f1f1;
-    --card-box-shadow: rgba(234, 234, 234, 0.7686274509803922);
-    --label-color: #616161;
-    --relate-post-date: rgba(30, 55, 70, 0.4);
-    --footnote-target-bg: lightcyan;
-    --tag-bg: rgba(0, 0, 0, 0.075);
-    --tag-hover: rgb(222, 226, 230);
-    --tb-odd-bg: #fbfcfd;
-    --tb-border-color: #eaeaea;
-    --dash-color: silver;
-    --preview-img-bg: radial-gradient(circle, rgb(255 255 255) 0%, rgb(249 249 249) 100%);
-    --kbd-wrap-color: #bdbdbd;
-    --kbd-text-color: var(--text-color);
-    --kbd-bg-color: white;
+    
+    /* Posts - prompt */
     --prompt-text-color: rgb(46 46 46 / 77%);
     --prompt-tip-bg: rgb(123 247 144 / 20%);
     --prompt-tip-icon-color: #03b303;
@@ -109,20 +73,12 @@
     --prompt-warning-icon-color: #ef9c03;
     --prompt-danger-bg: rgb(248 215 218 / 56%);
     --prompt-danger-icon-color: #df3c30;
-  
-    [class^=prompt-] {
-      --link-underline-color: rgb(219 216 216);
-    }
-  
-    /* Categories */
-    --categories-hover-bg: var(--btn-border-color);
-    --categories-icon-hover-color: darkslategray;
-  
-    /* Archive */
-    --timeline-color: rgba(0, 0, 0, 0.075);
-    --timeline-node-bg: #c2c6cc;
-    --timeline-year-dot-color: #ffffff;
-  
-} /* light-scheme */
+
+    /* Posts - tag */
+    --post-tag-bg: rgba(0, 0, 0, 0.075);
+    --post-tb-even-bg: var(--body-bg);
+    --post-tb-odd-bg: #fbfcfd;
+    --post-tb-border-color: #eaeaea;
+}
 
 $font-family: 'Source Sans Pro', 'Microsoft Yahei', sans-serif;

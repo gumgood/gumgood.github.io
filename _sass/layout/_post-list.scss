@@ -2,19 +2,21 @@
 
     h1.title {
         display: inline-block;
-        margin: 0 0 1.5rem;
-        padding-left: 0.5rem;
+        margin: 0;
+        padding: 1rem 1rem 1.5rem;
 
-        @include valign-ilink(2.5rem, 1.25rem);
-        font-size: 1.25rem;
+        text-align-last: right;
+
+        @include valign-ilink(2.5rem, 1.75rem);
+        font-size: 1.75rem;
 
         @media (max-width: $break-small) {
-            @include valign-ilink(2.5rem, 1.125rem);
-            font-size: 1.125rem;
+            @include valign-ilink(2.5rem, 1.5rem);
+            font-size: 1.5rem;
         }
 
         i {
-            margin-right: 0.5rem;
+            margin-right: 0.675rem;
         }
 
         a {
