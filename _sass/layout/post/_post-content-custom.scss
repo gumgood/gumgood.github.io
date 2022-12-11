@@ -2,7 +2,6 @@
     blockquote {
         &[class^="prompt-"] {
             display: block;
-            width: 100%;
             padding: 0.75rem 1.2rem;
 
             color: var(--prompt-text-color);
@@ -12,8 +11,8 @@
 
             @media all and (max-width: 576px) {
                 width: 114%;
-                margin-left: -7%;
-                margin-right: -7%;
+                margin: 0 -7%;
+                padding: 0.75rem 7%;
                 border-radius: 0;
             }
 
