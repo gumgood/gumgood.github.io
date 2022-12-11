@@ -1,23 +1,16 @@
 .post-summaries {
-    * {
-        margin: 0;
-    }
 
     .post-summaries__item {
-        padding-top: 1.5rem;
-        padding-bottom: 1rem;
+        padding: 1.5rem 0 1rem;
         border-bottom: 1px solid var(--post-summaries-border-color);
 
-        h2.post-title>a {
+        h2 {
+            margin: 0;
             font-size: 1.25rem;
-            font-weight: 400;
-            line-height: 1.2;
-            word-break: keep-all;
         }
 
-        .post-content {
-            margin-top: 0.6rem;
-            margin-bottom: 0.6rem;
+        p {
+            margin: 0.6rem 0;
             color: var(--post-summaries-text-color);
         }
 
@@ -25,34 +18,33 @@
             display: inline-flex;
             width: 100%;
 
-            span {
-                @include valign-i(1.5rem, 0.75rem);
+            >span {
+                * {
+                    vertical-align: middle;
 
-                color: var(--post-summaries-meta-color);
-                font-size: 0.85rem;
-                word-spacing: 1px;
+                    color: var(--post-summaries-meta-color);
+                    font-size: 0.85rem;
+                    word-spacing: 1px;
+                }
 
                 i {
+                    height: 0.75rem;
+                    width: 0.75rem;
                     margin-left: 0.75rem;
                     margin-right: 0.25rem;
+                    background-color: var(--post-summaries-meta-color);
 
                     &:first-child {
                         margin-left: 0;
                     }
                 }
 
-                a {
-                    color: var(--post-summaries-meta-color);
-
-                    &:hover {
-                        text-decoration: underline;
-                    }
+                a:hover {
+                    text-decoration: underline;
                 }
 
-                em {
+                .dash {
                     margin: 0 0.125rem;
-                    font-weight: 600;
-                    font-style: normal;
                 }
 
                 .tag {

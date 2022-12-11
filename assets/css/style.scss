@@ -5,20 +5,22 @@
 @import 'normalize';
 
 @import 'icon/octicons';
-@import 'util/svg-icon';
 @import 'util/functional';
 @import 'util/syntax';
 
 @import 'common';
 @import 'include/navigation';
 @import 'include/footer';
-@import 'include/paginate';
 
 @import 'layout/default';
 @import 'layout/post-list';
-@import 'layout/post';
+@import 'layout/post/post-content-custom';
+@import 'layout/post/post-content';
+@import 'layout/post/post-metadata';
+@import 'layout/post/post-tail';
 
 @import 'pages/categories';
-@import 'pages/index';
+@import 'pages/index/summaries';
+@import 'pages/index/paginate';
 @import 'pages/page404';
 @import 'pages/tags';

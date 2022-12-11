@@ -1,0 +1,28 @@
+.paginate {
+    margin: 1.5rem 0;
+
+    text-align: center;
+    font-size: 1rem;
+
+    a,
+    span {
+        color: var(--paginate-btn-color);
+        
+        &:not(&:last-child) {
+            margin-right: 1rem;
+        }
+
+        &.active {
+            color: var(--paginate-btn-active-color);
+            text-decoration: underline 2px var(--paginate-btn-active-color);
+            text-underline-offset: 0.625rem;
+        }
+
+    }
+
+    i {
+        height: 1rem;
+        width: 1rem;
+        background-color: var(--paginate-btn-color);
+    }
+}

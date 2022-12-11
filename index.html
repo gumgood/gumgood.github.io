@@ -3,19 +3,16 @@ layout: default
 ---
 
 <div class="post-summaries">
-
     {%- for post in paginator.posts -%}
-        
         <div class="post-summaries__item">
             
-            <h2 class="post-title ellipsis-two">
-                <a href="{{ post.url }}" class="hover-underline">{{ post.title }}</a>
+            <h2>
+                <a href="{{ post.url }}" class="ellipsis-two hover-underline">{{ post.title }}</a>
             </h2>
-            <div class="post-content">
-                <p class="ellipsis-two">
-                    {{ post.content | markdownify | strip_html | truncate: 200 }}
-                </p>
-            </div>
+
+            <p class="post-content ellipsis-two">
+                {{ post.content | markdownify | strip_html | truncate: 200 }}
+            </p>
 
             <div class="post-metadata">
                 <span class="ellipsis">
@@ -24,7 +21,7 @@ layout: default
                     {%- if post.categories.size > 0 -%}
                         <i class="file-directory"></i><a href="/categories/{{ post.categories.first }}">{% include utils/capitalize.html string=post.categories.first %}</a>
                         {%- if post.categories.size > 1 -%}
-                            <em>/</em><a href="/categories/{{ post.categories.last }}">{% include utils/capitalize.html string=post.categories.last %}</a>
+                            <span class="dash">/</span><a href="/categories/{{ post.categories.last }}">{% include utils/capitalize.html string=post.categories.last %}</a>
                         {%- endif -%}
                     {%- endif -%}
                         
@@ -41,9 +38,26 @@ layout: default
             </div>
 
         </div>
-
     {%- endfor -%}
-
 </div>
 
-{% include paginate.html %}
+<div class="paginate">
+    {% assign s = paginator.page | minus: 1 | divided_by: 8 | plus: 1 %}
+    {% assign e = paginator.page | minus: 1 | divided_by: 8 | plus: 8 | at_most: paginator.total_pages %}
+
+    {% if s > 1 %}
+    <a href="/{{ s | minus: 1 }}" class="hover-opacity"><i class="arrow-left"></i></a>
+    {% endif %}
+
+    {% for page_num in (s..e) %}
+        {% if page_num == paginator.page %}
+            <span class="active">{{ page_num }}</span>
+        {% else %}
+            <a href="/{% if page_num > 1 %}{{ page_num }}{% endif %}" class="hover-opacity">{{ page_num }}</a>
+        {% endif %}
+    {% endfor %}
+
+    {% if e < paginator.total_pages %}
+    <a href="/{{ e | plus: 1 }}" class="hover-opacity"><i class="arrow-right"></i></a>
+    {% endif %}
+</div>

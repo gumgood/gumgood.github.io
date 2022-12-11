@@ -17,7 +17,11 @@ nav {
 
       a {
         color: var(--nav-btn-color);
-        @include active-underline(--nav-btn-active-color);
+        &.active {
+          color: var(--nav-btn-active-color);
+          text-decoration: underline 2px var(--nav-btn-active-color);
+          text-underline-offset: 0.625rem;
+        }
       }
 
       @media (max-width: $break-small) {

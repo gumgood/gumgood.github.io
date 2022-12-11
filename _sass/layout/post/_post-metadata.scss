@@ -1,0 +1,54 @@
+.post>.post-metadata {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--common-border-color);
+
+    .post-category {
+
+        &,
+        * {
+            display: inline-block;
+            line-height: 0.85rem;
+            font-size: 0.85rem;
+        }
+
+        i {
+            height: 0.85rem;
+            width: 0.85rem;
+            margin-right: 0.25rem;
+            background-color: #6c757d;
+            vertical-align: bottom;
+        }
+
+        span {
+            margin: 0 0.125rem;
+        }
+    }
+
+    .post-title {
+        margin: 0.5rem 0 1.5rem;
+        color: var(--post-title-color);
+        line-height: 1.2;
+        word-break: keep-all;
+    }
+
+    .post-metadata {
+        color: #6c757d;
+        font-size: 0.85rem;
+        word-spacing: 1px;
+
+        em {
+            font-style: normal;
+            color: var(--post-meta-color);
+        }
+
+        span {
+            white-space: nowrap;
+
+            &:not(:first-child)::before {
+                content: "\2022";
+                padding-left: 0.25rem;
+                padding-right: 0.25rem;
+            }
+        }
+    }
+}

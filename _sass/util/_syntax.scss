@@ -176,7 +176,7 @@ div {
 
     content: "";
     display: inline-block;
-    margin-left: 1rem;
+    margin: 0 1rem;
     width: $dot-size;
     height: $dot-size;
     border-radius: 50%;
@@ -194,16 +194,15 @@ div {
 
     /* label icon */
     i {
+      height: 1rem;
+      width: 1rem;
       margin-right: 0.4rem;
-      content: map-get($icon-svg, --code-icon-svg);
-      max-width: 1rem;
-      max-height: 1rem;
+      @extend i, .code;
+      background-color: var(--code-header-icon-color);
     }
 
     @at-root [file] #{&} > i {
-      content: map-get($icon-svg, --file-code-icon-svg);
-      max-width: 1rem;
-      max-height: 1rem;
+      @extend i, .file-code;
     }
 
     /* label text */
@@ -227,10 +226,10 @@ div {
     background-color: inherit;
 
     i {
-      color: var(--code-header-icon-color);
-      content: map-get($icon-svg, --clipboard-icon-svg);
-      max-width: 1rem;
-      max-height: 1rem;
+      height: 1rem;
+      width: 1rem;
+      @extend i, .copy;
+      background-color: var(--code-header-icon-color);
     }
 
     &[timeout] {

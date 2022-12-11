@@ -1,0 +1,35 @@
+.post-tags {
+  display: inline-block;
+  margin: 2rem 0 1rem;
+
+  font-size: 0.85rem;
+  word-spacing: 1px;
+
+  >span {
+    display: inline;
+    width: 100%;
+
+    * {
+      vertical-align: middle;
+    }
+
+    i {
+      height: 1rem;
+      width: 1rem;
+      margin-right: 0.5rem;
+      background-color: var(--post-tag-color);
+    }
+
+    a {
+      padding: 0 0.4rem;
+
+      color: #6c757d;
+      background: var(--post-tag-bg);
+      border-radius: 0.3rem;
+    }
+  }
+}
+
+.post-comment {
+  margin-bottom: 3rem;
+}
