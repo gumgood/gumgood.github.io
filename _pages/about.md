@@ -34,6 +34,7 @@ Samsung Research, Machine Learning Engineer (2022.01 - )
 - 2022 인하대학교 프로그래밍 경진대회 IUPC, 검수 (22.05.22)
 - 2022 ICPC Sinchon Summer Algorithm Camp Contest, 출제 및 검수 (22.08.21)
 - 2022 신촌지역 대학생 프로그래밍 대회 동아리 연합 여름 대회 SUAPC 2022 Summer, 검수 (22.09.04)
+- 2022 Sogang Programming Contest, 검수 (22.11.26)
 
 #### 대회 참가
 - 2020 신촌지역 대학생 프로그래밍 대회 동아리 연합 여름 대회 SUAPC 2020 Summer, 2nd place (20.08.15)
