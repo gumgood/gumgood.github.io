@@ -47,6 +47,7 @@ defaults:
       type          : pages
     values:
       layout        : default
+      sitemap       : false
   - scope:
       type          : posts
     values:
@@ -56,11 +57,13 @@ defaults:
     values:
       permalink     : /categories/:path
       layout        : post-list
+      sitemap       : false
   - scope:
       type          : tags
     values:
       permalink     : /tags/:path
       layout        : post-list
+      sitemap       : false
 
 # ------------------------------ Paginate ------------------------------
       
