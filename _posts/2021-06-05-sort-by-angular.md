@@ -2,7 +2,6 @@
 title: "각도 정렬 알고리즘(Sort by Angular)"
 categories: [problem_solving, algorithm]
 tags: [geometry]
-redirect_from: /blog/sort-by-angular
 ---
 
 2차원 좌표평면 상의 점들을 기준점에 대해 반시계 방향 순서로 정렬하는 방법에 대해 알아보겠습니다.

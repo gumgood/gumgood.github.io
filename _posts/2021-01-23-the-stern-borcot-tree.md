@@ -2,7 +2,6 @@
 title: "스턴 브로콧 트리(Stern Brocot tree)"
 categories: [problem_solving, algorithm]
 tags: [data_structure, stern_brocot_tree]
-redirect_from: /blog/the-stern-borcot-tree
 ---
 
 먼저, 모든 양의 분수를 나열하는 방법에 대해 알아봅시다. 다음 두 분수가 있습니다.

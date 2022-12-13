@@ -2,7 +2,6 @@
 title: "Range Queries와 Modifications over Array의 Non-recursive 구현"
 categories: [problem_solving, algorithm]
 tags: [data_structure, segtree]
-redirect_from: /blog/range-queries-and-modifications-non-recursive-implements
 ---
 
 양의 정수 $N$이 2의 지수라고 하자. 길이가 $N$인 배열 $a$의 각 원소를 $a_i$라고 하자$(i \in [0, N-1])$. 어떤 원소 $a_i$를 수정하는 규칙이 있을 때, 이것을 $a_x$와 $a_y$ 사이 모든 원소들에 적용시킨다고 생각하자. 이것을 **Range modification**이라고 부를 것이다. 
