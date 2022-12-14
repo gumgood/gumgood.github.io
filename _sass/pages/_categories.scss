@@ -1,17 +1,24 @@
 .categories {
-    ul {
+    >ul {
+        width: 100%;
+        padding: 0;
+        overflow: hidden;
+        list-style-type: none;
+
         background-color: var(--categories-bg);
         background-clip: border-box;
         border: 1px solid var(--categories-border-color);
         border-radius: 0.25rem;
         box-shadow: 0 0 3px 0 var(--categories-shadow);
 
-        width: 100%;
-        padding: 0;
-        list-style-type: none;
+        >li {}
 
         li {
+            display: block;
+            height: 3.375rem;
+            margin-bottom: -1px;
             padding: 0.75rem 1rem;
+
             color: var(--categories-list-meta-color);
 
             &:not(:first-child) {
@@ -21,6 +28,12 @@
             &.subcategory {
                 background-color: var(--categories-sub-bg);
                 padding-left: 3rem;
+                transition: height 500ms ease, padding 500ms ease;
+            }
+
+            &.hidden {
+                height: 0;
+                padding: 0 1.25rem;
             }
 
             * {
@@ -37,8 +50,13 @@
                 width: 1.125rem;
                 background-color: var(--categories-list-meta-color);
 
-                &.triangle-down {
-                    background-color: black;
+                cursor: pointer;
+
+
+                transition: transform 300ms ease;
+
+                &.rotate {
+                    transform: rotate(-90deg);
                 }
             }
 
