@@ -8,6 +8,14 @@
         justify-content: center;
     }
 
+    div {
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.08);
+        }
+    }
+
     a {
         margin-right: 0.8rem;
         padding: 6px 8px 7px;
@@ -18,7 +26,7 @@
 
         line-height: 3rem;
         font-size: 1.125rem;
-            
+
         @media (max-width: $break-small) {
             padding: 6px 7px 6px;
             font-size: 1rem;
@@ -29,6 +37,7 @@
             color: var(--tags-meta-color);
             font-size: 0.75rem;
         }
+
 
         &:hover {
             text-decoration: none;
