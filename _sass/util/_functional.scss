@@ -42,3 +42,11 @@ $break-small: 670px;
     text-underline-offset: 3px;
   }
 }
+
+@mixin hover-scale($scale) {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale($scale);
+  }
+}

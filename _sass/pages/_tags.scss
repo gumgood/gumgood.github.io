@@ -9,38 +9,33 @@
     }
 
     div {
-        transition: transform 0.3s ease;
+        @include hover-scale(1.1);
 
-        &:hover {
-            transform: scale(1.08);
-        }
-    }
+        a {
+            margin-right: 0.8rem;
+            padding: 6px 8px 7px;
 
-    a {
-        margin-right: 0.8rem;
-        padding: 6px 8px 7px;
+            border: 1px solid var(--tags-border);
+            border-radius: 0.7em;
+            box-shadow: 0 0 3px 0 var(--tags-shadow);
 
-        border: 1px solid var(--tags-border);
-        border-radius: 0.7em;
-        box-shadow: 0 0 3px 0 var(--tags-shadow);
+            line-height: 3rem;
+            font-size: 1.125rem;
 
-        line-height: 3rem;
-        font-size: 1.125rem;
+            @media (max-width: $break-small) {
+                padding: 6px 7px 6px;
+                font-size: 1rem;
+            }
 
-        @media (max-width: $break-small) {
-            padding: 6px 7px 6px;
-            font-size: 1rem;
-        }
+            span {
+                margin-left: 0.6rem;
+                color: var(--tags-meta-color);
+                font-size: 0.75rem;
+            }
 
-        span {
-            margin-left: 0.6rem;
-            color: var(--tags-meta-color);
-            font-size: 0.75rem;
-        }
-
-
-        &:hover {
-            text-decoration: none;
+            &:hover {
+                text-decoration: none;
+            }
         }
     }
 }

@@ -33,14 +33,16 @@ footer {
             line-height: 1.125rem;
 
             &.link {
-                overflow: hidden;
-
                 a,
                 i {
                     display: inline-block;
                     height: 1.125rem;
                     width: 1.125rem;
                     margin-right: 1.5rem;
+                }
+
+                a {
+                    @include hover-scale(1.25);
                 }
 
                 i {
