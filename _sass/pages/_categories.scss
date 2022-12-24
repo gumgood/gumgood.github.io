@@ -11,8 +11,6 @@
         border-radius: 0.25rem;
         box-shadow: 0 0 3px 0 var(--categories-shadow);
 
-        >li {}
-
         li {
             display: block;
             height: 3.375rem;
@@ -69,6 +67,10 @@
 
                 &.subcategory {
                     padding-left: 2.75rem;
+                }
+
+                &.hidden {
+                    padding-left: 1rem;
                 }
 
                 a {
