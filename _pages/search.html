@@ -20,7 +20,9 @@ permalink: /search
             '<div class="post-summaries__item"><h2><a href="{{ site.url }}{url}" class="ellipsis-two hover-underline">{title}</a></h2><p class="post-content ellipsis-two">{content}</p><div class="post-metadata"><span class="ellipsis"><i class="calendar"></i><span>{date}</span><i class="file-directory"></i><span>{categories}</span><i class="tag"></i><span class="tag">{tags}</span></span></div></div>',
         noResultsText: '<div class="post-summaries__msg">No results found</div>'
     });
-    window.onload = function () {
-        window.simpleJekyllSearch.search(document.getElementById('search-input').value);
-    };
+    window.addEventListener('load', function () {
+        const input_box = document.getElementById('search-input')
+        window.simpleJekyllSearch.search(input_box.value);
+        input_box.focus();
+    });
 </script>
