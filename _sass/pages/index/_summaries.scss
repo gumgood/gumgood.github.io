@@ -43,10 +43,6 @@
                     text-decoration: underline;
                 }
 
-                .dash {
-                    margin: 0 0.125rem;
-                }
-
                 .tag {
                     @media (max-width: $break-small) {
                         display: none;

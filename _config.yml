@@ -23,7 +23,7 @@ collections:
     output          : true
 
 # Handling Reading
-include             : ["_page"]
+include             : ["_data", "_page"]
 exclude             : ["Gemfile", "Gemfile.lock", "README.md", "LICENSE"]
 
 # Plugins

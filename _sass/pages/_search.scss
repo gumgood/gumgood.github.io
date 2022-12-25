@@ -1,0 +1,44 @@
+div.search {
+    text-align: center;
+    margin-top: 0.5rem;
+
+    #search-input-wrapper {
+        padding: 0;// 2rem;
+
+        input {
+            width: 100%;
+            padding: 0.4rem 1rem;
+
+            border: 2px solid #6c757d;
+            border-radius: 0.5rem;
+
+            font-size: 1rem;
+
+            &:focus {
+                outline: none;
+            }
+
+            @media (max-width: $break-small) {
+                width: 100%;
+            }
+        }
+    }
+
+    .post-summaries {
+        margin: 2rem 0 3rem;
+        padding: 0;// 2rem;
+
+        .post-summaries__item {
+            text-align: left;
+        }
+
+        .post-summaries__msg {
+            padding: 4rem 0 1rem;
+            font-size: 1.125rem;
+
+            @media (max-width: $break-small) {
+                font-size: 1rem;
+            }
+        }
+    }
+}

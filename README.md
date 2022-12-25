@@ -36,6 +36,6 @@ Deep Learning 관련해서 학습한 내용을 정리합니다.
   - [x] Add to post, post list
 - [x] Pagination
 - [X] Comment
-- [ ] Copy clipboard button
+- [X] Copy clipboard button
 - [X] Navigation & Footer
-- [ ] Search
+- [X] Search

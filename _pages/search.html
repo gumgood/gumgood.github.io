@@ -1,0 +1,26 @@
+---
+title: Search
+permalink: /search
+---
+
+<div class="search">
+    <div id="search-input-wrapper">
+        <input id="search-input" type="search" tabindex="1" spellcheck="false" placeholder="Search...">
+    </div>
+    <div id="search-results" class="post-summaries"></div>
+</div>
+
+<script src="assets/js/simple-jekyll-search.js"></script>
+<script>
+    window.simpleJekyllSearch = new SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '/search.json',
+        searchResultTemplate:
+            '<div class="post-summaries__item"><h2><a href="{{ site.url }}{url}" class="ellipsis-two hover-underline">{title}</a></h2><p class="post-content ellipsis-two">{content}</p><div class="post-metadata"><span class="ellipsis"><i class="calendar"></i><span>{date}</span><i class="file-directory"></i><span>{categories}</span><i class="tag"></i><span class="tag">{tags}</span></span></div></div>',
+        noResultsText: '<div class="post-summaries__msg">No results found</div>'
+    });
+    window.onload = function () {
+        window.simpleJekyllSearch.search(document.getElementById('search-input').value);
+    };
+</script>
