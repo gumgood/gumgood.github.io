@@ -29,7 +29,7 @@
                 transition: height 500ms ease, padding 500ms ease;
             }
 
-            &.hidden {
+            &[hidden] {
                 height: 0;
                 padding: 0 1.25rem;
             }
@@ -48,12 +48,9 @@
                 width: 1.125rem;
                 background-color: var(--categories-list-meta-color);
 
-                cursor: pointer;
-
-
                 transition: transform 300ms ease;
 
-                &.rotate {
+                &[rotate] {
                     transform: rotate(-90deg);
                 }
             }
@@ -69,7 +66,7 @@
                     padding-left: 2.75rem;
                 }
 
-                &.hidden {
+                &[hidden] {
                     padding-left: 1rem;
                 }
 
