@@ -1,16 +1,112 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-{% include head.html %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- jekyll variable -->
+    {% assign title = page.title | default: site.title %}
+    {% if page.collection == 'categories' %}
+    {% capture title %}Categories: {% include utils/capitalize.html string=page.title %}{% endcapture %}
+    {% elsif page.collection == 'tags' %}
+    {% assign title = title | downcase | prepend: 'Tags: ' %}
+    {% endif %}
+    {% unless title == site.title %}
+    {% assign title = title | append: ' - ' | append: site.title %}
+    {% endunless %}
+
+    {% assign description = site.description %}
+    {% if page.collection == 'posts' %}
+    {% assign description = page.content | truncatewords: 30 | strip_html %}
+    {% endif %}
+
+    {% assign image ='/assets/image/header.jpg' | absolute_url %}
+
+    <!-- HTML Meta Tags -->
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}" />
+
+    <!-- Naver Search Engine Tag -->
+    <meta name="naver-site-verification" content="c3b1241687be8818c49d73438e224864dadc03e7" />
+
+    <!-- Google / Search Engine Tags -->
+    <meta name="google-site-verification" content="keI0ZBFx59S-ScMR-4FTc81bsVJ6UTXq8JfKhsYZqsM" />
+    <meta itemprop="name" content="{{ title }}">
+    <meta itemprop="description" content="{{ description }}">
+    <meta itemprop="image" content="{{ image }}">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta itemprop="image" content="{{ image }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' }}">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ '/favicon.ico' }}">
+
+    <!-- Mathjax Support -->
+    {% include scripts/mathjax.html %}
+
+</head>
 
 <body>
-    {% include navigation.html %}
-    
+    <nav>
+        <ul>
+            {% assign url = page.url | split: '/' %}
+            <li>
+                <a href="/" {% if paginator %}class="active" {% endif %}>Home</a>
+            </li>
+            <li>
+                <a href="/categories" {% if url[1]=='categories' %}class="active" {% endif %}>Categories</a>
+            </li>
+            <li>
+                <a href="/tags" {% if url[1]=='tags' %}class="active" {% endif %}>Tags</a>
+            </li>
+            <li>
+                <a href="/about" {% if url[1]=='about' %}class="active" {% endif %}>About</a>
+            </li>
+            <li>
+                <a href="/search" class="hover-opacity"><i class="search"></i></a>
+            </li>
+        </ul>
+    </nav>
+
     <main>
         {{ content }}
     </main>
-    
-    {% include footer.html %}
+
+    <footer>
+        <div>
+            <span class="link">
+                <a href="http://github.com/{{ site.author.github }}" target="_blank" class="hover-opacity">
+                    <i class="mark-github"></i>
+                </a>
+                <a href="mailto:{{ site.author.email }}" class="hover-opacity">
+                    <i class="mail"></i>
+                </a>
+                <a href="{{ 'feed.xml' | absolute_url }}" target="_blank" class="hover-opacity">
+                    <i class="rss"></i>
+                </a>
+            </span>
+            <span class="copyright">
+                &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time>. {{ site.author.name }}
+            </span>
+        </div>
+    </footer>
+
 </body>
 
 </html>
