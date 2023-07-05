@@ -6,13 +6,15 @@ layout: default
     {%- for post in paginator.posts -%}
         <div class="post-summaries__item">
             
-            <h2>
-                <a href="{{ post.url }}" class="ellipsis-two hover-underline">{{ post.title }}</a>
-            </h2>
+            <a href="{{ post.url }}" >
+                <h1 class="ellipsis-two">
+                    {{ post.title }}
+                </h1>
 
-            <p class="post-content ellipsis-two">
-                {{ post.content | markdownify | strip_html | truncate: 200 }}
-            </p>
+                <p class="post-content ellipsis-two">
+                    {{ post.content | markdownify | strip_html | truncate: 200 }}
+                </p>
+            </a>
 
             <div class="post-metadata">
                 <span class="ellipsis">
@@ -23,16 +25,6 @@ layout: default
                         {%- if post.categories.size > 1 -%}
                             <span>{{" / "}}</span><a href="/categories/{{ post.categories.last }}">{% include utils/capitalize.html string=post.categories.last %}</a>
                         {%- endif -%}
-                    {%- endif -%}
-                        
-                    {%- if post.tags.size > 0 -%}
-                        <i class="tag"></i>
-                        {%- for tag in post.tags -%}
-                            <a href="/tags/{{ tag }}" class="tag">{{ tag | downcase }}</a>
-                            {%- unless forloop.last -%}
-                                <span class="tag">, </span>
-                            {%- endunless -%}
-                        {%- endfor -%}
                     {%- endif -%}
                 </span>
             </div>

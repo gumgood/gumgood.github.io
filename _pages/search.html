@@ -17,7 +17,7 @@ permalink: /search
         resultsContainer: document.getElementById('search-results'),
         json: '/search.json',
         searchResultTemplate:
-            '<div class="post-summaries__item"><h2><a href="{{ site.url }}{url}" class="ellipsis-two hover-underline">{title}</a></h2><p class="post-content ellipsis-two">{content}</p><div class="post-metadata"><span class="ellipsis"><i class="calendar"></i><span>{date}</span><i class="file-directory"></i><span>{categories}</span><i class="tag"></i><span class="tag">{tags}</span></span></div></div>',
+            '<div class="post-summaries__item"><a href="{{ site.url }}{url}" class="ellipsis-two"><h1>{title}</h1><p class="post-content ellipsis-two">{content}</p></a><div class="post-metadata"><span class="ellipsis"><i class="calendar"></i><span>{date}</span><i class="file-directory"></i><span>{categories}</span><i class="tag"></i><span class="tag">{tags}</span></span></div></div>',
         noResultsText: '<div class="post-summaries__msg">No results found</div>'
     });
     window.addEventListener('load', function () {
