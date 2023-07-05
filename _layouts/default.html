@@ -102,12 +102,6 @@
                     <span>ABOUT</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="/search" class="nav-link{% if url[1]=='search' %} active{% endif %}">
-                    <i class="search"></i>
-                    <span>SEARCH</span>
-                </a>
-            </li>
         </ul>
 
         <div class="sidebar-bottom">
@@ -127,6 +121,10 @@
     <div id="main-wrapper">
         <div id="topbar-wrapper">
             <div id="topbar">
+                <a href="/search" class="nav-link{% if url[1]=='search' %} active{% endif %}">
+                    <i class="search"></i>
+                    <span>Search...</span>
+                </a>
             </div>
         </div>
 

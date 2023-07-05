@@ -4,12 +4,15 @@ permalink: /tags
 ---
 
 <div class="tags">
-  {% for tag in site.tags %}
-    <div>
-        {% assign title = tag.title | downcase %}
-        <a href="{{ tag.url }}" class="hover-underline">
-          {{ title }}<span>{{ site.posts | where_exp: 'post', 'post.tags contains title' | size }}</span>
-        </a>
-    </div>
-  {% endfor %}
+  <h1>Tags</h1>
+  <div class="tags-container">
+    {% for tag in site.tags %}
+      <div>
+          {% assign title = tag.title | downcase %}
+          <a href="{{ tag.url }}" class="hover-underline">
+            {{ title }}<span>{{ site.posts | where_exp: 'post', 'post.tags contains title' | size }}</span>
+          </a>
+      </div>
+    {% endfor %}
+  </div>
 </div>

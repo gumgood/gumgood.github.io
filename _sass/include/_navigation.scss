@@ -13,6 +13,11 @@ nav {
 
   background-color: var(--sidebar-bg);
 
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
   .profile-wrapper {
     width: 100%;
 
@@ -62,11 +67,6 @@ nav {
 
     font-size: 95%;
     word-spacing: 1px;
-
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
   }
 
 
