@@ -5,6 +5,7 @@
 @mixin light-scheme {
     --main-bg: white;
     --main-border-color: #f3f3f3;
+    --topbar-bg: rgb(255, 255, 255, 0.7);
     --sidebar-bg: #f6f8fa;
     --sidebar-muted-color: #a2a19f;
     --sidebar-active-color: #1d1d1d;
