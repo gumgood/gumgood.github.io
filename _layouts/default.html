@@ -66,7 +66,7 @@
     <nav>
         <div class="profile-wrapper">
             <a href="/" id="avatar">
-                <img src="https://avatars.githubusercontent.com/u/17876281", height="112", width="112">
+                <img src="https://avatars.githubusercontent.com/u/17876281" , height="112" , width="112">
             </a>
             <div class="site-title">
                 <a href="/">{{ site.title }}</a>
@@ -111,7 +111,8 @@
         </ul>
 
         <div class="sidebar-bottom">
-            <a href="http://github.com/{{ site.author.github }}" aria-label="github" target="_blank" rel="noopener noreferrer">
+            <a href="http://github.com/{{ site.author.github }}" aria-label="github" target="_blank"
+                rel="noopener noreferrer">
                 <i class="mark-github"></i>
             </a>
             <a href="mailto:{{ site.author.email }}" aria-label="email">
@@ -123,28 +124,34 @@
         </div>
     </nav>
 
-    <main>
-        {{ content }}
-    </main>
-
-    <footer>
-        <div>
-            <span class="link">
-                <a href="http://github.com/{{ site.author.github }}" target="_blank" class="hover-opacity">
-                    <i class="mark-github"></i>
-                </a>
-                <a href="mailto:{{ site.author.email }}" class="hover-opacity">
-                    <i class="mail"></i>
-                </a>
-                <a href="{{ 'feed.xml' | absolute_url }}" target="_blank" class="hover-opacity">
-                    <i class="rss"></i>
-                </a>
-            </span>
-            <span class="copyright">
-                &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time>. {{ site.author.name }}
-            </span>
+    <div id="main-wrapper">
+        <div id="topbar">
+            header here
         </div>
-    </footer>
+
+        <main>
+            {{ content }}
+        </main>
+
+        <footer>
+            <div>
+                <span class="link">
+                    <a href="http://github.com/{{ site.author.github }}" target="_blank" class="hover-opacity">
+                        <i class="mark-github"></i>
+                    </a>
+                    <a href="mailto:{{ site.author.email }}" class="hover-opacity">
+                        <i class="mail"></i>
+                    </a>
+                    <a href="{{ 'feed.xml' | absolute_url }}" target="_blank" class="hover-opacity">
+                        <i class="rss"></i>
+                    </a>
+                </span>
+                <span class="copyright">
+                    &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time>. {{ site.author.name }}
+                </span>
+            </div>
+        </footer>
+    </div>
 
 </body>
 

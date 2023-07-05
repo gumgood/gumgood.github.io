@@ -3,7 +3,7 @@
  */
 
 @mixin light-scheme {
-
+    --main-bg: white;
     --sidebar-bg: #f6f8fa;
     --sidebar-muted-color: #a2a19f;
     --sidebar-active-color: #1d1d1d;
@@ -11,6 +11,9 @@
     --sidebar-btn-bg: white;
     --sidebar-hover-bg: rgb(223, 233, 241, 0.64);
     --avatar-border-color: white;
+
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
 
 //old
 
