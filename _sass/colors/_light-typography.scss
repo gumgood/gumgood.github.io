@@ -4,6 +4,7 @@
 
 @mixin light-scheme {
     --main-bg: white;
+    --main-border-color: #f3f3f3;
     --sidebar-bg: #f6f8fa;
     --sidebar-muted-color: #a2a19f;
     --sidebar-active-color: #1d1d1d;
@@ -11,6 +12,8 @@
     --sidebar-btn-bg: white;
     --sidebar-hover-bg: rgb(223, 233, 241, 0.64);
     --avatar-border-color: white;
+    --text-muted-color: #8e8e8e;
+    --text-color: #34343c;
 
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
@@ -18,7 +21,6 @@
 //old
 
     /* Legacy */
-    --text-color: #34343c;
     --heading-color: black;
     --blockquote-border-color: #eee;
     --blockquote-text-color: #9a9a9a;

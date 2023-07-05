@@ -1,18 +1,21 @@
 #main-wrapper {
     position: relative;
-    min-height: calc(100vh - 5rem);
+    min-height: 100vh;
 
     margin-left: 260px;
 
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 
     background-color: var(--main-bg);
 }
 
 main {
-    width: 75%;
-    max-width: 850px;
+    @extend %max_width;
+    
+    flex : 1 0 auto;
+
     padding: 0 calc(var(--bs-gutter-x) * .5);
 }
