@@ -30,8 +30,8 @@ layout: default
         </span>
     </div>
 
-    <div class="post-content">
-        {% include utils/content-refactor.html content=content %}
+    <div class="post-content-remove markdown-body">
+        {{ content }}
     </div>
     
     <div class="post-tags">

@@ -120,7 +120,7 @@
 
     <div id="main-wrapper">
         <div id="topbar-wrapper">
-            <div id="topbar">
+            <div id="topbar" {% if page.url=='/search' %}style="visibility:hidden;"{% endif %}>
                 <a href="/search" class="nav-link{% if url[1]=='search' %} active{% endif %}">
                     <i class="search"></i>
                     <span>Search...</span>
@@ -135,7 +135,8 @@
         <footer>
             <div>
                 <p>
-                    &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time> <span>{{ site.author.name }}</span>.
+                    &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time> <span>{{
+                        site.author.name }}</span>.
                 </p>
             </div>
         </footer>

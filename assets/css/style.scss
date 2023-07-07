@@ -3,6 +3,7 @@
 ---
 
 @import 'normalize';
+@import 'github-markdown';
 
 @import 'icon/octicons';
 @import 'util/functional';
@@ -24,6 +25,7 @@
 @import 'pages/categories';
 @import 'pages/index/summaries';
 @import 'pages/index/paginate';
+@import 'pages/about';
 @import 'pages/page404';
 @import 'pages/search';
 @import 'pages/tags';

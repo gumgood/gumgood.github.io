@@ -17,7 +17,7 @@ layout: default
 
   <h1 class="title">
     <a href="/{{ page.collection }}" class="hover-opacity"><i class="{% if page.collection == 'categories' %}file-directory{% else %}tag{% endif %}"></i></a>
-    <a href="/{{ page.collection }}/{{ title.first }}" class="hover-opacity">{% if page.collection == 'categories' %}{% include utils/capitalize.html string=title.last %}{% else %}{{ title.last }}{% endif %}</a>
+    <span>{% if page.collection == 'categories' %}{% include utils/capitalize.html string=title.last %}{% else %}{{ title.last }}{% endif %}</span>
     <span>{{ posts.size }} {% if posts.size == 1 %}post{% else %}posts{% endif %}</span>
   </h1>
   

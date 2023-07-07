@@ -1,6 +1,6 @@
 .post-tags {
   display: inline-block;
-  margin: 2rem 0 1rem;
+  margin: 5rem 0 2rem;
 
   font-size: 0.85rem;
   word-spacing: 1px;
@@ -21,7 +21,7 @@
     }
 
     a {
-      padding: 0 0.4rem;
+      padding: 0.1rem 0.4rem;
 
       color: #6c757d;
       background: var(--post-tag-bg);
@@ -32,4 +32,8 @@
 
 .post-comment {
   margin-bottom: 3rem;
+
+  .utterances {
+    max-width: 100%;
+  }
 }

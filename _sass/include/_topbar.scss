@@ -13,9 +13,11 @@
     background-color: var(--topbar-bg);
 
     a {
-        display: inline;
-
         padding: 0.25rem 0.75rem;
+        
+        overflow: hidden;
+        white-space: nowrap;
+
         border-radius: 0.75rem;
         border: 1px solid var(--main-border-color);
 
@@ -28,7 +30,7 @@
             width: 1rem;
 
             margin-right: 0.5rem;
-            
+
             vertical-align: middle;
 
             background-color: var(--search-icon-color);
@@ -41,5 +43,6 @@
 
             color: gray;
         }
+
     }
 }
