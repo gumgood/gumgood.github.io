@@ -8,13 +8,42 @@
 
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
 
     background-color: var(--topbar-bg);
 
-    a {
+    i {
+        height: 1.25rem;
+        width: 1.25rem;
+        background-color: #999;
+    }
+
+    i.three-bars {
+        visibility: hidden;
+
+        @media screen and (max-width: $break-small) {
+            visibility: visible;
+        }
+    }
+
+    a.small_view {
+        display: none;
+
+        @media screen and (max-width: $break-small) {
+            display: block;
+        }
+    }
+
+    a.large_view {
+        display: flex;
+
+        @media screen and (max-width: $break-small) {
+            display: none;
+        }
+
         padding: 0.25rem 0.75rem;
-        
+        align-items: center;
+
         overflow: hidden;
         white-space: nowrap;
 
@@ -26,12 +55,10 @@
         }
 
         i {
-            height: 1rem;
-            width: 1rem;
-
             margin-right: 0.5rem;
 
-            vertical-align: middle;
+            height: 1rem;
+            width: 1rem;
 
             background-color: var(--search-icon-color);
         }

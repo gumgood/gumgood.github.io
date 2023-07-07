@@ -1,8 +1,10 @@
+$min-width: 200px;
 $max_width: 980px;
 $break-small: 767px;
 
 %max_width {
   margin: 0 auto;
+  min-width: $min_width;
   max-width: $max_width;
   width: 80%;
 

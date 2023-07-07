@@ -1,6 +1,14 @@
 nav {
 
   position: fixed;
+  left: 0px;
+  z-index: 10;
+  transition: left 0.25s ease-in-out;
+
+  @media screen and (max-width: $break-small) {
+    left: -260px;
+  }
+  
   height: 100%;
   width: 260px;
 
@@ -17,6 +25,22 @@ nav {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+
+  #nav-topbar {
+    display: none;
+
+    @media screen and (max-width: $break-small) {
+      display: flex;
+      align-items: center;
+    }
+
+    i {
+      height: 1.5rem;
+      width: 1.5rem;
+      margin: 2rem 1rem 0 2rem;
+      background-color: #999;
+    }
+  }
 
   .profile-wrapper {
     width: 100%;

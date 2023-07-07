@@ -59,11 +59,17 @@
 
     <!-- Mathjax Support -->
     {% include scripts/mathjax.html %}
+    
+    <script defer src="../assets/js/nav.js"></script>
 
 </head>
 
 <body>
     <nav>
+        <div id="nav-topbar">
+            <i class="x"></i>
+        </div>
+
         <div class="profile-wrapper">
             <a href="/" id="avatar">
                 <img src="https://avatars.githubusercontent.com/u/17876281" , height="112" , width="112">
@@ -120,11 +126,13 @@
 
     <div id="main-wrapper">
         <div id="topbar-wrapper">
-            <div id="topbar" {% if page.url=='/search' %}style="visibility:hidden;"{% endif %}>
-                <a href="/search" class="nav-link{% if url[1]=='search' %} active{% endif %}">
+            <div id="topbar">
+                <i class="three-bars"></i>
+                <a href="/search" class="large_view" {% if page.url == '/search' %}style="visibility: hidden;"{% endif %}>
                     <i class="search"></i>
                     <span>Search...</span>
                 </a>
+                <a href="/search" class="small_view"><i class="search"></i></a>
             </div>
         </div>
 
