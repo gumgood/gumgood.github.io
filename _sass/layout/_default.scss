@@ -31,6 +31,12 @@ body {
     }
 }
 
+
+main {
+    @extend %max_width;
+    padding: 1rem 0 3rem;
+}
+
 a {
     text-decoration: none;
 }
