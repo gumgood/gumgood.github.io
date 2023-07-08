@@ -32,12 +32,13 @@ nav {
     @media screen and (max-width: $break-small) {
       display: flex;
       align-items: center;
+
+      margin: 1.4rem 1rem 0 0;
     }
 
     i {
       height: 1.5rem;
       width: 1.5rem;
-      margin: 2rem 1rem 0 2rem;
       background-color: #999;
     }
   }
@@ -64,6 +65,11 @@ nav {
       img {
         max-width: 100%;
         height: auto;
+        transition: transform .5s;
+
+        &:hover {
+          transform: scale(1.2);
+        }
       }
     }
   }
@@ -81,6 +87,10 @@ nav {
 
     a {
       color: rgba(117, 117, 117, .9);
+
+      &:hover {
+        color: var(--sidebar-active-color);
+      }
     }
   }
 

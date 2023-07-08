@@ -66,9 +66,9 @@
 
 <body>
     <nav>
-        <div id="nav-topbar">
+        <a id="nav-topbar" class="hover_button">
             <i class="x"></i>
-        </div>
+        </a>
 
         <div class="profile-wrapper">
             <a href="/" id="avatar">
@@ -127,12 +127,12 @@
     <div id="main-wrapper">
         <div id="topbar-wrapper">
             <div id="topbar">
-                <i class="three-bars"></i>
+                <a class="hover_button"><i class="three-bars"></i></a>
                 <a href="/search" class="large_view" {% if page.url == '/search' %}style="visibility: hidden;"{% endif %}>
                     <i class="search"></i>
                     <span>Search...</span>
                 </a>
-                <a href="/search" class="small_view"><i class="search"></i></a>
+                <a href="/search" class="small_view hover_button"><i class="search"></i></a>
             </div>
         </div>
 

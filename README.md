@@ -19,6 +19,28 @@ Deep Learning 관련해서 학습한 내용을 정리합니다.
 ```
 이때 category의 순서는 `_pages/categories.html`의 front matter에 있는 `categories` 변수로 정할 수 있습니다.
 
+## File structure
+```
+├── _includes/     (layout)
+├── _layouts/
+│
+├── _categories/   (pages)
+├── _tags/
+├── _pages/
+├── index.html
+│
+├── _posts/        (posts)
+│
+├── _data/         (asset files)
+├── _sass/
+├── assets/
+├── favicon.ico
+│
+├── _config.yml    (configuration files)
+├── Gemfile
+└── README.md
+```
+
 ## Todo list
 - [ ] Post
   - [x] Post list

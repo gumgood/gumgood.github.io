@@ -52,6 +52,9 @@
             i {
                 height: 1.125rem;
                 width: 1.125rem;
+
+                cursor: pointer;
+
                 background-color: var(--categories-list-meta-color);
 
                 transition: transform 300ms ease;

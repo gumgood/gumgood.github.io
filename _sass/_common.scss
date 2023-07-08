@@ -53,3 +53,18 @@ ul {
 dt {
   font-weight: 700;
 }
+
+// temp
+
+
+a.hover_button {
+  line-height: 0.7;
+  border-radius: 0.75rem;
+  padding: 0.6rem;
+
+  cursor: pointer;
+
+  &:hover {
+      background-color: var(--sidebar-hover-bg);
+  }
+}
