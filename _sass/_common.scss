@@ -65,15 +65,6 @@ body {
     margin: 0;
 }
 
-@media all and (max-width: 576px) {
-
-    html,
-    body {
-        overflow-x: hidden;
-    }
-}
-
-
 main {
     @extend %max_width;
     padding: 1rem 0 3rem;
