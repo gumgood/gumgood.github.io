@@ -1,3 +1,10 @@
+.markdown-body {
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
 .post>.post-metadata {
     margin-bottom: 3rem;
     padding: 0.5rem 0;
@@ -54,4 +61,41 @@
             }
         }
     }
+}
+
+.post-tags {
+    display: inline-block;
+    margin: 5rem 0 2rem;
+    width: 100%;
+
+    font-size: 0.85rem;
+    word-spacing: 1px;
+
+    >span {
+        display: inline;
+        width: 100%;
+
+        * {
+            vertical-align: middle;
+        }
+
+        i {
+            height: 1rem;
+            width: 1rem;
+            margin-right: 0.5rem;
+            background-color: var(--post-tag-color);
+        }
+
+        a {
+            padding: 0.1rem 0.4rem;
+
+            color: #6c757d;
+            background: var(--post-tag-bg);
+            border-radius: 0.3rem;
+        }
+    }
+}
+
+.utterances {
+    max-width: 100%;
 }

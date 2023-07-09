@@ -9,7 +9,7 @@ layout: default
                 <h1 class="ellipsis-two">
                     {{ post.title }}
                 </h1>
-                <p class="post-content ellipsis-two">
+                <p class="ellipsis-two">
                     {{ post.content | markdownify | strip_html | truncate: 200 }}
                 </p>
             </a>
