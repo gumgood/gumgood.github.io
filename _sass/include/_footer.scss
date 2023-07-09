@@ -4,21 +4,17 @@ footer {
     background-color: var(--main-bg);
 
     div {
-
-        @extend %max_width;
-        height: 5rem;
-
-        line-height: 1.2rem;
-
-        padding-bottom: 1rem;
-
         display: flex;
         align-items: center;
         justify-content: center;
 
-        border-top: 1px solid var(--main-border-color);
+        height: 5rem;
+        @extend %max_width;
+        padding-bottom: 1rem;
 
+        border-top: 1px solid var(--main-border-color);
         color: var(--text-muted-color);
+
         span {
             color: var(--text-color);
         }

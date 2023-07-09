@@ -1,6 +1,5 @@
 .paginate {
     margin: 3rem 0 2rem;
-
     text-align: center;
     font-size: 1rem;
 
@@ -17,12 +16,9 @@
             text-decoration: underline 2px var(--paginate-btn-active-color);
             text-underline-offset: 0.625rem;
         }
-
     }
 
     i {
-        height: 1rem;
-        width: 1rem;
-        background-color: var(--paginate-btn-color);
+        @include icon-size(1rem, var(--paginate-btn-color));
     }
 }

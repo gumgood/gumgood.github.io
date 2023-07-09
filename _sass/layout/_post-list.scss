@@ -3,7 +3,6 @@
     h1.title {
         font-size: 2rem;
         margin: 3rem 0 2rem;
-        text-align-last: right;
 
         &,
         * {
@@ -18,29 +17,21 @@
         }
 
         i {
-            height: 1.75rem;
-            width: 1.75rem;
+            @include icon-size(1.75rem, var(--post-list-meta-color));
             margin-right: 0.5rem;
-            background-color: var(--post-list-meta-color);
             vertical-align: bottom;
 
             @media (max-width: $break-small) {
-                height: 1.5rem;
-                width: 1.5rem;
+                @include icon-size(1.5rem);
             }
         }
 
         span {
-            color: var(--post-list-title-color);
-        }
-
-        span {
             white-space: nowrap;
+            color: var(--post-list-title-color);
 
             &:last-child {
-                padding-top: 0.5rem;
-                padding-left: 0.5rem;
-
+                padding: 0.5rem 0 0 0.5rem;
                 color: var(--post-list-meta-color);
                 font-size: 1rem;
 
@@ -52,9 +43,9 @@
     }
 
     ul {
+        list-style: none;
         margin: 0 0 2rem;
         padding: 0 1rem;
-        list-style: none;
 
         li {
             display: flex;
@@ -62,12 +53,10 @@
             line-height: 1.5rem;
 
             i {
+                @include icon-size(0.65rem, var(--post-list-dot-color));
                 flex: 0 0 0.65rem;
-                height: 0.65rem;
-                width: 0.65rem;
                 margin: 0.425rem 0.5rem 0.425rem 0;
                 line-height: 1.5rem;
-                background-color: var(--post-list-dot-color);
             }
 
             a {

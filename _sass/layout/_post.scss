@@ -20,10 +20,8 @@
         }
 
         i {
-            height: 0.85rem;
-            width: 0.85rem;
+            @include icon-size(0.85rem, #6c757d);
             margin-right: 0.25rem;
-            background-color: #6c757d;
             vertical-align: bottom;
         }
 
@@ -35,7 +33,6 @@
     .post-title {
         margin: 0.5rem 0 0.75rem;
         color: var(--post-title-color);
-
         font-size: 2rem;
         line-height: 1.2;
         word-break: keep-all;
@@ -56,8 +53,7 @@
 
             &:not(:first-child)::before {
                 content: "\2022";
-                padding-left: 0.25rem;
-                padding-right: 0.25rem;
+                padding: 0 0.25rem;
             }
         }
     }
@@ -67,7 +63,6 @@
     display: inline-block;
     margin: 5rem 0 2rem;
     width: 100%;
-
     font-size: 0.85rem;
     word-spacing: 1px;
 
@@ -80,15 +75,12 @@
         }
 
         i {
-            height: 1rem;
-            width: 1rem;
+            @include icon-size(1rem, var(--post-tag-color));
             margin-right: 0.5rem;
-            background-color: var(--post-tag-color);
         }
 
         a {
             padding: 0.1rem 0.4rem;
-
             color: #6c757d;
             background: var(--post-tag-bg);
             border-radius: 0.3rem;

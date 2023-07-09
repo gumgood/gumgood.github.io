@@ -13,10 +13,7 @@
     background-color: var(--topbar-bg);
 
     i {
-        height: 1.25rem;
-        width: 1.25rem;
-        background-color: #999;
-        line-height: 1.0;
+        @include icon-size(1.25rem, #999);
     }
 
     a[href] {
@@ -52,19 +49,13 @@
         }
 
         i {
+            @include icon-size(1rem, var(--search-icon-color));
             margin-right: 0.5rem;
-
-            height: 1rem;
-            width: 1rem;
-
-            background-color: var(--search-icon-color);
         }
 
         span {
-            vertical-align: middle;
-
             margin-right: 5rem;
-
+            vertical-align: middle;
             color: gray;
         }
     }

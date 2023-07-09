@@ -9,14 +9,14 @@
         padding: 1.75rem 1.75rem 1.25rem 1.75rem;
 
         box-shadow: var(--post-summaries-shadow);
-
         border-radius: 0.5rem;
-
-        transition: background-color .35s ease-in-out;
         background-color: var(--post-summaries-bg);
+
         &:hover {
             background-color: var(--post-summaries-hover-bg);
         }
+
+        transition: background-color .35s ease-in-out;
 
         a {
             h1 {
@@ -35,7 +35,6 @@
         .post-metadata {
             display: inline-flex;
             width: 100%;
-
             line-height: 1.75;
 
             >span {
@@ -43,18 +42,15 @@
                 
                 * {
                     vertical-align: middle;
-
                     color: var(--text-muted-color);
                     font-size: 0.85rem;
                     word-spacing: 1px;
                 }
 
                 i {
-                    height: 0.75rem;
-                    width: 0.75rem;
+                    @include icon-size(0.75rem, var(--text-muted-color));
                     margin-left: 0.75rem;
                     margin-right: 0.25rem;
-                    background-color: var(--text-muted-color);
 
                     &:first-child {
                         margin-left: 0;

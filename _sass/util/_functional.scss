@@ -1,6 +1,7 @@
 $min-width: 200px;
 $max_width: 980px;
 $break-small: 850px;
+$nav-width: 260px;
 
 %max_width {
     margin: 0 auto;
@@ -51,6 +52,12 @@ $break-small: 850px;
     &:hover {
         transform: scale($scale);
     }
+}
+
+@mixin icon-size($size, $color: "black") {
+    height: $size;
+    width: $size;
+    background-color: $color;
 }
 
 a.hover_button {
