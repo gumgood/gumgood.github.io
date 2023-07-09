@@ -1,0 +1,29 @@
+<script>
+    if (navigator.clipboard) { // Clipboard API available
+        document.querySelectorAll("button").forEach((button) => {
+            button.addEventListener("click", function () {
+                if (button.dataset.state == "idle") {
+                    button.dataset.state = "fetching";
+                    button.firstChild.className = "kebab-horizontal";
+
+                    var content = button.parentElement.parentElement.querySelector(".rouge-code").innerText
+                    navigator.clipboard.writeText(content).then(
+                        () => { /* clipboard successfully set */
+                            button.dataset.state = "succeed";
+                            button.firstChild.className = "check";
+                        },
+                        () => { /* clipboard write failed */
+                            button.dataset.state = "failed";
+                            button.firstChild.className = "x";
+                        }
+                    );
+
+                    setTimeout(function () {
+                        button.dataset.state = "idle";
+                        button.firstChild.className = "copy";
+                    }, 3000);
+                }
+            });
+        });
+    }
+</script>
