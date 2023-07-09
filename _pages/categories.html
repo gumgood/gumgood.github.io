@@ -12,8 +12,6 @@ categories:
     - setting
 ---
 
-<script defer src="../assets/js/category.js"></script>
-
 <div class="categories">
   <h1>Categories</h1>
   <ul>
@@ -36,3 +34,13 @@ categories:
     {% endfor %}
     </ul>
 </div>
+
+<script defer>
+  document.querySelectorAll("i.triangle-down").forEach((i) => {
+    i.addEventListener("click", function () {
+      i.toggleAttribute('rotate');
+      for (var li = i.parentNode; (li = li.nextElementSibling) && li.classList.contains('subcategory');)
+        li.toggleAttribute('hidden');
+    });
+  });
+</script>
