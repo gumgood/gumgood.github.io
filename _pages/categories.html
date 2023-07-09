@@ -13,34 +13,34 @@ categories:
 ---
 
 <div class="categories">
-  <h1>Categories</h1>
-  <ul>
-    {% for category_group in page.categories %}
-      {% assign category = category_group.first %}
-      {% assign num_post = site.posts | where_exp: 'post', 'post.categories.first == category' | size %}
-      <li class="ellipsis">
-        <i class="triangle-down hover-opacity"></i>
-        <a href="/categories/{{ category }}" class="hover-underline">{% include utils/capitalize.html string=category %}</a>
-        <span>{{ category_group.last.size }} {% if category_group.last.size == 1 %}category{% else %}categories{% endif %}, {{ num_post }} {% if num_post == 1 %}post{% else %}posts{% endif %}</span>
-      </li>
-      {% for subcategory in category_group.last %}
-        {% assign num_post = site.posts | where_exp: 'post', 'post.categories.last == subcategory' | size %}
-        <li class="subcategory ellipsis">
-          <i class="file-directory"></i>
-          <a href="/categories/{{ subcategory }}" class="hover-underline">{% include utils/capitalize.html string=subcategory %}</a>
-          <span>{{ num_post }} {% if num_post == 1 %}post{% else %}posts{% endif %}</span>
-        </li>
-      {% endfor %}
-    {% endfor %}
-    </ul>
+    <h1>Categories</h1>
+    <ul>
+        {% for category_group in page.categories %}
+            {% assign category = category_group.first %}
+            {% assign num_post = site.posts | where_exp: 'post', 'post.categories.first == category' | size %}
+            <li class="ellipsis">
+                <i class="triangle-down hover-opacity"></i>
+                <a href="/categories/{{ category }}" class="hover-underline">{% include utils/capitalize.html string=category %}</a>
+                <span>{{ category_group.last.size }} {% if category_group.last.size == 1 %}category{% else %}categories{% endif %}, {{ num_post }} {% if num_post == 1 %}post{% else %}posts{% endif %}</span>
+            </li>
+            {% for subcategory in category_group.last %}
+                {% assign num_post = site.posts | where_exp: 'post', 'post.categories.last == subcategory' | size %}
+                <li class="subcategory ellipsis">
+                    <i class="file-directory"></i>
+                    <a href="/categories/{{ subcategory }}" class="hover-underline">{% include utils/capitalize.html string=subcategory %}</a>
+                    <span>{{ num_post }} {% if num_post == 1 %}post{% else %}posts{% endif %}</span>
+                </li>
+            {% endfor %}
+        {% endfor %}
+      </ul>
 </div>
 
 <script defer>
-  document.querySelectorAll("i.triangle-down").forEach((i) => {
-    i.addEventListener("click", function () {
-      i.toggleAttribute('rotate');
-      for (var li = i.parentNode; (li = li.nextElementSibling) && li.classList.contains('subcategory');)
-        li.toggleAttribute('hidden');
+    document.querySelectorAll("i.triangle-down").forEach((i) => {
+        i.addEventListener("click", function () {
+            i.toggleAttribute('rotate');
+            for (var li = i.parentNode; (li = li.nextElementSibling) && li.classList.contains('subcategory');)
+                li.toggleAttribute('hidden');
+        });
     });
-  });
 </script>

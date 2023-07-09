@@ -5,31 +5,32 @@ layout: default
 {% assign title = page.title | downcase %}
 
 {% if page.collection == 'categories' %}
-  {% assign posts = site.posts | where_exp: 'post', 'post.categories contains title' %}
-  {% assign title = posts.first.categories.first | append: ' ' | append: title %}
+    {% assign posts = site.posts | where_exp: 'post', 'post.categories contains title' %}
+    {% assign title = posts.first.categories.first | append: ' ' | append: title %}
 {% else %}
-  {% assign posts = site.posts | where_exp: 'post', 'post.tags contains title' %}
+    {% assign posts = site.posts | where_exp: 'post', 'post.tags contains title' %}
 {% endif %}
 
 {% assign title = title | split: ' ' | uniq %}
 
 <div class="post-list">
+    <h1 class="title">
+        <a href="/{{ page.collection }}" class="hover-opacity">
+            <i class="{% if page.collection == 'categories' %}file-directory{% else %}tag{% endif %}"></i>
+        </a>
+        <span>{% if page.collection == 'categories' %}{% include utils/capitalize.html string=title.last %}{% else %}{{
+      title.last }}{% endif %}</span>
+        <span>{{ posts.size }} {% if posts.size == 1 %}post{% else %}posts{% endif %}</span>
+      </h1>
 
-  <h1 class="title">
-    <a href="/{{ page.collection }}" class="hover-opacity"><i class="{% if page.collection == 'categories' %}file-directory{% else %}tag{% endif %}"></i></a>
-    <span>{% if page.collection == 'categories' %}{% include utils/capitalize.html string=title.last %}{% else %}{{ title.last }}{% endif %}</span>
-    <span>{{ posts.size }} {% if posts.size == 1 %}post{% else %}posts{% endif %}</span>
-  </h1>
-  
-  <ul>
-    {% for post in posts %}
-      <li>
-        <i class="dot-fill"></i>
-        <a href="{{ post.url }}" class="hover-underline">{{ post.title }}</a>
-        <span class="dash"></span>
-        <span>{{ post.date | date: "%b %e, %Y" }}</span>
-      </li>
-    {% endfor %}
-  </ul>
-  
+    <ul>
+        {% for post in posts %}
+            <li>
+                <i class="dot-fill"></i>
+                <a href="{{ post.url }}" class="hover-underline">{{ post.title }}</a>
+                <span class="dash"></span>
+                <span>{{ post.date | date: "%b %e, %Y" }}</span>
+            </li>
+        {% endfor %}
+    </ul>
 </div>

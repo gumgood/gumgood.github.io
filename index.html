@@ -5,21 +5,17 @@ layout: default
 <div class="post-summaries">
     {%- for post in paginator.posts -%}
         <div class="post-summaries__item">
-            
             <a href="{{ post.url }}" >
                 <h1 class="ellipsis-two">
                     {{ post.title }}
                 </h1>
-
                 <p class="post-content ellipsis-two">
                     {{ post.content | markdownify | strip_html | truncate: 200 }}
                 </p>
             </a>
-
             <div class="post-metadata">
                 <span class="ellipsis">
                     <i class="calendar"></i><span>{{ post.date | date: "%b %e, %Y" }}</span>
-
                     {%- if post.categories.size > 0 -%}
                         <i class="file-directory"></i><a href="/categories/{{ post.categories.first }}">{% include utils/capitalize.html string=post.categories.first %}</a>
                         {%- if post.categories.size > 1 -%}
@@ -28,7 +24,6 @@ layout: default
                     {%- endif -%}
                 </span>
             </div>
-
         </div>
     {%- endfor -%}
 </div>

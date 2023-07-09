@@ -2,12 +2,10 @@
 layout: default
 ---
 
-<script defer src="../assets/js/copyboard.js"></script>
-
 <div class="post">
     <div class="post-metadata">
         <span class="post-category">
-            {% if page.categories.size > 0%}
+            {% if page.categories.size > 0 %}
                 <a href="/categories" class="hover-opacity"><i class="file-directory"></i></a>
                 <a href="/categories/{{ page.categories.first }}" class="hover-underline">{% include utils/capitalize.html string=page.categories.first %}</a>
                 {%- if page.categories.size > 1 -%}
@@ -21,16 +19,12 @@ layout: default
         </h1>
     
         <span class="post-metadata">
-            <span>
-                By <em>{{ page.author | default: site.author.name }}</em>
-            </span>
-            <span>
-                Posted <em>{{ page.date | date: "%b %e, %Y" }}</em>
-            </span>
+            <span>By <em>{{ page.author | default: site.author.name }}</em></span>
+            <span>Posted <em>{{ page.date | date: "%b %e, %Y" }}</em></span>
         </span>
     </div>
 
-    <div class="post-content-remove markdown-body">
+    <div class="markdown-body">
         {{ content }}
     </div>
     

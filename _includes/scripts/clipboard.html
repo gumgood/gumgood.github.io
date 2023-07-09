@@ -5,7 +5,6 @@
                 if (button.dataset.state == "idle") {
                     button.dataset.state = "fetching";
                     button.firstChild.className = "kebab-horizontal";
-
                     var content = button.parentElement.parentElement.querySelector(".rouge-code").innerText
                     navigator.clipboard.writeText(content).then(
                         () => { /* clipboard successfully set */
@@ -17,7 +16,6 @@
                             button.firstChild.className = "x";
                         }
                     );
-
                     setTimeout(function () {
                         button.dataset.state = "idle";
                         button.firstChild.className = "copy";

@@ -1,0 +1,10 @@
+<div id="topbar">
+    <a class="hover_button small_view"><i class="three-bars"></i></a>
+    <a href="/search" class="large_view" {% if page.url=='/search' %}style="visibility: hidden;" {% endif %}>
+        <i class="search"></i>
+        <span>Search...</span>
+    </a>
+    <a href="/search" class="small_view hover_button" {% if page.url=='/search' %}style="visibility: hidden;" {% endif %}>
+        <i class="search"></i>
+    </a>
+</div>

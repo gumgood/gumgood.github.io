@@ -2,140 +2,17 @@
 <html lang="ko">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="format-detection" content="telephone=no">
-
-    <!-- jekyll variable -->
-    {% assign title = page.title | default: site.title %}
-    {% if page.collection == 'categories' %}
-    {% capture title %}Categories: {% include utils/capitalize.html string=page.title %}{% endcapture %}
-    {% elsif page.collection == 'tags' %}
-    {% assign title = title | downcase | prepend: 'Tags: ' %}
-    {% endif %}
-    {% unless title == site.title %}
-    {% assign title = title | append: ' - ' | append: site.title %}
-    {% endunless %}
-
-    {% assign description = site.description %}
-    {% if page.collection == 'posts' %}
-    {% assign description = page.content | truncatewords: 30 | strip_html %}
-    {% endif %}
-
-    {% assign image ='/assets/image/header.jpg' | absolute_url %}
-
-    <!-- HTML Meta Tags -->
-    <title>{{ title }}</title>
-    <meta name="description" content="{{ description }}" />
-
-    <!-- Naver Search Engine Tag -->
-    <meta name="naver-site-verification" content="c3b1241687be8818c49d73438e224864dadc03e7" />
-
-    <!-- Google / Search Engine Tags -->
-    <meta name="google-site-verification" content="keI0ZBFx59S-ScMR-4FTc81bsVJ6UTXq8JfKhsYZqsM" />
-    <meta itemprop="name" content="{{ title }}">
-    <meta itemprop="description" content="{{ description }}">
-    <meta itemprop="image" content="{{ image }}">
-
-    <!-- Facebook Meta Tags -->
-    <meta property="og:title" content="{{ title }}">
-    <meta property="og:description" content="{{ description }}">
-    <meta itemprop="image" content="{{ image }}">
-    <meta property="og:url" content="{{ page.url | absolute_url }}">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' }}">
-
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ '/favicon.ico' }}">
-
-    <!-- Mathjax Support -->
-    {% include scripts/mathjax.html %}
-
+    {% include head.html %}
 </head>
 
 <body>
     <nav>
-
-        <div class="profile-wrapper">
-            <div id="avatar-wrapper">
-                <a href="/" id="avatar">
-                    <img src="https://avatars.githubusercontent.com/u/17876281" , height="112" , width="112">
-                </a>
-                <a id="nav-topbar" class="hover_button">
-                    <i class="x"></i>
-                </a>
-            </div>
-            <div class="site-title">
-                <a href="/">{{ site.title }}</a>
-            </div>
-            <div class=" site-subtitle">
-                {{ site.description }}
-            </div>
-        </div>
-
-        <ul class="nav">
-            {% assign url = page.url | split: '/' %}
-            <li class="nav-item">
-                <a href="/" class="nav-link{% if paginator %} active{% endif %}">
-                    <i class="home"></i>
-                    <span>HOME</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/categories" class="nav-link{% if url[1]=='categories' %} active{% endif %}">
-                    <i class="file-directory"></i>
-                    <span>CATEGORIES</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/tags" class="nav-link{% if url[1]=='tags' %} active{% endif %}">
-                    <i class="tag"></i>
-                    <span>TAGS</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="/about" class="nav-link{% if url[1]=='about' %} active{% endif %}">
-                    <i class="info"></i>
-                    <span>ABOUT</span>
-                </a>
-            </li>
-        </ul>
-
-        <div class="sidebar-bottom">
-            <a href="http://github.com/{{ site.author.github }}" aria-label="github" target="_blank"
-                rel="noopener noreferrer">
-                <i class="mark-github"></i>
-            </a>
-            <a href="mailto:{{ site.author.email }}" aria-label="email">
-                <i class="mail"></i>
-            </a>
-            <a href="{{ 'feed.xml' | absolute_url }}" aria-label="rss" target="_blank" rel="noopener noreferrer">
-                <i class="rss"></i>
-            </a>
-        </div>
+        {% include navigation.html %}
     </nav>
 
     <div id="main-wrapper">
         <div id="topbar-wrapper">
-            <div id="topbar">
-                <a class="hover_button small_view"><i class="three-bars"></i></a>
-                <a href="/search" class="large_view" {% if page.url == '/search' %}style="visibility: hidden;"{% endif %}>
-                    <i class="search"></i>
-                    <span>Search...</span>
-                </a>
-                <a href="/search" class="small_view hover_button" {% if page.url == '/search' %}style="visibility: hidden;"{% endif %}>
-                    <i class="search"></i>
-                </a>
-            </div>
+            {% include topbar.html %}
         </div>
 
         <main>
@@ -143,12 +20,7 @@
         </main>
 
         <footer>
-            <div>
-                <p>
-                    &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time> <span>{{
-                        site.author.name }}</span>.
-                </p>
-            </div>
+            {% include footer.html %}
         </footer>
     </div>
 

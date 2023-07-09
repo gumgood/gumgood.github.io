@@ -1,0 +1,56 @@
+<div class="profile-wrapper">
+    <div id="avatar-wrapper">
+        <a href="/" id="avatar">
+            <img src="https://avatars.githubusercontent.com/u/17876281" , height="112" , width="112">
+        </a>
+        <a id="nav-topbar" class="hover_button">
+            <i class="x"></i>
+        </a>
+    </div>
+    <div class="site-title">
+        <a href="/">{{ site.title }}</a>
+    </div>
+    <div class=" site-subtitle">
+        {{ site.description }}
+    </div>
+</div>
+
+{% assign url = page.url | split: '/' %}
+<ul class="nav">
+    <li class="nav-item">
+        <a href="/" class="nav-link{% if paginator %} active{% endif %}">
+            <i class="home"></i>
+            <span>HOME</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/categories" class="nav-link{% if url[1]=='categories' %} active{% endif %}">
+            <i class="file-directory"></i>
+            <span>CATEGORIES</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/tags" class="nav-link{% if url[1]=='tags' %} active{% endif %}">
+            <i class="tag"></i>
+            <span>TAGS</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/about" class="nav-link{% if url[1]=='about' %} active{% endif %}">
+            <i class="info"></i>
+            <span>ABOUT</span>
+        </a>
+    </li>
+</ul>
+
+<div class="sidebar-bottom">
+    <a href="http://github.com/{{ site.author.github }}" aria-label="github" target="_blank" rel="noopener noreferrer">
+        <i class="mark-github"></i>
+    </a>
+    <a href="mailto:{{ site.author.email }}" aria-label="email">
+        <i class="mail"></i>
+    </a>
+    <a href="{{ 'feed.xml' | absolute_url }}" aria-label="rss" target="_blank" rel="noopener noreferrer">
+        <i class="rss"></i>
+    </a>
+</div>
