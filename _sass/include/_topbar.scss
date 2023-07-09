@@ -19,12 +19,8 @@
         line-height: 1.0;
     }
 
-    i.three-bars {
-        visibility: hidden;
-
-        @media screen and (max-width: $break-small) {
-            visibility: visible;
-        }
+    a[href] {
+        margin-left: auto;
     }
 
     a.small_view {

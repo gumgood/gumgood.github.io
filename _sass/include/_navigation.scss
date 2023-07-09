@@ -28,12 +28,11 @@ nav {
 
   #nav-topbar {
     display: none;
+    height: fit-content;
+    margin: -2.0rem 0 0 auto;
 
     @media screen and (max-width: $break-small) {
-      display: flex;
-      align-items: center;
-
-      margin: 1.4rem 1rem 0 0;
+      display: block;
     }
 
     i {
@@ -50,6 +49,10 @@ nav {
     margin-bottom: 2.5rem;
     padding-left: 2.5rem;
     padding-right: 1.25rem;
+
+    #avatar-wrapper {
+      display: flex;
+    }
 
     #avatar {
       display: block;

@@ -64,14 +64,16 @@
 
 <body>
     <nav>
-        <a id="nav-topbar" class="hover_button">
-            <i class="x"></i>
-        </a>
 
         <div class="profile-wrapper">
-            <a href="/" id="avatar">
-                <img src="https://avatars.githubusercontent.com/u/17876281" , height="112" , width="112">
-            </a>
+            <div id="avatar-wrapper">
+                <a href="/" id="avatar">
+                    <img src="https://avatars.githubusercontent.com/u/17876281" , height="112" , width="112">
+                </a>
+                <a id="nav-topbar" class="hover_button">
+                    <i class="x"></i>
+                </a>
+            </div>
             <div class="site-title">
                 <a href="/">{{ site.title }}</a>
             </div>
@@ -125,12 +127,14 @@
     <div id="main-wrapper">
         <div id="topbar-wrapper">
             <div id="topbar">
-                <a class="hover_button"><i class="three-bars"></i></a>
+                <a class="hover_button small_view"><i class="three-bars"></i></a>
                 <a href="/search" class="large_view" {% if page.url == '/search' %}style="visibility: hidden;"{% endif %}>
                     <i class="search"></i>
                     <span>Search...</span>
                 </a>
-                <a href="/search" class="small_view hover_button"><i class="search"></i></a>
+                <a href="/search" class="small_view hover_button" {% if page.url == '/search' %}style="visibility: hidden;"{% endif %}>
+                    <i class="search"></i>
+                </a>
             </div>
         </div>
 
