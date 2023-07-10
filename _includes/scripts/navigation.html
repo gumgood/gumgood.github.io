@@ -1,14 +1,17 @@
 <script>
     const nav = document.querySelector("nav");
+    const dimmed = document.querySelector("div#dimmed");
 
     const i_three_bars = document.querySelector("i.three-bars").parentElement;
     i_three_bars.addEventListener("click", function () {
         nav.style.left = "0";
+        dimmed.style.display = "block";
     });
 
     const i_x = document.querySelector("i.x").parentElement;
     i_x.addEventListener("click", function () {
         nav.style.left = "-260px";
+        dimmed.style.display = "none";
     });
 
     const w_min = window.matchMedia("screen and (min-width: 850px)");
@@ -18,5 +21,6 @@
         } else {
             nav.style.left = "-260px";
         }
+        dimmed.style.display = "none";
     });
 </script>
