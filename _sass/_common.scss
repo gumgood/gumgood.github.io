@@ -1,3 +1,80 @@
+// functional
+
+$min-width: 200px;
+$max_width: 980px;
+$break-small: 850px;
+$nav-width: 260px;
+
+%max_width {
+    margin: 0 auto;
+    min-width: $min_width;
+    max-width: $max_width;
+    width: 80%;
+    
+    @media (max-width: $break-small) {
+        width: 88%;
+    }
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ellipsis-two {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.hover-opacity {
+    transition: opacity 0.3s ease-in-out;
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+.hover-underline {
+    color: var(--common-link-color);
+
+    &:hover {
+        transition: all 0.3s ease-in-out;
+        color: var(--common-link-hover-color);
+        text-decoration: underline 1px;
+        text-underline-offset: 3px;
+    }
+}
+
+@mixin hover-scale($scale) {
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale($scale);
+    }
+}
+
+@mixin icon-size($size, $color: "black") {
+    height: $size;
+    width: $size;
+    background-color: $color;
+}
+
+a.hover_button {
+    line-height: 0.7;
+    border-radius: 0.75rem;
+    margin: 0 -0.6rem;
+    padding: 0.6rem;
+  
+    cursor: pointer;
+  
+    &:hover {
+        background-color: var(--sidebar-hover-bg);
+    }
+}
+
 /* --- Typography --- */
 
 h1, h2, h3, h4, h5 {

@@ -8,7 +8,6 @@
 @import 'style/octicons';
 
 @import 'util/functional';
-@import 'util/syntax';
 
 @import 'common';
 
@@ -21,7 +20,6 @@
 @import 'layout/post';
 
 @import 'pages/categories';
-@import 'pages/index/summaries';
-@import 'pages/index/paginate';
+@import 'pages/index';
 @import 'pages/search';
 @import 'pages/tags';
