@@ -9,11 +9,7 @@ $nav-width: 260px;
     margin: 0 auto;
     min-width: $min_width;
     max-width: $max_width;
-    width: 80%;
-    
-    @media (max-width: $break-small) {
-        width: 88%;
-    }
+    width: 90%;
 }
 
 .ellipsis {

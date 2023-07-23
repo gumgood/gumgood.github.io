@@ -6,6 +6,11 @@
         flex-direction: column;
 
         margin-bottom: 1.25rem;
+        
+        @media screen and (max-width: $break-small) {
+            margin-bottom: 1.5rem;
+        }
+
         padding: 1.75rem 1.75rem 1.25rem 1.75rem;
 
         box-shadow: var(--post-summaries-shadow);
@@ -17,6 +22,8 @@
         }
 
         transition: background-color .35s ease-in-out;
+
+        user-select: none;
 
         a {
             h1 {

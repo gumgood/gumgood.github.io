@@ -27,7 +27,7 @@ nav {
     #nav-topbar {
         display: none;
         height: fit-content;
-        margin: -2.0rem 0 0 auto;
+        margin: -2.5rem 0 0 auto;
       
         @media screen and (max-width: $break-small) {
             display: block;
@@ -66,7 +66,7 @@ nav {
     .site-title {
         margin: 1.25rem 0 0.5rem 0;
         font-weight: 900;
-        font-size: 1.75rem;
+        font-size: 1.25rem;
         line-height: 1.2;
     
         a {
@@ -81,7 +81,7 @@ nav {
     .site-subtitle {
         margin-top: .25rem;
         color: var(--sidebar-muted-color);
-        font-size: 95%;
+        font-size: 0.75rem;
     }
   
   
@@ -128,7 +128,8 @@ nav {
                     }
             
                     span {
-                        font-size: 90%;
+                        font-size: 0.85rem;
+                        line-height: 1.5;
                         letter-spacing: .2px;
                     }
                 }
@@ -170,6 +171,10 @@ nav {
             border-radius: 50%;
             color: var(--sidebar-btn-color);
             background-color: var(--sidebar-btn-bg);
+
+            &:hover {
+                background-color: var(--sidebar-hover-bg);
+            }
       
             text-align: center;
             line-height: 1.75rem;

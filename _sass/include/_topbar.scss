@@ -3,7 +3,12 @@
 }
 
 #topbar {
-    height: 5rem;
+    height: 3rem;
+
+    @media screen and (max-width: $break-small) {
+        height: 3.5rem;
+    }
+
     @extend %max_width;
 
     display: flex;
@@ -11,6 +16,8 @@
     justify-content: space-between;
 
     background-color: var(--topbar-bg);
+
+    user-select: none;
 
     i {
         @include icon-size(1.25rem, #999);
