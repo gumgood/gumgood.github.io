@@ -1,5 +1,5 @@
 div.search {
-    margin: 0.5rem auto 0;
+    margin: 1rem auto 0;
 
     #search-input-wrapper {
         display: flex;
@@ -12,14 +12,14 @@ div.search {
         box-shadow: 0 0 3px 0 var(--tags-shadow);
 
         i {
-            @include icon-size(1rem, var(--search-icon-color));
+            @include icon-size(1.2rem, var(--search-icon-color));
             margin-right: 0.75rem;
         }
 
         input {
             flex: 1;
             width: auto;
-            font-size: 1rem;
+            font-size: 1.2rem;
             border: none;
 
             &:focus {
