@@ -17,7 +17,6 @@
 }
 
 main {
-    @extend %max_width;
-    padding: 0;
-    flex: 1;
+    padding: 1rem 2.5% 3rem;
+    flex: 3;
 }

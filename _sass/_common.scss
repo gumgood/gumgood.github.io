@@ -3,13 +3,21 @@
 $min-width: 200px;
 $max_width: 980px;
 $break-small: 850px;
+$break-large: 1200px;
 $nav-width: 260px;
 
-%max_width {
-    margin: 0 auto;
+.flex-row {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.max_width {
     min-width: $min_width;
     max-width: $max_width;
-    width: 90%;
 }
 
 .ellipsis {
@@ -140,11 +148,6 @@ body {
     background: var(--body-bg);
 
     margin: 0;
-}
-
-main {
-    @extend %max_width;
-    padding: 1rem 0 3rem;
 }
 
 a {

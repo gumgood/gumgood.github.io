@@ -1,0 +1,23 @@
+#sidebar {
+    @media screen and (max-width: $break-large) {
+        display: none;
+    }
+    flex: 1;
+
+    margin: 3rem 0 4rem;
+
+    background-color: aqua;
+
+    .sidebar-header {
+
+    }
+
+    #recent-posts {
+        margin-bottom: 4rem;
+        padding-left: 1rem;
+    }
+    
+    #trending-tags {
+        padding-left: 1rem;
+    }
+}

@@ -9,7 +9,6 @@ footer {
         justify-content: center;
 
         height: 5rem;
-        @extend %max_width;
         padding-bottom: 1rem;
 
         border-top: 1px solid var(--main-border-color);

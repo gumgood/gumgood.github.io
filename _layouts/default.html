@@ -12,17 +12,25 @@
     <div id="dimmed"></div>
 
     <div id="main-wrapper">
-        <div id="topbar-wrapper">
-            {% include topbar.html %}
+        <div class="flex-column max_width">
+            <div id="topbar-wrapper">
+                {% include topbar.html %}
+            </div>
+
+            <div class="flex-row">
+                <main>
+                    {{ content }}
+                </main>
+                
+                <div id="sidebar">
+                    {% include sidebar.html %}
+                </div>
+            </div>
+
+            <footer>
+                {% include footer.html %}
+            </footer>
         </div>
-
-        <main>
-            {{ content }}
-        </main>
-
-        <footer>
-            {% include footer.html %}
-        </footer>
     </div>
 
     {% include scripts/navigation.html %}
