@@ -1,17 +1,26 @@
 <div id="recent-posts">
     <div class="sidebar-header">Recently Updated</div>
     <ul>
-        <li>abc</li>
-        <li>zdasf</li>
-        <li>asdfasdf</li>
+        {%- for post in site.posts limit: 5 -%}
+        <li class="ellipsis-two"><a href="{{ post.url }}" class="hover-underline">{{ post.title }}</a></li>
+        {%- endfor -%}
     </ul>
 </div>
 
+{% assign tags = "" | split: "" %}
+{% for tag in site.tags %}
+    {% assign title = tag.title | downcase %}
+    {% assign size = site.posts | where_exp: 'post', 'post.tags contains title' | size | times: -1 %}
+    {% assign ele = "" | split: "" | push: size | push: title %}
+    {% assign tags = tags | push: ele %}
+{% endfor %}
+{% assign tags = tags | sort %}
+
 <div id="trending-tags">
     <div class="sidebar-header">Trending Tags</div>
-    <ul>
-        <li>abc</li>
-        <li>zdasf</li>
-        <li>asdfasdf</li>
-    </ul>
+    <div class="flex-wrap">
+        {% for it in tags limit: 10 %}
+        <a href="/tags/{{ it[1] }}">{{ it[1] }}</a>
+        {% endfor %}
+    </div>
 </div>

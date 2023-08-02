@@ -27,21 +27,21 @@ nav {
     #nav-topbar {
         display: none;
         height: fit-content;
-        margin: -2.5rem 0 0 auto;
+        margin: -2.8rem -0.5rem 0 auto;
       
         @media screen and (max-width: $break-small) {
             display: block;
         }
       
         i {
-            @include icon-size(1.5rem, #999);
+            @include icon-size(1.25rem, #999);
         }
     }
   
     #profile-wrapper {
         width: 100%;
         margin: 3rem 0 2rem 0;
-        padding: 0 1.25rem 0 2.5rem;
+        padding: 0 1.25rem 0 2.25rem;
     }
     
     #avatar-wrapper {
@@ -81,7 +81,7 @@ nav {
     .site-subtitle {
         margin-top: .25rem;
         color: var(--sidebar-muted-color);
-        font-size: 0.75rem;
+        font-size: 0.8rem;
     }
   
   
@@ -99,7 +99,7 @@ nav {
     
         li.nav-item {
             width: 100%;
-            padding: 0 1.5rem;
+            padding: 0 1.25rem;
             opacity: 0.9;
       
             &:not(:first-child) {
@@ -123,12 +123,12 @@ nav {
                     font-weight: 600;
             
                     i {
-                        @include icon-size(1.25rem, rgba(117, 117, 117, .9));
-                        margin-right: 1.5rem;
+                        @include icon-size(0.8rem, rgba(117, 117, 117, .9));
+                        margin-right: 1rem;
                     }
             
                     span {
-                        font-size: 0.85rem;
+                        font-size: 0.8rem;
                         line-height: 1.5;
                         letter-spacing: .2px;
                     }

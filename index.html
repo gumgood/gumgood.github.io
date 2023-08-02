@@ -4,27 +4,39 @@ layout: default
 
 <div class="post-summaries">
     {%- for post in paginator.posts -%}
-        <div class="post-summaries__item">
-            <a href="{{ post.url }}" >
-                <h1 class="ellipsis-two">
-                    {{ post.title }}
-                </h1>
-                <p class="ellipsis-two">
-                    {{ post.content | markdownify | strip_html | truncate: 200 }}
-                </p>
-            </a>
-            <div class="post-metadata">
-                <span class="ellipsis">
-                    <i class="calendar"></i><span>{{ post.date | date: "%b %e, %Y" }}</span>
-                    {%- if post.categories.size > 0 -%}
-                        <i class="file-directory"></i><a href="/categories/{{ post.categories.first }}">{% include utils/capitalize.html string=post.categories.first %}</a>
-                        {%- if post.categories.size > 1 -%}
-                            <span>{{" / "}}</span><a href="/categories/{{ post.categories.last }}">{% include utils/capitalize.html string=post.categories.last %}</a>
-                        {%- endif -%}
-                    {%- endif -%}
-                </span>
+        {% assign img_attributes = post.content | split: "<img" | slice: 1 | first | split: '/>' | first %}
+        <a href="{{ post.url }}">
+            <div class="post-summaries__item">
+                <div class="flex-row-reverse">
+                    {% if img_attributes %}
+                    <div class="preview-img_wrapper flex-row">
+                        <div>
+                            <img class="preview-img" {{ img_attributes }} />
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="post-summaries__body flex-column flex-1">
+                        <h1 class="ellipsis-two">
+                            {{ post.title }}
+                        </h1>
+                        <p class="ellipsis-two">
+                            {{ post.content | markdownify | strip_html | truncate: 200 }}
+                        </p>
+                        <div class="post-metadata">
+                            <span class="ellipsis">
+                                <i class="calendar"></i><span>{{ post.date | date: "%b %e, %Y" }}</span>
+                                {%- if post.categories.size > 0 -%}
+                                    <i class="file-directory"></i><span>{% include utils/capitalize.html string=post.categories.first %}</span>
+                                    {%- if post.categories.size > 1 -%}
+                                        <span> / {% include utils/capitalize.html string=post.categories.last %}</span>
+                                    {%- endif -%}
+                                {%- endif -%}
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </a>
     {%- endfor -%}
 </div>
 

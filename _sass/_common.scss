@@ -1,7 +1,7 @@
 // functional
 
-$min-width: 200px;
-$max_width: 980px;
+$min_width: 200px;
+$max_width: 1250px;
 $break-small: 850px;
 $break-large: 1200px;
 $nav-width: 260px;
@@ -10,20 +10,43 @@ $nav-width: 260px;
     display: flex;
 }
 
+.flex-row-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 .flex-column {
     display: flex;
     flex-direction: column;
 }
 
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
 .max_width {
     min-width: $min_width;
     max-width: $max_width;
+    width: 94%;
+
+    @media screen and (min-width: $break-small) {
+        width: 88%;
+    }
+
+    @media screen and (min-width: $break-large) {
+        width: 92%;
+    }
 }
 
 .ellipsis {
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .ellipsis-two {
@@ -45,7 +68,6 @@ $nav-width: 260px;
     color: var(--common-link-color);
 
     &:hover {
-        transition: all 0.3s ease-in-out;
         color: var(--common-link-hover-color);
         text-decoration: underline 1px;
         text-underline-offset: 3px;
@@ -133,10 +155,6 @@ hr {
 html {
     @include light-scheme;
     font-size: 16px;
-
-    @media screen and (max-width: $break-small) {
-        font-size: 14px;
-    }
 }
 
 body {

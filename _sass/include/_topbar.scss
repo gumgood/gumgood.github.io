@@ -5,10 +5,6 @@
 #topbar {
     height: 3rem;
 
-    @media screen and (max-width: $break-small) {
-        height: 3.5rem;
-    }
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,7 +14,8 @@
     user-select: none;
 
     i {
-        @include icon-size(1.25rem, #999);
+        @include icon-size(1rem, #999);
+        margin: 0 0.125rem;
     }
 
     a[href] {
@@ -59,7 +56,7 @@
         }
 
         span {
-            margin-right: 5rem;
+            margin-right: 4rem;
             vertical-align: middle;
             color: gray;
         }
