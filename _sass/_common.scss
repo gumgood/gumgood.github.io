@@ -30,7 +30,7 @@ $nav-width: 260px;
 
 .max_width {
     max-width: $max_width;
-    width: 94%;
+    width: 100%;
 
     @media screen and (min-width: $break-small) {
         width: 88%;
