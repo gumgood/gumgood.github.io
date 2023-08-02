@@ -5,13 +5,13 @@
 @mixin light-scheme {
     --main-bg: white;
     --main-border-color: #f3f3f3;
-    --topbar-bg: rgb(255, 255, 255, 0.7);
+    --topbar-bg: rgba(255, 255, 255, 0.7);
     --sidebar-bg: #f6f8fa;
     --sidebar-muted-color: #a2a19f;
     --sidebar-active-color: #1d1d1d;
     --sidebar-btn-color: #8e8e8e;
     --sidebar-btn-bg: white;
-    --sidebar-hover-bg: rgb(223, 233, 241, 0.64);
+    --sidebar-hover-bg: rgba(223, 233, 241, 0.64);
     --search-icon-color: #c2c6cc;
     --heading-color: black;
     --avatar-border-color: white;
@@ -19,8 +19,8 @@
     --text-color: #34343c;
 
     --post-summaries-bg: white;
-    --post-summaries-hover-bg: rgb(227, 227, 227, 0.3);
-    --post-summaries-shadow: rgb(104, 104, 104, 0.05) 0 2px 6px 0, rgba(211, 209, 209, 0.15) 0 0 0 1px;
+    --post-summaries-hover-bg: rgba(227, 227, 227, 0.3);
+    --post-summaries-shadow: rgba(104, 104, 104, 0.05) 0 2px 6px 0, rgba(211, 209, 209, 0.15) 0 0 0 1px;
 
     --common-link-color: #2a408e;
     --common-link-hover-color: #d2603a;

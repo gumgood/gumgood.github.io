@@ -7,7 +7,7 @@ layout: default
         {% assign img_attributes = post.content | split: "<img" | slice: 1 | first | split: '/>' | first %}
         <a href="{{ post.url }}">
             <div class="post-summaries__item">
-                <div class="flex-row-reverse">
+                <div class="post-summaries-container">
                     {% if img_attributes %}
                     <div class="preview-img_wrapper flex-row">
                         <div>
