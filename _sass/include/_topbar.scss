@@ -18,8 +18,16 @@
         margin: 0 0.125rem;
     }
 
-    a[href] {
-        margin-left: auto;
+    #blog_title {
+        padding: 0 0.5rem;
+
+        font-size: 1.1rem;
+        color: var(--topbar-text-color);
+
+        visibility: hidden;
+        @media screen and (max-width: $break-small) {
+            visibility: visible;
+        }
     }
 
     a.small_view {

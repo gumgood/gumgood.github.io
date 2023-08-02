@@ -1,6 +1,5 @@
 // functional
 
-$min_width: 200px;
 $max_width: 1250px;
 $break-small: 850px;
 $break-large: 1200px;
@@ -30,7 +29,6 @@ $nav-width: 260px;
 }
 
 .max_width {
-    min-width: $min_width;
     max-width: $max_width;
     width: 94%;
 
