@@ -2,7 +2,7 @@
     <div class="sidebar-header">Recently Updated</div>
     <ul>
         {%- for post in site.posts limit: 5 -%}
-        <li class="ellipsis-two"><a href="{{ post.url }}" class="hover-underline">{{ post.title }}</a></li>
+        <li><a href="{{ post.url }}" class="hover-underline ellipsis-two">{{ post.title }}</a></li>
         {%- endfor -%}
     </ul>
 </div>
