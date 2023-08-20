@@ -41,8 +41,34 @@
         &#trending-tags {
             padding-left: 1rem;
 
-            div {
-                margin: 1rem 1rem 0.25rem 0;
+            .sidebar-header {
+                color: var(--label-color);
+                font-weight: 600;
+                letter-spacing: -0.2px;
+            }
+
+            .all-tags {
+                margin: 0;
+                justify-content: end;
+                align-items: center;
+
+                i {
+                    @include icon-size(0.85rem, var(--text-muted-color));
+                    margin-right: 0.1rem;
+                }
+                
+                a {
+                    line-height: 1.5;
+                    font-size: 0.85rem;
+
+                    &:not(:hover) {
+                        color: var(--text-muted-color);
+                    }
+                }
+            }
+
+            .trending-tags-item {
+                margin: 1rem 1rem 0 0;
 
                 a {
                     margin: 0 .35rem .5rem 0;
@@ -64,12 +90,6 @@
                     }
                 }
             }
-        }
-
-        .sidebar-header {
-            color: var(--label-color);
-            font-weight: 600;
-            letter-spacing: -0.2px;
         }
     }
 }
