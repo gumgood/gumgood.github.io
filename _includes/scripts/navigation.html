@@ -12,7 +12,7 @@
 
     const i_x = document.querySelector("i.x").parentElement;
     i_x.addEventListener("click", function () {
-        nav.style.left = "-260px";
+        nav.style.left = "-15rem";
         dimmed.style.display = "none";
         body.style.overflow = null;
     });
@@ -22,14 +22,14 @@
         if (e.matches) {
             nav.style.left = "0";
         } else {
-            nav.style.left = "-260px";
+            nav.style.left = "-15rem";
         }
         dimmed.style.display = "none";
         body.style.overflow = null;
     });
 
     dimmed.addEventListener("click", function (e) {
-        nav.style.left = "-260px";
+        nav.style.left = "-15rem";
         dimmed.style.display = "none";
         body.style.overflow = null;
     });
