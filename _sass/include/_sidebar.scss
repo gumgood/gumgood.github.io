@@ -2,6 +2,7 @@
     @media screen and (max-width: $break-large) {
         display: none;
     }
+
     flex: 1;
 
     overflow: hidden;
@@ -12,6 +13,12 @@
 
     >div {
         border-left: 1px solid var(--main-border-color);
+
+        .sidebar-header {
+            color: var(--label-color);
+            font-weight: 600;
+            letter-spacing: -0.2px;
+        }
 
         &#recent-posts {
             margin-bottom: 4rem;
@@ -37,15 +44,9 @@
                 }
             }
         }
-        
+
         &#trending-tags {
             padding-left: 1rem;
-
-            .sidebar-header {
-                color: var(--label-color);
-                font-weight: 600;
-                letter-spacing: -0.2px;
-            }
 
             .all-tags {
                 margin: 0;
@@ -56,7 +57,7 @@
                     @include icon-size(0.85rem, var(--text-muted-color));
                     margin-right: 0.1rem;
                 }
-                
+
                 a {
                     line-height: 1.5;
                     font-size: 0.85rem;
