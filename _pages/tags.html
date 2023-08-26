@@ -6,11 +6,11 @@ permalink: /tags
 <div class="tags">
     <h1>Tags</h1>
     <div class="tags-container">
-        {% for tag in site.tags %}
+        {% for it in site.tags %}
             <div>
-                {% assign title = tag.title | downcase %}
-                <a href="{{ tag.url }}" class="hover-underline">
-                  {{ title }}<span>{{ site.posts | where_exp: 'post', 'post.tags contains title' | size }}</span>
+                {% assign tag = it.first | downcase %}
+                <a href="/tags/{{ tag }}" class="hover-underline">
+                  {{ tag }}<span>{{ it.last | size }}</span>
                 </a>
             </div>
         {% endfor %}

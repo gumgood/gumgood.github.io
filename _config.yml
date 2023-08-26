@@ -19,8 +19,6 @@ sass:
 collections:
   categories:
     output          : true
-  tags:
-    output          : true
 
 # Handling Reading
 include             : ["_data", "_page"]
