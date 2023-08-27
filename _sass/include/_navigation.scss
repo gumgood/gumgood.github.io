@@ -91,17 +91,17 @@ nav {
         list-style-type: none;
 
         width: 100%;
-        margin: 0;
+        margin: 1.5rem 0 5rem;
         padding: 0;
     
         li.nav-item {
             width: 100%;
-            margin: 0;
-            padding: 0 0.75rem;
+            margin: 0.1rem 0;
+            padding: 0 1rem;
             opacity: 0.9;
       
-            &:not(:first-child) {
-              margin-top: 0.25rem;
+            &:not(.subcategory) {
+              margin: 0.2rem 0;
             }
       
             a {
@@ -154,7 +154,7 @@ nav {
 
         width: 100%;
         padding: 0 1.75rem;
-        margin-bottom: 2.5rem;
+        margin-bottom: 1rem;
     
         a {
             display: flex;
