@@ -1,21 +1,20 @@
 footer {
+    height: 5rem;
     width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-bottom: 1rem;
+
     font-size: 0.8rem;
+    color: var(--text-muted-color);
     background-color: var(--main-bg);
-
-    div {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        height: 5rem;
-        padding-bottom: 1rem;
-
-        border-top: 1px solid var(--main-border-color);
-        color: var(--text-muted-color);
-
-        span {
-            color: var(--text-color);
-        }
+    
+    border-top: 1px solid var(--main-border-color);
+    
+    span {
+        color: var(--text-color);
     }
 }
