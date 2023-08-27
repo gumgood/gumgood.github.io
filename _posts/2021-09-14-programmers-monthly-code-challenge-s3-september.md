@@ -1,6 +1,6 @@
 ---
 title: "프로그래머스 월간 코드 챌린지 시즌3 9월"
-categories: [problem_solving, editorial]
+categories: [cp-algorithm]
 tags: [programmers]
 ---
 

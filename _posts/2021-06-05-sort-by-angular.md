@@ -1,6 +1,6 @@
 ---
 title: "각도 정렬 알고리즘(Sort by Angular)"
-categories: [problem_solving, algorithm]
+categories: [cp-algorithm]
 tags: [geometry]
 ---
 

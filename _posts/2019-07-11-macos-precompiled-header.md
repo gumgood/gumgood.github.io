@@ -1,6 +1,6 @@
 ---
-title: "[MacOS] 맥 터미널에서 bits/stdc++.h 헤더 사용하기"
-categories: [etc, setting]
+title: "Mac OS에서 bits/stdc++.h 헤더 사용하기"
+categories: [cp-algorithm]
 tags: [mac]
 ---
 

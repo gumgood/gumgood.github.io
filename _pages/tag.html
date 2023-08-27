@@ -1,6 +1,5 @@
 ---
 title: Tags
-permalink: /tags
 ---
 
 <div class="tags">
@@ -8,9 +7,8 @@ permalink: /tags
     <div class="tags-container">
         {% for it in site.tags %}
             <div>
-                {% assign tag = it.first | downcase %}
-                <a href="/tags/{{ tag }}" class="hover-underline">
-                  {{ tag }}<span>{{ it.last | size }}</span>
+                <a href="/tag/{{ it.first | downcase }}" class="hover-underline">
+                  {{ it.first | downcase }}<span>{{ it.last | size }}</span>
                 </a>
             </div>
         {% endfor %}

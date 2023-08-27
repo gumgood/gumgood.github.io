@@ -15,34 +15,6 @@
     </div>
 </div>
 
-{% assign url = page.url | split: '/' %}
-<ul class="nav">
-    <li class="nav-item">
-        <a href="/" class="nav-link{% if paginator %} active{% endif %}">
-            <i class="home"></i>
-            <span>HOME</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="/categories" class="nav-link{% if url[1]=='categories' %} active{% endif %}">
-            <i class="file-directory"></i>
-            <span>CATEGORIES</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="/tags" class="nav-link{% if url[1]=='tags' %} active{% endif %}">
-            <i class="tag"></i>
-            <span>TAGS</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a href="/about" class="nav-link{% if url[1]=='about' %} active{% endif %}">
-            <i class="info"></i>
-            <span>ABOUT</span>
-        </a>
-    </li>
-</ul>
-
 <div class="sidebar-bottom">
     <a href="http://github.com/{{ site.author.github }}" aria-label="github" target="_blank" rel="noopener noreferrer">
         <i class="mark-github"></i>
@@ -50,7 +22,31 @@
     <a href="mailto:{{ site.author.email }}" aria-label="email">
         <i class="mail"></i>
     </a>
+    <a href="/about" aria-label="about">
+        <i class="info"></i>
+    </a>
     <a href="{{ 'feed.xml' | absolute_url }}" aria-label="rss" target="_blank" rel="noopener noreferrer">
         <i class="rss"></i>
     </a>
 </div>
+
+<ul class="nav">
+    <li class="nav-item">
+        <a href="/" class="nav-link{% if page.url == "/" %} active{% endif %}">📂 All Posts ({{ site.posts | size }})</a>
+    </li>
+    {% assign categories = site.category | sort: "order" %}
+    {% for category in categories %}
+        {% if category.emoji %}
+            <li class="nav-item ellipsis">
+                <a href="{{ category.url }}" class="nav-link{% if page.url == category.url %} active{% endif %}">{{ category.emoji }} {{ category.title }} ({{ site.categories[category.slug] | size }})</a>
+            </li>
+        {% else %}
+            <li class="nav-item ellipsis subcategory">
+                <a href="{{ category.url }}" class="nav-link subcategory{% if page.url == category.url %} active{% endif %}">{{ category.title }} ({{ site.categories[category.slug] | size }})</a>
+            </li>
+        {% endif %}
+    {% endfor %}
+    <li class="nav-item">
+        <a href="/tag" class="nav-link{% if page.url == "/tag" %} active{% endif %}">#️⃣ All Tags</a>
+    </li>
+</ul>

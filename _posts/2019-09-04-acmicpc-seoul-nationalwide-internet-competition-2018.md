@@ -1,6 +1,6 @@
 ---
 title: "ACM-ICPC Seoul Nationalwide Internet Competition 2018"
-categories: [problem_solving, editorial]
+categories: [cp-algorithm]
 tags: [icpc]
 ---
 

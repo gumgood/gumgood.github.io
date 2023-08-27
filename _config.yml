@@ -16,9 +16,6 @@ author:
 # Where things are
 sass:
   style             : compressed
-collections:
-  categories:
-    output          : true
 
 # Handling Reading
 include             : ["_data", "_page"]
@@ -29,41 +26,51 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
 
-# Outputting
-permalink           : /:title
-
 # Markdown Processors
 kramdown:
   syntax_highlighter_opts:
     block:
       line_numbers  : true
 
+collections:
+  category:
+    output          : true
+  tag:
+    output          : true
+
+# Paginate
+paginate            : 10
+paginate_path       : /:num
+
+# Outputting
+permalink           : /:title
+
 # Defaults
 defaults:
-  - scope:
-      type          : pages
-    values:
-      layout        : default
-      sitemap       : false
-  - scope:
+  - 
+    scope:
       type          : posts
     values:
       layout        : post
-  - scope:
-      type          : categories
+      sitemap       : true
+  - 
+    scope:
+      path          : _pages
     values:
-      permalink     : /categories/:path
+      layout        : default
+      sitemap       : false
+      permalink     : /:basename
+  - 
+    scope:
+      type          : category
+    values:
       layout        : post-list
       sitemap       : false
-  - scope:
-      type          : tags
+      permalink     : /category/:path
+  - 
+    scope:
+      type          : tag
     values:
-      permalink     : /tags/:path
       layout        : post-list
       sitemap       : false
-
-# ------------------------------ Paginate ------------------------------
-      
-paginate            : 10
-paginate_path       : /:num
-      
+      permalink     : /tag/:path

@@ -1,6 +1,6 @@
 ---
 title: "Mapping Permutation to Integer"
-categories: [problem_solving, algorithm]
+categories: [cp-algorithm]
 tags: [trick]
 ---
 

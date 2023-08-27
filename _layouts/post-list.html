@@ -2,25 +2,16 @@
 layout: default
 ---
 
-{% assign title = page.title | downcase %}
-
-{% if page.collection == 'categories' %}
-    {% assign posts = site.posts | where_exp: 'post', 'post.categories contains title' %}
-    {% assign title = posts.first.categories.first | append: ' ' | append: title %}
+{% if page.collection == 'category' %}
+    {% assign posts = site.categories[page.slug] %}
 {% else %}
-    {% assign posts = site.posts | where_exp: 'post', 'post.tags contains title' %}
+    {% assign posts = site.tags[page.slug] %}
 {% endif %}
-
-{% assign title = title | split: ' ' | uniq %}
 
 <div class="post-list">
     <h1 class="title">
-        <a href="/{{ page.collection }}" class="hover-opacity">
-            <i class="{% if page.collection == 'categories' %}file-directory{% else %}tag{% endif %}"></i>
-        </a>
-        <span>{% if page.collection == 'categories' %}{% include utils/capitalize.html string=title.last %}{% else %}{{
-      title.last }}{% endif %}</span>
-        <span>{{ posts.size }} {% if posts.size == 1 %}post{% else %}posts{% endif %}</span>
+        <span>{{ page.emoji | default: "📁" | append: " " }}{{ page.title }}</span>
+        <span>{{ posts | size }}</span>
       </h1>
 
     <ul>

@@ -41,6 +41,15 @@ $nav-width: 15rem;
     }
 }
 
+.hidden-scroll {   
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    
+    &::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera*/
+    }
+}
+
 .ellipsis {
     overflow: hidden;
     text-overflow: ellipsis;

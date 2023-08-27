@@ -1,6 +1,6 @@
 ---
 title: "Python FastIO - 프로그래밍 대회를 위한 파이썬 빠른 입출력"
-categories: [problem_solving]
+categories: [cp-algorithm]
 tags: [python, trick]
 ---
 

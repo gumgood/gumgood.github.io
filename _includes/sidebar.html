@@ -20,8 +20,8 @@
     <div class="sidebar-header">Trending Tags</div>
     <div class="flex-wrap trending-tags-item">
         {% for it in tags limit: 10 %}
-        <a href="/tags/{{ it[1] }}">{{ it[1] }}</a>
+        <a href="/tag/{{ it[1] }}">{{ it[1] }}</a>
         {% endfor %}
     </div>
-    <div class="flex-row all-tags"><i class="chevron-right"></i><a href="/tags" class="hover-underline">All tags</a></div>
+    <div class="flex-row all-tags"><i class="chevron-right"></i><a href="/tag" class="hover-underline">All tags</a></div>
 </div>

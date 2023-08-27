@@ -26,9 +26,11 @@ layout: default
                             <span class="ellipsis">
                                 <i class="calendar"></i><span>{{ post.date | date: "%b %e, %Y" }}</span>
                                 {%- if post.categories.size > 0 -%}
-                                    <i class="file-directory"></i><span>{% include utils/capitalize.html string=post.categories.first %}</span>
+                                    {%- assign category = site.category | where: 'slug', post.categories.first | first -%}
+                                    <i class="file-directory"></i><span>{{ category.title }}</span>
                                     {%- if post.categories.size > 1 -%}
-                                        <span> / {% include utils/capitalize.html string=post.categories.last %}</span>
+                                        {%- assign subcategory = site.category | where: 'slug', post.categories.last | first -%}
+                                        <span> / {{ subcategory.title }}</span>
                                     {%- endif -%}
                                 {%- endif -%}
                             </span>

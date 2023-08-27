@@ -1,6 +1,6 @@
 ---
 title: "Kickstart 2021 Round G 개인 풀이"
-categories: [problem_solving, editorial]
+categories: [cp-algorithm]
 tags: [kickstart, google]
 ---
 

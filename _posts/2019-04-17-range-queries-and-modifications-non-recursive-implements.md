@@ -1,6 +1,6 @@
 ---
 title: "Range Queries와 Modifications over Array의 Non-recursive 구현"
-categories: [problem_solving, algorithm]
+categories: [cp-algorithm]
 tags: [data_structure, segtree]
 ---
 

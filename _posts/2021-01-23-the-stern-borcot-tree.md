@@ -1,6 +1,6 @@
 ---
 title: "스턴 브로콧 트리(Stern Brocot tree)"
-categories: [problem_solving, algorithm]
+categories: [cp-algorithm]
 tags: [data_structure, stern_brocot_tree]
 ---
 

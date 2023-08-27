@@ -1,6 +1,6 @@
 ---
 title: "Segment Tree (+ Lazy Propagation) 코드 최적화"
-categories: [problem_solving, algorithm]
+categories: [cp-algorithm]
 tags: [data_structure, segtree]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "2022 서강대학교 프로그래밍 경시대회 Champion 부문 - Python 정답 코드"
-categories: [problem_solving, editorial]
+categories: [cp-algorithm]
 tags: [spc, python]
 ---
 
