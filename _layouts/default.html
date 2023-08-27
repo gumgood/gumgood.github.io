@@ -12,19 +12,21 @@
 
     <div id="main-wrapper">
         <div class="flex-column flex-1 max_width">
-            <div id="topbar-wrapper">
-                {% include topbar.html %}
-            </div>
+
+            {%- include topbar.html -%}
 
             <div class="flex-row flex-1">
+                
                 <main>
                     {{ content }}
                 </main>
-                
+
                 {%- include sidebar.html -%}
+
             </div>
 
             {%- include footer.html -%}
+
         </div>
     </div>
 
