@@ -1,52 +1,54 @@
-<div id="profile-wrapper">
-    <div id="avatar-wrapper">
-        <a href="/" id="avatar">
-            <img src="https://avatars.githubusercontent.com/u/17876281">
-        </a>
-        <a id="nav-topbar" class="hover_button">
-            <i class="x"></i>
-        </a>
+<nav class="hidden-scroll">
+    <div id="profile-wrapper">
+        <div id="avatar-wrapper">
+            <a href="/" id="avatar">
+                <img src="https://avatars.githubusercontent.com/u/17876281">
+            </a>
+            <a id="nav-topbar" class="hover_button">
+                <i class="x"></i>
+            </a>
+        </div>
+        <div class="site-title">
+            <a href="/" class="site-title">{{ site.title }}</a>
+        </div>
+        <div class=" site-subtitle">
+            {{ site.description }}
+        </div>
     </div>
-    <div class="site-title">
-        <a href="/">{{ site.title }}</a>
-    </div>
-    <div class=" site-subtitle">
-        {{ site.description }}
-    </div>
-</div>
 
-<div class="sidebar-bottom">
-    <a href="http://github.com/{{ site.author.github }}" aria-label="github" target="_blank" rel="noopener noreferrer">
-        <i class="mark-github"></i>
-    </a>
-    <a href="mailto:{{ site.author.email }}" aria-label="email">
-        <i class="mail"></i>
-    </a>
-    <a href="/about" aria-label="about">
-        <i class="info"></i>
-    </a>
-    <a href="{{ 'feed.xml' | absolute_url }}" aria-label="rss" target="_blank" rel="noopener noreferrer">
-        <i class="rss"></i>
-    </a>
-</div>
+    <div class="sidebar-bottom">
+        <a href="http://github.com/{{ site.author.github }}" aria-label="github" target="_blank" rel="noopener noreferrer">
+            <i class="mark-github"></i>
+        </a>
+        <a href="mailto:{{ site.author.email }}" aria-label="email">
+            <i class="mail"></i>
+        </a>
+        <a href="/about" aria-label="about">
+            <i class="info"></i>
+        </a>
+        <a href="{{ 'feed.xml' | absolute_url }}" aria-label="rss" target="_blank" rel="noopener noreferrer">
+            <i class="rss"></i>
+        </a>
+    </div>
 
-<ul class="nav">
-    <li class="nav-item">
-        <a href="/" class="nav-link{% if page.url == "/" %} active{% endif %}">📂 All Posts ({{ site.posts | size }})</a>
-    </li>
-    {% assign categories = site.category | sort: "order" %}
-    {% for category in categories %}
-        {% if category.emoji %}
-            <li class="nav-item ellipsis">
-                <a href="{{ category.url }}" class="nav-link{% if page.url == category.url %} active{% endif %}">{{ category.emoji }} {{ category.title }} ({{ site.categories[category.slug] | size }})</a>
-            </li>
-        {% else %}
-            <li class="nav-item ellipsis subcategory">
-                <a href="{{ category.url }}" class="nav-link subcategory{% if page.url == category.url %} active{% endif %}">{{ category.title }} ({{ site.categories[category.slug] | size }})</a>
-            </li>
-        {% endif %}
-    {% endfor %}
-    <li class="nav-item">
-        <a href="/tag" class="nav-link{% if page.url == "/tag" %} active{% endif %}">📌 All Tags</a>
-    </li>
-</ul>
+    <ul class="nav">
+        <li class="nav-item">
+            <a href="/" class="nav-link{% if page.url == "/" %} active{% endif %}">📂 All Posts ({{ site.posts | size }})</a>
+        </li>
+        {% assign categories = site.category | sort: "order" %}
+        {% for category in categories %}
+            {% if category.emoji %}
+                <li class="nav-item ellipsis">
+                    <a href="{{ category.url }}" class="nav-link{% if page.url == category.url %} active{% endif %}">{{ category.emoji }} {{ category.title }} ({{ site.categories[category.slug] | size }})</a>
+                </li>
+            {% else %}
+                <li class="nav-item ellipsis subcategory">
+                    <a href="{{ category.url }}" class="nav-link subcategory{% if page.url == category.url %} active{% endif %}">{{ category.title }} ({{ site.categories[category.slug] | size }})</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+        <li class="nav-item">
+            <a href="/tag" class="nav-link{% if page.url == "/tag" %} active{% endif %}">📌 All Tags</a>
+        </li>
+    </ul>
+</nav>
