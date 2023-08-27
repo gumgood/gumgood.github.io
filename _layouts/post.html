@@ -35,7 +35,7 @@ layout: default
             {%- if page.tags.size > 0 -%}
                 <i class="tag"></i>
                 {%- for tag in page.tags -%}
-                    <a href="/tags/{{ tag }}" class="hover-opacity">{{ tag | downcase }}</a>
+                    <a href="/tag/{{ tag }}" class="hover-opacity">{{ tag | downcase }}</a>
                     {%- unless forloop.last -%}
                         <span>, </span>
                     {%- endunless -%}
