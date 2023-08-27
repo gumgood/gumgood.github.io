@@ -1,27 +1,29 @@
-<div id="recent-posts">
-    <div class="sidebar-header">Recently Updated</div>
-    <ul>
-        {%- for post in site.posts limit: 5 -%}
-        <li><a href="{{ post.url }}" class="hover-underline ellipsis-two">{{ post.title }}</a></li>
-        {%- endfor -%}
-    </ul>
-</div>
-
-{% assign tags = "" | split: "" %}
-{% for it in site.tags %}
-    {% assign tag = it.first | downcase %}
-    {% assign size = site.posts | where_exp: 'post', 'post.tags contains tag' | size | times: -1 %}
-    {% assign ele = "" | split: "" | push: size | push: tag %}
-    {% assign tags = tags | push: ele %}
-{% endfor %}
-{% assign tags = tags | sort %}
-
-<div id="trending-tags">
-    <div class="sidebar-header">Trending Tags</div>
-    <div class="flex-wrap trending-tags-item">
-        {% for it in tags limit: 10 %}
-        <a href="/tag/{{ it[1] }}">{{ it[1] }}</a>
-        {% endfor %}
+<div id="sidebar">
+    <div id="recent-posts">
+        <div class="sidebar-header">Recently Updated</div>
+        <ul>
+            {%- for post in site.posts limit: 5 -%}
+            <li><a href="{{ post.url }}" class="hover-underline ellipsis-two">{{ post.title }}</a></li>
+            {%- endfor -%}
+        </ul>
     </div>
-    <div class="flex-row all-tags"><i class="chevron-right"></i><a href="/tag" class="hover-underline">All tags</a></div>
+
+    {% assign tags = "" | split: "" %}
+    {% for it in site.tags %}
+        {% assign tag = it.first | downcase %}
+        {% assign size = site.posts | where_exp: 'post', 'post.tags contains tag' | size | times: -1 %}
+        {% assign ele = "" | split: "" | push: size | push: tag %}
+        {% assign tags = tags | push: ele %}
+    {% endfor %}
+    {% assign tags = tags | sort %}
+
+    <div id="trending-tags">
+        <div class="sidebar-header">Trending Tags</div>
+        <div class="flex-wrap trending-tags-item">
+            {% for it in tags limit: 10 %}
+            <a href="/tag/{{ it[1] }}">{{ it[1] }}</a>
+            {% endfor %}
+        </div>
+        <div class="flex-row all-tags"><i class="chevron-right"></i><a href="/tag" class="hover-underline">All tags</a></div>
+    </div>
 </div>
