@@ -91,12 +91,13 @@ nav {
         list-style-type: none;
 
         width: 100%;
-        margin: 0 0 2rem;
-        padding-left: 0;
+        margin: 0;
+        padding: 0;
     
         li.nav-item {
-            margin: 0 0.75rem;
-            padding: 0;
+            width: 100%;
+            margin: 0;
+            padding: 0 0.75rem;
             opacity: 0.9;
       
             &:not(:first-child) {
@@ -106,13 +107,15 @@ nav {
             a {
                 transition: background-color .3s ease-in-out;
 
+                overflow: hidden;
+                text-overflow: ellipsis;
+
                 &:hover {
                     background-color: var(--sidebar-hover-bg);
                 }
 
                 &.nav-link {
-                    display: flex;
-                    align-items: center;
+                    display: block;
             
                     padding: .2rem 1rem;
                     border-radius: .75rem;
