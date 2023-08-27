@@ -5,10 +5,10 @@
 
 <!-- jekyll variable -->
 {% assign title = page.title | default: site.title %}
-{% if page.collection == "categories" %}
-    {% capture title %}Categories: {% include utils/capitalize.html string=page.title %}{% endcapture %}
-{% elsif page.collection == "tags" %}
-    {% assign title = title | downcase | prepend: "Tags: " %}
+{% if page.collection == "category" %}
+    {% capture title %}Category: {{ page.title }}{% endcapture %}
+{% elsif page.collection == "tag" %}
+    {% assign title = title | downcase | prepend: "Tag: " %}
 {% endif %}
 {% unless title == site.title %}
     {% assign title = title | append: " - " | append: site.title %}
