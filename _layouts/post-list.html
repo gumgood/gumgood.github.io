@@ -3,14 +3,16 @@ layout: default
 ---
 
 {% if page.collection == 'category' %}
+    {% assign title = page.emoji | default: "📁" | append: " " | append: page.title %}
     {% assign posts = site.categories[page.slug] %}
 {% else %}
+    {% assign title = "📌" | append: " " | append: page.title | downcase %}
     {% assign posts = site.tags[page.slug] %}
 {% endif %}
 
 <div class="post-list">
     <h1 class="title">
-        <span>{{ page.emoji | default: "📁" | append: " " }}{{ page.title }}</span>
+        <span>{{ title }}</span>
         <span>{{ posts | size }}</span>
       </h1>
 
