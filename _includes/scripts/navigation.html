@@ -3,14 +3,14 @@
     const dimmed = document.querySelector("div#dimmed");
     const body = document.querySelector("body");
 
-    const nav_button = document.querySelector(".nav_three_bars").parentElement;
+    const nav_button = document.querySelector(".nav_three_bars");
     nav_button.addEventListener("click", function () {
         nav.style.left = "0";
         dimmed.style.display = "block";
         body.style.overflow = "hidden";
     });
 
-    const i_x = document.querySelector(".nav_x").parentElement;
+    const i_x = document.querySelector(".nav_x");
     i_x.addEventListener("click", function () {
         nav.style.left = "-15rem";
         dimmed.style.display = "none";
