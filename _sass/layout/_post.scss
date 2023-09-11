@@ -56,7 +56,7 @@ div.highlight {
             font-size: 0.85rem;
         }
 
-        i {
+        svg {
             @include icon-size(0.85rem, #6c757d);
             margin-right: 0.25rem;
             vertical-align: bottom;
@@ -111,7 +111,7 @@ div.highlight {
             vertical-align: middle;
         }
 
-        i {
+        svg {
             @include icon-size(1rem, var(--post-tag-color));
             margin-right: 0.5rem;
         }

@@ -53,7 +53,7 @@
                 justify-content: end;
                 align-items: center;
 
-                i {
+                svg {
                     @include icon-size(0.85rem, var(--text-muted-color));
                     margin-right: 0.1rem;
                 }

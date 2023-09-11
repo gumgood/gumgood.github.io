@@ -13,7 +13,7 @@
 
     user-select: none;
 
-    i {
+    svg {
         @include icon-size(1rem, #999);
         margin: 0 0.125rem;
     }
@@ -58,7 +58,7 @@
             background-color: var(--sidebar-hover-bg);
         }
 
-        i {
+        svg {
             @include icon-size(1rem, var(--search-icon-color));
             margin-right: 0.5rem;
         }

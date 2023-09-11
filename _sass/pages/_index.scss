@@ -41,15 +41,15 @@
                 line-height: 1.75;
                 font-size: 0.85rem;
                 word-spacing: 1px;
+                vertical-align: middle;
             }
 
-            i {
+            svg {
                 @include icon-size(0.75rem, var(--text-muted-color));
-                margin: 0.125rem 0.25rem 0.125rem 0.75rem;
-                vertical-align: text-bottom;
+                vertical-align: sub;
 
-                &:first-child {
-                    margin-left: 0;
+                &:not(:first-child) {
+                    margin-left: 0.75rem;
                 }
             }
         }
@@ -127,7 +127,7 @@
         }
     }
 
-    i {
+    svg {
         @include icon-size(1rem, var(--paginate-btn-color));
     }
 }

@@ -4,8 +4,8 @@
             <a href="/" id="avatar">
                 <img src="https://avatars.githubusercontent.com/u/17876281">
             </a>
-            <a id="nav-topbar" class="hover_button">
-                <i class="x"></i>
+            <a id="nav-topbar" class="hover_button nav_x">
+                {% include octicons/x.html %}
             </a>
         </div>
         <div class="site-title">
@@ -16,30 +16,38 @@
         </div>
     </div>
 
-    <div class="sidebar-bottom">
-        <a href="http://github.com/{{ site.author.github }}" aria-label="github" target="_blank" rel="noopener noreferrer">
-            <i class="mark-github"></i>
-        </a>
-        <a href="mailto:{{ site.author.email }}" aria-label="email">
-            <i class="mail"></i>
-        </a>
-        <a href="/about" aria-label="about">
-            <i class="info"></i>
-        </a>
-        <a href="{{ 'feed.xml' | absolute_url }}" aria-label="rss" target="_blank" rel="noopener noreferrer">
-            <i class="rss"></i>
-        </a>
+    <div id="profile-detail">
+        <ul>
+            <li>
+                {% include octicons/organization.html %}
+                <span>Samsung Research</span>
+            </li>
+            <li>
+                {% include octicons/location.html %}
+                <span>Seoul, South Korea</span>
+            </li>
+            <li>
+                {% include octicons/mail.html %}
+                <span>gumgood@naver.com</span>
+            </li>
+        </ul>
     </div>
 
-    <ul class="nav">
+    <ul id="nav">
         <li class="nav-item">
-            <a href="/" class="nav-link{% if page.url == "/" %} active{% endif %}">📂 All Posts ({{ site.posts | size }})</a>
+            <a href="/" class="nav-link{% if page.url == "/" %} active{% endif %}">
+                {% include octicons/list-unordered.html %}
+                <span>All Posts ({{ site.posts | size }})</span>
+            </a>
         </li>
         {% assign categories = site.category | sort: "order" %}
         {% for category in categories %}
             {% if category.emoji %}
                 <li class="nav-item ellipsis">
-                    <a href="{{ category.url }}" class="nav-link{% if page.url == category.url %} active{% endif %}">{{ category.emoji }} {{ category.title }} ({{ site.categories[category.slug] | size }})</a>
+                    <a href="{{ category.url }}" class="nav-link{% if page.url == category.url %} active{% endif %}">
+                        {% include {{ category.emoji | prepend: "octicons/" | append: ".html" }} %}
+                        <span>{{ category.title }} ({{ site.categories[category.slug] | size }})</span>
+                    </a>
                 </li>
             {% else %}
                 <li class="nav-item ellipsis subcategory">
@@ -48,7 +56,26 @@
             {% endif %}
         {% endfor %}
         <li class="nav-item">
-            <a href="/tag" class="nav-link{% if page.url == "/tag" %} active{% endif %}">📌 All Tags</a>
+            <a href="/tag" class="nav-link{% if page.url == "/tag" %} active{% endif %}">
+                {% include octicons/tag.html %}
+                <span>All Tags</span>
+            </a>
         </li>
     </ul>
+
+    <div class="sidebar-bottom">
+        <a href="http://github.com/{{ site.author.github }}" aria-label="github" target="_blank" rel="noopener noreferrer">
+            {% include octicons/mark-github.html %}
+        </a>
+        <a href="mailto:{{ site.author.email }}" aria-label="email">
+            {% include octicons/mail.html %}
+        </a>
+        <a href="/about" aria-label="about">
+            {% include octicons/info.html %}
+        </a>
+        <a href="{{ 'feed.xml' | absolute_url }}" aria-label="rss" target="_blank" rel="noopener noreferrer">
+            {% include octicons/rss.html %}
+        </a>
+    </div>
+
 </nav>

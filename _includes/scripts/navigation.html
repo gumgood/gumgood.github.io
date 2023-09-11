@@ -3,14 +3,14 @@
     const dimmed = document.querySelector("div#dimmed");
     const body = document.querySelector("body");
 
-    const i_three_bars = document.querySelector("i.three-bars").parentElement;
-    i_three_bars.addEventListener("click", function () {
+    const nav_button = document.querySelector(".nav_three_bars").parentElement;
+    nav_button.addEventListener("click", function () {
         nav.style.left = "0";
         dimmed.style.display = "block";
         body.style.overflow = "hidden";
     });
 
-    const i_x = document.querySelector("i.x").parentElement;
+    const i_x = document.querySelector(".nav_x").parentElement;
     i_x.addEventListener("click", function () {
         nav.style.left = "-15rem";
         dimmed.style.display = "none";

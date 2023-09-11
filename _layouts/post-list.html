@@ -3,15 +3,18 @@ layout: default
 ---
 
 {% if page.collection == 'category' %}
-    {% assign title = page.emoji | default: "📁" | append: " " | append: page.title %}
+    {% assign icon = page.emoji | default: "file-directory" %}
+    {% assign title = page.title %}
     {% assign posts = site.categories[page.slug] %}
 {% else %}
-    {% assign title = "📌" | append: " " | append: page.title | downcase %}
+    {% assign icon = "tag" %}
+    {% assign title = page.title | downcase %}
     {% assign posts = site.tags[page.slug] %}
 {% endif %}
 
 <div class="post-list">
     <h1 class="title">
+        {% include {{ icon | prepend: "octicons/" | append: ".html" }} %}
         <span>{{ title }}</span>
         <span>{{ posts | size }}</span>
       </h1>
@@ -19,7 +22,7 @@ layout: default
     <ul>
         {% for post in posts %}
             <li>
-                <i class="dot-fill"></i>
+                {% include octicons/dot-fill.html %}
                 <a href="{{ post.url }}" class="hover-underline">{{ post.title }}</a>
                 <span class="dash"></span>
                 <span>{{ post.date | date: "%b %e, %Y" }}</span>

@@ -11,7 +11,7 @@ div.search {
         border-radius: 0.7em;
         box-shadow: 0 0 3px 0 var(--tags-shadow);
 
-        i {
+        svg {
             @include icon-size(1.2rem, var(--search-icon-color));
             margin-right: 0.75rem;
         }

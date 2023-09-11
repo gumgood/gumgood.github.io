@@ -7,7 +7,7 @@ layout: default
         <span class="post-category">
             {% if page.categories.size > 0 %}
                 {% assign category = site.category | where: 'slug', page.categories.first | first %}
-                <i class="file-directory"></i>
+                {% include octicons/file-directory.html %}
                 <a href="{{ category.url }}" class="hover-underline">{{ category.title }}</a>
                 {%- if page.categories.size > 1 -%}
                     {%- assign subcategory = site.category | where: 'slug', page.categories.last | first -%}
@@ -33,7 +33,7 @@ layout: default
     <div class="post-tags">
         <span>
             {%- if page.tags.size > 0 -%}
-                <i class="tag"></i>
+                {% include octicons/tag.html %}
                 {%- for tag in page.tags -%}
                     <a href="/tag/{{ tag }}" class="hover-opacity">{{ tag | downcase }}</a>
                     {%- unless forloop.last -%}
