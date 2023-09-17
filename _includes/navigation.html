@@ -49,7 +49,7 @@
         {% for category in categories %}
             {% if category.emoji %}
                 <li class="nav-item ellipsis">
-                    <a href="{{ category.url }}" class="nav-link{% if page.url == category.url %} active{% endif %}">
+                    <a href="{{ category.url }}" class="nav-link{% if page.url == category.url or page.categories.last == category.slug %} active{% endif %}">
                         {% include {{ category.emoji | prepend: "octicons/" | append: ".html" }} %}
                         <span>{{ category.title }}</span>
                         <span class="dots"></span>
@@ -58,7 +58,7 @@
                 </li>
             {% else %}
                 <li class="nav-item ellipsis subcategory">
-                    <a href="{{ category.url }}" class="nav-link subcategory{% if page.url == category.url %} active{% endif %}">
+                    <a href="{{ category.url }}" class="nav-link subcategory{% if page.url == category.url or page.categories.last == category.slug %} active{% endif %}">
                         <span>{{ category.title }}</span>
                         <span class="dots"></span>
                         <span class="counter">{{ site.categories[category.slug] | size }}</span>
