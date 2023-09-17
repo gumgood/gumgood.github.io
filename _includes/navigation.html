@@ -11,7 +11,10 @@
             </a>
         </div>
         <div class="site-title">
-            <a href="/" class="site-title">{{ site.title }}</a>
+            <a href="/about" class="site-title">
+                <span>{{ site.title }}</span>
+                {% include octicons/chevron-right.html %}
+            </a>
         </div>
         <div class=" site-subtitle">
             {{ site.description }}
@@ -79,9 +82,6 @@
         </a>
         <a href="mailto:{{ site.author.email }}" aria-label="email">
             {% include octicons/mail.html %}
-        </a>
-        <a href="/about" aria-label="about">
-            {% include octicons/info.html %}
         </a>
         <a href="{{ 'feed.xml' | absolute_url }}" aria-label="rss" target="_blank" rel="noopener noreferrer">
             {% include octicons/rss.html %}

@@ -38,7 +38,7 @@ nav {
   
     #profile-wrapper {
         margin: 0 1rem;
-        padding: 0.75rem;
+        padding: 1rem 0.75rem;
 
         border: 1px solid rgb(208, 215, 222);
         border-radius: 0.75rem;
@@ -72,9 +72,16 @@ nav {
     
         a {
             color: rgba(117, 117, 117, .9);
+            fill: rgba(117, 117, 117, .9);
       
             &:hover {
                 color: var(--sidebar-active-color);
+                fill: var(--sidebar-active-color);
+            }
+
+            svg {
+                margin-left: -0.25rem;
+                vertical-align: bottom;
             }
         }
     }
@@ -87,7 +94,7 @@ nav {
   
 
     ul#profile-detail  {
-        margin: 1rem 0 0.25rem;
+        margin: 1rem 0 0;
         padding: 0;
 
         list-style-type: none;
@@ -113,7 +120,7 @@ nav {
         list-style-type: none;
 
         width: 100%;
-        margin: 1.5rem 0 0.5rem;
+        margin: 1.5rem 0 5rem;
         padding: 0;
     
         li.nav-item {
@@ -194,7 +201,7 @@ nav {
         flex-wrap: wrap;
 
         width: auto;
-        margin: 1.5rem 1.75rem;
+        margin: auto 1.75rem 1.5rem;
         padding-top: 1.5rem;
 
         border-top: 1px solid rgba(187,187,187,0.9);
