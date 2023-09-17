@@ -37,7 +37,9 @@
         <li class="nav-item">
             <a href="/" class="nav-link{% if page.url == "/" %} active{% endif %}">
                 {% include octicons/list-unordered.html %}
-                <span>All Posts ({{ site.posts | size }})</span>
+                <span>All Posts</span>
+                <span class="dots"></span>
+                <span class="counter">{{ site.posts | size }}</span>
             </a>
         </li>
         {% assign categories = site.category | sort: "order" %}
@@ -46,12 +48,18 @@
                 <li class="nav-item ellipsis">
                     <a href="{{ category.url }}" class="nav-link{% if page.url == category.url %} active{% endif %}">
                         {% include {{ category.emoji | prepend: "octicons/" | append: ".html" }} %}
-                        <span>{{ category.title }} ({{ site.categories[category.slug] | size }})</span>
+                        <span>{{ category.title }}</span>
+                        <span class="dots"></span>
+                        <span class="counter">{{ site.categories[category.slug] | size }}</span>
                     </a>
                 </li>
             {% else %}
                 <li class="nav-item ellipsis subcategory">
-                    <a href="{{ category.url }}" class="nav-link subcategory{% if page.url == category.url %} active{% endif %}">{{ category.title }} ({{ site.categories[category.slug] | size }})</a>
+                    <a href="{{ category.url }}" class="nav-link subcategory{% if page.url == category.url %} active{% endif %}">
+                        <span>{{ category.title }}</span>
+                        <span class="dots"></span>
+                        <span class="counter">{{ site.categories[category.slug] | size }}</span>
+                    </a>
                 </li>
             {% endif %}
         {% endfor %}
@@ -59,6 +67,8 @@
             <a href="/tag" class="nav-link{% if page.url == "/tag" %} active{% endif %}">
                 {% include octicons/tag.html %}
                 <span>All Tags</span>
+                <span class="dots"></span>
+                <span class="counter">{{ site.tags | size }}</span>
             </a>
         </li>
     </ul>
