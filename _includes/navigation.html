@@ -1,11 +1,13 @@
 <nav class="hidden-scroll">
+    <div id="closed" style="display:flex;height:3rem;align-items:center;flex-direction: row-reverse;">
+        <a id="nav-topbar" class="hover_button nav_x" style="margin-right:0.5rem;">
+            {% include octicons/x.html %}
+        </a>
+    </div>
     <div id="profile-wrapper">
         <div id="avatar-wrapper">
             <a href="/" id="avatar">
                 <img src="https://avatars.githubusercontent.com/u/17876281">
-            </a>
-            <a id="nav-topbar" class="hover_button nav_x">
-                {% include octicons/x.html %}
             </a>
         </div>
         <div class="site-title">
@@ -14,10 +16,8 @@
         <div class=" site-subtitle">
             {{ site.description }}
         </div>
-    </div>
-
-    <div id="profile-detail">
-        <ul>
+        
+        <ul id="profile-detail">
             <li>
                 {% include octicons/organization.html %}
                 <span>Samsung Research</span>

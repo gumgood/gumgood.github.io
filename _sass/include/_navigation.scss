@@ -14,6 +14,7 @@ nav {
     height: 100%;
     width: $nav-width;
     background-color: var(--sidebar-bg);
+    border-right: 1px solid rgb(208, 215, 222);
   
     overflow-x: hidden;
     overflow-y: auto;
@@ -25,8 +26,6 @@ nav {
   
     #nav-topbar {
         display: none;
-        height: fit-content;
-        margin: -2.8rem -0.5rem 0 auto;
       
         @media screen and (max-width: $break-small) {
             display: block;
@@ -38,8 +37,12 @@ nav {
     }
   
     #profile-wrapper {
-        margin: 3rem 0 0.25rem 0;
-        padding: 0 1.25rem 0 1.75rem;
+        margin: 0 1rem;
+        padding: 0.75rem;
+
+        border: 1px solid rgb(208, 215, 222);
+        border-radius: 0.75rem;
+        background-color: white;
     }
     
     #avatar-wrapper {
@@ -52,7 +55,7 @@ nav {
         width: 7rem;
         overflow: hidden;
         border-radius: 50%;
-        box-shadow: var(--avatar-border-color) 0 0 0 2px;
+        box-shadow: rgb(208, 215, 222) 0 0 0 2px;
     
         img {
             height: auto;
@@ -62,7 +65,7 @@ nav {
     }
   
     .site-title {
-        margin: 1.25rem 0 0.5rem 0;
+        margin: 1rem 0 0.25rem 0;
         font-weight: 900;
         font-size: 1rem;
         line-height: 1.2;
@@ -83,54 +86,41 @@ nav {
     }
   
 
-    div#profile-detail {
-        margin: 0 1rem;
+    ul#profile-detail  {
+        margin: 1rem 0 0.25rem;
+        padding: 0;
 
-        ul {
-            margin: 0.5rem 0.75rem;
-            padding: 0 0 1rem;
-            border-bottom: 1px solid rgba(187,187,187,0.9);
+        list-style-type: none;
 
-            list-style-type: none;
+        li {
+            * {
+                vertical-align: middle;
+            }
 
-            li {
-                * {
-                    vertical-align: middle;
-                }
+            svg {
+                @include icon-size(0.8rem, #656d76);
+                margin-right: 0.2rem;
+            }
 
-                svg {
-                    @include icon-size(0.8rem, #656d76);
-                    margin-right: 0.2rem;
-                }
-
-                span {
-                    color: rgb(31, 35, 40);
-                    font-size: 0.8rem;
-                }
+            span {
+                color: rgb(31, 35, 40);
+                font-size: 0.8rem;
             }
         }
     }
   
     ul#nav {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-
         list-style-type: none;
 
         width: 100%;
-        margin: 0.75rem 0 0.5rem;
+        margin: 1.5rem 0 0.5rem;
         padding: 0;
     
         li.nav-item {
             width: 100%;
-            margin: 0.1rem 0;
+            margin: 0.2rem 0;
             padding: 0 1rem;
             opacity: 0.9;
-      
-            &:not(.subcategory) {
-              margin: 0.2rem 0;
-            }
       
             a {
                 display: flex;
@@ -139,8 +129,6 @@ nav {
 
                 overflow: hidden;
                 text-overflow: ellipsis;
-
-                transition: background-color .3s ease-in-out;
 
                 &:hover {
                     background-color: var(--sidebar-hover-bg);
