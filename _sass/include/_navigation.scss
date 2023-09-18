@@ -125,12 +125,35 @@ nav {
             }
         }
     }
+
+    #searchbar-wrapper {
+        margin-top: 0.5rem;
+        border: 1px solid #d0d7de;
+        border-radius: 0.75rem;
+        background-color: white;
+
+        a {
+            display: flex;
+            align-items: center;
+            padding: 0.25rem 1rem;
+            color: rgb(110, 119, 129);
+            
+            svg {
+                margin-right: 0.5rem;
+                fill: rgb(101, 109, 118);
+            }
+
+            span {
+                font-size: 0.875rem;
+            }
+        }
+    }
   
     ul#nav {
         list-style-type: none;
 
         width: 100%;
-        margin: 1.5rem 0 5rem;
+        margin: 1.25rem 0 5rem;
         padding: 0;
     
         li.nav-item {
