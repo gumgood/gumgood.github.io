@@ -13,6 +13,8 @@ nav {
   
     height: 100%;
     width: $nav-width;
+    padding: 0 1rem;
+
     background-color: var(--sidebar-bg);
     border-right: 1px solid rgb(208, 215, 222);
   
@@ -25,19 +27,27 @@ nav {
     -ms-user-select: none;
   
     #nav-topbar {
-        display: none;
-      
-        @media screen and (max-width: $break-small) {
-            display: block;
-        }
-      
-        svg {
-            @include icon-size(1.25rem, #999);
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+
+        height: 3rem;
+        min-height: 3rem;
+
+        a {
+            display: none;
+        
+            @media screen and (max-width: $break-small) {
+                display: block;
+            }
+        
+            svg {
+                @include icon-size(1.25rem, #999);
+            }
         }
     }
   
     #profile-wrapper {
-        margin: 0 1rem;
         padding: 1rem;
 
         border: 1px solid rgb(208, 215, 222);
@@ -124,10 +134,7 @@ nav {
         padding: 0;
     
         li.nav-item {
-            width: 100%;
             margin: 0.2rem 0;
-            padding: 0 1rem;
-            opacity: 0.9;
       
             a {
                 display: flex;
@@ -201,8 +208,8 @@ nav {
         flex-wrap: wrap;
 
         width: auto;
-        margin: auto 1.75rem 1.5rem;
-        padding-top: 1.5rem;
+        margin: auto 0.75rem 0;
+        padding: 1.5rem 0;
 
         border-top: 1px solid rgba(187,187,187,0.9);
     
