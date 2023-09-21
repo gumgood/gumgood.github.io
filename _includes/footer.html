@@ -1,5 +1,8 @@
 <footer>
-    <p>
-        &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time> <span>{{ site.author.name }}</span>.
-    </p>
+    <span>&copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time><b> {{ site.author.name }}</b></span>
+    <span class="sep">|</span>
+    <a href="{{ 'feed.xml' | absolute_url }}" aria-label="rss" target="_blank" rel="noopener noreferrer">
+        {% include octicons/rss.html %}
+        <span>RSS</span>
+    </a>
 </footer>

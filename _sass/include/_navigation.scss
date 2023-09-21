@@ -110,18 +110,22 @@ nav {
         list-style-type: none;
 
         li {
-            * {
-                vertical-align: middle;
-            }
+            display: flex;
+            align-items: center;
 
             svg {
                 @include icon-size(0.8rem, #656d76);
-                margin-right: 0.2rem;
+                margin-right: 0.5rem;
             }
 
             span {
                 color: rgb(31, 35, 40);
                 font-size: 0.8rem;
+            }
+
+            a:hover {
+                text-decoration: underline 1px solid rgb(31, 35, 40);
+                text-underline-offset: 2px;
             }
         }
     }
@@ -221,47 +225,6 @@ nav {
                     //color: var(--sidebar-active-color);
                     background-color: var(--sidebar-hover-bg);
                 }
-            }
-        }
-    }
-  
-    .sidebar-bottom {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-
-        width: auto;
-        margin: auto 0.75rem 0;
-        padding: 1.5rem 0;
-
-        border-top: 1px solid rgba(187,187,187,0.9);
-    
-        a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            height: 1.75rem;
-            width: 1.75rem;
-      
-            &:not(:last-child) {
-                margin-right: 0.8rem;
-            }
-      
-            border-radius: 50%;
-            border: 1px solid #d0d7de;
-            color: var(--sidebar-btn-color);
-            background-color: var(--sidebar-btn-bg);
-
-            &:hover {
-                background-color: var(--sidebar-hover-bg);
-            }
-      
-            text-align: center;
-            line-height: 1.75rem;
-      
-            svg {
-                @include icon-size(1rem, var(--sidebar-btn-color));
             }
         }
     }

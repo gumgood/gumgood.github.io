@@ -7,14 +7,37 @@ footer {
     justify-content: center;
 
     padding-bottom: 1rem;
-
-    font-size: 0.8rem;
-    color: var(--text-muted-color);
+    
     background-color: var(--main-bg);
-    
     border-top: 1px solid var(--main-border-color);
-    
+
     span {
-        color: var(--text-color);
+        font-size: 0.8rem;
+        color: var(--text-muted-color);
+
+        b {
+            margin-right: 0.25rem;
+            font-weight: normal;
+            color: var(--text-color);
+        }
+
+        &.sep {
+            margin: 0 0.25rem;
+        }
+    }
+
+    svg {
+        @include icon-size(0.7rem, var(--text-muted-color));
+    }
+
+    a {
+        display: block;
+        margin: 0 0.25rem;
+        padding: 0.125rem 0;
+        line-height: 1.0;
+
+        &:hover {
+            border-bottom: 1px solid var(--text-muted-color);
+        }
     }
 }

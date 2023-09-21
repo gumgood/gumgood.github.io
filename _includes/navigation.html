@@ -26,12 +26,12 @@
                 <span>Samsung Research</span>
             </li>
             <li>
-                {% include octicons/location.html %}
-                <span>Seoul, South Korea</span>
-            </li>
-            <li>
                 {% include octicons/mail.html %}
                 <span>gumgood@naver.com</span>
+            </li>
+            <li>
+                {% include octicons/mark-github.html %}
+                <a href="/"><span>github.com/gumgood</span></a>
             </li>
         </ul>
     </div>
@@ -82,17 +82,4 @@
             </a>
         </li>
     </ul>
-
-    <div class="sidebar-bottom">
-        <a href="http://github.com/{{ site.author.github }}" aria-label="github" target="_blank" rel="noopener noreferrer">
-            {% include octicons/mark-github.html %}
-        </a>
-        <a href="mailto:{{ site.author.email }}" aria-label="email">
-            {% include octicons/mail.html %}
-        </a>
-        <a href="{{ 'feed.xml' | absolute_url }}" aria-label="rss" target="_blank" rel="noopener noreferrer">
-            {% include octicons/rss.html %}
-        </a>
-    </div>
-
 </nav>
