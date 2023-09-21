@@ -17,7 +17,7 @@
             </a>
         </div>
         <div class=" site-subtitle">
-            AI 공부하는 블로그입니다!!
+            {{ site.description }}
         </div>
         
         <ul id="profile-detail">
@@ -27,11 +27,11 @@
             </li>
             <li>
                 {% include octicons/mail.html %}
-                <span>gumgood@naver.com</span>
+                <span>{{ site.author.email }}</span>
             </li>
             <li>
                 {% include octicons/mark-github.html %}
-                <a href="/"><span>github.com/gumgood</span></a>
+                <a href="https://github.com/{{ site.author.github }}"><span>github.com/gumgood</span></a>
             </li>
         </ul>
     </div>
