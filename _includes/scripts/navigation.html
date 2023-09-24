@@ -1,6 +1,6 @@
 <script>
     const nav = document.querySelector("nav");
-    const dimmed = document.querySelector("div#dimmed");
+    const dimmed = document.querySelector(".dimmed");
     const body = document.querySelector("body");
 
     const nav_button = document.querySelector(".nav_three_bars");
@@ -10,8 +10,8 @@
         body.style.overflow = "hidden";
     });
 
-    const i_x = document.querySelector(".nav_x");
-    i_x.addEventListener("click", function () {
+    const close_button = document.querySelector(".close-button");
+    close_button.addEventListener("click", function () {
         nav.style.left = "-15rem";
         dimmed.style.display = "none";
         body.style.overflow = null;

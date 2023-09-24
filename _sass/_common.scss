@@ -5,27 +5,11 @@ $break-small: 850px;
 $break-large: 1200px;
 $nav-width: 15rem;
 
-.flex-row {
-    display: flex;
-}
-
-.flex-row-reverse {
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-wrap {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.flex-1 {
-    flex: 1;
+.prevent-select {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .max_width {
@@ -41,7 +25,13 @@ $nav-width: 15rem;
     }
 }
 
+.vertical-scroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 .hidden-scroll {   
+
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
     
@@ -81,12 +71,47 @@ $nav-width: 15rem;
     }
 }
 
-@mixin hover-scale($scale) {
-    transition: transform 0.3s ease;
 
-    &:hover {
-        transform: scale($scale);
-    }
+.octicon {
+    display: inline-block;
+    overflow: visible !important;
+    vertical-align: text-bottom;
+    fill: currentColor;
+}
+
+.color-bg-default {
+    background-color: var(--color-canvas-default);
+}
+
+.border {
+    border: 1px solid var(--color-border-default);
+}
+
+.Box {
+    background-color: var(--color-canvas-default);
+    border-color: var(--color-border-default);
+    border-radius: var(--borderRadius-medium);
+    border-style: solid;
+    border-width: var(--borderWidth-thin);
+}
+
+.Button {
+    display: grid;
+    height: 2rem;
+    width: 2rem;
+    background-color: transparent;
+    color: var(--color-fg-muted);
+    border-color: var(--color-border-default);
+    border-radius: var(--borderRadius-medium);
+    border-style: solid;
+    border-width: var(--borderWidth-thin);
+    place-content: center;
+    cursor: pointer;
+}
+
+.hover-background:hover {
+    background-color: var(--color-button-default-hover-bg);
+    cursor: pointer;
 }
 
 @mixin icon-size($size, $color) {
@@ -95,17 +120,16 @@ $nav-width: 15rem;
     fill: $color;
 }
 
-a.hover_button {
-    line-height: 0.7;
-    border-radius: 0.75rem;
-    margin: 0 -0.6rem;
-    padding: 0.6rem;
-  
-    cursor: pointer;
-  
-    &:hover {
-        background-color: var(--sidebar-hover-bg);
-    }
+.color-fg-default {
+    color: var(--color-fg-default);
+}
+
+.color-fg-muted {
+    color: var(--color-fg-muted);
+}
+
+.color-accent-fg {
+    color: var(--color-accent-fg);
 }
 
 /* --- Typography --- */
@@ -167,7 +191,7 @@ html {
 body {
     margin: 0;
     
-    color: var(--text-color);
+    color: var(--color-fg-default);
     background: var(--body-bg);
 
     font-family: $font-family;
@@ -177,4 +201,13 @@ body {
 
 a {
     text-decoration: none;
+
+    &:hover {
+        color: var(--color-accent-fg);
+        text-decoration: underline;
+    }
+
+    &.link-muted:hover {
+        text-decoration: none;
+    }
 }

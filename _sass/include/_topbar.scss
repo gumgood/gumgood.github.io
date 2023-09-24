@@ -1,45 +1,21 @@
-#topbar-wrapper {
+.topbar-wrapper {
     display: none;
-    width: 100%;
     
     @media screen and (max-width: $break-small) {
         display: block;
     }
 }
 
-#topbar {
+.topbar {
     height: 3rem;
+    margin: 0 -1rem;
+    padding: 0 1.25rem;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    background-color: var(--color-canvas-inset);
+    box-shadow: var(--color-nav-shadow) 0px -1px 0px 0px inset;
+    color: var(--color-fg-muted);
+}
 
-    background-color: var(--topbar-bg);
-
-    user-select: none;
-
-    svg {
-        @include icon-size(1rem, #999);
-        margin: 0 0.125rem;
-    }
-
-    #blog_title {
-        padding: 0 0.5rem;
-
-        font-size: 1.1rem;
-        color: var(--topbar-text-color);
-
-        visibility: hidden;
-        @media screen and (max-width: $break-small) {
-            visibility: visible;
-        }
-    }
-
-    a {
-        display: none;
-
-        @media screen and (max-width: $break-small) {
-            display: block;
-        }
-    }
+.topbar-title {
+    margin: 0 auto;
 }

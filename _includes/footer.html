@@ -1,8 +1,12 @@
-<footer>
-    <span>&copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time><b> {{ site.author.name }}</b></span>
-    <span class="sep">|</span>
-    <a href="{{ 'feed.xml' | absolute_url }}" aria-label="rss" target="_blank" rel="noopener noreferrer">
-        {% include octicons/rss.html %}
-        <span>RSS</span>
-    </a>
+<footer class="w-100 pb-3 prevent-select flex-vertical-center">
+    <span class="footer-copyright ellipsis">
+        &copy;
+        <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time>
+        <span class="footer-name"> {{ site.author.name }}</span>
+        &nbsp|&nbsp
+        <a class="footer-rss-link" href="{{ 'feed.xml' | absolute_url }}" aria-label="rss" target="_blank" rel="noopener noreferrer">
+            {% include octicons/rss.html %}
+            <span class="ml-1">RSS</span>
+        </a>
+    </span>
 </footer>

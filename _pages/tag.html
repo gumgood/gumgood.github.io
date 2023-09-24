@@ -2,13 +2,19 @@
 title: Tag
 ---
 
-<div class="tag">
-    <h1>Tag</h1>
-    <div class="tag-container">
+<div class="Tag">
+    <h1 class="Tag-title flex-vertical-center my-4 pl-2">
+        <span class="mr-3">
+            {% include octicons/tag.html %}
+        </span>
+        <span class="ellipsis">Tag</span>
+    </h1>
+    <div class="Tag-container flex-wrap">
         {% for it in site.tags %}
-            <div>
-                <a href="/tag/{{ it.first | downcase }}" class="hover-underline">
-                  {{ it.first | downcase }}<span>{{ it.last | size }}</span>
+            <div class="Tag-item">
+                <a class="Tag-item-link color-fg-muted link-muted hover-background" href="/tag/{{ it.first | downcase }}">
+                  {{ it.first | downcase }}
+                  <span class="Tag-item-counter color-fg-default">{{ it.last | size }}</span>
                 </a>
             </div>
         {% endfor %}

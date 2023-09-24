@@ -7,9 +7,9 @@ div.search {
 
         padding: 0.4rem 1rem;
 
-        border: 1px solid var(--tags-border);
+        border: 1px solid #dee2e6;
         border-radius: 0.7em;
-        box-shadow: 0 0 3px 0 var(--tags-shadow);
+        box-shadow: 0 0 3px 0 #e9ecef;
 
         svg {
             @include icon-size(1.2rem, var(--search-icon-color));

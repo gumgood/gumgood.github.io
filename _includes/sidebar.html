@@ -1,9 +1,9 @@
-<div id="sidebar">
-    <div id="recent-posts">
-        <div class="sidebar-header">Recently Updated</div>
-        <ul>
+<div class="Sidebar prevent-select flex-1 my-5 ml-5 pl-2">
+    <div class="mb-5 pl-3">
+        <div class="Sidebar--header color-fg-default">Recently Updated</div>
+        <ul class="Sidebar--recent-posts mt-2 mb-3 pl-1 pt-1 pb-1">
             {%- for post in site.posts limit: 5 -%}
-            <li><a href="{{ post.url }}" class="hover-underline ellipsis-two">{{ post.title }}</a></li>
+            <li class="mb-2 pb-1"><a class="color-fg-muted ellipsis-two" href="{{ post.url }}">{{ post.title }}</a></li>
             {%- endfor -%}
         </ul>
     </div>
@@ -17,15 +17,18 @@
     {% endfor %}
     {% assign tags = tags | sort %}
 
-    <div id="trending-tags">
-        <div class="sidebar-header">Trending Tags</div>
-        <div class="flex-wrap trending-tags-item">
+    <div class="Sidebar--trending-tags mt-3 pl-3">
+        <div class="Sidebar--header">Trending Tags</div>
+        <div class="flex-wrap mt-3 mr-3">
             {% for it in tags limit: 10 %}
-            <a href="/tag/{{ it[1] }}">{{ it[1] }}</a>
+            <a class="Sidebar--tags Box mr-2 mb-2 px-2 py-1 color-fg-muted hover-background" href="/tag/{{ it[1] }}">{{ it[1] }}</a>
             {% endfor %}
         </div>
-        <div class="flex-row all-tags">
-            {% include octicons/chevron-right.html %}
-            <a href="/tag" class="hover-underline">All tags</a></div>
+        <div class="flex-vertical-center">
+            <a href="/tag" class="Sidebar--all-tags ml-auto color-fg-muted">
+                {% include octicons/chevron-right.html %}
+                <span>All tags</span>
+            </a>
+        </div>
     </div>
 </div>

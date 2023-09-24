@@ -8,16 +8,16 @@
 <body>
     {%- include navigation.html -%}
     
-    <div id="dimmed"></div>
+    <div class="dimmed h-100 w-100"></div>
 
-    <div id="main-wrapper">
+    <div class="Main-wrapper flex-column flex-vertical-center py-0 px-3">
         <div class="flex-column flex-1 max_width">
 
             {%- include topbar.html -%}
 
             <div class="flex-row flex-1">
                 
-                <main>
+                <main class="w-100 my-5 py-0 px-1">
                     {{ content }}
                 </main>
 

@@ -42,87 +42,62 @@ div.highlight {
     }
 }
 
-.post>.post-metadata {
-    margin-bottom: 3rem;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgb(208, 215, 222);
+.Post-info {
+    border-bottom: 1px solid var(--color-border-default);
+}
 
-    .post-category {
+.Post-info-category {
+    line-height: 0.85rem;
+    font-size: 0.85rem;
 
-        &,
-        * {
-            display: inline-block;
-            line-height: 0.85rem;
-            font-size: 0.85rem;
-        }
+    svg {
+        @include icon-size(0.85rem, var(--color-fg-muted));
+    }
+}
 
-        svg {
-            @include icon-size(0.85rem, #6c757d);
-            margin-right: 0.25rem;
-            vertical-align: bottom;
-        }
+.Post-info-title {
+    color: var(--post-title-color);
+    font-size: 2rem;
+    line-height: 1.2;
+    word-break: keep-all;
+}
 
-        span {
-            margin: 0 0.125rem;
-        }
+.Post-info-metadata {
+    color: #6c757d;
+    font-size: 0.85rem;
+    word-spacing: 1px;
+    
+    em {
+        font-style: normal;
+        color: var(--post-meta-color);
     }
 
-    .post-title {
-        margin: 0.5rem 0 0.75rem;
-        color: var(--post-title-color);
-        font-size: 2rem;
-        line-height: 1.2;
-        word-break: keep-all;
-    }
+    span {
+        white-space: nowrap;
 
-    .post-metadata {
-        color: #6c757d;
-        font-size: 0.85rem;
-        word-spacing: 1px;
-
-        em {
-            font-style: normal;
-            color: var(--post-meta-color);
-        }
-
-        span {
-            white-space: nowrap;
-
-            &:not(:first-child)::before {
-                content: "\2022";
-                padding: 0 0.25rem;
-            }
+        &:not(:first-child)::before {
+            content: "\2022";
+            padding: 0 0.25rem;
         }
     }
 }
 
-.post-tags {
-    display: inline-block;
-    margin: 5rem 0 2rem;
-    width: 100%;
+.Post-tags {
     font-size: 0.85rem;
+    line-height: 1.125rem;
     word-spacing: 1px;
 
-    >span {
-        display: inline;
-        width: 100%;
-
-        * {
-            vertical-align: middle;
-        }
-
-        svg {
-            @include icon-size(1rem, var(--post-tag-color));
-            margin-right: 0.5rem;
-        }
-
-        a {
-            padding: 0.1rem 0.4rem;
-            color: #6c757d;
-            background: var(--post-tag-bg);
-            border-radius: 0.3rem;
-        }
+    svg {
+        @include icon-size(1rem, var(--post-tag-color));
+        margin-right: 0.5rem;
     }
+}
+
+.Post-tags--items {
+    padding: 0.1rem 0.4rem;
+    color: #6c757d;
+    background: var(--post-tag-bg);
+    border-radius: 0.3rem;
 }
 
 .utterances {

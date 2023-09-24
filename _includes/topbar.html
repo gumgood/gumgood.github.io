@@ -1,11 +1,13 @@
-<div id="topbar-wrapper">
-    <div id="topbar">
-        <a class="hover_button nav_three_bars">
+<div class="topbar-wrapper w-100">
+    <div class="topbar flex-vertical-center prevent-select">
+        <button class="Button hover-background nav_three_bars">
             {% include octicons/three-bars.html %}
-        </a>
-        <span id="blog_title" class="ellipsis">gumgood blog</span>
-        <a href="/search" class="hover_button" {% if page.url=='/search' %}style="visibility: hidden;" {% endif %}>
+        </button>
+        <span class="topbar-title px-2 ellipsis">gumgood blog</span>
+        
+        <a href="/search"><button class="Button hover-background" {% if page.url=='/search' %}style="visibility: hidden;" {% endif %}>
             {% include octicons/search.html %}
-        </a>
+            
+        </button></a>
     </div>
 </div>

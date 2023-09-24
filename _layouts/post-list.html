@@ -12,20 +12,22 @@ layout: default
     {% assign posts = site.tags[page.slug] %}
 {% endif %}
 
-<div class="post-list">
-    <h1 class="title">
-        {% include {{ icon | prepend: "octicons/" | append: ".html" }} %}
-        <span>{{ title }}</span>
-        <span>{{ posts | size }}</span>
+<div class="Postlist">
+    <h1 class="Postlist-title flex-vertical-center my-4">
+        <span class="mr-3">
+            {% include {{ icon | prepend: "octicons/" | append: ".html" }} %}
+        </span>
+        <span class="mr-2 ellipsis">{{ title }}</span>
+        <span class="Postlist-title-count color-fg-muted">{{ posts | size }}</span>
       </h1>
 
-    <ul>
+    <ul class="Postlist-items mb-5 px-3">
         {% for post in posts %}
-            <li>
+            <li class="Postlist-items--item flex-row py-2">
                 {% include octicons/dot-fill.html %}
-                <a href="{{ post.url }}" class="hover-underline">{{ post.title }}</a>
-                <span class="dash"></span>
-                <span>{{ post.date | date: "%b %e, %Y" }}</span>
+                <a href="{{ post.url }}" class="color-accent-fg">{{ post.title }}</a>
+                <span class="Postlist-items--item-dash flex-1 mx-2"></span>
+                <span class="Postlist-items--item-date">{{ post.date | date: "%b %e, %Y" }}</span>
             </li>
         {% endfor %}
     </ul>

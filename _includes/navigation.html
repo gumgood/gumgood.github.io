@@ -1,53 +1,53 @@
-<nav class="hidden-scroll">
-    <div id="nav-topbar">
-        <a class="hover_button nav_x">
+<nav class="flex-column h-100 px-3 vertical-scroll hidden-scroll prevent-select">
+    <div class="close-button-wrapper">
+        <button type="button" class="Button close-button">
             {% include octicons/x.html %}
-        </a>
+        </button>
     </div>
-    <div id="profile-wrapper">
-        <div id="avatar-wrapper">
-            <a href="/" id="avatar">
-                <img src="https://avatars.githubusercontent.com/u/17876281">
+    <div class="p-3 Box">
+        <div>
+            <a href="/" class="profile-avatar d-block">
+                <img class="h-100 w-100" src="https://avatars.githubusercontent.com/u/17876281">
             </a>
         </div>
-        <div class="site-title">
-            <a href="/about" class="site-title">
+        <div class="py-3">
+            <a href="/about" class="profile-site-title flex-vertical-center hover-background link-muted">
                 <span>{{ site.title }}</span>
                 {% include octicons/chevron-right.html %}
             </a>
-        </div>
-        <div class=" site-subtitle">
-            {{ site.description }}
+            <span class="profile-site-description">
+                {{ site.description }}
+            </span>
         </div>
         
-        <ul id="profile-detail">
-            <li>
+        <ul class="profile-detail m-0 p-0">
+            <li class="flex-vertical-center">
                 {% include octicons/organization.html %}
                 <span>Samsung Research</span>
             </li>
-            <li>
+            <li class="flex-vertical-center">
                 {% include octicons/mail.html %}
                 <span>{{ site.author.email }}</span>
             </li>
-            <li>
+            <li class="flex-vertical-center">
                 {% include octicons/mark-github.html %}
-                <a href="https://github.com/{{ site.author.github }}"><span>github.com/gumgood</span></a>
+                <a href="https://github.com/{{ site.author.github }}">github.com/gumgood</a>
             </li>
         </ul>
     </div>
 
-    <div id="searchbar-wrapper">
-        <a href="/search">
+    <button class="searchbar-wrapper Box my-2 p-0">
+        <a class="flex-vertical-center py-1 px-3 link-muted" href="/search">
             {% include octicons/search.html %}
             <span>Search...</span>
         </a>
-    </div>
+    </button>
 
-    <ul id="nav">
-        <li class="nav-item">
-            <a href="/" class="nav-link{% if page.url == "/" %} active{% endif %}">
+    <ul class="side-nav-container mt-1 mx-0 p-0 width-full">
+        <li {% if page.url == "/" %}class="active"{% endif %}>
+            <a href="/" class="nav-link flex-vertical-center hover-background">
                 {% include octicons/list-unordered.html %}
-                <span>All Posts</span>
+                <span class="ellipsis">All Posts</span>
                 <span class="dots"></span>
                 <span class="counter">{{ site.posts | size }}</span>
             </a>
@@ -55,28 +55,28 @@
         {% assign categories = site.category | sort: "order" %}
         {% for category in categories %}
             {% if category.emoji %}
-                <li class="nav-item ellipsis">
-                    <a href="{{ category.url }}" class="nav-link{% if page.url == category.url or page.categories.last == category.slug %} active{% endif %}">
+                <li {% if page.url == category.url or page.categories.last == category.slug %}class="active"{% endif %}>
+                    <a href="{{ category.url }}" class="nav-link flex-vertical-center hover-background">
                         {% include {{ category.emoji | prepend: "octicons/" | append: ".html" }} %}
-                        <span>{{ category.title }}</span>
+                        <span class="ellipsis">{{ category.title }}</span>
                         <span class="dots"></span>
                         <span class="counter">{{ site.categories[category.slug] | size }}</span>
                     </a>
                 </li>
             {% else %}
-                <li class="nav-item ellipsis subcategory">
-                    <a href="{{ category.url }}" class="nav-link subcategory{% if page.url == category.url or page.categories.last == category.slug %} active{% endif %}">
-                        <span>{{ category.title }}</span>
+                <li class="subcategory{% if page.url == category.url or page.categories.last == category.slug %} active{% endif %}">
+                    <a href="{{ category.url }}" class="nav-link flex-vertical-center subcategory hover-background">
+                        <span class="ellipsis">{{ category.title }}</span>
                         <span class="dots"></span>
                         <span class="counter">{{ site.categories[category.slug] | size }}</span>
                     </a>
                 </li>
             {% endif %}
         {% endfor %}
-        <li class="nav-item">
-            <a href="/tag" class="nav-link{% if page.url == "/tag" %} active{% endif %}">
+        <li {% if page.url == "/tag" %}class="active"{% endif %}>
+            <a href="/tag" class="nav-link flex-vertical-center hover-background">
                 {% include octicons/tag.html %}
-                <span>All Tags</span>
+                <span class="ellipsis">All Tags</span>
                 <span class="dots"></span>
                 <span class="counter">{{ site.tags | size }}</span>
             </a>

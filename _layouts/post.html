@@ -2,25 +2,25 @@
 layout: default
 ---
 
-<div class="post">
-    <div class="post-metadata">
-        <span class="post-category">
+<div class="Post">
+    <div class="Post-info mb-5 py-2">
+        <span class="Post-info-category flex-vertical-center">
             {% if page.categories.size > 0 %}
                 {% assign category = site.category | where: 'slug', page.categories.first | first %}
                 {% include octicons/file-directory.html %}
-                <a href="{{ category.url }}" class="hover-underline">{{ category.title }}</a>
+                <a href="{{ category.url }}" class="ml-2 color-accent-fg">{{ category.title }}</a>
                 {%- if page.categories.size > 1 -%}
                     {%- assign subcategory = site.category | where: 'slug', page.categories.last | first -%}
-                    <span>/</span><a href="{{ subcategory.url }}" class="hover-underline">{{ subcategory.title }}</a>
+                    <span>&nbsp/&nbsp</span><a href="{{ subcategory.url }}" class="color-accent-fg">{{ subcategory.title }}</a>
                 {%- endif -%}
             {% endif %}
         </span>
 
-        <h1 class="post-title">
+        <h1 class="Post-info-title my-2 pb-1">
             {{ page.title }}
         </h1>
     
-        <span class="post-metadata">
+        <span class="Post-info-metadata">
             <span>By <em>{{ page.author | default: site.author.name }}</em></span>
             <span>Posted <em>{{ page.date | date: "%b %e, %Y" }}</em></span>
         </span>
@@ -30,21 +30,21 @@ layout: default
         {{ content }}
     </div>
     
-    <div class="post-tags">
-        <span>
+    <div class="w-100 my-4 pt-5">
+        <span class="Post-tags flex-vertical-center w-100">
             {%- if page.tags.size > 0 -%}
                 {% include octicons/tag.html %}
                 {%- for tag in page.tags -%}
-                    <a href="/tag/{{ tag }}" class="hover-opacity">{{ tag | downcase }}</a>
+                    <a class="Post-tags--items color-accent-fg" href="/tag/{{ tag }}">{{ tag | downcase }}</a>
                     {%- unless forloop.last -%}
-                        <span>, </span>
+                        <span>,&nbsp;</span>
                     {%- endunless -%}
                 {%- endfor -%}
             {%- endif -%}
         </span>
     </div>
     
-    <div class="post-comment">
+    <div class="Post-comment">
         {% include scripts/comment.html%}
     </div>
 

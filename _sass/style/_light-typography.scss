@@ -3,10 +3,27 @@
  */
 
 @mixin light-scheme {
+// 230923
+    --borderWidth-thin: 0.0625rem;
+    --borderRadius-medium: 0.375rem;
+
+    --color-accent-fg: rgb(9, 105, 218);
+    --color-avatar-border: var(--color-border-default);
+    --color-border-default: rgb(208, 215, 222);
+    --color-button-default-hover-bg: rgba(208, 215, 222, 0.32);
+    --color-canvas-default: rgb(255, 255, 255);
+    --color-canvas-inset: rgb(246, 248, 250);
+    --color-counter-border: rgba(0, 0, 0, 0);
+    --color-fg-default: rgb(31, 35, 40);
+    --color-fg-muted: rgb(101, 109, 118);
+    --color-fg-subtle: rgb(110, 119, 129);
+    --color-nav-shadow: var(--color-border-default);
+    --color-neutral-muted: rgba(175, 184, 193, 0.2);
+
+//
     --main-bg: white;
     --main-border-color: #f3f3f3;
     --topbar-bg: rgba(255, 255, 255, 0.7);
-    --sidebar-bg: #f6f8fa;
     --sidebar-muted-color: #a2a19f;
     --sidebar-active-color: #1d1d1d;
     --sidebar-btn-color: #8e8e8e;
@@ -80,8 +97,6 @@
     --categories-shadow: var(--common-btn-border-color);
 
     /* tags */
-    --tags-border: #dee2e6;
-    --tags-shadow: #e9ecef;
     --tags-meta-color: var(--common-meta-color);
 
     /* Post */
@@ -91,39 +106,9 @@
     --post-link-hover-color: var(--common-link-hover-color);
     --post-link-underline-color: #dee2e6;
     --post-tag-color: var(--common-meta-color);
-    
-    /* Posts - prompt */
-    --prompt-text-color: rgb(46 46 46 / 77%);
-    --prompt-tip-bg: rgb(123 247 144 / 20%);
-    --prompt-tip-icon-color: #03b303;
-    --prompt-info-bg: #e1f5fe;
-    --prompt-info-icon-color: #0070cb;
-    --prompt-warning-bg: rgb(255 243 205);
-    --prompt-warning-icon-color: #ef9c03;
-    --prompt-danger-bg: rgb(248 215 218 / 56%);
-    --prompt-danger-icon-color: #df3c30;
 
     /* Posts - tag */
     --post-tag-bg: rgba(0, 0, 0, 0.075);
-    --post-tb-even-bg: var(--body-bg);
-    --post-tb-odd-bg: #fbfcfd;
-    --post-tb-border-color: #eaeaea;
-
-    /* --- code highlight: custom light colors --- */
-    --highlight-bg-color: #f7f7f7;
-    --highlighter-rouge-color: #2f2f2f;
-    --highlight-lineno-color: #c2c6cc;
-    --inline-code-bg: #f3f3f3;
-    --code-header-text-color: #a3a3b1;
-    --code-header-muted-color: #ebebeb;
-    --code-header-icon-color: #d1d1d1;
-    --clipboard-checked-color: #43c743;
-    --clipboard-failed-color: #c74343;
-
-    [class^=prompt-] {
-        --inline-code-bg: #fbfafa;
-        --highlighter-rouge-color: rgb(82 82 82);
-    }
 }
 
 $font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";

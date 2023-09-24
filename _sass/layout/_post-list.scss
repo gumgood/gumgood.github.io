@@ -1,92 +1,40 @@
-.post-list {
-
-    h1.title {
-        display: block;
-        font-size: 2rem;
-        margin: 0 0 2rem;
-
-        * {
-            vertical-align: middle;
-        }
-
-        &,
-        * {
-            line-height: 1.75rem;
-            font-size: 1.75rem;
-
-            @media (max-width: $break-small) {
-                line-height: 1.5rem;
-                font-size: 1.5rem;
-            }
-        }
-
-        svg {
-            @include icon-size(1.75rem, var(--post-list-meta-color));
-            margin-right: 0.5rem;
-
-            @media (max-width: $break-small) {
-                @include icon-size(1.5rem, rgba(117, 117, 117, .9));
-            }
-        }
-
-        span {
-            white-space: nowrap;
-            color: var(--post-list-title-color);
-
-            &:last-child {
-                padding: 0.5rem 0 0 0.5rem;
-                color: var(--post-list-meta-color);
-                font-size: 1rem;
-
-                @media (max-width: $break-small) {
-                    font-size: 0.875rem;
-                }
-            }
-        }
+.Postlist-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    
+    svg {
+        height: 1.5rem;
+        width: 1.5rem;
+        color: var(--color-fg-muted);
     }
+}
 
-    ul {
-        list-style: none;
-        margin: 0 0 2rem;
-        padding: 0 1rem;
+.Postlist-title-count {
+    font-size: 1rem;
+}
 
-        li {
-            display: flex;
-            padding: 0.6rem 0;
-            line-height: 1.5rem;
+.Postlist-items {
+    list-style: none;
+}
 
-            svg {
-                @include icon-size(0.65rem, var(--post-list-dot-color));
-                flex: 0 0 0.65rem;
-                margin: 0.425rem 0.5rem 0.425rem 0;
-                line-height: 1.5rem;
-            }
+.Postlist-items--item {
+    word-break: break-all;
+    font-size: 1.125rem;
 
-            a {
-                word-break: break-all;
-                font-size: 1.125rem;
-
-                @media (max-width: $break-small) {
-                    font-size: 1rem;
-                }
-            }
-
-            span.dash {
-                flex-grow: 1;
-                margin: 0.75rem 0.5rem 0;
-                min-width: 0.5rem;
-                border-top: 2px dotted var(--post-list-dash-color);
-            }
-
-            span {
-                white-space: nowrap;
-                color: var(--post-list-meta-color);
-                font-size: 0.875rem;
-
-                @media (max-width: $break-small) {
-                    font-size: 0.75rem;
-                }
-            }
-        }
+    svg {
+        @include icon-size(0.65rem, var(--color-fg-muted));
+        margin: 0.5rem 0.5rem 0.5rem 0;
     }
+}
+
+.Postlist-items--item-dash {
+    margin-top: 0.75rem;
+    min-width: 0.5rem;
+    border-top: 2px dotted var(--post-list-dash-color);
+}
+
+.Postlist-items--item-date {
+    font-size: 0.875rem;
+    white-space: nowrap;
+    color: var(--post-list-meta-color);
 }
