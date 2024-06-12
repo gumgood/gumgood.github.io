@@ -1,16 +1,6 @@
 .post-summaries { 
 
     .post-summaries__item {
-        margin-bottom: 1.25rem;
-        
-        @media screen and (max-width: $break-small) {
-            margin-bottom: 1.5rem;
-        }
-
-        //box-shadow: var(--post-summaries-shadow);
-        border: 1px solid rgb(208, 215, 222);
-        border-radius: 0.5rem;
-        background-color: var(--post-summaries-bg);
 
         &:hover {
             box-shadow: rgba(104, 104, 104, 0.5) 0 2px 6px 0, rgba(211, 209, 209, 0.15) 0 0 0 1px;
@@ -79,8 +69,9 @@
         display: flex;
         flex-basis: 20rem;
 
-        border-radius: 0 0.5rem 0.5rem 0;
-
+        border-top-right-radius: var(--borderRadius-large);
+        border-bottom-right-radius: var(--borderRadius-large);
+        
         @media screen and (max-width: 640px) {
             max-height: 10rem;
             border-radius: 0.5rem 0.5rem 0 0;

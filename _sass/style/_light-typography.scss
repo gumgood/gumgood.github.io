@@ -5,7 +5,10 @@
 @mixin light-scheme {
 // 230923
     --borderWidth-thin: 0.0625rem;
+    --borderRadius-small: 0.1875rem;
     --borderRadius-medium: 0.375rem;
+    --borderRadius-large: 0.75rem;
+    --borderRadius-full: 624.9375rem;
 
     --color-accent-fg: rgb(9, 105, 218);
     --color-avatar-border: var(--color-border-default);

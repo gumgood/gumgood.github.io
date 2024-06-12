@@ -35,16 +35,18 @@ nav {
         height: 7rem;
         width: 7rem;
         overflow: hidden;
-        border-radius: 50%;
+        border-radius: var(--borderRadius-full);
         box-shadow: var(--color-avatar-border) 0 0 0 2px;
     }
 
   
     .profile-site-title {
+        width: min-content;
         margin: 0 -0.5rem;
         padding: 0.125rem 0.5rem;
         font-weight: 600;
         color: var(--color-fg-default);
+        border-radius: var(--borderRadius-medium);
     }
   
     .profile-site-description {
