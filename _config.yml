@@ -2,6 +2,13 @@
 title               : Gumgood
 description         : AI 공부하는 블로그입니다!!
 
+# Where things are
+collections_dir     : contents
+collections:
+  assets:
+    output          : true
+    permalink       : :name
+
 # Handling Reading
 include             : ["_pages", "_sass"]
 exclude             : ["Gemfile", "Gemfile.lock", "README.md"]
