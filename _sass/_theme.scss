@@ -1,2 +1,5 @@
 @mixin light-scheme {
+    --color-border-default: rgb(208, 215, 222);
+    --color-canvas-inset: rgb(246, 248, 250);
+    --color-nav-shadow: var(--color-border-default);
 }
