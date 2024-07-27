@@ -15,8 +15,11 @@
 
 <body>
     <nav></nav>
-    <div id="main-container">
-        <main>{{ content }}</main>
+    <div id="page-wrapper">
+        <div id="main-wrapper">
+            <main>{{- content -}}</main>
+            <nav></nav>
+        </div>
         <footer>
             <div class="footer-content">
                 {{- "&copy;&nbsp" -}}<time datetime="{{- site.time -}}">{{- site.time | date: '%Y' -}}</time>{{- "&nbsp" -}}<b>{{- site.title -}}</b>{{- "&nbsp|&nbsp" -}}

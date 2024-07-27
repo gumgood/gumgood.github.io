@@ -11,19 +11,21 @@ nav {
     box-shadow: var(--color-nav-shadow) -1px 0px 0px 0px inset;
 }
 
-#main-container {
-    display: flex;
-    flex-direction: column;
+#page-wrapper {
+    @include flex-column-center;
     min-height: 100vh;
     margin-left: var(--nav-width);
     padding: 0 1rem;
 }
 
-main {
+#main-wrapper {
+    display: flex;
     flex: 1;
     width: 100%;
     max-width: var(--main-max-width);
-    margin: 0 auto;
+}
+
+main {
     overflow: hidden;
 }
 
@@ -31,18 +33,16 @@ footer {
     height: var(--footer-height);
     width: 100%;
     max-width: var(--main-max-width);
-    margin: 0 auto;
     border-top: 1px solid var(--color-border-default);
 }
 
 .footer-content {
     @include flex-center;
-    @include ellipse;
 
     height: 100%;
-    line-height: 1.5;
     color: var(--color-fg-muted);
     font-size: var(--footer-font-size);
+    white-space: nowrap;
 
     a {
         @include flex-center;
