@@ -17,6 +17,15 @@
     <nav></nav>
     <div id="main-container">
         <main>{{ content }}</main>
+        <footer>
+            <div class="footer-content">
+                {{- "&copy;&nbsp" -}}<time datetime="{{- site.time -}}">{{- site.time | date: '%Y' -}}</time>{{- "&nbsp" -}}<b>{{- site.title -}}</b>{{- "&nbsp|&nbsp" -}}
+                <a href="{{- 'feed.xml' | absolute_url -}}" aria-label="rss" target="_blank" rel="noopener noreferrer">
+                    {%- include octicons/rss.html -%}
+                    {{- "&nbspRSS" -}}
+                </a>
+            </div>
+        </footer>
     </div>
 </body>
 

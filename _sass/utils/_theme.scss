@@ -1,10 +1,15 @@
 @mixin light-scheme {
     font-size: 16px;
 
+    --footer-height: 4rem;
+    --footer-font-size: 0.8rem;
     --nav-width: 15rem;
     --main-max-width: 80rem;
 
+    --color-accent-fg: rgb(9, 105, 218);
     --color-border-default: rgb(208, 215, 222);
     --color-canvas-inset: rgb(246, 248, 250);
+    --color-fg-default: rgb(31, 35, 40);
+    --color-fg-muted: rgb(101, 109, 118);
     --color-nav-shadow: var(--color-border-default);
 }

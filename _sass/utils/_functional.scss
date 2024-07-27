@@ -1,0 +1,17 @@
+.octicon {
+    height: 1em;
+    width: 1em;
+    fill: currentColor;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin ellipse {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
