@@ -2,7 +2,7 @@ html {
     @include light-scheme;
 }
 
-nav {
+#navigation {
     position: fixed;
     left: 0px;
     height: 100%;
@@ -26,7 +26,12 @@ nav {
 }
 
 main {
+    flex: 3;
     overflow: hidden;
+}
+
+#sidebar {
+    flex: 1;
 }
 
 footer {
