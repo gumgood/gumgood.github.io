@@ -1,6 +1,6 @@
 ---
 permalink: /main.css
 ---
-@import "normalize";
-@import "theme";
-@import "default";
+@import "utils/normalize";
+@import "utils/theme";
+@import "layouts/default";

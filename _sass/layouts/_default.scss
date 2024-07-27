@@ -1,0 +1,25 @@
+html {
+    @include light-scheme;
+}
+
+nav {
+    position: fixed;
+    left: 0px;
+    height: 100%;
+    width: var(--nav-width);
+    background-color: var(--color-canvas-inset);
+    box-shadow: var(--color-nav-shadow) -1px 0px 0px 0px inset;
+}
+
+#main-container {
+    margin-left: var(--nav-width);
+    padding: 0 1rem;
+
+    main {
+        width: 100%;
+        min-height: 100vh;
+        max-width: var(--main-max-width);
+        margin: 0 auto;
+        overflow: hidden;
+    }
+}
