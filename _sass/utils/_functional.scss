@@ -1,6 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-accent-fg);
+    text-decoration: underline;
+}
+
 .octicon {
+    display: inline-block;
     height: 1em;
     width: 1em;
+    overflow: visible !important;
+    vertical-align: text-bottom;
     fill: currentColor;
 }
 

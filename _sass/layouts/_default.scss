@@ -2,13 +2,98 @@ html {
     @include light-scheme;
 }
 
+body {
+    line-height: 1.5rem;
+    color: var(--color-fg-default);
+}
+
 #navigation {
     position: fixed;
     left: 0px;
     height: 100%;
     width: var(--nav-width);
+    padding: 3rem 1rem 0;
     background-color: var(--color-canvas-inset);
     box-shadow: var(--color-nav-shadow) -1px 0px 0px 0px inset;
+
+    section {
+        background-color: var(--color-canvas-default);
+        border-color: var(--color-border-default);
+        border-radius: var(--borderRadius-large);
+        border-style: solid;
+        border-width: var(--borderWidth-thin);
+        padding: 0 1rem;
+    }
+
+    .profile-image {
+        padding: 1rem 0;
+
+        a {
+            display: block;
+            height: 7rem;
+            width: 7rem;
+            overflow: hidden;
+            border-radius: var(--borderRadius-full);
+            box-shadow: var(--color-border-default) 0 0 0 2px;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .profile-description {
+        a {
+            display: flex;
+            align-items: center;
+            width: min-content;
+            margin: 0 -0.5rem;
+            padding: 0.125rem 0.5rem;
+            font-weight: 600;
+            color: var(--color-fg-default);
+            border-radius: var(--borderRadius-medium);
+        }
+
+        a:hover {
+            background-color: var(--control-transparent-bgColor-hover);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        >span {
+            color: var(--color-fg-muted);
+            font-size: 0.8rem;
+        }
+    }
+
+    .profile-contact {
+        font-size: 0.8rem;
+        padding: 1rem 0;
+        color: var(--color-fg-default);
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+        }
+
+        svg {
+            height: 1rem;
+            width: 1rem;
+            margin-right: 0.5rem;
+            color: var(--color-fg-muted);
+        }
+    }
 }
 
 #page-wrapper {
@@ -27,7 +112,6 @@ html {
 
 main {
     flex: 3;
-    overflow: hidden;
 }
 
 #sidebar {
@@ -52,7 +136,6 @@ footer {
     a {
         @include flex-center;
         color: var(--color-fg-muted);
-        text-decoration: none;
     }
 
     a:hover {

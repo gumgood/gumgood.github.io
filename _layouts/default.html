@@ -14,7 +14,41 @@
 </head>
 
 <body>
-    <aside id="navigation"></aside>
+    <aside id="navigation">
+        <section>
+            <div class="profile-image">
+                <a href="/">
+                    <img src="{{- site.author.avatar -}}">
+                </a>
+            </div>
+            <div class="profile-description">
+                <a href="/about">
+                    <span>{{- site.title -}}</span>
+                    {%- include octicons/chevron-right.html -%}
+                </a>
+                <span class="profile-site-description">
+                    {{- site.description -}}
+                </span>
+            </div>
+            
+            <div class="profile-contact">
+                <ul>
+                    <li>
+                        {%- include octicons/organization.html -%}
+                        <span>{{- site.author.organization -}}</span>
+                    </li>
+                    <li>
+                        {%- include octicons/mail.html -%}
+                        <span>{{- site.author.email -}}</span>
+                    </li>
+                    <li>
+                        {%- include octicons/mark-github.html -%}
+                        <a href="https://github.com/{{- site.author.github -}}">github.com/{{- site.author.github -}}</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </aside>
     <div id="page-wrapper">
         <div id="main-wrapper">
             <main>{{- content -}}</main>

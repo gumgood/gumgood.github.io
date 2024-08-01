@@ -1,6 +1,11 @@
 # Site info
 title               : Gumgood
 description         : AI 공부하는 블로그입니다!!
+author:
+  avatar            : https://avatars.githubusercontent.com/u/17876281
+  organization      : Samsung Research
+  email             : gumgood@naver.com
+  github            : gumgood
 
 # Where things are
 collections_dir     : contents
