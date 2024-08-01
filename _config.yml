@@ -13,6 +13,8 @@ collections:
   assets:
     output          : true
     permalink       : :name
+  category:
+    output          : true
 
 # Handling Reading
 include             : ["_pages", "_sass"]
