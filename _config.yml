@@ -18,5 +18,13 @@ collections:
 include             : ["_pages", "_sass"]
 exclude             : ["Gemfile", "Gemfile.lock", "README.md"]
 
+defaults:
+  -
+    scope:
+      type          : pages
+    values:
+      layout        : default
+      permalink     : :basename
+
 # Build trick
 theme: null
