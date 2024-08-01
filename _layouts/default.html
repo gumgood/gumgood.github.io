@@ -48,6 +48,39 @@
                 </ul>
             </div>
         </section>
+        <nav class="category-container">
+            <ul>
+                <li>
+                    <a href="/" {% if page.url == "/index" %}class="active"{% endif %}>
+                        {%- include octicons/list-unordered.html -%}
+                        <span class="item">All Posts</span>
+                        <span class="dots"></span>
+                        <span class="counter">{{- site.posts | size -}}</span>
+                    </a>
+                </li>
+                {%- assign categories = site.category | sort: "order" -%}
+                {%- for category in categories -%}
+                    <li>
+                        <a href="{{- category.url -}}" class="{% if page.url == category.url %}active{% endif %} {% unless category.emoji %}subcategory{% endunless %}">
+                            {% if category.emoji %}
+                                {%- include {{ category.emoji | prepend: "octicons/" | append: ".html" }} -%}
+                            {% endif %}
+                            <span class="item">{{- category.title -}}</span>
+                            <span class="dots"></span>
+                            <span class="counter">{{- site.categories[category.slug] | size -}}</span>
+                        </a>
+                    </li>
+                {%- endfor -%}
+                <li>
+                    <a href="/tag" {% if page.url == "/tag" %}class="active"{% endif %}>
+                        {%- include octicons/tag.html -%}
+                        <span class="item">All Tags</span>
+                        <span class="dots"></span>
+                        <span class="counter">{{- site.tags | size -}}</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </aside>
     <div id="page-wrapper">
         <div id="main-wrapper">

@@ -15,6 +15,11 @@ body {
     padding: 3rem 1rem 0;
     background-color: var(--color-canvas-inset);
     box-shadow: var(--color-nav-shadow) -1px 0px 0px 0px inset;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    @include prevent-select;
 
     section {
         background-color: var(--color-canvas-default);
@@ -23,6 +28,23 @@ body {
         border-style: solid;
         border-width: var(--borderWidth-thin);
         padding: 0 1rem;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    li {
+        padding: 0;
+    }
+
+    svg {
+        height: 1rem;
+        width: 1rem;
+        margin-right: 0.5rem;
+        color: var(--color-fg-muted);
     }
 
     .profile-image {
@@ -76,22 +98,58 @@ body {
         padding: 1rem 0;
         color: var(--color-fg-default);
 
-        ul {
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-        }
-
         li {
             display: flex;
             align-items: center;
         }
+    }
 
-        svg {
-            height: 1rem;
-            width: 1rem;
-            margin-right: 0.5rem;
-            color: var(--color-fg-muted);
+    .category-container {
+        padding: 1rem 0 7rem;
+
+        a {
+            display: flex;
+            align-items: center;
+            height: 2rem;
+            margin: 0.2rem 0;
+            padding: 0 0.75rem;
+            font-size: 0.85rem;
+            color: var(--color-fg-default);
+            border-radius: var(--borderRadius-medium);
+        }
+
+        a:hover,
+        .active {
+            background-color: var(--color-button-default-hover-bg);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .item {
+            @include ellipse;
+        }
+
+        .subcategory {
+            height: 1.5rem;
+            padding-left: 2.75rem;
+        }
+
+        .dots {
+            min-width: 0.5rem;
+            margin: 0 0.5rem;
+            flex: 1;
+            border-top: 2px dotted var(--post-list-dash-color);
+        }
+
+        .counter {
+            display: inline-block;
+            padding: 0 0.375rem;
+            background-color: var(--color-neutral-muted);
+            border: var(--borderWidth-thin) solid var(--color-counter-border);
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            line-height: 1.125rem;
         }
     }
 }

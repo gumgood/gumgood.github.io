@@ -32,6 +32,13 @@ defaults:
       type          : posts
     values:
       permalink     : :title
+  -
+    scope:
+      type          : category
+    values:
+      layout        : default
+      sitemap       : false
+      permalink     : /category/:path
 
 # Build trick
 theme: null

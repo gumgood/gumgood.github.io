@@ -39,3 +39,10 @@ a:hover {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+@mixin prevent-select {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
