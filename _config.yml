@@ -25,6 +25,11 @@ defaults:
     values:
       layout        : default
       permalink     : :basename
+  -
+    scope:
+      type          : posts
+    values:
+      permalink     : :title
 
 # Build trick
 theme: null
