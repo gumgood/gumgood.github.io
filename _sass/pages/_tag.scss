@@ -2,7 +2,6 @@
     #tag-container {
         display: flex;
         flex-wrap: wrap;
-        padding-top: 1rem;
     }
 
     .tag-item-link {
@@ -11,14 +10,25 @@
         border: 1px solid var(--color-border-default);
         border-radius: 0.7em;
         box-shadow: 0 0 3px 0 var(--tags-shadow);
+        text-decoration: none;
+        @include prevent-select;
+
+        &:hover {
+            background-color: var(--color-button-default-hover-bg);
+            cursor: pointer;
+        }
     }
 
     .tag-item {
         font-size: 1.125rem;
         color: var(--color-fg-muted);
+
+        &:hover {
+            color: var(--color-accent-fg);
+        }
     }
 
-    .tag-item-counter {
+    .counter {
         margin-left: 0.5rem;
         color: var(--color-fg-default);
     }
