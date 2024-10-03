@@ -12,7 +12,7 @@ collections_dir     : contents
 collections:
   assets:
     output          : true
-    permalink       : :name
+    permalink       : :path
   category:
     output          : true
 
