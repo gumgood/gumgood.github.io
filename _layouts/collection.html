@@ -28,5 +28,8 @@ layout: default
             <span class="date">{{- post.date | date: "%b %e, %Y" -}}</span>
         </li>
         {%- endfor -%}
+        {%- unless posts -%}
+        <p class="message">There are no posts.</p>
+        {%- endunless -%}
     </ul>
 </div>

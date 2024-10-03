@@ -4,7 +4,7 @@
 
         li {
             display: flex;
-            padding: 0 0.5rem;
+            padding: 0.5rem 0;
             word-break: break-all;
             font-size: 1.125rem;
             list-style: none;
@@ -33,5 +33,10 @@
                 color: var(--color-fg-muted);
             }
         }
+    }
+
+    .message {
+        padding: 2rem 0;
+        text-align: center;
     }
 }
