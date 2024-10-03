@@ -1,0 +1,25 @@
+#tag {
+    #tag-container {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 1rem;
+    }
+
+    .tag-item-link {
+        margin: 0 0.75rem 0.5rem 0;
+        padding: 6px 8px 7px;
+        border: 1px solid var(--color-border-default);
+        border-radius: 0.7em;
+        box-shadow: 0 0 3px 0 var(--tags-shadow);
+    }
+
+    .tag-item {
+        font-size: 1.125rem;
+        color: var(--color-fg-muted);
+    }
+
+    .tag-item-counter {
+        margin-left: 0.5rem;
+        color: var(--color-fg-default);
+    }
+}

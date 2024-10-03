@@ -1,0 +1,18 @@
+---
+title: Tags
+---
+
+<div id="tag">
+    <h1 id="title">
+        {%- include octicons/tag.html -%}
+        <span>{{- "Tags" -}}</span>
+    </h1>
+    <div id="tag-container">
+        {%- for it in site.tags -%}
+        <a class="tag-item-link" href="/tag/{{ it.first | downcase }}">
+            <span class="tag-item">{{- it.first | downcase -}}</span>
+            <span class="tag-item-counter">{{- it.last | size -}}</span>
+        </a>
+        {%- endfor -%}
+    </div>
+</div>
