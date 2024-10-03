@@ -38,14 +38,14 @@ defaults:
     scope:
       type          : category
     values:
-      layout        : default
+      layout        : collection
       sitemap       : false
       permalink     : /category/:path
   -
     scope:
       type          : tag
     values:
-      layout        : default
+      layout        : collection
       sitemap       : false
       permalink     : /tag/:path
 

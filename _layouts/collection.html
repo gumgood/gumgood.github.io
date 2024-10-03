@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+{%- if page.collection == 'category' -%}
+{%- assign icon = page.emoji | default: "file-directory" -%}
+{%- assign title = page.title -%}
+{%- assign posts = site.categories[page.slug] -%}
+{%- else -%}
+{%- assign icon = "tag" -%}
+{%- assign title = page.title | downcase -%}
+{%- assign posts = site.tags[page.slug] -%}
+{%- endif -%}
+
+<div id="collection">
+    <h1 id="title" class="Postlist-title flex-vertical-center my-4">
+        {%- include {{ icon | prepend: "octicons/" | append: ".html" }} -%}
+        <span>{{- title -}}</span>
+        <span class="metadata">{{- posts | size -}}</span>
+    </h1>
+
+    <ul class="collection-items">
+        {%- for post in posts -%}
+        <li>
+            {%- include octicons/dot-fill.html -%}
+            <a href="{{ post.url }}">{{- post.title -}}</a>
+            <span class="dots"></span>
+            <span class="date">{{- post.date | date: "%b %e, %Y" -}}</span>
+        </li>
+        {%- endfor -%}
+    </ul>
+</div>
