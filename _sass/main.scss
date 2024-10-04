@@ -2,8 +2,11 @@
 permalink: /main.css
 ---
 @import "utils/normalize";
-@import "utils/theme";
 @import "utils/functional";
+@import "utils/theme";
+@import "utils/github-markdown";
+@import "utils/rouge-highlighter";
 @import "layouts/default";
 @import "layouts/collection";
+@import "layouts/post";
 @import "pages/tag";

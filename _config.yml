@@ -2,6 +2,7 @@
 title               : Gumgood
 description         : AI 공부하는 블로그입니다!!
 author:
+  name              : Sangwon Lee
   avatar            : https://avatars.githubusercontent.com/u/17876281
   organization      : Samsung Research
   email             : gumgood@naver.com
@@ -22,17 +23,31 @@ collections:
 include             : ["_pages", "_sass"]
 exclude             : ["Gemfile", "Gemfile.lock", "README.md"]
 
+# Plugins
+plugins:
+  - jekyll-sitemap
+
+# Markdown Processors
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers  : true
+
+# Default
 defaults:
   -
     scope:
       type          : pages
     values:
       layout        : default
+      sitemap       : false
       permalink     : :basename
   -
     scope:
       type          : posts
     values:
+      layout        : post
+      sitemap       : true
       permalink     : :title
   -
     scope:

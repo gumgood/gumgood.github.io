@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<div id="post">
+    <div class="post-info">
+        <span class="post-info-category">
+            {%- if page.categories.size > 0 -%}
+            {%- assign category = site.category | where: 'slug', page.categories.first | first -%}
+            {%- include octicons/file-directory.html -%}
+            <a href="{{- category.url -}}">{{- category.title -}}</a>
+            {%- if page.categories.size > 1 -%}
+            {%- assign subcategory = site.category | where: 'slug', page.categories.last | first -%}
+            <span>&nbsp/&nbsp</span><a href="{{- subcategory.url -}}">{{- subcategory.title -}}</a>
+            {%- endif -%}
+            {%- endif -%}
+        </span>
+
+        <h1 class="post-info-title my-2 pb-1">
+            {{- page.title -}}
+        </h1>
+
+        <span class="post-info-metadata">
+            <span>By <em>{{- page.author | default: site.author.name -}}</em></span>
+            <span>Posted <em>{{- page.date | date: "%b %e, %Y" -}}</em></span>
+        </span>
+    </div>
+
+    <div class="markdown-body">
+        {{- content -}}
+    </div>
+
+    <div class="post-tag-container">
+        {%- if page.tags.size > 0 -%}
+        {%- include octicons/tag.html -%}
+        {%- for tag in page.tags -%}
+        <a href="/tag/{{- tag -}}">{{- tag | downcase -}}</a>
+        {%- unless forloop.last -%}
+        <span>,&nbsp</span>
+        {%- endunless -%}
+        {%- endfor -%}
+        {%- endif -%}
+    </div>
+
+    {%- include scripts/comment.html -%}
+</div>
