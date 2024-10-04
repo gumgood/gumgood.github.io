@@ -26,6 +26,7 @@ exclude             : ["Gemfile", "Gemfile.lock", "README.md"]
 # Plugins
 plugins:
   - jekyll-sitemap
+  - jekyll-paginate
 
 # Markdown Processors
 kramdown:
@@ -33,11 +34,15 @@ kramdown:
     block:
       line_numbers  : true
 
+# Paginate
+paginate            : 10
+paginate_path       : /:num
+
 # Default
 defaults:
   -
     scope:
-      type          : pages
+      path          : _pages
     values:
       layout        : default
       sitemap       : false

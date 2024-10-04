@@ -40,6 +40,14 @@ a:hover {
     white-space: nowrap;
 }
 
+@mixin ellipse-two {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 @mixin prevent-select {
     user-select: none;
     -webkit-user-select: none;

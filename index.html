@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+<div id="post-summary">
+{%- for post in paginator.posts -%}
+    {%- assign thumbnail = post.content | split: "<img" | slice: 1 | first | split: '/>' | first -%}
+    <a href="{{- post.url -}}">
+        <div class="post-summary-item">
+            {%- if thumbnail -%}
+            <div class="post-summary-item-thumbnail">
+                <img {{ thumbnail }}/>
+            </div>
+            {%- endif -%}
+            <div class="post-summaries-item-body">
+                <h2 class="post-summaries-item-title">{{- post.title -}}</h2>
+                <p class="post-summaries-item-content">
+                    {{- post.content | markdownify | strip_html | truncate: 200 -}}
+                </p>
+                <div class="post-summaries-item-metadata">
+                    {%- include octicons/calendar.html -%}
+                    <span>{{- post.date | date: "%b %e, %Y" -}}</span>
+                    {%- if post.categories.size > 0 -%}
+                        {%- assign category = site.category | where: 'slug', post.categories.first | first -%}
+                        {%- include octicons/file-directory.html -%}
+                        <span>{{- category.title -}}</span>
+                        {%- if post.categories.size > 1 -%}
+                            {%- assign subcategory = site.category | where: 'slug', post.categories.last | first -%}
+                            <span>&nbsp/&nbsp{{- subcategory.title -}}</span>
+                        {%- endif -%}
+                    {%- endif -%}
+                </div>
+            </div>
+        </div>
+    </a>
+{%- endfor -%}
+</div>
+
+<div id="paginate">
+    {%- assign s = paginator.page | minus: 1 | divided_by: 8 | plus: 1 -%}
+    {%- assign e = paginator.page | minus: 1 | divided_by: 8 | plus: 8 | at_most: paginator.total_pages -%}
+
+    {%- if s > 1 -%}
+    <a href="/{{- s | minus: 1 -}}">
+        {%- include octicons/arrow-left.html -%}
+    </a>
+    {%- endif -%}
+
+    {%- for page_num in (s..e) -%}
+        {%- if page_num == paginator.page -%}
+            <span class="active">{{- page_num -}}</span>
+        {%- else -%}
+            <a href="/{%- if page_num > 1 -%}{{- page_num -}}{%- endif -%}">{{- page_num -}}</a>
+        {%- endif -%}
+    {%- endfor -%}
+
+    {%- if e < paginator.total_pages -%}
+    <a href="/{{- e | plus: 1 -}}">
+        {%- include octicons/arrow-right.html -%}
+    </a>
+    {%- endif -%}
+</div>

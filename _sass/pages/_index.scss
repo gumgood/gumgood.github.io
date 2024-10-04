@@ -1,0 +1,95 @@
+#post-summary {
+    @include prevent-select;
+
+    .post-summary-item {
+        display: flex;
+        flex-direction: row-reverse;
+        margin-bottom: 1.5rem;
+        background-color: var(--color-canvas-default);
+        border-color: var(--color-border-default);
+        border-radius: var(--borderRadius-large);
+        border-style: solid;
+        border-width: var(--borderWidth-thin);
+        transition: box-shadow .3s ease-in-out;
+    }
+
+    .post-summary-item:hover {
+        box-shadow: rgba(104, 104, 104, 0.5) 0 2px 6px 0, rgba(211, 209, 209, 0.15) 0 0 0 1px;
+    }
+
+    .post-summary-item-thumbnail {
+        border-top-right-radius: var(--borderRadius-large);
+        border-bottom-right-radius: var(--borderRadius-large);
+        overflow: hidden;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            background-color: rgba(0, 0, 0, 0.05);
+            filter: contrast(0.9);
+        }
+    }
+
+    .post-summaries-item-body {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-width: 70%;
+        padding: 1.25rem 1.75rem;
+    }
+
+    .post-summaries-item-title {
+        margin: 0.5rem 0;
+        color: var(--color-fg-default);
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.5;
+        @include ellipse-two;
+    }
+
+    .post-summaries-item-content {
+        margin: 0 0 0.5rem;
+        color: var(--color-fg-muted);
+        @include ellipse-two;
+    }
+
+    .post-summaries-item-metadata {
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+        color: var(--color-fg-muted);
+        line-height: 1.75;
+        font-size: 0.85rem;
+        word-spacing: 1px;
+        @include ellipse;
+
+        svg {
+            margin-right: 0.375rem;
+        }
+
+        svg:not(:first-child) {
+            margin-left: 1rem;
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+#paginate {
+    margin: 2rem 0;
+    text-align: center;
+    @include prevent-select;
+
+    *:not(:last-child) {
+        margin-right: 1rem;
+    }
+
+    .active {
+        color: var(--color-fg-muted);
+        text-decoration: underline 2px var(--color-fg-muted);
+        text-underline-offset: 0.625rem;
+    }
+}
