@@ -96,7 +96,40 @@
     <div id="page-wrapper">
         <div id="main-wrapper">
             <main>{{- content -}}</main>
-            <aside id="sidebar"></aside>
+            <aside id="sidebar">
+                <div class="sidebar-section">
+                    <span class="sidebar-header">Recently Updated</span>
+                    <ul class="sidebar-recent-post-items">
+                        {%- for post in site.posts limit: 5 -%}
+                        <li class="sidebar-recent-post-item"><a href="{{ post.url }}">{{ post.title }}</a></li>
+                        {%- endfor -%}
+                    </ul>
+                </div>
+            
+                {% assign tags = "" | split: "" %}
+                {% for it in site.tags %}
+                    {% assign tag = it.first | downcase %}
+                    {% assign size = site.posts | where_exp: 'post', 'post.tags contains tag' | size | times: -1 %}
+                    {% assign ele = "" | split: "" | push: size | push: tag %}
+                    {% assign tags = tags | push: ele %}
+                {% endfor %}
+                {% assign tags = tags | sort %}
+            
+                <div class="sidebar-section">
+                    <span class="sidebar-header">Trending Tags</span>
+                    <ul class="sidebar-trending-tags-items">
+                        {% for it in tags limit: 10 %}
+                        <li class="sidebar-trending-tags-item"><a href="/tag/{{ it[1] }}">{{ it[1] }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    <div class="sidebar-all-tags">
+                        <a href="/tag">
+                            {% include octicons/chevron-right.html %}
+                            <span>&nbspAll&nbsptags</span>
+                        </a>
+                    </div>
+                </div>
+            </aside>
         </div>
         <footer>
             <div class="footer-content">
