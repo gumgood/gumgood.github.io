@@ -28,7 +28,10 @@ title: Search Results
     };
 </script>
 
-<script src="https://unpkg.com/lunr/lunr.js"></script>
+{%- include scripts/lunr.html -%}
+{%- include scripts/lunr.stemmer.support.html -%}
+{%- include scripts/lunr.multi.html -%}
+{%- include scripts/lunr.ko.html -%}
 
 <script>
 (function() {
@@ -88,6 +91,8 @@ title: Search Results
         // Initalize lunr.js with the fields to search.
         // The title field is given more weight with the "boost" parameter
         var idx = lunr(function () {
+            this.use(lunr.multiLanguage('en', 'ko'));
+
             this.field('id');
             this.field('title', { boost: 10 });
             this.field('category');
