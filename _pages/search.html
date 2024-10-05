@@ -1,0 +1,116 @@
+---
+title: Search Results
+---
+
+<div id="search-results"></div>
+
+<script>
+    // Template to generate the JSON to search
+    window.store = {
+        {% for post in site.posts %}
+        {%- if post.categories.size > 0 -%}
+        {%- assign category = site.category | where: 'slug', post.categories.first | first -%}
+        {%- endif -%}
+        {%- if post.categories.size > 1 -%}
+        {%- assign subcategory = site.category | where: 'slug', post.categories.last | first -%}
+        {%- endif -%}
+        "{{ post.url | slugify }}": {
+            "url": "{{ post.url | xml_escape }}",
+            "title": "{{ post.title | xml_escape }}",
+            "category": '{{ category.title | default: "" }}',
+            "subcategory": '{{ subcategory.title | default: "" }}',
+            "date": '{{- post.date | date: "%b %e, %Y" -}}',
+            "thumbnail": '{{ post.content | split: "<img" | slice: 1 | first | split: "/>" | first | default: "" }}',
+            "content": {{ post.content | strip_html | strip_newlines | jsonify }},
+        }
+        {% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    };
+</script>
+
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+
+<script>
+(function() {
+    function showResults(searchTerm, results, store) {
+        var searchResults = document.getElementById('search-results');
+
+        var prependString = "<h1>'" + searchTerm + "'의&nbsp검색&nbsp결과&nbsp&nbsp<em>" + results.length + "</em></h1>";
+        var appendString = '';
+
+        for (var i = 0; i < results.length; i++) {  // Iterate over them and generate html
+            var item = store[results[i].ref];
+            appendString += '<a href="' + item.url + '">'
+            appendString += '<div class="post-summary-item">';
+            if (item.thumbnail) {
+                appendString += '<div class="post-summary-item-thumbnail">';
+                appendString += '<img ' + item.thumbnail + '/>';
+                appendString += '</div>'
+            }
+            appendString += '<div class="post-summaries-item-body">';
+            appendString += '<h2 class="post-summaries-item-title">' + item.title + '</h2>';
+            appendString += '<p class="post-summaries-item-content">';
+            appendString += item.content.substring(0, 250) + '</p>';
+            appendString += '<div class="post-summaries-item-metadata">';
+            appendString += '{%- include octicons/calendar.html -%}';
+            appendString += '<span>' + item.date + '</span>';
+            if (item.category) {
+                appendString += '{%- include octicons/file-directory.html -%}';
+                appendString += '<span>' + item.category + '</span>';
+            }
+            if (item.subcategory) {
+                appendString += '<span>&nbsp/&nbsp' + item.subcategory + '</span>';
+            }
+            appendString += '</div></div></div></a>';
+        }
+
+        searchResults.innerHTML = prependString + '<div id="post-summary">' + appendString + '</div>';
+    }
+
+    function getQuery(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split('&');
+
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split('=');
+
+            if (pair[0] === variable) {
+                return decodeURIComponent(pair[1].replace(/\+/g, '%20'));
+            }
+        }
+    }
+
+    var searchTerm = getQuery('query');
+
+    if (searchTerm) {
+        document.getElementById('search-box').setAttribute("value", searchTerm);
+
+        // Initalize lunr.js with the fields to search.
+        // The title field is given more weight with the "boost" parameter
+        var idx = lunr(function () {
+            this.field('id');
+            this.field('title', { boost: 10 });
+            this.field('category');
+            this.field('subcategory');
+            this.field('date');
+            this.field('thumbnail');
+            this.field('content');
+
+            for (var key in window.store) { // Add the JSON we generated from the site content to Lunr.js.
+                this.add({
+                    'id': key,
+                    'title': window.store[key].title,
+                    'category': window.store[key].category,
+                    'subcategory': window.store[key].subcategory,
+                    'date': window.store[key].date,
+                    'thumbnail': window.store[key].thumbnail,
+                    'content': window.store[key].content,
+                });
+            }
+        });
+
+        var results = idx.search(searchTerm + "~1"); // Perform search with Lunr.js
+        showResults(searchTerm, results, window.store);
+    }
+})();
+</script>

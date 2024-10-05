@@ -49,6 +49,16 @@
                 </ul>
             </div>
         </section>
+
+        <div id="header-search">
+            <form class="header-search-form" action="/search/" method="get">
+                <input type="text" id="search-box" name="query" placeholder="Search...">
+                <button type="submit" value="search">
+                    {%- include octicons/search.html -%}
+                </button>
+            </form>
+        </div>
+
         <nav class="category-container">
             <ul>
                 <li>
