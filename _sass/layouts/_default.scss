@@ -11,7 +11,7 @@ body {
     position: fixed;
     left: 0px;
     height: 100%;
-    width: var(--nav-width);
+    width: $nav-width;
     padding: 3rem 1rem 0;
     background-color: var(--color-canvas-inset);
     box-shadow: var(--color-nav-shadow) -1px 0px 0px 0px inset;
@@ -20,6 +20,10 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
     @include prevent-select;
+    
+    @media screen and (max-width: $break-small) {
+        left: -$nav-width;
+    }
 
     section {
         background-color: var(--color-canvas-default);
@@ -214,20 +218,32 @@ body {
 #page-wrapper {
     @include flex-column-center;
     min-height: 100vh;
-    margin-left: var(--nav-width);
     padding: 0 1rem;
+    margin-left: $nav-width;
+
+    @media screen and (max-width: $break-small) {
+        margin-left: 0;
+    }
 }
 
 #main-wrapper {
     display: flex;
     flex: 1;
+    max-width: $main-max-width;
     width: 92%;
-    max-width: var(--main-max-width);
+
+    @media screen and (max-width: $break-large) {
+        width: 88%;
+    }
+
+    @media screen and (max-width: $break-small) {
+        width: 100%;
+    }
 }
 
 main {
     flex: 3;
-    width: 100%;
+    min-width: 0;
     padding: 3rem 0.25rem;
 
     h1#title {
@@ -264,6 +280,10 @@ main {
     flex: 1;
     padding: 3rem 0 3rem 3.5rem;
     @include prevent-select;
+
+    @media screen and (max-width: $break-large) {
+        display: none;
+    }
 
     .sidebar-section {
         margin-bottom: 3rem;

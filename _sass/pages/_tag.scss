@@ -2,6 +2,10 @@
     #tag-container {
         display: flex;
         flex-wrap: wrap;
+
+        @media screen and (max-width: $break-small) {
+            justify-content: center;
+        }
     }
 
     .tag-item-link {
@@ -12,6 +16,11 @@
         box-shadow: 0 0 3px 0 var(--tags-shadow);
         text-decoration: none;
         @include prevent-select;
+
+        @media screen and (max-width: $break-small) {
+            margin: 0 0.5rem 0.75rem 0;
+            justify-content: center;
+        }
 
         &:hover {
             background-color: var(--color-button-default-hover-bg);
