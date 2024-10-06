@@ -16,6 +16,11 @@
 
 <body>
     <aside id="navigation">
+        <div class="nav-close-button">
+            <button class="toggle-button">
+                {%- include octicons/x.html -%}
+            </button>
+        </div>
         <section>
             <div class="profile-image">
                 <a href="/">
@@ -94,6 +99,15 @@
         </nav>
     </aside>
     <div id="page-wrapper">
+        <div id="topbar">
+            <div class="topbar-open-button">
+                <button class="toggle-button">
+                    {%- include octicons/three-bars.html -%}
+                </button>
+                <span class>{{- site.title -}}</span>
+                <span>&nbsp</span>
+            </div>
+        </div>
         <div id="main-wrapper">
             <main>{{- content -}}</main>
             <aside id="sidebar">
@@ -141,6 +155,8 @@
             </div>
         </footer>
     </div>
+    <div id="dimmed"></div>
+    {%- include scripts/sidebar-button.html -%}
 </body>
 
 </html>

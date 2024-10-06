@@ -1,0 +1,32 @@
+<script>
+    const nav = document.querySelector("#navigation");
+    const topbar = document.querySelector("#topbar");
+    const dimmed = document.querySelector("#dimmed");
+
+    const nav_button = nav.querySelector(".toggle-button");
+    const topbar_button = topbar.querySelector(".toggle-button");
+
+    nav_button.addEventListener("click", function () {
+        nav.style.left = "-15rem";
+        dimmed.style.display = "none";
+    });
+    topbar_button.addEventListener("click", function () {
+        nav.style.left = "0";
+        dimmed.style.display = "block";
+    });
+
+    const w_min = window.matchMedia("screen and (min-width: 54rem)");
+    w_min.addEventListener("change", function (e) {
+        if (e.matches) {
+            nav.style.left = "0";
+        } else {
+            nav.style.left = "-15rem";
+        }
+        dimmed.style.display = "none";
+    });
+
+    dimmed.addEventListener("click", function (e) {
+        nav.style.left = "-15rem";
+        dimmed.style.display = "none";
+    });
+</script>

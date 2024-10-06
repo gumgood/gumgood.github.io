@@ -10,19 +10,56 @@ body {
 #navigation {
     position: fixed;
     left: 0px;
+    z-index: 10;
     height: 100%;
     width: $nav-width;
-    padding: 3rem 1rem 0;
+    padding: 0 1rem;
     background-color: var(--color-canvas-inset);
     box-shadow: var(--color-nav-shadow) -1px 0px 0px 0px inset;
     overflow-x: hidden;
     overflow-y: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    transition: left 0.25s ease-in-out;
     @include prevent-select;
-    
+
     @media screen and (max-width: $break-small) {
         left: -$nav-width;
+    }
+
+    .nav-close-button {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        height: 3rem;
+    }
+
+    .toggle-button {
+        height: 2rem;
+        width: 2rem;
+        margin-right: -0.5rem;
+        padding: 0.5rem;
+        color: var(--color-fg-muted);
+        background-color: transparent;
+        border-color: transparent;
+        border-radius: var(--borderRadius-medium);
+        border-style: solid;
+        border-width: var(--borderWidth-thin);
+        cursor: pointer;
+        outline: none;
+        visibility: hidden;
+
+        @media screen and (max-width: $break-small) {
+            visibility: visible;
+        }
+
+        svg {
+            vertical-align: baseline;
+        }
+
+        &:hover {
+            background-color: var(--color-button-default-hover-bg);
+        }
     }
 
     section {
@@ -276,6 +313,50 @@ main {
     }
 }
 
+#topbar {
+    display: none;
+    width: 100%;
+
+    @media screen and (max-width: $break-small) {
+        display: block;
+    }
+
+    .topbar-open-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 3rem;
+        margin: 0 -1rem;
+        padding: 0 1.25rem;
+        color: var(--color-fg-muted);
+        background-color: var(--color-canvas-inset);
+        box-shadow: var(--color-nav-shadow) 0px -1px 0px 0px inset;
+        @include prevent-select;
+    }
+
+    .toggle-button {
+        height: 2rem;
+        width: 2rem;
+        padding: 0.5rem;
+        color: var(--color-fg-muted);
+        background-color: transparent;
+        border-color: var(--color-border-default);
+        border-radius: var(--borderRadius-medium);
+        border-style: solid;
+        border-width: var(--borderWidth-thin);
+        cursor: pointer;
+        outline: none;
+
+        svg {
+            vertical-align: baseline;
+        }
+
+        &:hover {
+            background-color: var(--color-button-default-hover-bg);
+        }
+    }
+}
+
 #sidebar {
     flex: 1;
     padding: 3rem 0 3rem 3.5rem;
@@ -351,6 +432,17 @@ main {
             align-items: center;
         }
     }
+}
+
+#dimmed {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-neutral-muted);
 }
 
 footer {
