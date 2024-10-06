@@ -43,12 +43,12 @@ title: Search Results
 
         for (var i = 0; i < results.length; i++) {  // Iterate over them and generate html
             var item = store[results[i].ref];
-            appendString += '<a href="' + item.url + '">'
-            appendString += '<div class="post-summary-item">';
+            appendString += '<li class="post-summary-item">';
+            appendString += '<a href="' + item.url + '">';
             if (item.thumbnail) {
                 appendString += '<div class="post-summary-item-thumbnail">';
                 appendString += '<img ' + item.thumbnail + '/>';
-                appendString += '</div>'
+                appendString += '</div>';
             }
             appendString += '<div class="post-summaries-item-body">';
             appendString += '<h2 class="post-summaries-item-title">' + item.title + '</h2>';
@@ -64,10 +64,10 @@ title: Search Results
             if (item.subcategory) {
                 appendString += '<span>&nbsp/&nbsp' + item.subcategory + '</span>';
             }
-            appendString += '</div></div></div></a>';
+            appendString += '</div></div></a></li>';
         }
 
-        searchResults.innerHTML = prependString + '<div id="post-summary">' + appendString + '</div>';
+        searchResults.innerHTML = prependString + '<ul id="post-summary">' + appendString + '</ul>';
     }
 
     function getQuery(variable) {

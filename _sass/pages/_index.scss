@@ -1,9 +1,9 @@
 #post-summary {
     @include prevent-select;
+    margin: 0;
+    padding: 0;
 
     .post-summary-item {
-        display: flex;
-        flex-direction: row-reverse;
         margin-bottom: 1.5rem;
         overflow: hidden;
         background-color: var(--color-canvas-default);
@@ -12,6 +12,15 @@
         border-style: solid;
         border-width: var(--borderWidth-thin);
         transition: box-shadow .3s ease-in-out;
+
+        a {
+            display: flex;
+            flex-direction: row-reverse;
+
+            @media screen and (max-width: $break-small) {
+                flex-direction: column;
+            }
+        }
     }
 
     .post-summary-item:hover {
@@ -19,9 +28,12 @@
     }
 
     .post-summary-item-thumbnail {
-        border-top-right-radius: var(--borderRadius-large);
-        border-bottom-right-radius: var(--borderRadius-large);
+        flex: 1;
         overflow: hidden;
+
+        @media screen and (max-width: $break-small) {
+            flex: 0 0 12rem;
+        }
 
         img {
             height: 100%;
@@ -40,13 +52,13 @@
         padding: 1.25rem 1.75rem;
 
         @media screen and (max-width: $break-small) {
-            flex-direction: column;
             padding: 1rem;
         }
     }
 
     .post-summaries-item-title {
-        margin: 0.5rem 0;
+        margin-top: 0;
+        margin-bottom: 0.75rem;
         color: var(--color-fg-default);
         font-size: 1.25rem;
         font-weight: 400;
@@ -88,6 +100,7 @@
     margin: 2rem 0;
     text-align: center;
     @include prevent-select;
+    @include ellipse;
 
     *:not(:last-child) {
         margin-right: 1rem;

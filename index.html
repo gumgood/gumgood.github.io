@@ -2,11 +2,11 @@
 layout: default
 ---
 
-<div id="post-summary">
+<ul id="post-summary">
 {%- for post in paginator.posts -%}
     {%- assign thumbnail = post.content | split: "<img" | slice: 1 | first | split: '/>' | first -%}
-    <a href="{{- post.url -}}">
-        <div class="post-summary-item">
+    <li class="post-summary-item">
+        <a href="{{- post.url -}}">
             {%- if thumbnail -%}
             <div class="post-summary-item-thumbnail">
                 <img {{ thumbnail }}/>
@@ -31,10 +31,10 @@ layout: default
                     {%- endif -%}
                 </div>
             </div>
-        </div>
-    </a>
+        </a>
+    </li>
 {%- endfor -%}
-</div>
+</ul>
 
 <div id="paginate">
     {%- assign s = paginator.page | minus: 1 | divided_by: 8 | plus: 1 -%}

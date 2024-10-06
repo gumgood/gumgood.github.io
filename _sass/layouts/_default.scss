@@ -357,6 +357,11 @@ main {
             background-color: var(--color-button-default-hover-bg);
         }
     }
+
+    span {
+        padding: 1rem;
+        @include ellipse;
+    }
 }
 
 #sidebar {
@@ -456,7 +461,7 @@ footer {
 
 .footer-content {
     @include flex-center;
-
+    @include ellipse;
     height: 100%;
     color: var(--color-fg-muted);
     font-size: var(--footer-font-size);
